@@ -6,8 +6,8 @@
   @vite('resources/css/app.css')
 </head>
 <body>
-  <h1 class="bg-gray-500">
-    Hello world!
-  </h1>
+  <div class="container w-full">
+    Masuk
+  </div>
 </body>
 </html>

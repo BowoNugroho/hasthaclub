@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\webstore\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('webstore/layout/index');
-});
+// Route::get('/', function () {
+//     return view('webstore/layout/index');
+// });
+
+Route::get('/', [IndexController::class, 'index'])->name('webstore.layout.index');
