@@ -8,9 +8,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    server: {
-        host: "0.0.0.0", // Membuka akses dari luar localhost
-        port: 5173, // Port yang digunakan
-        open: true, // Opsional, ini membuka browser secara otomatis
-    },
+    // server: {
+    //     host: "0.0.0.0", // Membuka akses dari luar localhost
+    //     port: 5173, // Port yang digunakan
+    //     open: true, // Opsional, ini membuka browser secara otomatis
+    // },
 });

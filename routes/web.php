@@ -14,8 +14,8 @@ use App\Http\Controllers\webstore\IndexController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('webstore/layout/index');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', [IndexController::class, 'index'])->name('webstore.layout.index');
+// Route::get('/', [IndexController::class, 'index'])->name('webstore.layout.index');
