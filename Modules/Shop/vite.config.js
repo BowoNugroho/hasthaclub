@@ -5,6 +5,7 @@ dotenvExpand(
 
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
+import tailwindcss from "tailwindcss";
 
 export default defineConfig({
     build: {
@@ -18,11 +19,22 @@ export default defineConfig({
             buildDirectory: "build-shop",
             input: [
                 __dirname + "/Resources/assets/sass/app.scss",
+                __dirname + "/Resources/assets/css/app.css",
                 __dirname + "/Resources/assets/js/app.js",
             ],
             refresh: true,
         }),
     ],
+    css: {
+        postcss: {
+            plugins: [tailwindcss(), require("autoprefixer")],
+        },
+    },
+    resolve: {
+        alias: {
+            "@": "/resources", // Aliases folder `resources/` untuk memudahkan pengelolaan path
+        },
+    },
     // server: {
     //     host: "0.0.0.0", // Membuka akses dari luar localhost
     //     port: 5173, // Port yang digunakan

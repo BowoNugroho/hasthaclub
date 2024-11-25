@@ -1,7 +1,7 @@
-@extends('shop::layouts.master')
+@extends('shop::layouts.app')
 
 @section('content')
-    <h1>Hello World</h1>
+    <h1 >Hello World masuk</h1>
 
     <p>
         This view is loaded from module: {!! config('shop.name') !!}
