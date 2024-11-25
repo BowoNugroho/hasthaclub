@@ -6,6 +6,7 @@ dotenvExpand(
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
 import tailwindcss from "tailwindcss";
+import path from "path";
 
 export default defineConfig({
     build: {
@@ -33,7 +34,12 @@ export default defineConfig({
     resolve: {
         alias: {
             "@": "/resources", // Aliases folder `resources/` untuk memudahkan pengelolaan path
+            "@modules": path.resolve(__dirname, "Modules"),
         },
+    },
+    build: {
+        outDir: "public", // Tentukan folder output build
+        assetsDir: "assets", // Tentukan direktori aset dalam output
     },
     // server: {
     //     host: "0.0.0.0", // Membuka akses dari luar localhost
