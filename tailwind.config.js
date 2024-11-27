@@ -9,9 +9,10 @@ module.exports = {
         "./modules/**/*/Resources/views/**/*.blade.php",
         "./modules/**/*/Resources/js/**/*.js",
         "./modules/**/*/Resources/css/**/*.css",
+        "./node_modules/flowbite/**/*.js",
     ],
     theme: {
         extend: {},
     },
-    plugins: [],
+    plugins: [require("flowbite/plugin")],
 };

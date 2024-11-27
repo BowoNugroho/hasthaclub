@@ -14,3 +14,7 @@
 Route::prefix('/')->group(function () {
     Route::get('/', 'ShopController@index');
 });
+
+Route::prefix('/etalase')->group(function () {
+    Route::get('/', 'HomeController@index');
+});
