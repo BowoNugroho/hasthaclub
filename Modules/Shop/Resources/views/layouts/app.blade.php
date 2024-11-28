@@ -43,7 +43,79 @@
         </div>
         <hr>
         @yield('content')
-        <div class="h-[500px] mt-10"></div>
+        <hr>
+        <div class="grid grid-cols-9 gap-2 mb-5">
+            <div class="box col-span-2"></div>
+            <div class="box col-span-5 p-5">
+                <div class="grid grid-cols-4 gap-6">
+                    <div class="box "> 
+                        <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Belanja</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Apple</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Andorid</div>
+                    </div>
+                    <div class="box ">
+                        <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Layanan</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Layanan Pelanggan</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Mitra / Partnership</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Reseller</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Online Banking</div>
+                    </div>
+                    <div class="box ">
+                        <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Tentang</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Tentang Hastha</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Hubungi Kami</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> FAQ</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Cari Toko</div>
+                    </div>
+                    <div class="box ">
+                        <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Kebijakan</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Kebijakan Pembelian </div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Kebijakan Pengembalian</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Kebijakan Privasi</div>
+                        <div class="grid grid-cols-1 text-start mb-3"> Akun Saya</div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6 mt-10 mb-4">
+                    <div class="box ">
+                        <table>
+                            <tr class="h-10">
+                                <td><i class="fa-regular fa-clock"></i> &nbsp;&nbsp;</td>
+                                <td>Jam  09:00 - 18:00</td>
+                            </tr>
+                            <tr class="h-10">
+                                <td><i class="fa-regular fa-envelope"></i> &nbsp;&nbsp;</td>
+                                <td>Email : <span class="text-blue-500">customercare@hasthaclub.com</span></td>
+                            </tr>
+                            <tr class="h-10">
+                                <td><i class="fa-solid fa-headset"></i> &nbsp;&nbsp;</td>
+                                <td>Contact Center : <span class="text-blue-500">1500378</span></td>
+                            </tr>
+                            <tr class="h-10">
+                                <td><i class="fa-brands fa-whatsapp"></i> &nbsp;&nbsp;</td>
+                                <td>Whatsapp : <span class="text-blue-500">0882 0089 97382</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="box ">
+                        <table>
+                            <tr class="h-10">
+                                <td class="text-lg font-bold">Find Us</td>
+                            </tr>
+                            <tr class="h-10">
+                                <td>
+                                    <i class="fa-brands fa-instagram"></i> &nbsp;&nbsp; <i class="fa-brands fa-facebook"></i> &nbsp;&nbsp; <i class="fa-brands fa-tiktok"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <hr>
+                <div class="grid grid-cols-1 text-center mt-4">
+                    <p class="text-slate-500">Copyright © 2024 Hastha Club | PT Gayeon Industri Persada. All rights reserved.</p>
+                </div>
+            </div>
+            <div class="box col-span-2"></div>
+        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     </body>
