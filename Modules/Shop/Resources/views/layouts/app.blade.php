@@ -17,12 +17,12 @@
 
     </head>
     <body>
-        <div class="grid grid-cols-1 gap-2 ">
-            <div class="flex items-center justify-center bg-blue-500 h-10 text-white text-[12px] py-2">Dapatkan Free Membership Paradigm Fitness s.d 1 bulan dengan Pembelian Produk Hastha Club</div>
+        <div class="grid grid-cols-1 gap-2">
+            <div class="flex items-center justify-center bg-blue-500 lg:h-10 h-8 text-white lg:text-[12px] text-[10px] py-2 p-2">Dapatkan Free Membership Paradigm Fitness s.d 1 bulan dengan Pembelian Produk Hastha Club</div>
         </div>
-        <div class="grid grid-cols-7 gap-4">
-            <div class="box"></div>
-            <div class="box col-span-5 flex justify-center">
+        <div class="grid xl:grid-cols-7 grid-cols-7 gap-4">
+            <div class="box "></div>
+            <div class="box xl:col-span-5 col-span-7 justify-center hidden lg:flex">
                 <div class="flex justify-between items-center px-5 lg:px-[50px] h-[80px] w-full ">
                     <a href="/">
                         <img src="{{ Vite::asset('modules/shop/Resources/assets/images/hasthaclub.png') }}" class="h-[60px]" alt="">
@@ -39,7 +39,38 @@
                     </ul>
                 </div>
             </div>
-            <div class="box"></div>
+            <div class="box "></div>
+        </div>
+        <div class="lg:hidden px-2">
+            <div class="grid grid-cols-1 text-center p-3 ">
+                <p class="text-[15px] "><i class="fas fa-store"></i>&nbsp;&nbsp;<span class="hover:underline">Pilih Toko</span></p>
+            </div>
+            <hr>
+            <div class="grid grid-cols-1 text-center p-1">
+                <div class="flex justify-between items-center px-5 lg:px-[30px] h-[50px] w-full ">
+                    <button id="menu-button" class="text-xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="/">
+                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/hasthaclub.png') }}" class="h-[60px]" alt="">
+                    </a>
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+            </div>
+            <div id="mobile-menu" class="lg:hidden hidden">
+                <hr>
+                <div class="flex justify-between items-center px-5 lg:px-[50px] h-[80px] w-full ">
+                    <input type="text" placeholder="Cari Produk" class="md:w-[500px] w-[200px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
+                    <ul class="flex gap-4">
+                        <li class="text-[14px] hover:underline">Partnership</li>
+                        <li class="text-[14px] hover:underline">Reseller</li>
+                    </ul>
+                    <ul class="flex gap-4">
+                        <li class="text-[14px]"><i class="fa-regular fa-user"></i></li>
+                    </ul>
+                </div>
+                {{-- <div class=" left-0 flex flex-col gap-4 pt-5 px-5 absolute  w-[500px] h-screen bg-white"></div> --}}
+            </div>
         </div>
         <hr>
         @yield('content')
@@ -116,7 +147,14 @@
             </div>
             <div class="box col-span-2"></div>
         </div>
-
+        <script>
+            // Toggle mobile menu visibility
+            document.getElementById('menu-button').addEventListener('click', function() {
+                let menu = document.getElementById('mobile-menu');
+                console.log('masuk');
+                menu.classList.toggle('hidden');
+            });
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     </body>
 </html>
