@@ -7,23 +7,23 @@
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
              <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out " data-carousel-item>
-                <img src="{{ Vite::asset('modules/shop/Resources/assets/images/slider/slide1.png') }}" class="absolute block h-[400px]  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{ Vite::asset('modules/shop/Resources/assets/images/slider/slide1.png') }}" class="absolute block lg:h-[400px] md:h-[400px] h-[300px]  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ Vite::asset('modules/shop/Resources/assets/images/slider/slide2.jpg') }}" class="absolute block h-[400px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{ Vite::asset('modules/shop/Resources/assets/images/slider/slide2.jpg') }}" class="absolute blocklg:h-[400px] md:h-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ Vite::asset('modules/shop/Resources/assets/images/slider/slide3.jpg') }}" class="absolute block h-[400px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{ Vite::asset('modules/shop/Resources/assets/images/slider/slide3.jpg') }}" class="absolute blocklg:h-[400px] md:h-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 4 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ Vite::asset('modules/shop/Resources/assets/images/slider/slide4.jpg') }}" class="absolute block h-[400px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{ Vite::asset('modules/shop/Resources/assets/images/slider/slide4.jpg') }}" class="absolute blocklg:h-[400px] md:h-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 5 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ Vite::asset('modules/shop/Resources/assets/images/slider/slide5.jpg') }}" class="absolute block h-[400px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{ Vite::asset('modules/shop/Resources/assets/images/slider/slide5.jpg') }}" class="absolute blocklg:h-[400px] md:h-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
         </div>
         <!-- Slider indicators -->
@@ -54,59 +54,59 @@
     </div>
 </div>
 <hr>
-<div class="grid grid-cols-7 gap-2">
+<div class="grid xl:grid-cols-7 grid-cols-7 gap-2">
     <div class="box"> </div>
-    <div class="box col-span-5 p-5"> 
+    <div class="box xl:col-span-5 col-span-7 p-5"> 
         <p class="text-[25px] font-bold">Type produk Hastha</p>
-        <div class="flex justify-center gap-16 mt-3">
+        <div class="flex justify-center gap-16 mt-3 ">
             <a href="#" class="max-auto p-3">
                 <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/katalog/ip 13.png') }}" class="h-[80px]" alt="">
+                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/katalog/ip 13.png') }}" class="lg:h-[80px] h-[50px]" alt="">
                     </div>
                  </div>
                  <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <p class="font-bold">Apple</p>
+                        <p class="font-bold lg:text-lg md:text-md text-sm">Apple</p>
                     </div>
                  </div>
                  <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <p class="">Mulai 3 Jutaan</p>
+                        <p class="lg:text-lg md:text-md text-sm">Mulai 3 Jutaan</p>
                     </div>
                  </div>
             </a>
             <a href="#" class="max-auto p-3">
                 <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/katalog/samsung.png') }}" class="h-[80px]" alt="">
+                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/katalog/samsung.png') }}" class="lg:h-[80px] h-[50px]" alt="">
                     </div>
                  </div>
                  <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <p class="font-bold">Android</p>
+                        <p class="font-bold lg:text-lg md:text-md text-sm">Android</p>
                     </div>
                  </div>
                  <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <p class="">Mulai 2 Jutaan</p>
+                        <p class="lg:text-lg md:text-md text-sm">Mulai 2 Jutaan</p>
                     </div>
                  </div>
             </a>
             <a href="#" class="max-auto p-3">
                 <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/katalog/laptop.png') }}" class="h-[80px]" alt="">
+                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/katalog/laptop.png') }}" class="lg:h-[80px] h-[50px]" alt="">
                     </div>
                  </div>
                  <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <p class="font-bold">Laptop</p>
+                        <p class="font-bold lg:text-lg md:text-md text-sm">Laptop</p>
                     </div>
                  </div>
                  <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <p class="">Mulai 4 Jutaan</p>
+                        <p class="lg:text-lg md:text-md text-sm">Mulai 4 Jutaan</p>
                     </div>
                  </div>
             </a>
@@ -115,9 +115,9 @@
     <div class="box"></div>
 </div>
 <hr>
-<div class="grid grid-cols-7 gap-2 mb-5">
+<div class="grid xl:grid-cols-7 grid-cols-7 gap-2 mb-5">
     <div class="box"></div>
-    <div class="box col-span-5 p-5">
+    <div class="box xl:col-span-5 col-span-7 p-5">
         <p class="text-[25px] font-bold">Produk Best Seller</p>
         <div class="flex justify-center gap-5 mt-10">
             <a href="#" class="max-auto p-3 border rounded-lg shadow h-[350px] w-[260px]">
@@ -235,10 +235,10 @@
     <div class="box"></div>
 </div>
 <hr>
-<div class="grid grid-cols-7 gap-2 mb-5">
+<div class="grid XL:grid-cols-7 grid-cols-7 gap-2 mb-5">
     <div class="box"></div>
-    <div class="box col-span-5 p-5">
-        <div class="grid grid-cols-3 px-2 gap-3">
+    <div class="box xl:col-span-5 col-span-7 p-5">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 px-2 gap-3">
             <div class="box  p-14">
                 <div class="grid grid-cols-1 text-slate-400 text-[50px] text-center"><i class="fa-solid fa-headset"></i></div>
                 <div class="grid grid-cols-1 text-center font-bold text-2xl mt-5">Dapatkan Pelayanan yang Profesional</div>
@@ -259,17 +259,17 @@
     <div class="box"></div>
 </div>
 <hr>
-<div class="grid grid-cols-7 gap-2 mb-5">
+<div class="grid XL:grid-cols-7 grid-cols-7 gap-2 mb-5">
     <div class="box"></div>
-    <div class="box col-span-5 p-5">
+    <div class="box xl:col-span-5 col-span-7 p-5">
         <p class="text-[25px] font-bold">Our Partner</p>
-        <div class="grid grid-cols-5 mt-6">
-            <div class="box col-span-2 text-center text-7xl text-blue-500 "><i class="fa-solid fa-street-view"></i></div>
-            <div class="box col-span-3">
-                <div class="grid grid-cols-1 text-3xl font-bold">Cari Toko Terdekat</div>
-                <div class="grid grid-cols-1 text-[14px] mt-2">"Temukan toko terdekat dan nikmati pengalaman belanja yang lebih mudah dan cepat!"</div>
+        <div class="grid lg:grid-cols-5 md:grid-cols-3 mt-6">
+            <div class="box lg:col-span-2 text-center lg:text-7xl md:text-6xl text-5xl text-blue-500 "><i class="fa-solid fa-street-view"></i></div>
+            <div class="box lg:col-span-3 md:col-span-1">
+                <div class="grid grid-cols-1 lg:text-3xl md:text-2xl text-xl  font-bold lg:mt-0 md:mt-0 mt-3">Cari Toko Terdekat</div>
+                <div class="grid grid-cols-1 lg:text-[14px] md:text-[12px] text-[10px] mt-2">"Temukan toko terdekat dan nikmati pengalaman belanja yang lebih mudah dan cepat!"</div>
                 <div class="grid grid-cols-1 mt-4">
-                    <a href="#" class="inline-block px-6 py-2.5 border-2 w-[115px] border-blue-500 text-blue-500 font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    <a href="#" class="inline-block px-6 py-2.5 border-2 lg:w-[115px] md:w-[100px]  w-[100px] border-blue-500 text-blue-500 font-semibold lg:text-sm md:text-[10px] text-[10px] leading-tight rounded-full hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                         Cari Toko 
                     </a>
                 </div>
