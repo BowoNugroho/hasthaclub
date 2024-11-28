@@ -239,13 +239,41 @@
     <div class="box"></div>
     <div class="box col-span-5 p-5">
         <div class="grid grid-cols-3 px-2 gap-3">
-            <div class="box border">
-                <div class="grid grid-cols-1"></div>
-                <div class="grid grid-cols-1"></div>
-                <div class="grid grid-cols-1"></div>
+            <div class="box  p-14">
+                <div class="grid grid-cols-1 text-slate-400 text-[50px] text-center"><i class="fa-solid fa-headset"></i></div>
+                <div class="grid grid-cols-1 text-center font-bold text-2xl mt-5">Dapatkan Pelayanan yang Profesional</div>
+                <div class="grid grid-cols-1 text-center text-[12px] mt-5">Kami selalu berkomitmen untuk memberikan pelayanan yang profesional, cepat, dan terpercaya untuk setiap kebutuhan Anda.</div>
             </div>
-            <div class="box border"></div>
-            <div class="box border"></div>
+            <div class="box  p-14">
+                <div class="grid grid-cols-1 text-blue-300 text-[50px] text-center"><i class="fa-solid fa-money-check-dollar"></i></div>
+                <div class="grid grid-cols-1 text-center font-bold text-2xl mt-5">Jaminan Pembayaran dengan Aman</div>
+                <div class="grid grid-cols-1 text-center text-[12px] mt-5">Kami memberikan jaminan pembayaran yang aman dan terpercaya, sehingga Anda dapat berbelanja dengan tenang dan tanpa kekhawatiran.</div>
+            </div>
+            <div class="box  p-14">
+                <div class="grid grid-cols-1 text-slate-400 text-[50px] text-center"><i class="fa-solid fa-cart-shopping"></i></div>
+                <div class="grid grid-cols-1 text-center font-bold text-2xl mt-5">Pesan Sekarang, ambil di toko</div>
+                <div class="grid grid-cols-1 text-center text-[12px] mt-5">Pesan barang dengan tenang tanpa harus memikirankan barang tidak dikirim.</div>
+            </div>
+        </div>
+    </div>
+    <div class="box"></div>
+</div>
+<hr>
+<div class="grid grid-cols-7 gap-2 mb-5">
+    <div class="box"></div>
+    <div class="box col-span-5 p-5">
+        <p class="text-[25px] font-bold">Our Partner</p>
+        <div class="grid grid-cols-5 mt-6">
+            <div class="box col-span-2 text-center text-7xl text-blue-500 "><i class="fa-solid fa-street-view"></i></div>
+            <div class="box col-span-3">
+                <div class="grid grid-cols-1 text-3xl font-bold">Cari Toko Terdekat</div>
+                <div class="grid grid-cols-1 text-[14px] mt-2">"Temukan toko terdekat dan nikmati pengalaman belanja yang lebih mudah dan cepat!"</div>
+                <div class="grid grid-cols-1 mt-4">
+                    <a href="#" class="inline-block px-6 py-2.5 border-2 w-[115px] border-blue-500 text-blue-500 font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                        Cari Toko 
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="box"></div>
