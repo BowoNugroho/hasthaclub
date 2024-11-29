@@ -78,8 +78,8 @@
         <div class="grid xl:grid-cols-9 grid-cols-9 gap-2 mb-5">
             <div class="box xl:col-span-2 "></div>
             <div class="box xl:col-span-5 col-span-9 p-5">
-                <div class="hidden xl:flex">
-                    <div class="grid grid-cols-4  gap-6">
+                <div class="hidden xl:grid">
+                    <div class="grid grid-cols-4 gap-6 ">
                         <div class="box "> 
                             <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Belanja</div>
                             <div class="grid grid-cols-1 text-start mb-3"> Apple</div>
@@ -229,7 +229,7 @@
                     <p class="text-slate-500 lg:text-lg md:text-md text-sm">Copyright © 2024 Hastha Club | PT Gayeon Industri Persada. All rights reserved.</p>
                 </div>
             </div>
-            <div class="box col-span-2"></div>
+            <div class="box xl:col-span-2 "></div>
         </div>
         <script>
             // Toggle mobile menu visibility
