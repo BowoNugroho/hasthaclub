@@ -240,19 +240,19 @@
     <div class="box xl:col-span-5 col-span-7 p-5">
         <div class="grid lg:grid-cols-3 md:grid-cols-2 px-2 gap-3">
             <div class="box  p-14">
-                <div class="grid grid-cols-1 text-slate-400 text-[50px] text-center"><i class="fa-solid fa-headset"></i></div>
-                <div class="grid grid-cols-1 text-center font-bold text-2xl mt-5">Dapatkan Pelayanan yang Profesional</div>
-                <div class="grid grid-cols-1 text-center text-[12px] mt-5">Kami selalu berkomitmen untuk memberikan pelayanan yang profesional, cepat, dan terpercaya untuk setiap kebutuhan Anda.</div>
+                <div class="grid grid-cols-1 text-slate-400 lg:text-[50px] md:text-[40px] text-[35px] text-center"><i class="fa-solid fa-headset"></i></div>
+                <div class="grid grid-cols-1 text-center font-bold lg:text-2xl md:text-xl text-lg mt-5">Dapatkan Pelayanan yang Profesional</div>
+                <div class="grid grid-cols-1 text-center lg:text-[12px] md:text-[11px] text-[10px] mt-5">Kami selalu berkomitmen untuk memberikan pelayanan yang profesional, cepat, dan terpercaya untuk setiap kebutuhan Anda.</div>
             </div>
             <div class="box  p-14">
-                <div class="grid grid-cols-1 text-blue-300 text-[50px] text-center"><i class="fa-solid fa-money-check-dollar"></i></div>
-                <div class="grid grid-cols-1 text-center font-bold text-2xl mt-5">Jaminan Pembayaran dengan Aman</div>
-                <div class="grid grid-cols-1 text-center text-[12px] mt-5">Kami memberikan jaminan pembayaran yang aman dan terpercaya, sehingga Anda dapat berbelanja dengan tenang dan tanpa kekhawatiran.</div>
+                <div class="grid grid-cols-1 text-blue-300 lg:text-[50px] md:text-[40px] text-[35px] text-center"><i class="fa-solid fa-money-check-dollar"></i></div>
+                <div class="grid grid-cols-1 text-center font-bold lg:text-2xl md:text-xl text-lg mt-5">Jaminan Pembayaran dengan Aman</div>
+                <div class="grid grid-cols-1 text-center lg:text-[12px] md:text-[11px] text-[10px] mt-5">Kami memberikan jaminan pembayaran yang aman dan terpercaya, sehingga Anda dapat berbelanja dengan tenang dan tanpa kekhawatiran.</div>
             </div>
             <div class="box  p-14">
-                <div class="grid grid-cols-1 text-slate-400 text-[50px] text-center"><i class="fa-solid fa-cart-shopping"></i></div>
-                <div class="grid grid-cols-1 text-center font-bold text-2xl mt-5">Pesan Sekarang, ambil di toko</div>
-                <div class="grid grid-cols-1 text-center text-[12px] mt-5">Pesan barang dengan tenang tanpa harus memikirankan barang tidak dikirim.</div>
+                <div class="grid grid-cols-1 text-slate-400 lg:text-[50px] md:text-[40px] text-[35px] text-center"><i class="fa-solid fa-cart-shopping"></i></div>
+                <div class="grid grid-cols-1 text-center font-bold lg:text-2xl md:text-xl text-lg mt-5">Pesan Sekarang, ambil di toko</div>
+                <div class="grid grid-cols-1 text-center lg:text-[12px] md:text-[11px] text-[10px] mt-5">Pesan barang dengan tenang tanpa harus memikirankan barang tidak dikirim.</div>
             </div>
         </div>
     </div>
@@ -264,8 +264,8 @@
     <div class="box xl:col-span-5 col-span-7 p-5">
         <p class="text-[25px] font-bold">Our Partner</p>
         <div class="grid lg:grid-cols-5 md:grid-cols-3 mt-6">
-            <div class="box lg:col-span-2 text-center lg:text-7xl md:text-6xl text-5xl text-blue-500 "><i class="fa-solid fa-street-view"></i></div>
-            <div class="box lg:col-span-3 md:col-span-1">
+            <div class="box  lg:col-span-2 col-span-1 text-center lg:text-7xl md:text-6xl text-5xl text-blue-500 "><i class="fa-solid fa-street-view"></i></div>
+            <div class="box  lg:col-span-3 md:col-span-2">
                 <div class="grid grid-cols-1 lg:text-3xl md:text-2xl text-xl  font-bold lg:mt-0 md:mt-0 mt-3">Cari Toko Terdekat</div>
                 <div class="grid grid-cols-1 lg:text-[14px] md:text-[12px] text-[10px] mt-2">"Temukan toko terdekat dan nikmati pengalaman belanja yang lebih mudah dan cepat!"</div>
                 <div class="grid grid-cols-1 mt-4">
@@ -279,9 +279,9 @@
     <div class="box"></div>
 </div>
 <hr>
-<div class="grid grid-cols-5 gap-2 mb-5">
+<div class="grid xl:grid-cols-5 grid-cols-5 gap-2 mb-5">
     <div class="box"></div>
-    <div class="box col-span-3 p-8">
+    <div class="box xl:col-span-3 col-span-5 p-8">
         <p class="text-[30px] font-bold flex justify-center tracking-widest text-lg">Checkout Sekarang</p>
         <div class="flex justify-center gap-5 mt-10">    
             <div class=" relative w-full max-w-4xl ">
@@ -290,7 +290,7 @@
                     <!-- Carousel Inner -->
                     <div class="carousel-inner flex transition-transform duration-500 ease-in-out" id="carousel">
                         <!-- Item 1 -->
-                        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
+                        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2" id="carousel-items">
                             <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
                                 <div class="flex justify-center ">
                                     <img src="{{ Vite::asset('modules/shop/Resources/assets/images/checkout/applewacth1.png') }}" class="h-[200px]" alt="">
@@ -445,6 +445,37 @@
                                 </div>
                              </div>
                         </div>
+                        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
+                            <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
+                                <div class="flex justify-center ">
+                                    <img src="{{ Vite::asset('modules/shop/Resources/assets/images/checkout/applewacth3.png') }}" class="h-[200px]" alt="">
+                                </div>
+                             </div>
+                             <div class="grid grid-cols-1 mb-6">
+                                <div class="flex justify-center">
+                                    <p class="font-bold text-[18px]">Apple Wacth</p>
+                                </div>
+                             </div>
+                             <div class="grid grid-cols-1 mt-1">
+                                <div class="flex justify-center">
+                                    <p class="text-[18px] text-slate-400 line-through">Rp 15.999.000</p>
+                                </div>
+                             </div>
+                             <div class="grid grid-cols-1 ">
+                                <div class="flex justify-center">
+                                    <p class="text-[18px]">Rp 12.999.000  <span class="text-red-500 text-[15px]">20 %</span></p>
+                                </div>
+                             </div>
+                             <div class="grid grid-cols-1 mt-3">
+                                <div class="flex justify-center">
+                                    {{-- <button type="button" class="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Beli Sekarang</button> --}}
+
+                                    <a href="#" class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                        Beli Sekarang
+                                    </a>
+                                </div>
+                             </div>
+                        </div>
                     </div>
                 </div>
             
@@ -477,7 +508,10 @@
     const prevBtn = document.getElementById('prev');
     const nextBtn = document.getElementById('next');
     const carousel = document.getElementById('carousel');
+    const carousels = document.getElementById('carousel-items');
     const carouselItems = document.querySelectorAll('.carousel-item');
+    const windowWidth = window.innerWidth;
+    const classes = carousels.classList;
     let currentIndex = 0;
 
     const moveToSlide = (index) => {
@@ -494,21 +528,80 @@
     };
 
     prevBtn.addEventListener('click', () => {
-        let hasil = carouselItems.length - 4 ;
-        if (currentIndex == 0 ){
-            moveToSlide(currentIndex + hasil);
-        } else{
-            moveToSlide(currentIndex - 1);
+        
+        
+        if (windowWidth >= 1024) { 
+            console.log('Kelas yang aktif untuk lebar besar:', classes.contains('lg:w-1/4') ? 'lg:w-1/4' : 'Tidak ada lg:w-1/4');
+            let hasil = carouselItems.length - 4 ;
+            if (currentIndex == 0 ){
+                moveToSlide(currentIndex + hasil);
+            } else{
+                moveToSlide(currentIndex - 1);
+            }
+        } else if (windowWidth >= 768) { 
+            console.log('Kelas yang aktif untuk lebar sedang:', classes.contains('md:w-1/3') ? 'md:w-1/3' : 'Tidak ada md:w-1/3');
+            let hasil = carouselItems.length - 3 ;
+            if (currentIndex == 0 ){
+                moveToSlide(currentIndex + hasil);
+            } else{
+                moveToSlide(currentIndex - 1);
+            }
+        } else if (windowWidth >= 640) { 
+            console.log('Kelas yang aktif untuk lebar kecil:', classes.contains('sm:w-1/2') ? 'sm:w-1/2' : 'Tidak ada sm:w-1/2');
+            let hasil = carouselItems.length - 2 ;
+            if (currentIndex == 0 ){
+                moveToSlide(currentIndex + hasil);
+            } else{
+                moveToSlide(currentIndex - 1);
+            }
+        } else {
+            console.log('Kelas yang aktif untuk lebar sangat kecil:', classes.contains('w-full') ? 'w-full' : 'Tidak ada w-full');
+            let hasil = carouselItems.length - 1 ;
+            if (currentIndex == 0 ){
+                moveToSlide(currentIndex + hasil);
+            } else{
+                moveToSlide(currentIndex - 1);
+            }
         }
     });
 
     nextBtn.addEventListener('click', () => {
-        let hasil = carouselItems.length - 5 ;
-        let hasil1 = carouselItems.length - 4 ;
-        if (hasil >= currentIndex  ) {
-            moveToSlide(currentIndex + 1);
-        } else if (hasil1 == currentIndex){
-            moveToSlide(currentIndex + 4);
+        if (windowWidth >= 1024) { 
+            console.log('Kelas yang aktif untuk lebar besar:', classes.contains('lg:w-1/4') ? 'lg:w-1/4' : 'Tidak ada lg:w-1/4');
+            let hasil = carouselItems.length - 5 ;
+            let hasil1 = carouselItems.length - 4 ;
+            if (hasil >= currentIndex  ) {
+                moveToSlide(currentIndex + 1);
+            } else if (hasil1 == currentIndex){
+                moveToSlide(currentIndex + 4);
+            }
+        } else if (windowWidth >= 768) { 
+            console.log('Kelas yang aktif untuk lebar sedang:', classes.contains('md:w-1/3') ? 'md:w-1/3' : 'Tidak ada md:w-1/3');
+            let hasil = carouselItems.length - 4 ;
+            let hasil1 = carouselItems.length - 3 ;
+            if (hasil >= currentIndex  ) {
+                moveToSlide(currentIndex + 1);
+            } else if (hasil1 == currentIndex){
+                moveToSlide(currentIndex + 3);
+            }
+        } else if (windowWidth >= 640) { 
+            console.log('Kelas yang aktif untuk lebar kecil:', classes.contains('sm:w-1/2') ? 'sm:w-1/2' : 'Tidak ada sm:w-1/2');
+            let hasil = carouselItems.length - 3 ;
+            let hasil1 = carouselItems.length - 2 ;
+            if (hasil >= currentIndex  ) {
+                moveToSlide(currentIndex + 1);
+            } else if (hasil1 == currentIndex){
+                moveToSlide(currentIndex + 2);
+            }
+        } else {
+            console.log('Kelas yang aktif untuk lebar sangat kecil:', classes.contains('w-full') ? 'w-full' : 'Tidak ada w-full');
+            let hasil = carouselItems.length - 2 ;
+            let hasil1 = carouselItems.length - 1 ;
+            if (hasil >= currentIndex  ) {
+                moveToSlide(currentIndex + 1);
+            } else if (hasil1 == currentIndex){
+                moveToSlide(currentIndex + 1);
+            }
         }
     });
 });
