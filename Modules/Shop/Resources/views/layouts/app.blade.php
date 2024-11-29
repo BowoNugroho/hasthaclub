@@ -75,39 +75,121 @@
         <hr>
         @yield('content')
         <hr>
-        <div class="grid grid-cols-9 gap-2 mb-5">
-            <div class="box col-span-2"></div>
-            <div class="box col-span-5 p-5">
-                <div class="grid grid-cols-4 gap-6">
-                    <div class="box "> 
-                        <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Belanja</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Apple</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Andorid</div>
-                    </div>
-                    <div class="box ">
-                        <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Layanan</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Layanan Pelanggan</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Mitra / Partnership</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Reseller</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Online Banking</div>
-                    </div>
-                    <div class="box ">
-                        <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Tentang</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Tentang Hastha</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Hubungi Kami</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> FAQ</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Cari Toko</div>
-                    </div>
-                    <div class="box ">
-                        <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Kebijakan</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Kebijakan Pembelian </div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Kebijakan Pengembalian</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Kebijakan Privasi</div>
-                        <div class="grid grid-cols-1 text-start mb-3"> Akun Saya</div>
+        <div class="grid xl:grid-cols-9 grid-cols-9 gap-2 mb-5">
+            <div class="box xl:col-span-2 "></div>
+            <div class="box xl:col-span-5 col-span-9 p-5">
+                <div class="hidden xl:flex">
+                    <div class="grid grid-cols-4  gap-6">
+                        <div class="box "> 
+                            <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Belanja</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Apple</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Andorid</div>
+                        </div>
+                        <div class="box ">
+                            <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Layanan</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Layanan Pelanggan</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Mitra / Partnership</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Reseller</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Reseller</div>
+                        </div>
+                        <div class="box ">
+                            <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Tentang</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Tentang Hastha</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Hubungi Kami</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> FAQ</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Cari Toko</div>
+                        </div>
+                        <div class="box ">
+                            <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Kebijakan</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Kebijakan Pembelian </div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Kebijakan Pengembalian</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Kebijakan Privasi</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Akun Saya</div>
+                        </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-6 mt-10 mb-4">
-                    <div class="box ">
+                <div class="xl:hidden">
+                    <button type="button" class="flex items-center w-full p-4 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                        <span class="flex-1 ms-3 text-start text-lg font-bold rtl:text-right whitespace-nowrap">Belanja</span>
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                  </button>
+                  <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Apple</a>
+                        </li>
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Android</a>
+                        </li>
+                  </ul>
+                  <hr>
+                    <button type="button" class="flex items-center w-full p-4 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example2" data-collapse-toggle="dropdown-example2">
+                        <span class="flex-1 ms-3 text-start text-lg font-bold rtl:text-right whitespace-nowrap">Layanan</span>
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                  </button>
+                  <ul id="dropdown-example2" class="hidden py-2 space-y-2">
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Layanan Pelanggan</a>
+                        </li>
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Mitra / Partnership</a>
+                        </li>
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Reseller</a>
+                        </li>
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Online Banking</a>
+                        </li>
+                  </ul>
+                  <hr>
+                    <button type="button" class="flex items-center w-full p-4 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example3" data-collapse-toggle="dropdown-example3">
+                        <span class="flex-1 ms-3 text-start text-lg font-bold rtl:text-right whitespace-nowrap">Tentang</span>
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                  </button>
+                  <ul id="dropdown-example3" class="hidden py-2 space-y-2">
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Tentang Hastha</a>
+                        </li>
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Hubungi Kami</a>
+                        </li>
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">FAQ</a>
+                        </li>
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Cari Toko</a>
+                        </li>
+                  </ul>
+                  <hr>
+                    <button type="button" class="flex items-center w-full p-4 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example4" data-collapse-toggle="dropdown-example4">
+                        <span class="flex-1 ms-3 text-start text-lg font-bold rtl:text-right whitespace-nowrap">Kebijakan</span>
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                  </button>
+                  <ul id="dropdown-example4" class="hidden py-2 space-y-2">
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Kebijakan Pembelian</a>
+                        </li>
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Kebijakan Pengembalian</a>
+                        </li>
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Kebijakan Privasi</a>
+                        </li>
+                        <li>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Akun Saya</a>
+                        </li>
+                  </ul>
+                  <hr>
+                </div>
+                <div class="grid xl:grid-cols-2 grid-cols-1 gap-6 mt-10 mb-4">
+                    <div class="box flex xl:justify-start justify-center lg:text-lg md:text-md text-sm">
                         <table>
                             <tr class="h-10">
                                 <td><i class="fa-regular fa-clock"></i> &nbsp;&nbsp;</td>
@@ -127,22 +209,24 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="box ">
-                        <table>
-                            <tr class="h-10">
-                                <td class="text-lg font-bold">Find Us</td>
-                            </tr>
-                            <tr class="h-10">
-                                <td>
-                                    <i class="fa-brands fa-instagram"></i> &nbsp;&nbsp; <i class="fa-brands fa-facebook"></i> &nbsp;&nbsp; <i class="fa-brands fa-tiktok"></i>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class="box xl:text-start text-center">
+                        <div class="flex xl:justify-start justify-center ">
+                            <table>
+                                <tr class="h-10">
+                                    <td class="lg:text-lg md:text-md text-sm font-bold">Find Us</td>
+                                </tr>
+                                <tr class="h-10">
+                                    <td class="lg:text-lg md:text-md text-sm">
+                                        <i class="fa-brands fa-instagram"></i> &nbsp;&nbsp; <i class="fa-brands fa-facebook"></i> &nbsp;&nbsp; <i class="fa-brands fa-tiktok"></i>&nbsp;&nbsp; <i class="fa-brands fa-whatsapp"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <hr>
                 <div class="grid grid-cols-1 text-center mt-4">
-                    <p class="text-slate-500">Copyright © 2024 Hastha Club | PT Gayeon Industri Persada. All rights reserved.</p>
+                    <p class="text-slate-500 lg:text-lg md:text-md text-sm">Copyright © 2024 Hastha Club | PT Gayeon Industri Persada. All rights reserved.</p>
                 </div>
             </div>
             <div class="box col-span-2"></div>
