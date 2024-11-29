@@ -117,119 +117,191 @@
 <hr>
 <div class="grid xl:grid-cols-7 grid-cols-7 gap-2 mb-5">
     <div class="box"></div>
-    <div class="box xl:col-span-5 col-span-7 p-5">
+    <div class="box xl:col-span-5 col-span-7 p-5 ">
         <p class="text-[25px] font-bold">Produk Best Seller</p>
         <div class="flex justify-center gap-5 mt-10">
-            <a href="#" class="max-auto p-3 border rounded-lg shadow h-[350px] w-[260px]">
-                <div class="grid grid-cols-1 mb-7 mt-5">
-                    <div class="flex justify-center ">
-                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+            <div class=" relative w-full max-w-7xl ">
+                <!-- Slider -->
+                <div class="carousel-container overflow-hidden">
+                    <!-- Carousel Inner -->
+                    <div class="carousel-inner flex transition-transform duration-500 ease-in-out" id="carousel1">
+                        <!-- Item 1 -->
+                        <div class="carousel-item1 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2" id="carousel-items1">
+                            <a href="#" class=" ">
+                                <div class="border max-auto p-3 rounded-lg shadow">
+                                    <div class="grid grid-cols-1 mb-7 mt-5">
+                                        <div class="flex justify-center ">
+                                            <img src="{{ Vite::asset('modules/shop/Resources/assets/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1">
+                                        <div class="flex justify-start">
+                                            <p class="font-bold text-orange-500">Best Seller</p>
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1 mt-1">
+                                        <div class="flex justify-start">
+                                            <p class="text-[25px]">iPhone 14</p>
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1 mt-3">
+                                        <div class="flex justify-start">
+                                            <p class="text-[11px]">Mulai Rp12.999.000</p>
+                                        </div>
+                                     </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item1 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2" >
+                            <a href="#" class=" ">
+                                <div class="border max-auto p-3 rounded-lg shadow ">
+                                    <div class="grid grid-cols-1 mb-7 mt-5">
+                                        <div class="flex justify-center ">
+                                            <img src="{{ Vite::asset('modules/shop/Resources/assets/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1">
+                                        <div class="flex justify-start">
+                                            <p class="font-bold text-orange-500">Best Seller</p>
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1 mt-1">
+                                        <div class="flex justify-start">
+                                            <p class="text-[25px]">iPhone 14</p>
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1 mt-3">
+                                        <div class="flex justify-start">
+                                            <p class="text-[11px]">Mulai Rp12.999.000</p>
+                                        </div>
+                                     </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item1 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2" >
+                            <a href="#" class=" ">
+                                <div class="border max-auto p-3 rounded-lg shadow ">
+                                    <div class="grid grid-cols-1 mb-7 mt-5">
+                                        <div class="flex justify-center ">
+                                            <img src="{{ Vite::asset('modules/shop/Resources/assets/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1">
+                                        <div class="flex justify-start">
+                                            <p class="font-bold text-orange-500">Best Seller</p>
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1 mt-1">
+                                        <div class="flex justify-start">
+                                            <p class="text-[25px]">iPhone 14</p>
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1 mt-3">
+                                        <div class="flex justify-start">
+                                            <p class="text-[11px]">Mulai Rp12.999.000</p>
+                                        </div>
+                                     </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item1 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2" >
+                            <a href="#" class=" ">
+                                <div class="border max-auto p-3 rounded-lg shadow ">
+                                    <div class="grid grid-cols-1 mb-7 mt-5">
+                                        <div class="flex justify-center ">
+                                            <img src="{{ Vite::asset('modules/shop/Resources/assets/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1">
+                                        <div class="flex justify-start">
+                                            <p class="font-bold text-orange-500">Best Seller</p>
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1 mt-1">
+                                        <div class="flex justify-start">
+                                            <p class="text-[25px]">iPhone 14</p>
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1 mt-3">
+                                        <div class="flex justify-start">
+                                            <p class="text-[11px]">Mulai Rp12.999.000</p>
+                                        </div>
+                                     </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item1 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2" >
+                            <a href="#" class=" ">
+                                <div class="border max-auto p-3 rounded-lg shadow ">
+                                    <div class="grid grid-cols-1 mb-7 mt-5">
+                                        <div class="flex justify-center ">
+                                            <img src="{{ Vite::asset('modules/shop/Resources/assets/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1">
+                                        <div class="flex justify-start">
+                                            <p class="font-bold text-orange-500">Best Seller</p>
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1 mt-1">
+                                        <div class="flex justify-start">
+                                            <p class="text-[25px]">iPhone 14</p>
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1 mt-3">
+                                        <div class="flex justify-start">
+                                            <p class="text-[11px]">Mulai Rp12.999.000</p>
+                                        </div>
+                                     </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item1 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2" >
+                            <a href="#" class=" ">
+                                <div class="border max-auto p-3 rounded-lg shadow ">
+                                    <div class="grid grid-cols-1 mb-7 mt-5">
+                                        <div class="flex justify-center ">
+                                            <img src="{{ Vite::asset('modules/shop/Resources/assets/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1">
+                                        <div class="flex justify-start">
+                                            <p class="font-bold text-orange-500">Best Seller</p>
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1 mt-1">
+                                        <div class="flex justify-start">
+                                            <p class="text-[25px]">iPhone 14</p>
+                                        </div>
+                                     </div>
+                                     <div class="grid grid-cols-1 mt-3">
+                                        <div class="flex justify-start">
+                                            <p class="text-[11px]">Mulai Rp12.999.000</p>
+                                        </div>
+                                     </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                 </div>
-                 <div class="grid grid-cols-1">
-                    <div class="flex justify-start">
-                        <p class="font-bold text-orange-500">Best Seller</p>
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1 mt-1">
-                    <div class="flex justify-start">
-                        <p class="text-[25px]">iPhone 14</p>
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1 mt-3">
-                    <div class="flex justify-start">
-                        <p class="text-[11px]">Mulai Rp12.999.000</p>
-                    </div>
-                 </div>
-            </a>
-            <a href="#" class="max-auto p-3 border rounded-lg shadow h-[350px] w-[260px]">
-                <div class="grid grid-cols-1 mb-7 mt-5">
-                    <div class="flex justify-center ">
-                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1">
-                    <div class="flex justify-start">
-                        <p class="font-bold text-orange-500">Best Seller</p>
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1 mt-1">
-                    <div class="flex justify-start">
-                        <p class="text-[25px]">iPhone 14</p>
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1 mt-3">
-                    <div class="flex justify-start">
-                        <p class="text-[11px]">Mulai Rp12.999.000</p>
-                    </div>
-                 </div>
-            </a>
-            <a href="#" class="max-auto p-3 border rounded-lg shadow h-[350px] w-[260px]">
-                <div class="grid grid-cols-1 mb-7 mt-5">
-                    <div class="flex justify-center ">
-                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1">
-                    <div class="flex justify-start">
-                        <p class="font-bold text-orange-500">Best Seller</p>
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1 mt-1">
-                    <div class="flex justify-start">
-                        <p class="text-[25px]">iPhone 14</p>
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1 mt-3">
-                    <div class="flex justify-start">
-                        <p class="text-[11px]">Mulai Rp12.999.000</p>
-                    </div>
-                 </div>
-            </a>
-            <a href="#" class="max-auto p-3 border rounded-lg shadow h-[350px] w-[260px]">
-                <div class="grid grid-cols-1 mb-7 mt-5">
-                    <div class="flex justify-center ">
-                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1">
-                    <div class="flex justify-start">
-                        <p class="font-bold text-orange-500">Best Seller</p>
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1 mt-1">
-                    <div class="flex justify-start">
-                        <p class="text-[25px]">iPhone 14</p>
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1 mt-3">
-                    <div class="flex justify-start">
-                        <p class="text-[11px]">Mulai Rp12.999.000</p>
-                    </div>
-                 </div>
-            </a>
-            <a href="#" class="max-auto p-3 border rounded-lg shadow h-[350px] w-[260px]">
-                <div class="grid grid-cols-1 mb-7 mt-5">
-                    <div class="flex justify-center ">
-                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1">
-                    <div class="flex justify-start">
-                        <p class="font-bold text-orange-500">Best Seller</p>
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1 mt-1">
-                    <div class="flex justify-start">
-                        <p class="text-[25px]">iPhone 14</p>
-                    </div>
-                 </div>
-                 <div class="grid grid-cols-1 mt-3">
-                    <div class="flex justify-start">
-                        <p class="text-[11px]">Mulai Rp12.999.000</p>
-                    </div>
-                 </div>
-            </a>
+                </div>
+                <!-- Carousel Controls -->
+                <button id="prev1" type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 dark:bg-gray-800/30 group-hover:bg-blue-600 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-grey dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button id="next1" type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 dark:bg-gray-800/30 group-hover:bg-blue-600  dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-grey dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
         </div>
     </div>
     <div class="box"></div>
@@ -497,7 +569,6 @@
                     </span>
                 </button>
             </div>
-            
         </div>
     </div>
     <div class="box"></div>
@@ -505,6 +576,125 @@
 <hr>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+    // carousel best seller
+    const prevBtn1 = document.getElementById('prev1');
+    const nextBtn1 = document.getElementById('next1');
+    const carousel1 = document.getElementById('carousel1');
+    const carousels1 = document.getElementById('carousel-items1');
+    const carouselItems1 = document.querySelectorAll('.carousel-item1');
+    const windowWidth1 = window.innerWidth;
+    const classes1 = carousels1.classList;
+    let currentIndex1 = 0;
+
+    const moveToSlide1 = (index) => {
+        // console.log(index);
+        if (index < 0) {
+            currentIndex1 = carouselItems1.length - 1;
+        } else if (index >= carouselItems1.length) {
+            currentIndex1 = 0;
+        } else {
+            currentIndex1 = index;
+        }
+        const offset = -currentIndex1 * (carouselItems1[0].offsetWidth + 16); // 16px is padding
+        carousel1.style.transform = `translateX(${offset}px)`;
+    };
+
+    prevBtn1.addEventListener('click', () => {
+        if (windowWidth1 >= 1280) {
+            console.log('masuk')
+            console.log(windowWidth1)
+            let hasil = carouselItems1.length - 5 ;
+            if (currentIndex1 == 0 ){
+                moveToSlide1(currentIndex1 + hasil);
+            } else{
+                moveToSlide1(currentIndex1 - 1);
+            }
+        } else if (windowWidth1 >= 1024) { 
+            console.log('Kelas yang aktif untuk lebar besar:', classes1.contains('lg:w-1/4') ? 'lg:w-1/4' : 'Tidak ada lg:w-1/4');
+            let hasil = carouselItems1.length - 4 ;
+            if (currentIndex1 == 0 ){
+                moveToSlide1(currentIndex1 + hasil);
+            } else{
+                moveToSlide1(currentIndex1 - 1);
+            }
+        } else if (windowWidth1 >= 768) { 
+            console.log('Kelas yang aktif untuk lebar sedang:', classes1.contains('md:w-1/3') ? 'md:w-1/3' : 'Tidak ada md:w-1/3');
+            let hasil = carouselItems1.length - 3 ;
+            if (currentIndex1 == 0 ){
+                moveToSlide1(currentIndex1 + hasil);
+            } else{
+                moveToSlide1(currentIndex1 - 1);
+            }
+        } else if (windowWidth1 >= 640) { 
+            console.log('Kelas yang aktif untuk lebar kecil:', classes1.contains('sm:w-1/2') ? 'sm:w-1/2' : 'Tidak ada sm:w-1/2');
+            let hasil = carouselItems1.length - 2 ;
+            if (currentIndex1 == 0 ){
+                moveToSlide1(currentIndex1 + hasil);
+            } else{
+                moveToSlide1(currentIndex1 - 1);
+            }
+        } else {
+            console.log('Kelas yang aktif untuk lebar sangat kecil:', classes1.contains('w-full') ? 'w-full' : 'Tidak ada w-full');
+            let hasil = carouselItems1.length - 1 ;
+            if (currentIndex1 == 0 ){
+                moveToSlide1(currentIndex1 + hasil);
+            } else{
+                moveToSlide1(currentIndex1 - 1);
+            }
+        }
+    });
+
+    nextBtn1.addEventListener('click', () => {
+        if (windowWidth1 >= 1280){
+            console.log('masuk')
+            console.log(windowWidth1)
+            let hasil = carouselItems1.length - 6;
+            let hasil1 = carouselItems1.length - 5 ;
+            if (hasil >= currentIndex1  ) {
+                moveToSlide1(currentIndex1 + 1);
+            } else if (hasil1 == currentIndex1){
+                moveToSlide1(currentIndex1 + 5);
+            } 
+        } else if(windowWidth1 >= 1024) { 
+            console.log('Kelas yang aktif untuk lebar besar:', classes1.contains('lg:w-1/4') ? 'lg:w-1/4' : 'Tidak ada lg:w-1/4');
+            let hasil = carouselItems1.length - 5 ;
+            let hasil1 = carouselItems1.length - 4 ;
+            if (hasil >= currentIndex1  ) {
+                moveToSlide1(currentIndex1 + 1);
+            } else if (hasil1 == currentIndex1){
+                moveToSlide1(currentIndex1 + 4);
+            }
+        } else if (windowWidth1 >= 768) { 
+            console.log('Kelas yang aktif untuk lebar sedang:', classes1.contains('md:w-1/3') ? 'md:w-1/3' : 'Tidak ada md:w-1/3');
+            let hasil = carouselItems1.length - 4 ;
+            let hasil1 = carouselItems1.length - 3 ;
+            if (hasil >= currentIndex1  ) {
+                moveToSlide1(currentIndex1 + 1);
+            } else if (hasil1 == currentIndex1){
+                moveToSlide1(currentIndex1 + 3);
+            }
+        } else if (windowWidth1 >= 640) { 
+            console.log('Kelas yang aktif untuk lebar kecil:', classes1.contains('sm:w-1/2') ? 'sm:w-1/2' : 'Tidak ada sm:w-1/2');
+            let hasil = carouselItems1.length - 3 ;
+            let hasil1 = carouselItems1.length - 2 ;
+            if (hasil >= currentIndex1  ) {
+                moveToSlide1(currentIndex1 + 1);
+            } else if (hasil1 == currentIndex1){
+                moveToSlide1(currentIndex1 + 2);
+            }
+        } else {
+            console.log('Kelas yang aktif untuk lebar sangat kecil:', classes1.contains('w-full') ? 'w-full' : 'Tidak ada w-full');
+            let hasil = carouselItems1.length - 2 ;
+            let hasil1 = carouselItems1.length - 1 ;
+            if (hasil >= currentIndex1  ) {
+                moveToSlide1(currentIndex1 + 1);
+            } else if (hasil1 == currentIndex1){
+                moveToSlide1(currentIndex1 + 1);
+            }
+        }
+    });
+
+    // carousel checkout produk
     const prevBtn = document.getElementById('prev');
     const nextBtn = document.getElementById('next');
     const carousel = document.getElementById('carousel');
