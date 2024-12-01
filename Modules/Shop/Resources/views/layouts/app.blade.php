@@ -29,7 +29,7 @@
                     </a>
                     <input type="text" placeholder="Cari Produk" class="w-[500px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
                     <ul class="flex gap-4">
-                        <li class="text-[14px] hover:underline"><i class="fas fa-store"></i>Pilih Toko</li>
+                        <li class="text-[14px] "><i class="fas fa-store"></i>&nbsp;&nbsp;<span class="hover:underline">Pilih Toko</span></li>
                         <li class="text-[14px] hover:underline">Partnership</li>
                         <li class="text-[14px] hover:underline">Reseller</li>
                     </ul>
@@ -90,19 +90,18 @@
                             <div class="grid grid-cols-1 text-start mb-3"> Layanan Pelanggan</div>
                             <div class="grid grid-cols-1 text-start mb-3"> Mitra / Partnership</div>
                             <div class="grid grid-cols-1 text-start mb-3"> Reseller</div>
-                            <div class="grid grid-cols-1 text-start mb-3"> Reseller</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Online Banking</div>
                         </div>
                         <div class="box ">
                             <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Tentang</div>
                             <div class="grid grid-cols-1 text-start mb-3"> Tentang Hastha</div>
                             <div class="grid grid-cols-1 text-start mb-3"> Hubungi Kami</div>
-                            <div class="grid grid-cols-1 text-start mb-3"> FAQ</div>
                             <div class="grid grid-cols-1 text-start mb-3"> Cari Toko</div>
                         </div>
                         <div class="box ">
                             <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Kebijakan</div>
-                            <div class="grid grid-cols-1 text-start mb-3"> Kebijakan Pembelian </div>
-                            <div class="grid grid-cols-1 text-start mb-3"> Kebijakan Pengembalian</div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Syarat & Ketentuan </div>
+                            <div class="grid grid-cols-1 text-start mb-3"> Pengembalian & Penukaran</div>
                             <div class="grid grid-cols-1 text-start mb-3"> Kebijakan Privasi</div>
                             <div class="grid grid-cols-1 text-start mb-3"> Akun Saya</div>
                         </div>
@@ -159,9 +158,6 @@
                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Hubungi Kami</a>
                         </li>
                         <li>
-                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">FAQ</a>
-                        </li>
-                        <li>
                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Cari Toko</a>
                         </li>
                   </ul>
@@ -174,10 +170,10 @@
                   </button>
                   <ul id="dropdown-example4" class="hidden py-2 space-y-2">
                         <li>
-                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Kebijakan Pembelian</a>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Syarat & Ketentuan</a>
                         </li>
                         <li>
-                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Kebijakan Pengembalian</a>
+                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Pengembalian & Penukaran</a>
                         </li>
                         <li>
                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Kebijakan Privasi</a>

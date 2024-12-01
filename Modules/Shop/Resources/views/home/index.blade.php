@@ -136,12 +136,12 @@
                                      </div>
                                      <div class="grid grid-cols-1">
                                         <div class="flex justify-start">
-                                            <p class="font-bold text-orange-500">Best Seller</p>
+                                            <p class="font-bold text-md text-orange-500">Best Seller</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-1">
                                         <div class="flex justify-start">
-                                            <p class="text-[25px]">iPhone 14</p>
+                                            <p class="text-lg font-bold">iPhone 14</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-3">
@@ -162,12 +162,12 @@
                                      </div>
                                      <div class="grid grid-cols-1">
                                         <div class="flex justify-start">
-                                            <p class="font-bold text-orange-500">Best Seller</p>
+                                            <p class="font-bold text-md text-orange-500">Best Seller</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-1">
                                         <div class="flex justify-start">
-                                            <p class="text-[25px]">iPhone 14</p>
+                                            <p class="text-lg font-bold">iPhone 14</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-3">
@@ -188,12 +188,12 @@
                                      </div>
                                      <div class="grid grid-cols-1">
                                         <div class="flex justify-start">
-                                            <p class="font-bold text-orange-500">Best Seller</p>
+                                            <p class="font-bold text-md text-orange-500">Best Seller</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-1">
                                         <div class="flex justify-start">
-                                            <p class="text-[25px]">iPhone 14</p>
+                                            <p class="text-lg font-bold">iPhone 14</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-3">
@@ -214,12 +214,12 @@
                                      </div>
                                      <div class="grid grid-cols-1">
                                         <div class="flex justify-start">
-                                            <p class="font-bold text-orange-500">Best Seller</p>
+                                            <p class="font-bold text-md text-orange-500">Best Seller</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-1">
                                         <div class="flex justify-start">
-                                            <p class="text-[25px]">iPhone 14</p>
+                                            <p class="text-lg font-bold">iPhone 14</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-3">
@@ -240,12 +240,12 @@
                                      </div>
                                      <div class="grid grid-cols-1">
                                         <div class="flex justify-start">
-                                            <p class="font-bold text-orange-500">Best Seller</p>
+                                            <p class="font-bold text-md text-orange-500">Best Seller</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-1">
                                         <div class="flex justify-start">
-                                            <p class="text-[25px]">iPhone 14</p>
+                                            <p class="text-lg font-bold">iPhone 14</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-3">
@@ -266,12 +266,12 @@
                                      </div>
                                      <div class="grid grid-cols-1">
                                         <div class="flex justify-start">
-                                            <p class="font-bold text-orange-500">Best Seller</p>
+                                            <p class="font-bold text-md text-orange-500">Best Seller</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-1">
                                         <div class="flex justify-start">
-                                            <p class="text-[25px]">iPhone 14</p>
+                                            <p class="text-lg font-bold">iPhone 14</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-3">
