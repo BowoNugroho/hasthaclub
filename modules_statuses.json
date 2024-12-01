@@ -1,4 +1,5 @@
 {
     "Shop": true,
-    "Admin": true
+    "Admin": true,
+    "Auth": true
 }

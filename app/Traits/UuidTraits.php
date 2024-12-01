@@ -4,7 +4,7 @@ namespace App\Traits;
 
 use Illuminate\Support\Str;
 
-trait UuidTrait
+trait UuidTraits
 {
     protected static function boot()
     {
@@ -15,6 +15,7 @@ trait UuidTrait
             $model->{$model->getKeyName()} = Str::orderedUuid()->toString();
         });
     }
+    
     public function getIncremenying()
     {
         return false;

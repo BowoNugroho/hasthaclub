@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Modules\Auth\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +13,11 @@
 |
 */
 
-Route::middleware(['auth'])->group(function () {
-    Route::prefix('admin')->group(function() {
-        Route::get('/', 'AdminController@index');
-    });
+Route::middleware('guest')->group(function () { 
+    Route::get('/login', function () {
+        return view('auth::index');
+    })->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
 });
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
