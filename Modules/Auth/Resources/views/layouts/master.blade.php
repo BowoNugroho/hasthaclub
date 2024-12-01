@@ -13,18 +13,38 @@
     <meta name="keywords" content="{{ $keywords ?? '' }}">
     <meta name="author" content="{{ $author ?? '' }}">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     {{-- Vite CSS --}}
-    {{-- {{ module_vite('build-auth', 'resources/assets/sass/app.scss', storage_path('vite.hot')) }} --}}
-</head>
+    {{-- {{ module_vite('build-auth', 'resources/urls/sass/app.scss', storage_path('vite.hot')) }} --}}
 
-<body>
+    <!-- CSS files -->
+    <link href="{{ url('public/modules/admin/css/tabler.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/tabler-flags.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/tabler-payments.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/tabler-vendors.min.css') }} " rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/demo.min.css') }}" rel="stylesheet"/>
+    <style>
+    @import url('https://rsms.me/inter/inter.css');
+    :root {
+        --tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+    }
+    body {
+        font-feature-settings: "cv03", "cv04", "cv11";
+    }
+    </style>
+</head>
+<body  class=" d-flex flex-column">
     @yield('content')
 
     {{-- Vite JS --}}
-    {{-- {{ module_vite('build-auth', 'resources/assets/js/app.js', storage_path('vite.hot')) }} --}}
-</body>
+    {{-- {{ module_vite('build-auth', 'resources/urls/js/app.js', storage_path('vite.hot')) }} --}}
+    
+    <!-- Libs JS -->
+    <!-- Tabler Core -->
+
+    @yield('script')
+
+    <script src="{{ url('public/modules/admin/js/demo-theme.min.js') }}" defer></script>
+    <script src="{{ url('public/modules/admin/js/tabler.min.js') }}" defer></script>
+    <script src="{{ url('public/modules/admin/js/demo.min.js') }}" defer></script>
+  </body>
+</html>

@@ -28,6 +28,10 @@ class ShopServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
+
+        $this->publishes([
+            __DIR__ . '/../Resources/assets' => public_path('modules/shop'),
+        ], 'public');
     }
 
     /**

@@ -11,8 +11,10 @@
 |
 */
 
-Route::middleware(['auth'])->group(function () {
-    Route::prefix('admin')->group(function() {
-        Route::get('/', 'AdminController@index');
-    });
+Route::group(['middleware' => ['auth']], function () {
+    // Route::group(['middleware' => ['role:admin']], function () {
+        Route::prefix('admin')->group(function() {
+            Route::get('/', 'AdminController@index');
+        });
+    // });
 });
