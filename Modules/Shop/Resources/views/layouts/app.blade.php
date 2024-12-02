@@ -25,7 +25,7 @@
             <div class="box xl:col-span-5 col-span-7 justify-center hidden lg:flex">
                 <div class="flex justify-between items-center px-5 lg:px-[50px] h-[80px] w-full ">
                     <a href="/">
-                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/hasthaclub.png') }}" class="h-[60px]" alt="">
+                        <img src="{{ url('modules/shop/images/hasthaclub.png') }}" class="h-[60px]" alt="">
                     </a>
                     <input type="text" placeholder="Cari Produk" class="w-[500px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
                     <ul class="flex gap-4">
@@ -52,7 +52,7 @@
                         <i class="fas fa-bars"></i>
                     </button>
                     <a href="/">
-                        <img src="{{ Vite::asset('modules/shop/Resources/assets/images/hasthaclub.png') }}" class="h-[60px]" alt="">
+                        <img src="{{ url('modules/shop/images/hasthaclub.png') }}" class="h-[60px]" alt="">
                     </a>
                     <i class="fa-solid fa-bag-shopping"></i>
                 </div>
