@@ -19,18 +19,31 @@ class CreateUserSeeder extends Seeder
             'name' => 'Admin Hastha Club', 
             'username' => 'admin',
             'email' => 'admin@hasthaclub.com',
-            'password' => bcrypt('Bismillah')
+            'password' => bcrypt('Bismillah'),
+            'status' => true 
         ]);
          
         $user->assignRole([1]);
 
         $user2 = User::create([
-            'name' => 'User Hastha Club', 
-            'username' => 'user',
-            'email' => 'user@hasthaclub.com',
-            'password' => bcrypt('Bismillah')
+            'name' => 'Shop Hastha Club', 
+            'username' => 'shop',
+            'email' => 'shop@hasthaclub.com',
+            'password' => bcrypt('Bismillah'),
+            'status' => true 
         ]);
          
         $user2->assignRole([2]);
+
+        $user3 = User::create([
+            'name' => 'User Hastha Club', 
+            'username' => 'user',
+            'email' => 'user@hasthaclub.com',
+            'password' => bcrypt('Bismillah'),
+            'status' => true 
+        ]);
+         
+        $user3->assignRole([3]);
+
     }
 }

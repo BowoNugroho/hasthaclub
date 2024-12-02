@@ -15,11 +15,16 @@
             <div class="mb-3">
                 <label class="form-label">Username / Email address</label>
                 <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="Enter username or email" value="{{ old('username') }}" autocomplete="username" autofocus>
-                @error('username')
+                {{-- @if ($errors->has('username'))
+                    <div class="alert alert-danger">
+                        {{ $errors->first('username') }}
+                    </div>
+                @endif --}}
+                {{-- @error('username')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                @enderror
+                @enderror --}}
             </div>
             <div class="mb-2">
               <label class="form-label">
@@ -40,15 +45,25 @@
                             </svg>
                     </a>
                 </span>
-                @error('password')
+                {{-- @if ($errors->has('password'))
+                    <div class="alert alert-danger">
+                        {{ $errors->first('password') }}
+                    </div>
+                @endif --}}
+                {{-- @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                @enderror
+                @enderror --}}
             </div>
             <div class="form-footer">
                 <button type="submit" class="btn btn-primary w-100">Sign in</button>
             </div>
+            @if ($errors->has('message'))
+                <div class="alert alert-danger mt-2">
+                    {{ $errors->first('message') }}
+                </div>
+            @endif
         </div>
       </form>
       <div class="text-center text-secondary mt-3">

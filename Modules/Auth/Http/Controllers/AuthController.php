@@ -6,6 +6,8 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -23,14 +25,25 @@ class AuthController extends Controller
             $this->username() => 'required',
             'password' => 'required',
         ]);
+        $credentials['status'] = 1;
 
         if (Auth::attempt($credentials)) {
+
             $request->session()->regenerate();
+
+            $user = User::find(Auth::user()->id);
+            $user->update([
+                'last_login_at' => Carbon::now()->toDateTimeString(),
+                'last_login_ip' => $request->getClientIp()
+            ]);
+
             return redirect()->intended('/admin');
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'username' => 'The provided credentials do not match our records.',
+            'password' => 'The provided credentials do not match our records.',
+            'message' => 'The provided credentials do not match our records.',
         ]);
     }
 
