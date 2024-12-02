@@ -17,6 +17,7 @@ class CreateUserSeeder extends Seeder
     {
         $user = User::create([
             'name' => 'Admin Hastha Club', 
+            'username' => 'admin',
             'email' => 'admin@hasthaclub.com',
             'password' => bcrypt('Bismillah')
         ]);
@@ -25,6 +26,7 @@ class CreateUserSeeder extends Seeder
 
         $user2 = User::create([
             'name' => 'User Hastha Club', 
+            'username' => 'user',
             'email' => 'user@hasthaclub.com',
             'password' => bcrypt('Bismillah')
         ]);

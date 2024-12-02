@@ -14,8 +14,8 @@
             <h2 class="card-title text-center mb-4">Login to your account</h2>
             <div class="mb-3">
                 <label class="form-label">Username / Email address</label>
-                <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Enter username or email" value="{{ old('email') }}" autocomplete="email" autofocus>
-                @error('email')
+                <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="Enter username or email" value="{{ old('username') }}" autocomplete="username" autofocus>
+                @error('username')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>

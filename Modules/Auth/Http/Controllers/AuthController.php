@@ -9,10 +9,18 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    public function username()
+    {
+        $login = request()->input('username');
+        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        request()->merge([$field => $login]);
+        return $field;
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'email' => 'required|email',
+            $this->username() => 'required',
             'password' => 'required',
         ]);
 
