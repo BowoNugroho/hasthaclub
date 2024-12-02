@@ -36,16 +36,16 @@
         </div>
         <!-- Slider controls -->
         <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/10 dark:bg-gray-800/30 group-hover:bg-black/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 group-hover:bg-blue-600  group-focus:ring-4 group-focus:ring-blue-300 group-focus:ring-blue-500/70   group-focus:outline-none">
+                <svg class="w-4 h-4 text-white  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                 </svg>
                 <span class="sr-only">Previous</span>
             </span>
         </button>
         <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/10 dark:bg-gray-800/30 group-hover:bg-black/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 group-hover:bg-blue-600  group-focus:ring-4 group-focus:ring-blue-300 group-focus:ring-blue-500/70group-focus:outline-none">
+                <svg class="w-4 h-4 text-white  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                 </svg>
                 <span class="sr-only">Next</span>
@@ -286,16 +286,16 @@
                 </div>
                 <!-- Carousel Controls -->
                 <button id="prev1" type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 dark:bg-gray-800/30 group-hover:bg-blue-600 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-grey dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 group-hover:bg-blue-600  group-focus:ring-4 group-focus:ring-blue-300 group-focus:ring-blue-500/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                         </svg>
                         <span class="sr-only">Previous</span>
                     </span>
                 </button>
                 <button id="next1" type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 dark:bg-gray-800/30 group-hover:bg-blue-600  dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-grey dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 group-hover:bg-blue-600  group-focus:ring-4 group-focus:ring-blue-300 group-focus:ring-blue-500/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                         </svg>
                         <span class="sr-only">Next</span>
@@ -313,12 +313,12 @@
         <div class="grid lg:grid-cols-3 md:grid-cols-2 px-2 gap-3">
             <div class="box  p-14">
                 <div class="grid grid-cols-1 text-slate-400 lg:text-[50px] md:text-[40px] text-[35px] text-center"><i class="fa-solid fa-headset"></i></div>
-                <div class="grid grid-cols-1 text-center font-bold lg:text-2xl md:text-xl text-lg mt-5">Dapatkan Pelayanan yang Profesional</div>
+                <div class="grid grid-cols-1 text-center font-bold lg:text-2xl md:text-xl text-lg mt-5">Dapatkan Layanan Profesional</div>
                 <div class="grid grid-cols-1 text-center lg:text-[12px] md:text-[11px] text-[10px] mt-5">Kami selalu berkomitmen untuk memberikan pelayanan yang profesional, cepat, dan terpercaya untuk setiap kebutuhan Anda.</div>
             </div>
             <div class="box  p-14">
                 <div class="grid grid-cols-1 text-blue-300 lg:text-[50px] md:text-[40px] text-[35px] text-center"><i class="fa-solid fa-money-check-dollar"></i></div>
-                <div class="grid grid-cols-1 text-center font-bold lg:text-2xl md:text-xl text-lg mt-5">Jaminan Pembayaran dengan Aman</div>
+                <div class="grid grid-cols-1 text-center font-bold lg:text-2xl md:text-xl text-lg mt-5">Jaminan keamanan pembayaran</div>
                 <div class="grid grid-cols-1 text-center lg:text-[12px] md:text-[11px] text-[10px] mt-5">Kami memberikan jaminan pembayaran yang aman dan terpercaya, sehingga Anda dapat berbelanja dengan tenang dan tanpa kekhawatiran.</div>
             </div>
             <div class="box  p-14">
@@ -553,16 +553,16 @@
             
                 <!-- Carousel Controls -->
                 <button id="prev" type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 dark:bg-gray-800/30 group-hover:bg-blue-600 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-grey dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 group-hover:bg-blue-600  group-focus:ring-4 group-focus:ring-blue-300 group-focus:ring-blue-500/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                         </svg>
                         <span class="sr-only">Previous</span>
                     </span>
                 </button>
                 <button id="next" type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 dark:bg-gray-800/30 group-hover:bg-blue-600  dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-grey dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 group-hover:bg-blue-600  group-focus:ring-4 group-focus:ring-blue-300 group-focus:ring-blue-500/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                         </svg>
                         <span class="sr-only">Next</span>
