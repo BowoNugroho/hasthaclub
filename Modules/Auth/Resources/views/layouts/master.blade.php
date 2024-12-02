@@ -17,11 +17,11 @@
     {{-- {{ module_vite('build-auth', 'resources/urls/sass/app.scss', storage_path('vite.hot')) }} --}}
 
     <!-- CSS files -->
-    <link href="{{ url('modules/admin/css/tabler.min.css') }}" rel="stylesheet"/>
-    <link href="{{ url('modules/admin/css/tabler-flags.min.css') }}" rel="stylesheet"/>
-    <link href="{{ url('modules/admin/css/tabler-payments.min.css') }}" rel="stylesheet"/>
-    <link href="{{ url('modules/admin/css/tabler-vendors.min.css') }} " rel="stylesheet"/>
-    <link href="{{ url('modules/admin/css/demo.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/tabler.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/tabler-flags.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/tabler-payments.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/tabler-vendors.min.css') }} " rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/demo.min.css') }}" rel="stylesheet"/>
     <style>
     @import url('https://rsms.me/inter/inter.css');
     :root {
@@ -43,8 +43,8 @@
 
     @yield('script')
 
-    <script src="{{ url('modules/admin/js/demo-theme.min.js') }}" defer></script>
-    <script src="{{ url('modules/admin/js/tabler.min.js') }}" defer></script>
-    <script src="{{ url('modules/admin/js/demo.min.js') }}" defer></script>
+    <script src="{{ url('public/modules/admin/js/demo-theme.min.js') }}" defer></script>
+    <script src="{{ url('public/modules/admin/js/tabler.min.js') }}" defer></script>
+    <script src="{{ url('public/modules/admin/js/demo.min.js') }}" defer></script>
   </body>
 </html>

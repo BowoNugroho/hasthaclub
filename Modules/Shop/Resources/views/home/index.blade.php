@@ -7,23 +7,23 @@
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
              <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out " data-carousel-item>
-                <img src="{{ url('modules/shop/images/slider/slide1.png') }}" class="absolute block lg:h-[400px] md:h-[400px] h-[300px]  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{ url('public/modules/shop/images/slider/slide1.png') }}" class="absolute block lg:h-[400px] md:h-[400px] h-[300px]  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ url('modules/shop/images/slider/slide2.jpg') }}" class="absolute blocklg:h-[400px] md:h-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{ url('public/modules/shop/images/slider/slide2.jpg') }}" class="absolute blocklg:h-[400px] md:h-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ url('modules/shop/images/slider/slide3.jpg') }}" class="absolute blocklg:h-[400px] md:h-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{ url('public/modules/shop/images/slider/slide3.jpg') }}" class="absolute blocklg:h-[400px] md:h-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 4 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ url('modules/shop/images/slider/slide4.jpg') }}" class="absolute blocklg:h-[400px] md:h-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{ url('public/modules/shop/images/slider/slide4.jpg') }}" class="absolute blocklg:h-[400px] md:h-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 5 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ url('modules/shop/images/slider/slide5.jpg') }}" class="absolute blocklg:h-[400px] md:h-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{ url('public/modules/shop/images/slider/slide5.jpg') }}" class="absolute blocklg:h-[400px] md:h-[400px] h-[300px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
         </div>
         <!-- Slider indicators -->
@@ -62,7 +62,7 @@
             <a href="#" class="max-auto p-3">
                 <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <img src="{{ url('modules/shop/images/katalog/ip 13.png') }}" class="lg:h-[80px] h-[50px]" alt="">
+                        <img src="{{ url('public/modules/shop/images/katalog/ip 13.png') }}" class="lg:h-[80px] h-[50px]" alt="">
                     </div>
                  </div>
                  <div class="grid grid-cols-1">
@@ -79,7 +79,7 @@
             <a href="#" class="max-auto p-3">
                 <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <img src="{{ url('modules/shop/images/katalog/samsung.png') }}" class="lg:h-[80px] h-[50px]" alt="">
+                        <img src="{{ url('public/modules/shop/images/katalog/samsung.png') }}" class="lg:h-[80px] h-[50px]" alt="">
                     </div>
                  </div>
                  <div class="grid grid-cols-1">
@@ -96,7 +96,7 @@
             <a href="#" class="max-auto p-3">
                 <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <img src="{{ url('modules/shop/images/katalog/laptop.png') }}" class="lg:h-[80px] h-[50px]" alt="">
+                        <img src="{{ url('public/modules/shop/images/katalog/laptop.png') }}" class="lg:h-[80px] h-[50px]" alt="">
                     </div>
                  </div>
                  <div class="grid grid-cols-1">
@@ -131,7 +131,7 @@
                                 <div class="border max-auto p-3 rounded-lg shadow">
                                     <div class="grid grid-cols-1 mb-7 mt-5">
                                         <div class="flex justify-center ">
-                                            <img src="{{ url('modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1">
@@ -157,7 +157,7 @@
                                 <div class="border max-auto p-3 rounded-lg shadow ">
                                     <div class="grid grid-cols-1 mb-7 mt-5">
                                         <div class="flex justify-center ">
-                                            <img src="{{ url('modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1">
@@ -183,7 +183,7 @@
                                 <div class="border max-auto p-3 rounded-lg shadow ">
                                     <div class="grid grid-cols-1 mb-7 mt-5">
                                         <div class="flex justify-center ">
-                                            <img src="{{ url('modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1">
@@ -209,7 +209,7 @@
                                 <div class="border max-auto p-3 rounded-lg shadow ">
                                     <div class="grid grid-cols-1 mb-7 mt-5">
                                         <div class="flex justify-center ">
-                                            <img src="{{ url('modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1">
@@ -235,7 +235,7 @@
                                 <div class="border max-auto p-3 rounded-lg shadow ">
                                     <div class="grid grid-cols-1 mb-7 mt-5">
                                         <div class="flex justify-center ">
-                                            <img src="{{ url('modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1">
@@ -261,7 +261,7 @@
                                 <div class="border max-auto p-3 rounded-lg shadow ">
                                     <div class="grid grid-cols-1 mb-7 mt-5">
                                         <div class="flex justify-center ">
-                                            <img src="{{ url('modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1">
@@ -365,7 +365,7 @@
                         <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2" id="carousel-items">
                             <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
                                 <div class="flex justify-center ">
-                                    <img src="{{ url('modules/shop/images/checkout/applewacth1.png') }}" class="h-[200px]" alt="">
+                                    <img src="{{ url('public/modules/shop/images/checkout/applewacth1.png') }}" class="h-[200px]" alt="">
                                 </div>
                              </div>
                              <div class="grid grid-cols-1 mb-6">
@@ -396,7 +396,7 @@
                         <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
                             <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
                                 <div class="flex justify-center ">
-                                    <img src="{{ url('modules/shop/images/checkout/applewacth2.png') }}" class="h-[200px]" alt="">
+                                    <img src="{{ url('public/modules/shop/images/checkout/applewacth2.png') }}" class="h-[200px]" alt="">
                                 </div>
                              </div>
                              <div class="grid grid-cols-1 mb-6">
@@ -427,7 +427,7 @@
                         <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
                             <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
                                 <div class="flex justify-center ">
-                                    <img src="{{ url('modules/shop/images/checkout/applewacth3.png') }}" class="h-[200px]" alt="">
+                                    <img src="{{ url('public/modules/shop/images/checkout/applewacth3.png') }}" class="h-[200px]" alt="">
                                 </div>
                              </div>
                              <div class="grid grid-cols-1 mb-6">
@@ -458,7 +458,7 @@
                         <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
                             <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
                                 <div class="flex justify-center ">
-                                    <img src="{{ url('modules/shop/images/checkout/applewacth4.png') }}" class="h-[200px]" alt="">
+                                    <img src="{{ url('public/modules/shop/images/checkout/applewacth4.png') }}" class="h-[200px]" alt="">
                                 </div>
                              </div>
                              <div class="grid grid-cols-1 mb-6">
@@ -489,7 +489,7 @@
                         <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
                             <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
                                 <div class="flex justify-center ">
-                                    <img src="{{ url('modules/shop/images/checkout/applewacth2.png') }}" class="h-[200px]" alt="">
+                                    <img src="{{ url('public/modules/shop/images/checkout/applewacth2.png') }}" class="h-[200px]" alt="">
                                 </div>
                              </div>
                              <div class="grid grid-cols-1 mb-6">
@@ -520,7 +520,7 @@
                         <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
                             <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
                                 <div class="flex justify-center ">
-                                    <img src="{{ url('modules/shop/images/checkout/applewacth3.png') }}" class="h-[200px]" alt="">
+                                    <img src="{{ url('public/modules/shop/images/checkout/applewacth3.png') }}" class="h-[200px]" alt="">
                                 </div>
                              </div>
                              <div class="grid grid-cols-1 mb-6">
