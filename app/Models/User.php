@@ -8,12 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Traits\Blameable;
 use App\Traits\UuidTraits;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, UuidTraits, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, UuidTraits, HasRoles, Blameable;
 
     protected $keyType = 'string';
     public $incrementing = false;
