@@ -63,14 +63,12 @@
         </div>
     </div>
 
+    <script src="{{ url('public/modules/admin/js/tabler.min.js') }}"></script>
+    <script src="{{ url('public/modules/admin/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ url('public/modules/admin/js/demo-theme.min.js') }}" defer></script>
-    <script src="{{ url('public/modules/admin/js/tabler.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/demo.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/sweetalert2.all.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/libs/toastr/toastr.min.js') }}" defer></script>
-
-    @yield('script')
-    @include('admin::layouts.partials.toastMessage')
 
     <script>
          @if (Auth::check()) 
@@ -84,10 +82,13 @@
             event.preventDefault();
             event.stopImmediatePropagation();
             Swal.fire({
-                title: "Do you want to log out?",
-                text: "You can login back to continue the activity",
-                icon: "warning",
-                buttons: true
+                title: 'Are you sure you want to logout?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, logout!',
+                cancelButtonText: 'Cancel',
+                reverseButtons: true  // Optional: reverses button order
               }).then((result) => {
                 if (result.isConfirmed) {
                     $('#logout-form').submit();
@@ -101,5 +102,7 @@
             })
         });
     </script>
+    @yield('script')
+    @include('admin::layouts.partials.toastMessage')
   </body>
 </html>
