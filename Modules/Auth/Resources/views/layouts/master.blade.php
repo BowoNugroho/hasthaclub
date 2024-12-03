@@ -31,15 +31,10 @@
         font-feature-settings: "cv03", "cv04", "cv11";
     }
     </style>
+    @yield('style')
 </head>
 <body  class=" d-flex flex-column">
     @yield('content')
-
-    {{-- Vite JS --}}
-    {{-- {{ module_vite('build-auth', 'resources/urls/js/app.js', storage_path('vite.hot')) }} --}}
-    
-    <!-- Libs JS -->
-    <!-- Tabler Core -->
 
     @yield('script')
 
