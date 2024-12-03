@@ -66,5 +66,31 @@
     <script src="{{ url('public/modules/admin/js/demo-theme.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/tabler.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/demo.min.js') }}" defer></script>
+
+    <script>
+         @if (Auth::check()) 
+            var timeout = ({{config('session.lifetime')}} * 60000) -10 ;
+            setTimeout(function(){
+                window.location.reload(1);
+            },  timeout);
+        @endif
+        
+        $('body').on('click', '.logout', function(event) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            swal({
+                title: "Do you want to log out?",
+                text: "You can login back to continue the activity",
+                icon: "warning",
+                buttons: true
+            }).then((willDelete) => {
+                if (willDelete) {
+                    $('#logout-form').submit();
+                } else {
+                    swal("Cancel", "You haven't logged out yet", "error");
+                }
+            })
+        });
+    </script>
   </body>
 </html>

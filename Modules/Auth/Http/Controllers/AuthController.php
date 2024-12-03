@@ -40,9 +40,9 @@ class AuthController extends Controller
 
                 // Check the user's role and redirect accordingly
                 if ($user->hasRole('admin')) {
-                    return redirect()->intended('/admin');
+                    return redirect()->route('admin.index');
                 } elseif ($user->hasRole('shop')) {
-                    return redirect()->intended('/shop');
+                    return redirect()->route('shop.index');
                 } else {
                     return redirect()->intended('/');
                 }
