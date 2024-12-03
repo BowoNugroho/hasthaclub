@@ -5,7 +5,7 @@
     <div class="container container-tight py-4">
       <div class="text-center mb-4">
         <a href="{{ url('/') }}" class="navbar-brand navbar-brand-autodark">
-          <img src="{{ url('public/modules/shop/images/hasthaclub.png') }}" width="150" height="100" alt="Tabler" class="navbar-brand-image">
+          <img src="{{ url('public/public/modules/shop/images/hasthaclub.png') }}" width="150" height="100" alt="Tabler" class="navbar-brand-image">
         </a>
       </div>
       <form class="card card-md" action="{{ route('login') }}" method="post">

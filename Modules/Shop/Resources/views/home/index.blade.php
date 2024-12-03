@@ -331,7 +331,7 @@
     <div class="box"></div>
 </div>
 <hr>
-<div class="grid XL:grid-cols-7 grid-cols-7 gap-2 mb-5">
+{{-- <div class="grid XL:grid-cols-7 grid-cols-7 gap-2 mb-5">
     <div class="box"></div>
     <div class="box xl:col-span-5 col-span-7 p-5">
         <p class="text-[25px] font-bold">Our Partner</p>
@@ -349,7 +349,7 @@
         </div>
     </div>
     <div class="box"></div>
-</div>
+</div> --}}
 <hr>
 <div class="grid xl:grid-cols-5 grid-cols-5 gap-2 mb-5">
     <div class="box"></div>
@@ -574,6 +574,9 @@
     <div class="box"></div>
 </div>
 <hr>
+@endsection
+
+@section('script')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
     // carousel best seller

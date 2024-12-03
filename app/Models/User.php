@@ -27,7 +27,7 @@ class User extends Authenticatable
             $model->{$model->getKeyName()} = (string) \Illuminate\Support\Str::uuid();
         });
     }
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -36,6 +36,9 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
+        'no_hp',
+        'status',
         'password',
     ];
 

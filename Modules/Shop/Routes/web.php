@@ -29,14 +29,16 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/loginCs', 'loginCs')->name('loginCs');
+    Route::get('/registerCs', 'registerCs')->name('registerCs');
     Route::post('/loginCs', 'actionlogin')->name('actionlogin');
+    Route::post('/createCs', 'store')->name('createCs');
     Route::post('/logoutCs', 'logoutCs')->name('logoutCs');
     // Route::get('/loginCs', [AuthController::class, 'loginCs'])->name('loginCs');
     // Route::post('/loginCs', [AuthController::class, 'actionlogin']);
     // Route::post('/logoutCs', [AuthController::class, 'logoutCs'])->name('logoutCs');
 });
 
-Route::controller(AuthController::class)->group(function () {
+Route::controller(DashboardController::class)->group(function () {
     Route::get('/dashboardCs', 'index')->name('dashboardCs')->middleware('auth');
     // Route::get('/dashboardCs', [DashboardController::class, 'index'])->name('dashboardCs')->middleware('auth');
 });

@@ -37,8 +37,17 @@
                         <li class="text-[14px] hover:underline">Reseller</li>
                     </ul>
                     <ul class="flex gap-4">
-                        <li class="text-[14px]"><i class="fa-regular fa-user"></i></li>
-                        <li class="text-[14px]"><i class="fa-solid fa-bag-shopping"></i></li>
+                        <li class="text-[14px] hover:scale-150">
+                            <a href="{{ url('/loginCs') }}"><i class="fa-regular fa-user"></a></i>
+                        </li>
+                        <li class="text-[14px] hover:scale-150">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </li>
+                        {{-- buttton logout sementara --}}
+                        {{-- <li><form action="{{ route('logoutCs') }}" method="POST" style="display: inline;">
+                            @csrf
+                            <button type="submit" class="btn btn-danger" onclick="confirmLogout()">Logout</button>
+                        </form></li> --}}
                     </ul>
                 </div>
             </div>
@@ -93,7 +102,7 @@
                             <div class="grid grid-cols-1 text-start mb-3"> Layanan Pelanggan</div>
                             <div class="grid grid-cols-1 text-start mb-3"> Mitra / Partnership</div>
                             <div class="grid grid-cols-1 text-start mb-3"> Reseller</div>
-                            <div class="grid grid-cols-1 text-start mb-3"> Online Banking</div>
+                            {{-- <div class="grid grid-cols-1 text-start mb-3"> Online Banking</div> --}}
                         </div>
                         <div class="box ">
                             <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Tentang</div>
@@ -142,9 +151,9 @@
                         <li>
                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Reseller</a>
                         </li>
-                        <li>
+                        {{-- <li>
                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Online Banking</a>
-                        </li>
+                        </li> --}}
                   </ul>
                   <hr>
                     <button type="button" class="flex items-center w-full p-4 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 " aria-controls="dropdown-example3" data-collapse-toggle="dropdown-example3">
@@ -225,11 +234,12 @@
                 </div>
                 <hr>
                 <div class="grid grid-cols-1 text-center mt-4">
-                    <p class="text-slate-500 lg:text-lg md:text-md text-sm">Copyright © 2024 Hastha Club | PT Gayeon Industri Persada. All rights reserved.</p>
+                    <p class="text-slate-500 lg:text-lg md:text-md text-sm">Copyright © 2024 Hastha Club | PT HMS Group. All rights reserved.</p>
                 </div>
             </div>
             <div class="box xl:col-span-2 "></div>
         </div>
+        @yield('script')
         <script>
             // Toggle mobile menu visibility
             document.getElementById('menu-button').addEventListener('click', function() {
