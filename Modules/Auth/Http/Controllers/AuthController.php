@@ -31,13 +31,24 @@ class AuthController extends Controller
 
             $request->session()->regenerate();
 
-            $user = User::find(Auth::user()->id);
-            $user->update([
-                'last_login_at' => Carbon::now()->toDateTimeString(),
-                'last_login_ip' => $request->getClientIp()
-            ]);
+            if (Auth::check()) {
+                $user = Auth::user();  // Using Auth::user() directly instead of querying by ID
+                $user->update([
+                    'last_login_at' => Carbon::now()->toDateTimeString(),
+                    'last_login_ip' => $request->getClientIp()
+                ]);
 
-            return redirect()->intended('/admin');
+                // Check the user's role and redirect accordingly
+                if ($user->hasRole('admin')) {
+                    return redirect()->intended('/admin');
+                } elseif ($user->hasRole('shop')) {
+                    return redirect()->intended('/shop');
+                } else {
+                    return redirect()->intended('/');
+                }
+            }
+
+            
         }
 
         return back()->withErrors([

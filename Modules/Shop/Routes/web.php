@@ -15,12 +15,12 @@ use Modules\Shop\Http\Controllers\DashboardController;
 |
 */
 
-Route::prefix('/')->group(function () {
-    Route::get('/', 'ShopController@index');
-});
-
-Route::prefix('/etalase')->group(function () {
-    Route::get('/', 'HomeController@index');
+Route::group(['middleware' => ['auth']], function () {
+    // Route::group(['middleware' => ['role:shop']], function () {
+    Route::prefix('shop')->group(function () {
+        Route::get('/', 'ShopController@index');
+    });
+    // });
 });
 
 Route::middleware('guest')->group(function () {
