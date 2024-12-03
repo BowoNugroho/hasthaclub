@@ -23,11 +23,20 @@ Route::group(['middleware' => ['auth']], function () {
     // });
 });
 
-Route::middleware('guest')->group(function () {
-    // Route::get('/login-cs', function () {
-    //     return view('shop::customer.login');
-    // })->name('login-cs');
-    Route::get('/login-cs', [AuthController::class, 'login'])->name('login-cs');
-    Route::post('/login-cs', [AuthController::class, 'actionlogin']);
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+// Route::prefix('/')->group(function () {
+//     Route::get('/', 'ShopController@index');
+// });
+
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/loginCs', 'loginCs')->name('loginCs');
+    Route::post('/loginCs', 'actionlogin')->name('actionlogin');
+    Route::post('/logoutCs', 'logoutCs')->name('logoutCs');
+    // Route::get('/loginCs', [AuthController::class, 'loginCs'])->name('loginCs');
+    // Route::post('/loginCs', [AuthController::class, 'actionlogin']);
+    // Route::post('/logoutCs', [AuthController::class, 'logoutCs'])->name('logoutCs');
+});
+
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/dashboardCs', 'index')->name('dashboardCs')->middleware('auth');
+    // Route::get('/dashboardCs', [DashboardController::class, 'index'])->name('dashboardCs')->middleware('auth');
 });
