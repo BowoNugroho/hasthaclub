@@ -1,7 +1,7 @@
 @extends('admin::layouts.master')
 
 @section('title')
-    Dashboard - {{ config('app.name', 'Laravel') }}
+    Dashboard
 @endsection
 
 @section('content')

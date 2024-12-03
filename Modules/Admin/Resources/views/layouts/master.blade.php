@@ -37,7 +37,7 @@
         @include('admin::layouts.navbar')
         
         <div class="page-wrapper">
-            <!-- Page header -->
+            {{-- <!-- Page header -->
             <div class="page-header d-print-none">
               <div class="container-xl">
                 <div class="row g-2 align-items-center">
@@ -48,7 +48,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
             <!-- Page body -->
             <div class="page-body">
               <div class="container-xl">
@@ -61,11 +61,16 @@
 
         </div>
     </div>
-    @yield('script')
 
     <script src="{{ url('public/modules/admin/js/demo-theme.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/tabler.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/demo.min.js') }}" defer></script>
+    <script src="{{ url('public/modules/admin/js/sweetalert2@11.js') }}" defer></script>
+    <script src="{{ url('public/modules/admin/libs/toastr/toastr.min.js') }}" defer></script>
+
+    @include('sweetalert::alert')
+    @yield('script')
+    @include('admin::layouts.partials.toastMessage')
 
     <script>
          @if (Auth::check()) 
@@ -78,16 +83,20 @@
         $('body').on('click', '.logout', function(event) {
             event.preventDefault();
             event.stopImmediatePropagation();
-            swal({
+            Swal.fire({
                 title: "Do you want to log out?",
                 text: "You can login back to continue the activity",
                 icon: "warning",
                 buttons: true
-            }).then((willDelete) => {
-                if (willDelete) {
+              }).then((result) => {
+                if (result.isConfirmed) {
                     $('#logout-form').submit();
                 } else {
-                    swal("Cancel", "You haven't logged out yet", "error");
+                  Swal.fire(
+                    "Cancel!",
+                    "You haven't logged out yet.",
+                    "error"
+                  )
                 }
             })
         });
