@@ -18,6 +18,7 @@
     <link href="{{ url('public/modules/admin/css/tabler-payments.min.css') }}" rel="stylesheet"/>
     <link href="{{ url('public/modules/admin/css/tabler-vendors.min.css') }} " rel="stylesheet"/>
     <link href="{{ url('public/modules/admin/css/demo.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/sweetalert2.min.css') }}" rel="stylesheet"/>
     <style>
     @import url('https://rsms.me/inter/inter.css');
     :root {
@@ -65,10 +66,9 @@
     <script src="{{ url('public/modules/admin/js/demo-theme.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/tabler.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/demo.min.js') }}" defer></script>
-    <script src="{{ url('public/modules/admin/js/sweetalert2@11.js') }}" defer></script>
+    <script src="{{ url('public/modules/admin/js/sweetalert2.all.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/libs/toastr/toastr.min.js') }}" defer></script>
 
-    @include('sweetalert::alert')
     @yield('script')
     @include('admin::layouts.partials.toastMessage')
 
