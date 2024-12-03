@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Modules\Shop\Http\Controllers\AuthController;
+use Modules\Shop\Http\Controllers\DashboardController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +21,13 @@ Route::prefix('/')->group(function () {
 
 Route::prefix('/etalase')->group(function () {
     Route::get('/', 'HomeController@index');
+});
+
+Route::middleware('guest')->group(function () {
+    // Route::get('/login-cs', function () {
+    //     return view('shop::customer.login');
+    // })->name('login-cs');
+    Route::get('/login-cs', [AuthController::class, 'login'])->name('login-cs');
+    Route::post('/login-cs', [AuthController::class, 'actionlogin']);
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 });
