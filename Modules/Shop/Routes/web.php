@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Shop\Http\Controllers\AuthController;
 use Modules\Shop\Http\Controllers\DashboardController;
+use Modules\Shop\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ use Modules\Shop\Http\Controllers\DashboardController;
 Route::group(['middleware' => ['auth']], function () {
     // Route::group(['middleware' => ['role:shop']], function () {
     Route::prefix('shop')->group(function () {
-        Route::get('/', 'ShopController@index');
+        Route::get('/', [ShopController::class, 'index'])->name('shop.index');
     });
     // });
 });

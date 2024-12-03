@@ -14,16 +14,19 @@ class RolePermissionSeeder extends Seeder
      */
     public function run(): void
     {
+        $superadmin = Role::create(['name' => 'superadmin']);
         $admin = Role::create(['name' => 'admin']);
-        $shop = Role::create(['name' => 'shop']);
-        $user = Role::create(['name' => 'user']);
+        $mitra = Role::create(['name' => 'mitra']);
+        $customer = Role::create(['name' => 'customer']);
+        $sales_mitra = Role::create(['name' => 'sales_mitra']);
+        $sales_mitra = Role::create(['name' => 'sales_toko']);
 
-        $viewDashboard = Permission::create(['name' => 'view dashboard']);
-        $manageUsers = Permission::create(['name' => 'manage users']);
-        $manageShops = Permission::create(['name' => 'manage shops']);
+        // $viewDashboard = Permission::create(['name' => 'view dashboard']);
+        // $manageUsers = Permission::create(['name' => 'manage users']);
+        // $manageShops = Permission::create(['name' => 'manage shops']);
 
-        $admin->givePermissionTo([$viewDashboard, $manageUsers, $manageShops]);
-        $shop->givePermissionTo([$viewDashboard]);
-        $user->givePermissionTo([$viewDashboard]);
+        // $admin->givePermissionTo([$viewDashboard, $manageUsers, $manageShops]);
+        // $shop->givePermissionTo([$viewDashboard]);
+        // $user->givePermissionTo([$viewDashboard]);
     }
 }

@@ -39,12 +39,10 @@ class AuthController extends Controller
                 ]);
 
                 // Check the user's role and redirect accordingly
-                if ($user->hasRole('admin')) {
-                    return redirect()->intended('/admin');
-                } elseif ($user->hasRole('shop')) {
-                    return redirect()->intended('/shop');
-                } else {
-                    return redirect()->intended('/');
+                if ($user->hasRole('customer')) { // Halaman customer
+                    return redirect()->intended('dashboardCs');
+                } else { // Halaman panel
+                    return redirect()->route('admin.index');
                 }
             }
 
@@ -64,6 +62,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect()->route('login');
     }
 }
