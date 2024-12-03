@@ -39,12 +39,10 @@ class AuthController extends Controller
                 ]);
 
                 // Check the user's role and redirect accordingly
-                if ($user->hasRole('admin')) {
+                if ($user->hasRole('customer')) { // Halaman customer
+                    return redirect()->intended('dashboardCs');
+                } else { // Halaman panel
                     return redirect()->route('admin.index');
-                } elseif ($user->hasRole('shop')) {
-                    return redirect()->route('shop.index');
-                } else {
-                    return redirect()->intended('/');
                 }
             }
 

@@ -37,7 +37,7 @@ Route::controller(AuthController::class)->group(function () {
     // Route::post('/logoutCs', [AuthController::class, 'logoutCs'])->name('logoutCs');
 });
 
-Route::controller(AuthController::class)->group(function () {
+Route::controller(DashboardController::class)->group(function () {
     Route::get('/dashboardCs', 'index')->name('dashboardCs')->middleware('auth');
     // Route::get('/dashboardCs', [DashboardController::class, 'index'])->name('dashboardCs')->middleware('auth');
 });
