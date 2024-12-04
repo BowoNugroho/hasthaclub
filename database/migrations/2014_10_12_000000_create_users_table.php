@@ -22,9 +22,9 @@ return new class extends Migration
             $table->string('gender')->nullable();
             $table->boolean('status')->default(false);
             $table->rememberToken();
-            $table->unsignedBigInteger('created_by')->nullable();
-            $table->unsignedBigInteger('updated_by')->nullable();
-            $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->uuid('created_by')->nullable();
+            $table->uuid('updated_by')->nullable();
+            $table->uuid('deleted_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

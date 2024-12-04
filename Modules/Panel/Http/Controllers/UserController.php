@@ -52,4 +52,46 @@ class UserController extends Controller
             'data' => $data,
         ]);
     }
+
+    // Create new record
+    public function store(Request $request)
+    {
+        $user = new User; 
+        $user->create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'no_hp' => $request->no_hp,
+            'email' =>$request->email
+        ]);
+
+        return response()->json(['success' => 'User added successfully!']);
+    }
+
+    // Get data for editing
+    public function edit($id)
+    {
+        $data = User::findOrFail($id);
+        return response()->json($data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->update([
+            'name' => $request->name,
+            'username' => $request->username,
+            'no_hp' => $request->no_hp,
+            'email' =>$request->email
+        ]);
+
+        return response()->json(['success' => 'User updated successfully!']);
+    }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+
+        return response()->json(['success' => 'User deleted successfully!']);
+    }
 }
