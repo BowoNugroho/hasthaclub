@@ -1,5 +1,5 @@
 {
     "Shop": true,
-    "Admin": true,
-    "Auth": true
+    "Auth": true,
+    "Panel": true
 }

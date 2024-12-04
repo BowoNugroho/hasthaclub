@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Admin\Http\Controllers\AdminController;
+use Modules\Panel\Http\Controllers\PanelController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +17,7 @@ use Modules\Admin\Http\Controllers\AdminController;
 Route::group(['middleware' => ['auth:web']], function () {
     // Route::group(['middleware' => ['role:admin']], function () {
     Route::prefix('panel')->group(function () {
-        Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+        Route::get('/', [PanelController::class, 'index'])->name('panel.index');
     });
     // });
 });

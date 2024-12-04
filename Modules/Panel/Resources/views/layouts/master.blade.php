@@ -33,9 +33,9 @@
 <body  class="layout-fluid">
     <div class="page">
         
-        @include('admin::layouts.header')
+        @include('panel::layouts.header')
 
-        @include('admin::layouts.navbar')
+        @include('panel::layouts.navbar')
         
         <div class="page-wrapper">
             {{-- <!-- Page header -->
@@ -58,7 +58,7 @@
               </div>
             </div>
 
-            @include('admin::layouts.footer')
+            @include('panel::layouts.footer')
 
         </div>
     </div>
@@ -103,6 +103,6 @@
         });
     </script>
     @yield('script')
-    @include('admin::layouts.partials.toastMessage')
+    @include('panel::layouts.partials.toastMessage')
   </body>
 </html>
