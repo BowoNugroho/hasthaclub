@@ -1,7 +1,7 @@
 @extends('panel::layouts.master')
 
 @section('title')
-    Konfifgurasi - Data User
+    Konfifgurasi - Data Role
 @endsection
 
 @section('content')
@@ -14,14 +14,13 @@
         </div>
       </div>
       <div class="card-body">
-          <h1>Data User</h1>
-          <table id="user_datatables" class="display">
+          <h1>Data Role</h1>
+          <table id="role_datatables" class="display">
               <thead>
                   <tr>
                       <th>ID</th>
                       <th>Name</th>
-                      <th>Email</th>
-                      <th>No Hp</th>
+                      <th>Guard</th>
                       <th>Created At</th>
                   </tr>
               </thead>
@@ -37,11 +36,11 @@
 @section('script')
   <script>
     $(document).ready(function() {
-        $('#user_datatables').DataTable({
+        $('#role_datatables').DataTable({
             processing: true,
             serverSide: true,
             ajax: {
-                url: '{{ route('panel.user.datatables') }}',
+                url: '{{ route('panel.role.datatables') }}',
                 data: function (d) {
                     // Additional parameters can be added here if needed
                 }
@@ -49,8 +48,7 @@
             columns: [
                 { data: 'id' },
                 { data: 'name' },
-                { data: 'email' },
-                { data: 'no_hp' },
+                { data: 'guard_name' },
                 { data: 'created_at' }
             ]
         });

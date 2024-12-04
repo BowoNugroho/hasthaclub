@@ -33,7 +33,7 @@
                         <a href="{{ route('panel.user.index') }}" class="dropdown-item">
                           Data User
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="{{ route('panel.role.index') }}" class="dropdown-item">
                           Data Role
                         </a>
                       </div>

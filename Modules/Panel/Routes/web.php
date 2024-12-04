@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Panel\Http\Controllers\PanelController;
 use Modules\Panel\Http\Controllers\UserController;
+use Modules\Panel\Http\Controllers\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,11 @@ Route::group(['middleware' => ['auth:web']], function () {
         Route::prefix('user')->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('panel.user.index');
             Route::get('/datatables', [UserController::class, 'datatables'])->name('panel.user.datatables');
+        });
+
+        Route::prefix('role')->group(function () {
+            Route::get('/', [RoleController::class, 'index'])->name('panel.role.index');
+            Route::get('/datatables', [RoleController::class, 'datatables'])->name('panel.role.datatables');
         });
 
     });

@@ -5,21 +5,21 @@ namespace Modules\Panel\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\User;
+use Spatie\Permission\Models\Role;
 
-class UserController extends Controller
+class RoleController extends Controller
 {
     // Display DataTable view
     public function index()
     {
-        return view('panel::user.index');  // Create this view
+        return view('panel::role.index');  // Create this view
     }
 
     // Fetch data for DataTable with server-side processing
     public function datatables(Request $request)
     {
-        $columns = ['id', 'name', 'email', 'no_hp', 'created_at'];  // Define the columns you want to display
-        $query = User::query();  // Replace with your actual model
+        $columns = ['id', 'name', 'created_at'];  // Define the columns you want to display
+        $query = Role::query();  // Replace with your actual model
 
         // Apply search filter
         if ($search = $request->input('search.value')) {
@@ -42,7 +42,7 @@ class UserController extends Controller
         $start = $request->input('start', 0);
 
         $data = $query->offset($start)->limit($length)->get();
-        $totalRecords = User::count();
+        $totalRecords = Role::count();
 
         // Prepare response for DataTable
         return response()->json([
