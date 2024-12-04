@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Shop\Http\Controllers\AuthController;
+use Modules\Shop\Http\Controllers\CustomerAuthController;
 use Modules\Shop\Http\Controllers\DashboardController;
 use Modules\Shop\Http\Controllers\ShopController;
 
@@ -28,7 +28,7 @@ Route::group(['middleware' => ['auth']], function () {
 //     Route::get('/', 'ShopController@index');
 // });
 
-Route::controller(AuthController::class)->group(function () {
+Route::controller(CustomerAuthController::class)->group(function () {
     Route::get('/loginCs', 'loginCs')->name('loginCs');
     Route::get('/registerCs', 'registerCs')->name('registerCs');
     Route::post('/loginCs', 'actionlogin')->name('actionlogin');
@@ -40,6 +40,6 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::controller(DashboardController::class)->group(function () {
-    Route::get('/dashboardCs', 'index')->name('dashboardCs')->middleware('auth');
+    Route::get('/dashboardCs', 'index')->name('dashboardCs')->middleware('auth:customer');
     // Route::get('/dashboardCs', [DashboardController::class, 'index'])->name('dashboardCs')->middleware('auth');
 });

@@ -13,10 +13,10 @@ use Modules\Admin\Http\Controllers\AdminController;
 |
 */
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth:web']], function () {
     // Route::group(['middleware' => ['role:admin']], function () {
-        Route::prefix('panel')->group(function() {
-            Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-        });
+    Route::prefix('panel')->group(function () {
+        Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    });
     // });
 });

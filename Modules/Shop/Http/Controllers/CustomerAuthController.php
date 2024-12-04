@@ -8,15 +8,15 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-use App\Models\User;
+use App\Models\Customer;
 use Carbon\Carbon;
 
-class AuthController extends Controller
+class CustomerAuthController extends Controller
 {
     public function loginCs(Request $request)
     {
 
-        if (Auth::check()) {
+        if (Auth::guard('customer')->check()) {
             return redirect('/dashboardCs');
         } else {
             return view('shop::customer.login');
@@ -31,12 +31,11 @@ class AuthController extends Controller
         ]);
         $credentials['status'] = 1;
 
-
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('customer')->attempt($credentials)) {
 
             $request->session()->regenerate();
-            if (Auth::check()) {
-                $user = User::find(Auth::user()->id);
+            if (Auth::guard('customer')->check()) {
+                $user = Customer::find(Auth::guard('customer')->user()->id);
                 $user->update([
                     'last_login_at' => Carbon::now()->toDateTimeString(),
                     'last_login_ip' => $request->getClientIp()
@@ -71,13 +70,13 @@ class AuthController extends Controller
         $data['password'] = Hash::make($request->password);
         $data['username'] = $request->no_hp;
 
-        User::create($data);
+        Customer::create($data);
         return redirect('/loginCs');
     }
 
     public function logoutCs(Request $request)
     {
-        Auth::logout();
+        Auth::guard('customer')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 

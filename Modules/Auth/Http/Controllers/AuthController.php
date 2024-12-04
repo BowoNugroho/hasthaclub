@@ -27,12 +27,12 @@ class AuthController extends Controller
         ]);
         $credentials['status'] = 1;
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('web')->attempt($credentials)) {
 
             $request->session()->regenerate();
 
-            if (Auth::check()) {
-                $user = Auth::user();  // Using Auth::user() directly instead of querying by ID
+            if (Auth::guard('web')->check()) {
+                $user = Auth::guard('web')->user();  // Using Auth::user() directly instead of querying by ID
                 $user->update([
                     'last_login_at' => Carbon::now()->toDateTimeString(),
                     'last_login_ip' => $request->getClientIp()
@@ -45,8 +45,6 @@ class AuthController extends Controller
                     return redirect()->route('admin.index');
                 }
             }
-
-            
         }
 
         return back()->withErrors([
@@ -58,7 +56,7 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        Auth::guard('web')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
