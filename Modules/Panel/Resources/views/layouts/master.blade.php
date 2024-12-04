@@ -19,6 +19,7 @@
     <link href="{{ url('public/modules/admin/css/tabler-vendors.min.css') }} " rel="stylesheet"/>
     <link href="{{ url('public/modules/admin/css/demo.min.css') }}" rel="stylesheet"/>
     <link href="{{ url('public/modules/admin/css/sweetalert2.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/jquery.dataTables.min.css') }}" rel="stylesheet"/>
     <style>
     @import url('https://rsms.me/inter/inter.css');
     :root {
@@ -65,6 +66,7 @@
 
     <script src="{{ url('public/modules/admin/js/tabler.min.js') }}"></script>
     <script src="{{ url('public/modules/admin/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ url('public/modules/admin/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ url('public/modules/admin/js/demo-theme.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/demo.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/sweetalert2.all.min.js') }}" defer></script>
