@@ -16,7 +16,7 @@
       <div class="card-body">
         <div class="row align-items-center">
           <div class="col-10">
-            <h3 class="h1">Hello, {{ Str::ucfirst(auth()->user()->name) }}</h3>
+            <h3 class="h1">Hello, {{ Str::ucfirst(auth('web')->user()->name) }}</h3>
             <div class="markdown text-secondary">
              
             </div>
