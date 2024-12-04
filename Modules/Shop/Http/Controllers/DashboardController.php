@@ -6,19 +6,17 @@ namespace Modules\Shop\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 // use Illuminate\Support\Facades\Auth;
-use App\Models\User;
+use App\Models\Customer;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        // $post = auth()->user()->id;
-        // $name = auth()->user()->name;
+        $id = auth('customer')->user()->id;
+        $data = Customer::find($id);
         // echo "<pre>";
-        // var_dump($post);
-        // var_dump($name);
+        // var_dump($data);
         // die;
-        // $post = User::findOrFail($id);
         return view('shop::customer.informasiCs');
     }
 }

@@ -3,7 +3,7 @@
     <div class="navbar">
       <div class="container-xl">
         <ul class="navbar-nav">
-          @if (auth()->user()->hasRole('admin'))
+          @if (auth('web')->user()->hasRole('admin'))
           <li class="nav-item {{ Route::is('home') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('admin.index') }}">
               <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
