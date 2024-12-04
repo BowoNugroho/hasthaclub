@@ -21,7 +21,7 @@
              
             </div>
             <div class="mt-3">
-              <a href="#" class="btn btn-primary" target="_blank" rel="noopener">Lihat Orderan</a>
+              <a href="#" class="btn btn-primary" rel="noopener">Lihat Pesanan</a>
             </div>
           </div>
         </div>
