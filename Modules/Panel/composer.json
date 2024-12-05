@@ -1,5 +1,5 @@
 {
-    "name": "nwidart/admin",
+    "name": "nwidart/panel",
     "description": "",
     "authors": [
         {
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Admin\\": ""
+            "Modules\\Panel\\": ""
         }
     }
 }

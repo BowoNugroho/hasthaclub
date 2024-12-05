@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Admin\Http\Controllers;
+namespace Modules\Panel\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class AdminController extends Controller
+class PanelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin::index');
+        return view('panel::index');
     }
 
     /**
@@ -23,7 +23,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin::create');
+        return view('panel::create');
     }
 
     /**
@@ -43,7 +43,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        return view('admin::show');
+        return view('panel::show');
     }
 
     /**
@@ -53,7 +53,7 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        return view('admin::edit');
+        return view('panel::edit');
     }
 
     /**

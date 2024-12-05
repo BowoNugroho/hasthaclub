@@ -42,7 +42,7 @@ class AuthController extends Controller
                 if ($user->hasRole('customer')) { // Halaman customer
                     return redirect()->intended('dashboardCs');
                 } else { // Halaman panel
-                    return redirect()->route('admin.index');
+                    return redirect()->route('panel.index');
                 }
             }
         }

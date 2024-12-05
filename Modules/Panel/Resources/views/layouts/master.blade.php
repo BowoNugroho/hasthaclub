@@ -19,6 +19,7 @@
     <link href="{{ url('public/modules/admin/css/tabler-vendors.min.css') }} " rel="stylesheet"/>
     <link href="{{ url('public/modules/admin/css/demo.min.css') }}" rel="stylesheet"/>
     <link href="{{ url('public/modules/admin/css/sweetalert2.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/jquery.dataTables.min.css') }}" rel="stylesheet"/>
     <style>
     @import url('https://rsms.me/inter/inter.css');
     :root {
@@ -33,9 +34,9 @@
 <body  class="layout-fluid">
     <div class="page">
         
-        @include('admin::layouts.header')
+        @include('panel::layouts.header')
 
-        @include('admin::layouts.navbar')
+        @include('panel::layouts.navbar')
         
         <div class="page-wrapper">
             {{-- <!-- Page header -->
@@ -58,13 +59,14 @@
               </div>
             </div>
 
-            @include('admin::layouts.footer')
+            @include('panel::layouts.footer')
 
         </div>
     </div>
 
     <script src="{{ url('public/modules/admin/js/tabler.min.js') }}"></script>
     <script src="{{ url('public/modules/admin/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ url('public/modules/admin/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ url('public/modules/admin/js/demo-theme.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/demo.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/sweetalert2.all.min.js') }}" defer></script>
@@ -103,6 +105,6 @@
         });
     </script>
     @yield('script')
-    @include('admin::layouts.partials.toastMessage')
+    @include('panel::layouts.partials.toastMessage')
   </body>
 </html>

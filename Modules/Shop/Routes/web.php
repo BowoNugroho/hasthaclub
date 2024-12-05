@@ -21,7 +21,6 @@ Route::group(['middleware' => ['auth:customer']], function () {
     // Route::group(['middleware' => ['role:shop']], function () {
     Route::prefix('shop')->group(function () {
         Route::get('/', [ShopController::class, 'index'])->name('shop.index');
-        // Route::get('/loginCs', [CustomerAuthController::class, 'loginCs'])->name('loginCs');
     });
     // });
 });
@@ -31,7 +30,7 @@ Route::group(['middleware' => ['auth:customer']], function () {
 // });
 
 Route::controller(CustomerAuthController::class)->group(function () {
-    Route::get('/loginCs', 'loginCs')->name('loginCs');
+    Route::get('/loginCs', 'loginCs')->name('customer.loginCs');
     Route::get('/registerCs', 'registerCs')->name('registerCs');
     Route::post('/loginCs', 'actionlogin')->name('actionlogin');
     Route::post('/createCs', 'store')->name('createCs');
