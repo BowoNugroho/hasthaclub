@@ -32,6 +32,6 @@ class DashboardController extends Controller
             return redirect()->route('dashboardCs')->with('success', 'Data berhasil diperbaharui');
         }
 
-        return redirect()->route('dashboardCs')->with('error', 'Data gagal diperbaharui');
+        return redirect()->route('dashboardCs')->with('error', 'Data gagal / tidak diperbaharui');
     }
 }
