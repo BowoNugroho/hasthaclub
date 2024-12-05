@@ -5,6 +5,7 @@ use Modules\Shop\Http\Controllers\CustomerAuthController;
 use Modules\Shop\Http\Controllers\DashboardController;
 use Modules\Shop\Http\Controllers\RiwayatController;
 use Modules\Shop\Http\Controllers\KatalogController;
+use Modules\Shop\Http\Controllers\DetailKatalogController;
 use Modules\Shop\Http\Controllers\ShopController;
 
 /*
@@ -52,4 +53,8 @@ Route::controller(RiwayatController::class)->group(function () {
 
 Route::controller(KatalogController::class)->group(function () {
     Route::get('/katalog', 'index')->name('katalog');
+});
+
+Route::controller(DetailKatalogController::class)->group(function () {
+    Route::get('/detail-katalog', 'index')->name('detail.katalog');
 });

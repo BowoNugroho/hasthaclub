@@ -110,7 +110,7 @@
                  </div>
                  <div class="grid grid-cols-1 mt-3">
                     <div class="flex justify-center">
-                        <a href="#" class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                        <a href="{{ route('detail.katalog') }}" class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                             Beli Sekarang
                         </a>
                     </div>
