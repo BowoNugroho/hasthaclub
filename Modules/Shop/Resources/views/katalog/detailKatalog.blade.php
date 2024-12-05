@@ -101,6 +101,16 @@
         </div>
         <div class="grid grid-cols-1 mt-5">
             <div class="box">
+                <span class="text-[15px] font-bold">Voucher toko</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 mt-2 ml-5">
+            <div class="box">
+                <input type="text" name="voucher" id="" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full p-3">
+            </div>
+        </div>
+        <div class="grid grid-cols-1 mt-5">
+            <div class="box">
                 <button type="submit" class="text-lg text-white bg-blue-500 rounded-lg w-full px-3 py-1  flex justify-center items-center ">
                     Tambah Keranjang
                 </button>
