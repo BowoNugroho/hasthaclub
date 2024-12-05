@@ -5,14 +5,14 @@
     <div class="box"></div>
     <div class="box col-span-2 p-10">
         <div class="flex justify-center ">
-            <img src="{{ url('modules/shop/images/terbaru/iphone14.png') }}" class="h-[400px] " alt="">
+            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[400px] " alt="">
         </div> 
         <div class="grid grid-cols-2 mt-10 gap-4">
             <div class="box  flex justify-center">
-                <img src="{{ url('modules/shop/images/terbaru/iphone14.png') }}" class="h-[300px] " alt="">
+                <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[300px] " alt="">
             </div>
             <div class="box  flex justify-center">
-                <img src="{{ url('modules/shop/images/terbaru/iphone14.png') }}" class="h-[300px] " alt="">
+                <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[300px] " alt="">
             </div>
         </div>
     </div>
