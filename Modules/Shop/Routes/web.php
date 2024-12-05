@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Modules\Shop\Http\Controllers\CustomerAuthController;
 use Modules\Shop\Http\Controllers\DashboardController;
 use Modules\Shop\Http\Controllers\RiwayatController;
+use Modules\Shop\Http\Controllers\KatalogController;
 use Modules\Shop\Http\Controllers\ShopController;
 
 /*
@@ -47,4 +48,8 @@ Route::controller(DashboardController::class)->group(function () {
 
 Route::controller(RiwayatController::class)->group(function () {
     Route::get('/riwayatCs', 'index')->name('riwayatCs')->middleware('auth:customer');
+});
+
+Route::controller(KatalogController::class)->group(function () {
+    Route::get('/katalog', 'index')->name('katalog');
 });

@@ -59,7 +59,7 @@
     <div class="box xl:col-span-5 col-span-7 p-5"> 
         <p class="text-[25px] font-bold">Type produk Hastha</p>
         <div class="flex justify-center gap-16 mt-3 ">
-            <a href="#" class="max-auto p-3">
+            <a href="{{ url('/katalog') }}" class="max-auto p-3">
                 <div class="grid grid-cols-1">
                     <div class="flex justify-center">
                         <img src="{{ url('public/modules/shop/images/katalog/ip 13.png') }}" class="lg:h-[80px] h-[50px]" alt="">

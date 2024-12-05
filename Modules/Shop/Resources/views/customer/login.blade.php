@@ -7,7 +7,7 @@
         <div class="grid grid-cols-5">
             <div class="box col-span-2"></div>
             <div class="box"> 
-                <form action="{{ route('loginCs') }}" method="post">
+                <form action="{{ route('actionlogin') }}" method="post">
                     @csrf
                     @if ($errors->has('message'))
                         <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 " role="alert">
