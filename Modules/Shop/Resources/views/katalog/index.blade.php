@@ -90,7 +90,7 @@
             <div class=" max-auto ">
                  <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
                     <div class="flex justify-center ">
-                        <img src="{{ url('modules/shop/images/terbaru/iphone14.png') }}" class="h-[200px] hover:scale-110" alt="">
+                        <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[200px] hover:scale-110" alt="">
                     </div>
                  </div>
                  <div class="grid grid-cols-1 mb-6">
