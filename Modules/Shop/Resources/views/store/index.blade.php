@@ -40,6 +40,7 @@
                     </div>
                 </div>
                 @else
+                <div id="store-list">
                     @foreach ($data as $dt)
                     @if (auth('customer')->check())    
                         @if(auth('customer')->user()->store_id == $dt->id)                        
@@ -105,10 +106,44 @@
                             </div>
                         </div>
                     @endforeach
+                </div>
+                @endif
+                @if ($data->hasMorePages())
+                    <div class="text-center mt-4">
+                        <button id="load-more" class= "px-4 py-2 rounded text-blue-700">Tampilkan Lebih Banyak <i class="fa-solid fa-chevron-down"></i></button>
+                    </div>
                 @endif
             </div>
         </div>
     </div>
     <div class="box"></div>
 </div>
+@endsection
+
+@section('script')
+<script>
+    $(document).ready(function() {
+    let page = 2; // Halaman awal setelah halaman pertama
+
+        $('#load-more').on('click', function() {
+        $.ajax({
+            url: '{{ route('store.loadMoreStore') }}', // URL untuk AJAX request
+            method: 'GET',
+            data: { page: page }, // Mengirim halaman saat ini
+            success: function(response) {
+                // Menambahkan produk yang diterima ke list produk
+                $('#store-list').append(response);
+                
+                // Jika tidak ada produk lebih lanjut, sembunyikan tombol
+                if (!response.trim()) {
+                    $('#load-more').hide();
+                }
+
+                // Increment halaman untuk permintaan berikutnya
+                page++;
+            }
+        });
+    });
+});
+</script>
 @endsection

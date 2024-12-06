@@ -63,4 +63,5 @@ Route::controller(DetailKatalogController::class)->group(function () {
 Route::controller(StoreController::class)->group(function () {
     Route::get('/store', 'index')->name('store');
     Route::post('/store/{id}', 'updateStore')->name('store.updateStore')->middleware('auth:customer');
+    Route::get('/store/loadMoreStore', 'loadMoreStore')->name('store.loadMoreStore');
 });

@@ -18,6 +18,17 @@ class StoreController extends Controller
         $count = $get['count'];
         return view('shop::store.index', compact('data', 'count'));
     }
+
+    public function loadMoreStore(Request $request)
+    {
+        if ($request->ajax()) {
+            $store = Store::getStoreList($request->page);
+            $data = $store['data'];
+
+            return view('shop::store.storeList', compact('data'))->render();
+        }
+    }
+
     public function updateStore(Request $request, $id)
     {
         $user_id = auth('customer')->user()->id;

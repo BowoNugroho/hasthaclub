@@ -44,11 +44,21 @@ class Store extends Model
         $data['data'] =  DB::table('stores')
             ->leftJoin('users', 'stores.id', '=', 'users.store_id')
             ->select('stores.*', 'users.store_id')
-            ->get();  // Mengambil semua store
+            ->paginate(2);  // Mengambil semua store
         $data['count'] =  DB::table('stores')
             ->leftJoin('users', 'stores.id', '=', 'users.store_id')
             ->select('stores.*', 'users.store_id')
             ->count();  // Mengambil semua store
+
+        return  $data;
+    }
+
+    public static function getStoreList($page = null)
+    {
+        $data['data'] =  DB::table('stores')
+            ->leftJoin('users', 'stores.id', '=', 'users.store_id')
+            ->select('stores.*', 'users.store_id')
+            ->paginate(2, ['*'], 'page', $page);
 
         return  $data;
     }
