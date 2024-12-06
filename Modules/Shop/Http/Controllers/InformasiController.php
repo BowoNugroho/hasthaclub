@@ -11,4 +11,8 @@ class InformasiController extends Controller
     {
         return view('shop::informasi.partnership');
     }
+    public function reseller(Request $request)
+    {
+        return view('shop::informasi.reseller');
+    }
 }

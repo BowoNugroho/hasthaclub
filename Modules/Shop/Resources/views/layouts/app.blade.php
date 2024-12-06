@@ -54,7 +54,7 @@
                     <ul class="flex gap-4">
                         <li class="text-[14px] "><i class="fas fa-store"></i>&nbsp;&nbsp;<span class="hover:underline"><a href="{{ route('store') }}">Pilih Toko</a></span></li>
                         <li class="text-[14px] hover:underline"><a href="{{ route('informasi.partnership') }}">Partnership</a></li>
-                        <li class="text-[14px] hover:underline">Reseller</li>
+                        <li class="text-[14px] hover:underline"><a href="{{ route('informasi.reseller') }}">Reseller</a></li>
                     </ul>
                     <ul class="flex gap-4">
                         <li class="text-[14px] hover:scale-150">
@@ -95,7 +95,7 @@
                     <input type="text" placeholder="Cari Produk" class="md:w-[500px] w-[200px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
                     <ul class="flex gap-4">
                         <li class="text-[14px] hover:underline"><a href="{{ route('informasi.partnership') }}">Partnership</a></li>
-                        <li class="text-[14px] hover:underline">Reseller</li>
+                        <li class="text-[14px] hover:underline"><a href="{{ route('informasi.reseller') }}">Reseller</a></li>
                     </ul>
                     <ul class="flex gap-4">
                         <li class="text-[14px]"><i class="fa-regular fa-user"></i></li>
@@ -121,7 +121,7 @@
                             <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Layanan</div>
                             <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Layanan Pelanggan</div>
                             <div class="grid grid-cols-1 text-start mb-3 hover:underline"><a href="{{ route('informasi.partnership') }}"> Mitra / Partnership </a></div>
-                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Reseller</div>
+                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"><a href="{{ route('informasi.reseller') }}"> Reseller</a></div>
                             {{-- <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Online Banking</div> --}}
                         </div>
                         <div class="box ">
@@ -169,7 +169,7 @@
                            <a href="{{ route('informasi.partnership') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Mitra / Partnership</a>
                         </li>
                         <li>
-                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Reseller</a>
+                           <a href="{{ route('informasi.reseller') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Reseller</a>
                         </li>
                         {{-- <li>
                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Online Banking</a>
