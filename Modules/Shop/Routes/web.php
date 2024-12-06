@@ -7,6 +7,7 @@ use Modules\Shop\Http\Controllers\RiwayatController;
 use Modules\Shop\Http\Controllers\KatalogController;
 use Modules\Shop\Http\Controllers\DetailKatalogController;
 use Modules\Shop\Http\Controllers\StoreController;
+use Modules\Shop\Http\Controllers\InformasiController;
 use Modules\Shop\Http\Controllers\ShopController;
 
 /*
@@ -64,4 +65,8 @@ Route::controller(StoreController::class)->group(function () {
     Route::get('/store', 'index')->name('store');
     Route::post('/store/{id}', 'updateStore')->name('store.updateStore')->middleware('auth:customer');
     Route::get('/store/loadMoreStore', 'loadMoreStore')->name('store.loadMoreStore');
+});
+
+Route::controller(InformasiController::class)->group(function () {
+    Route::get('/informasi-partnership', 'partnership')->name('informasi.partnership');
 });

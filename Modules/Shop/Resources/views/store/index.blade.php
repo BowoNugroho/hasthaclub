@@ -129,7 +129,7 @@
 
     let urlParams = new URLSearchParams(window.location.search);
     let searchStore = urlParams.get('search_store');
-    
+
     if(searchStore === null){
         let lastWord = null;
         $('#load-more').on('click', function() {
