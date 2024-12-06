@@ -16,8 +16,10 @@ class StoreSeeder extends Seeder
     {
         Store::create([
             'store_name' => 'Rhino Cell (Hastha Club)',
-            'alamat' => 'superadmin',
-            'jam_operasional' => '10:00 - 20:00 ',
+            'alamat' => 'Plaza Ambarrukmo Jl. Laksda Adisucipto Yogyakarta 55281',
+            'kota' => 'Kota Yogyakarta',
+            'provinsi' => 'Daerah Istimewa Yogyakarta',
+            'jam_operasional' => '10:00 - 20:00',
             'mitra_id' => User::where('name', 'Mitra Hastha Club')->first()->id,
             'sales_mitra_id' => User::where('name', 'Sales Mitra Hastha Club')->first()->id,
             'status' => true
@@ -25,7 +27,9 @@ class StoreSeeder extends Seeder
 
         Store::create([
             'store_name' => 'Adi Cell (Hastha Club)',
-            'alamat' => 'superadmin',
+            'alamat' => 'Jalan Kaliurang KM 5 CT III, RT.CT III/RW No.: 27, Karang Wuni, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281',
+            'kota' => 'Kabupaten Sleman',
+            'provinsi' => 'Daerah Istimewa Yogyakarta',
             'jam_operasional' => '10:00 - 21:00 ',
             'mitra_id' => User::where('name', 'Mitra Hastha Club 2')->first()->id,
             'sales_mitra_id' => User::where('name', 'Sales Mitra Hastha Club')->first()->id,

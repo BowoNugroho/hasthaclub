@@ -15,6 +15,8 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('store_name');
             $table->text('alamat')->nullable();
+            $table->string('kota')->nullable();
+            $table->string('provinsi')->nullable();
             $table->string('jam_operasional')->nullable();
             $table->string('mitra_id');
             $table->string('sales_mitra_id');
