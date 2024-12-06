@@ -19,4 +19,8 @@ class InformasiController extends Controller
     {
         return view('shop::informasi.layanan');
     }
+    public function tentang(Request $request)
+    {
+        return view('shop::informasi.tentang');
+    }
 }

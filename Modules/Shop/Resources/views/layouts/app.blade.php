@@ -126,7 +126,7 @@
                         </div>
                         <div class="box ">
                             <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Tentang</div>
-                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Tentang Hastha</div>
+                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"><a href="{{ route('informasi.tentang') }}"> Tentang Hastha</a></div>
                             <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Hubungi Kami</div>
                             <div class="grid grid-cols-1 text-start mb-3 hover:underline"> <a href="{{ route('store') }}">Cari Toko</a></div>
                         </div>
@@ -184,7 +184,7 @@
                   </button>
                   <ul id="dropdown-example3" class="hidden py-2 space-y-2">
                         <li>
-                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Tentang Hastha</a>
+                           <a href="{{ route('informasi.tentang') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Tentang Hastha</a>
                         </li>
                         <li>
                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Hubungi Kami</a>
