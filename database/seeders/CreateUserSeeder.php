@@ -73,7 +73,7 @@ class CreateUserSeeder extends Seeder
         $user6 = User::create([
             'name' => 'Sales Toko Hastha Club',
             'username' => 'sales_to',
-            'email' => 'sales_toko@hasthaclub.com',
+            'email' => 'sales_to@hasthaclub.com',
             'no_hp' => '081487965331',
             'password' => bcrypt('Bismillah'),
             'status' => true
