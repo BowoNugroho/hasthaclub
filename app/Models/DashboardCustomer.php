@@ -29,7 +29,7 @@ class DashboardCustomer extends Authenticatable
             'name' => $request->name,
             'email' => $request->email,
             'no_hp' => $request->no_hp,
-            'username' => $request->ktp,
+            'ktp' => $request->ktp,
             'gender' => $request->gender,
         ];
 

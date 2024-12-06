@@ -39,6 +39,8 @@ class User extends Authenticatable
         'username',
         'no_hp',
         'status',
+        'ktp',
+        'store_id',
         'password',
     ];
 
