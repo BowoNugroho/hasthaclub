@@ -10,6 +10,8 @@ use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\Blameable;
 use App\Traits\UuidTraits;
+use Illuminate\Support\Facades\DB;
+
 
 class Store extends Model
 {
@@ -36,4 +38,9 @@ class Store extends Model
         'sales_mitra_id',
         'status',
     ];
+
+    public static function getStore()
+    {
+        return DB::table('stores')->get();  // Mengambil semua store
+    }
 }
