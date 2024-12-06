@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('gender')->nullable();
             $table->string('ktp')->nullable();
+            $table->string('store_id')->nullable();
             $table->boolean('status')->default(false);
             $table->rememberToken();
             $table->unsignedBigInteger('created_by')->nullable();

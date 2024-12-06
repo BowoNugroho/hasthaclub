@@ -41,6 +41,28 @@ class Store extends Model
 
     public static function getStore()
     {
-        return DB::table('stores')->get();  // Mengambil semua store
+        $data['data'] =  DB::table('stores')
+            ->leftJoin('users', 'stores.id', '=', 'users.store_id')
+            ->select('stores.*', 'users.store_id')
+            ->get();  // Mengambil semua store
+        $data['count'] =  DB::table('stores')
+            ->leftJoin('users', 'stores.id', '=', 'users.store_id')
+            ->select('stores.*', 'users.store_id')
+            ->count();  // Mengambil semua store
+
+        return  $data;
+    }
+
+    public static function updateUserStore($user_id, $store_id)
+    {
+        $data = [
+            'store_id' => $store_id,
+        ];
+
+        $user = DB::table('users')
+            ->where('id', $user_id)
+            ->update($data);
+
+        return $user;
     }
 }

@@ -13,13 +13,21 @@ class StoreController extends Controller
 {
     public function index()
     {
-        $data = Store::getStore();
-        return view('shop::store.index', compact('data'));
+        $get = Store::getStore();
+        $data = $get['data'];
+        $count = $get['count'];
+        return view('shop::store.index', compact('data', 'count'));
     }
     public function updateStore(Request $request, $id)
     {
-        echo "<pre>";
-        var_dump('masuk');
-        die;
+        $user_id = auth('customer')->user()->id;
+        $store_id = $id;
+
+        $updated = Store::updateUserStore($user_id, $store_id);
+        if ($updated) {
+            return redirect()->route('store')->with('success', 'Toko berhasil terpilih.');
+        }
+
+        return redirect()->route('store')->with('error', 'Data gagal / tidak diperbaharui');
     }
 }
