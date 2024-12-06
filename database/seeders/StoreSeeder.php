@@ -46,5 +46,16 @@ class StoreSeeder extends Seeder
             'sales_mitra_id' => User::where('name', 'Sales Mitra Hastha Club')->first()->id,
             'status' => true
         ]);
+
+        Store::create([
+            'store_name' => 'SH Cell (Hastha Club)',
+            'alamat' => 'Jalan Kaliurang KM 5 CT III, RT.CT III/RW No.: 27, Karang Wuni, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281',
+            'kota' => 'Kabupaten Sleman',
+            'provinsi' => 'Daerah Istimewa Yogyakarta',
+            'jam_operasional' => '10:00 - 22:00 ',
+            'mitra_id' => User::where('name', 'Mitra Hastha Club 2')->first()->id,
+            'sales_mitra_id' => User::where('name', 'Sales Mitra Hastha Club')->first()->id,
+            'status' => true
+        ]);
     }
 }

@@ -11,9 +11,10 @@ use App\Models\Store;
 
 class StoreController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $get = Store::getStore();
+        $search = $request->input('search_store');
+        $get = Store::getStore($search);
         $data = $get['data'];
         $count = $get['count'];
         return view('shop::store.index', compact('data', 'count'));
@@ -21,8 +22,10 @@ class StoreController extends Controller
 
     public function loadMoreStore(Request $request)
     {
+        $search = $request->search_store;
+
         if ($request->ajax()) {
-            $store = Store::getStoreList($request->page);
+            $store = Store::getStoreList($request->page, $search);
             $data = $store['data'];
 
             return view('shop::store.storeList', compact('data'))->render();

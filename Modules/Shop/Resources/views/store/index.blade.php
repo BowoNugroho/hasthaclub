@@ -7,7 +7,9 @@
         <div class="grid grid-cols-1">
             <div class="box flex">
                 <span class="text-4xl font-bold tracking-widest mr-24">Toko</span>
-                <input type="text" placeholder="Cari Toko" class="w-[500px] pl-5 pr-3 py-1 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-50" />
+                <form action="{{ route('store') }}" method="GET">
+                    <input type="text" name="search_store" value="{{ old('search_store') }}"  placeholder="Cari Toko" class="w-[500px] pl-5 pr-3 py-1 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-50" />
+                </form>
             </div>
         </div>
         <div class="grid grid-cols-1 mt-5 ml-5">
@@ -23,7 +25,7 @@
             </div>
         </div>
         <div class="grid grid-cols-1 mt-2">
-            <div class="box">
+            <div class="box" id="results">
                 @if ($data == null)
                 <div class="border max-auto p-5 border-red-500 rounded-lg shadow pl-8 mb-3">
                     <div class="grid grid-cols-1">
@@ -125,25 +127,60 @@
     $(document).ready(function() {
     let page = 2; // Halaman awal setelah halaman pertama
 
+    let urlParams = new URLSearchParams(window.location.search);
+    let searchStore = urlParams.get('search_store');
+    
+    if(searchStore === null){
+        let lastWord = null;
         $('#load-more').on('click', function() {
-        $.ajax({
-            url: '{{ route('store.loadMoreStore') }}', // URL untuk AJAX request
-            method: 'GET',
-            data: { page: page }, // Mengirim halaman saat ini
-            success: function(response) {
-                // Menambahkan produk yang diterima ke list produk
-                $('#store-list').append(response);
-                
-                // Jika tidak ada produk lebih lanjut, sembunyikan tombol
-                if (!response.trim()) {
-                    $('#load-more').hide();
-                }
+            $.ajax({
+                url: '{{ route('store.loadMoreStore') }}', // URL untuk AJAX request
+                method: 'GET',
+                data: { page: page,
+                    search_store : lastWord
+                }, // Mengirim halaman saat ini
+                success: function(response) {
+                    // Menambahkan produk yang diterima ke list produk
+                    $('#store-list').append(response);
+                    
+                    // Jika tidak ada produk lebih lanjut, sembunyikan tombol
+                    if (!response.trim()) {
+                        $('#load-more').hide();
+                    }
 
-                // Increment halaman untuk permintaan berikutnya
-                page++;
-            }
+                    // Increment halaman untuk permintaan berikutnya
+                    page++;
+                }
+            });
         });
-    });
+    }else{
+        let lastWord = searchStore.split('=')[0];
+        $('#load-more').on('click', function() {
+            $.ajax({
+                url: '{{ route('store.loadMoreStore') }}', // URL untuk AJAX request
+                method: 'GET',
+                data: { page: page,
+                    search_store : lastWord
+                }, // Mengirim halaman saat ini
+                success: function(response) {
+                    // Menambahkan produk yang diterima ke list produk
+                    $('#store-list').append(response);
+                    
+                    // Jika tidak ada produk lebih lanjut, sembunyikan tombol
+                    if (!response.trim()) {
+                        $('#load-more').hide();
+                    }
+
+                    // Increment halaman untuk permintaan berikutnya
+                    page++;
+                }
+            });
+        });
+    }
+
+   
+
+
 });
 </script>
 @endsection

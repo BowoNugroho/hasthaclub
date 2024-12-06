@@ -39,26 +39,53 @@ class Store extends Model
         'status',
     ];
 
-    public static function getStore()
+    public static function getStore($search)
     {
-        $data['data'] =  DB::table('stores')
-            ->leftJoin('users', 'stores.id', '=', 'users.store_id')
-            ->select('stores.*', 'users.store_id')
-            ->paginate(2);  // Mengambil semua store
-        $data['count'] =  DB::table('stores')
-            ->leftJoin('users', 'stores.id', '=', 'users.store_id')
-            ->select('stores.*', 'users.store_id')
-            ->count();  // Mengambil semua store
+        if ($search == null) {
+            $data['data'] =  DB::table('stores')
+                ->leftJoin('users', 'stores.id', '=', 'users.store_id')
+                ->select('stores.*', 'users.store_id')
+                ->where('stores.status', 1)
+                ->paginate(2);  // Mengambil semua store
+            $data['count'] =  DB::table('stores')
+                ->leftJoin('users', 'stores.id', '=', 'users.store_id')
+                ->select('stores.*', 'users.store_id')
+                ->where('stores.status', 1)
+                ->count();  // Mengambil semua store
+        } else {
+            $data['data'] =  DB::table('stores')
+                ->leftJoin('users', 'stores.id', '=', 'users.store_id')
+                ->select('stores.*', 'users.store_id')
+                ->where('kota', 'like', '%' . $search . '%')
+                ->where('stores.status', 1)
+                ->paginate(2);  // Mengambil semua store
+            $data['count'] =  DB::table('stores')
+                ->leftJoin('users', 'stores.id', '=', 'users.store_id')
+                ->select('stores.*', 'users.store_id')
+                ->where('kota', 'like', '%' . $search . '%')
+                ->where('stores.status', 1)
+                ->count();  // Mengambil semua store
+        }
 
         return  $data;
     }
 
-    public static function getStoreList($page = null)
+    public static function getStoreList($page = null, $search = null)
     {
-        $data['data'] =  DB::table('stores')
-            ->leftJoin('users', 'stores.id', '=', 'users.store_id')
-            ->select('stores.*', 'users.store_id')
-            ->paginate(2, ['*'], 'page', $page);
+        if ($search == null) {
+            $data['data'] =  DB::table('stores')
+                ->leftJoin('users', 'stores.id', '=', 'users.store_id')
+                ->select('stores.*', 'users.store_id')
+                ->where('stores.status', 1)
+                ->paginate(2, ['*'], 'page', $page);
+        } else {
+            $data['data'] =  DB::table('stores')
+                ->leftJoin('users', 'stores.id', '=', 'users.store_id')
+                ->select('stores.*', 'users.store_id')
+                ->where('kota', 'like', '%' . $search . '%')
+                ->where('stores.status', 1)
+                ->paginate(2, ['*'], 'page', $page);
+        }
 
         return  $data;
     }
