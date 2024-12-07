@@ -58,7 +58,7 @@
                     </ul>
                     <ul class="flex gap-4">
                         <li class="text-[14px] hover:scale-150">
-                            <a href="{{ url('/loginCs') }}"><i class="fa-regular fa-user"></a></i>
+                            <a href="{{ route('customer.loginCs') }}"><i class="fa-regular fa-user"></a></i>
                         </li>
                         <li class="text-[14px] hover:scale-150">
                             <i class="fa-solid fa-bag-shopping"></i>
@@ -135,7 +135,7 @@
                             <div class="grid grid-cols-1 text-start mb-3 hover:underline"><a href="{{ route('informasi.syarat') }}">  Syarat & Ketentuan </a></div>
                             <div class="grid grid-cols-1 text-start mb-3 hover:underline"><a href="{{ route('informasi.return') }}"> Pengembalian & Penukaran</a></div>
                             {{-- <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Kebijakan Privasi</div> --}}
-                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Akun Saya</div>
+                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"><a href="{{ route('dashboardCs') }}"> Akun Saya</a></div>
                         </div>
                     </div>
                 </div>
@@ -211,7 +211,7 @@
                            {{-- <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Kebijakan Privasi</a> --}}
                         </li>
                         <li>
-                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Akun Saya</a>
+                           <a href="{{ route('dashboardCs') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Akun Saya</a>
                         </li>
                   </ul>
                   <hr>

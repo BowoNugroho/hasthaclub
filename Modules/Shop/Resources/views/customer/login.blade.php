@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="mb-10 flex justify-between">
-                        <a href="{{ url('/registerCs') }}">Belum punya akun? <span class="text-blue-600 hover:underline hover:text-blue-400">Daftar </span></a>
+                        <a href="{{ route('registerCs') }}">Belum punya akun? <span class="text-blue-600 hover:underline hover:text-blue-400">Daftar </span></a>
                         {{-- <a href=""><span class="text-blue-600 hover:underline hover:text-blue-400">Lupa password?</span></a> --}}
                     </div>
                     <div class="mb-10 text-center">

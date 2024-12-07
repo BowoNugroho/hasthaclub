@@ -13,13 +13,15 @@ class Authenticate extends Middleware
      */
     protected function redirectTo(Request $request, ...$guards): ?string
     {
-        $req = $request->server('PATH_INFO');
+        $url = $request->server('PATH_INFO');
+        $segments = explode('/', $url);
 
-        if ($req == '/panel') {
+        $admin = ['panel'];
+        $shop = ['shop', 'dashboardCs', 'store', 'informasi-partnership', 'riwayatCs', 'updateCs'];
+
+        if (in_array($segments[1], $admin)) {
             return route('login');
-        } elseif ($req == '/dashboardCs') {
-            return route('customer.loginCs');
-        } else {
+        } elseif (in_array($segments[1], $shop)) {
             return route('customer.loginCs');
         }
         // return $request->expectsJson() ? null : route('login');
