@@ -14,10 +14,14 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="d-flex ">
-          <h1>Data User</h1>
-          <button  type="button" class="btn btn-primary btn-sm m-2" data-bs-toggle="modal" data-bs-target="#tambahUser">Tambah</button>
-        </div>
+          <div class="row">
+            <div class="col-md-1">
+              <h1>Data User</h1>
+            </div>
+            <div class="col-md-11">
+              <button  type="button" class="btn btn-primary btn-sm m-2" data-bs-toggle="modal" data-bs-target="#tambahUser">Tambah</button>
+            </div>
+          </div>
           <table id="user_datatables" class="display">
               <thead>
                   <tr>
