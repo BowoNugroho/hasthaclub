@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\Customer;
+use App\Models\User;
 use Carbon\Carbon;
 
 class CustomerAuthController extends Controller
@@ -17,7 +18,7 @@ class CustomerAuthController extends Controller
     {
 
         if (Auth::guard('customer')->check()) {
-            return redirect('/dashboardCs');
+            return redirect('/shop/dashboardCs');
         } else {
             return view('shop::customer.login');
         }
@@ -41,7 +42,7 @@ class CustomerAuthController extends Controller
                     'last_login_ip' => $request->getClientIp()
                 ]);
 
-                return redirect('/dashboardCs');
+                return redirect('/shop/dashboardCs');
             }
         }
 
@@ -70,8 +71,9 @@ class CustomerAuthController extends Controller
         $data['password'] = Hash::make($request->password);
         $data['username'] = $request->no_hp;
 
-        Customer::create($data);
-        return redirect('/loginCs');
+        $user = User::create($data);
+        $user->assignRole([4]);
+        return redirect('/shop/loginCs');
     }
 
     public function logoutCs(Request $request)
