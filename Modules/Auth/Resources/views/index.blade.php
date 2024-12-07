@@ -4,7 +4,7 @@
 <div class="page page-center">
     <div class="container container-tight py-4">
       <div class="text-center mb-4">
-        <a href="{{ route('shop') }}" class="navbar-brand navbar-brand-autodark">
+        <a href="{{ route('shop.index') }}" class="navbar-brand navbar-brand-autodark">
           <img src="{{ url('public/modules/shop/images/hasthaclub.png') }}" width="150" height="100" alt="Tabler" class="navbar-brand-image">
         </a>
       </div>
