@@ -24,9 +24,10 @@ return new class extends Migration
             $table->string('store_id')->nullable();
             $table->boolean('status')->default(false);
             $table->rememberToken();
-            $table->unsignedBigInteger('created_by')->nullable();
-            $table->unsignedBigInteger('updated_by')->nullable();
-            $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
+            $table->string('deleted_by')->nullable();
+            // $table->unsignedBigInteger('deleted_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
