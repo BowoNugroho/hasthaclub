@@ -72,4 +72,5 @@ Route::controller(InformasiController::class)->group(function () {
     Route::get('/informasi-reseller', 'reseller')->name('informasi.reseller');
     Route::get('/informasi-layanan', 'layanan')->name('informasi.layanan');
     Route::get('/informasi-tentang-hastha', 'tentang')->name('informasi.tentang');
+    Route::get('/informasi-term-condition', 'syarat')->name('informasi.syarat');
 });

@@ -23,4 +23,8 @@ class InformasiController extends Controller
     {
         return view('shop::informasi.tentang');
     }
+    public function syarat(Request $request)
+    {
+        return view('shop::informasi.syarat');
+    }
 }
