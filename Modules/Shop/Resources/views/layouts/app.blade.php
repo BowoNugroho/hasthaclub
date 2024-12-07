@@ -133,7 +133,7 @@
                         <div class="box ">
                             <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Kebijakan</div>
                             <div class="grid grid-cols-1 text-start mb-3 hover:underline"><a href="{{ route('informasi.syarat') }}">  Syarat & Ketentuan </a></div>
-                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Pengembalian & Penukaran</div>
+                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"><a href="{{ route('informasi.return') }}"> Pengembalian & Penukaran</a></div>
                             {{-- <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Kebijakan Privasi</div> --}}
                             <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Akun Saya</div>
                         </div>
@@ -205,7 +205,7 @@
                            <a href="{{ route('informasi.syarat') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Syarat & Ketentuan</a>
                         </li>
                         <li>
-                           <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Pengembalian & Penukaran</a>
+                           <a href="{{ route('informasi.return') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Pengembalian & Penukaran</a>
                         </li>
                         <li>
                            {{-- <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Kebijakan Privasi</a> --}}
