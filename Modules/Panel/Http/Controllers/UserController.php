@@ -5,6 +5,7 @@ namespace Modules\Panel\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class UserController extends Controller
@@ -23,7 +24,7 @@ class UserController extends Controller
 
         // Apply search filter
         if ($search = $request->input('search.value')) {
-            $query->where(function($query) use ($search) {
+            $query->where(function ($query) use ($search) {
                 foreach ($columns as $column) {
                     $query->orWhere($column, 'like', "%$search%");
                 }
@@ -51,5 +52,31 @@ class UserController extends Controller
             'recordsFiltered' => $totalRecords,
             'data' => $data,
         ]);
+    }
+
+    public function saveUser(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'no_hp' => 'required|unique:users,no_hp',
+            'email' => 'required|unique:users,email',
+            'username' => 'required|unique:users,username',
+        ]);
+
+        try {
+
+            $data['name'] = $request->name;
+            $data['username'] = $request->username;
+            $data['no_hp'] = $request->no_hp;
+            $data['email'] = $request->email;
+            $data['password'] = Hash::make('hastha');
+            $data['status'] = 1;
+
+            $user = User::create($data);
+
+            return response()->json(['success' => true, 'message' => 'Data berhasil disimpan!'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => true, 'message' => 'Terjadi kesalahan, coba lagi.'], 500);
+        }
     }
 }
