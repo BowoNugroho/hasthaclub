@@ -7,11 +7,12 @@
             <div class="box col-span-2"></div>
             <div class="box col-span-2">
                 <p class="text-2xl font-bold text-start mb-5 mt-5">Informasi Akun</p>
-                <form action="{{ route('createCs') }}" method="post">
+                <form action="{{ route('updateCs',$dt->id) }}" method="post">
                     @csrf
                     <div class="mb-10 mt-3">
                         <div class="relative">
-                        <input type="text" id="name" name="name" class="block  p-3.5 bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full  peer @error('name') is-invalid @enderror" placeholder="  " value="{{ old('name') }}" >
+                        {{-- <input type="hidden" name="id" value="{{ $dt->id }}"> --}}
+                        <input type="text" id="name" name="name" class="block  p-3.5 bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full  peer @error('name') is-invalid @enderror" placeholder="  " value="{{ $dt->name }}" >
                         <label for="name" 
                             class="absolute text-sm text-gray-500 duration-300 transform -translate-y-3.5 scale-75 top-3.5 left-3 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:translate-y-[-0.8rem] peer-focus:scale-75 peer-focus:text-blue-600">Nama</label>
                             @if ($errors->has('name'))
@@ -21,7 +22,7 @@
                     </div>
                     <div class="mb-10 mt-3">
                         <div class="relative">
-                        <input type="text" id="no_hp" name="no_hp" class="block  p-3.5 bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full  peer @error('no_hp') is-invalid @enderror" placeholder=" " value="{{ old('no_hp') }}" >
+                        <input type="text" id="no_hp" name="no_hp" class="block  p-3.5 bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full  peer @error('no_hp') is-invalid @enderror" placeholder=" " value="{{ $dt->no_hp }}" >
                         <label for="no_hp" 
                             class="absolute text-sm text-gray-500 duration-300 transform -translate-y-3.5 scale-75 top-3.5 left-3 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:translate-y-[-0.8rem] peer-focus:scale-75 peer-focus:text-blue-600">No. handphone</label>
                             @if ($errors->has('no_hp'))
@@ -31,7 +32,7 @@
                     </div>
                     <div class="mb-10 mt-3">
                         <div class="relative">
-                        <input type="text" id="email" name="email" class="block  p-3.5 bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full  peer @error('email') is-invalid @enderror" placeholder=" " value="{{ old('email') }}" >
+                        <input type="text" id="email" name="email" class="block  p-3.5 bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full  peer @error('email') is-invalid @enderror" placeholder=" " value="{{ $dt->email }}" >
                         <label for="email" 
                             class="absolute text-sm text-gray-500 duration-300 transform -translate-y-3.5 scale-75 top-3.5 left-3 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:translate-y-[-0.8rem] peer-focus:scale-75 peer-focus:text-blue-600">Email</label>
                             @if ($errors->has('email'))
@@ -41,7 +42,7 @@
                     </div>
                     <div class="mb-10 mt-3">
                         <div class="relative">
-                        <input type="text" id="ktp" name="ktp" class="block  p-3.5 bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full  peer @error('ktp') is-invalid @enderror" placeholder=" " value="{{ old('ktp') }}" >
+                        <input type="text" id="ktp" name="ktp" class="block  p-3.5 bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full  peer @error('ktp') is-invalid @enderror" placeholder=" " value="{{ $dt->ktp }}" >
                         <label for="ktp" 
                             class="absolute text-sm text-gray-500 duration-300 transform -translate-y-3.5 scale-75 top-3.5 left-3 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:translate-y-[-0.8rem] peer-focus:scale-75 peer-focus:text-blue-600">KTP / SIM</label>
                             @if ($errors->has('ktp'))
@@ -51,15 +52,15 @@
                     </div>
                     <div class="mb-10 mt-3">
                         <div class="relative">
-                            <form class="max-w-sm mx-auto">
-                                <label for="gender" 
-                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-3.5 scale-75 top-3.5 left-3 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:translate-y-[-0.8rem] peer-focus:scale-75 peer-focus:text-blue-600">Jenis Kelamin</label>
-                                <select id="gender" name="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none w-full p-3.5  peer" placeholder=" ">
-                                  <option value="">- pilih -</option>
-                                  <option value="laki-laki">Laki - Laki</option>
-                                  <option value="perempuan">Perempuan</option>
-                                </select>
-                              </form>
+                                <div class="max-w-sm mx-auto">
+                                    <label for="gender" 
+                                    class="absolute text-sm text-gray-500 duration-300 transform -translate-y-3.5 scale-75 top-3.5 left-3 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:translate-y-[-0.8rem] peer-focus:scale-75 peer-focus:text-blue-600">Jenis Kelamin</label>
+                                    <select id="gender" name="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none w-full p-3.5  peer" placeholder=" ">
+                                        <option value="">- pilih -</option>
+                                        <option value="laki-laki" {{ $dt->gender == "laki-laki" ? 'selected' : '' }}>Laki - Laki</option>
+                                        <option value="perempuan" {{ $dt->gender == "perempuan" ? 'selected' : '' }}>Perempuan</option>
+                                    </select>
+                                </div>
                         </div>
                     </div>
                     <div class="mb-10 text-center mt-10">

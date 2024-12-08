@@ -5,7 +5,9 @@ namespace Modules\Panel\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+// use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -23,7 +25,8 @@ class UserController extends Controller
 
         // Apply search filter
         if ($search = $request->input('search.value')) {
-            $query->where(function($query) use ($search) {
+            $query->where(function ($query) use ($search) {
+                $columns = ['id', 'name', 'email', 'no_hp', 'created_at']; // Define the columns you want to displays
                 foreach ($columns as $column) {
                     $query->orWhere($column, 'like', "%$search%");
                 }
@@ -53,45 +56,119 @@ class UserController extends Controller
         ]);
     }
 
-    // Create new record
-    public function store(Request $request)
+    public function saveUser(Request $request)
     {
-        $user = new User; 
-        $user->create([
-            'name' => $request->name,
-            'username' => $request->username,
-            'no_hp' => $request->no_hp,
-            'email' =>$request->email
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'no_hp' => 'required|unique:users,no_hp',
+            'email' => 'required|unique:users,email',
+            'username' => 'required|unique:users,username',
         ]);
 
-        return response()->json(['success' => 'User added successfully!']);
+        try {
+
+            $data['name'] = $request->name;
+            $data['username'] = $request->username;
+            $data['no_hp'] = $request->no_hp;
+            $data['email'] = $request->email;
+            $data['password'] = Hash::make('hastha');
+            $data['status'] = 1;
+
+            $user = User::create($data);
+
+            return response()->json(['success' => true, 'message' => 'Data berhasil disimpan!'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => true, 'message' => 'Terjadi kesalahan, coba lagi.'], 500);
+        }
     }
 
-    // Get data for editing
-    public function edit($id)
+    public function editUser(Request $request)
     {
-        $data = User::findOrFail($id);
-        return response()->json($data);
+        $user = User::find($request->id);
+        return response()->json($user);
     }
 
-    public function update(Request $request, $id)
+    public function checkUsername(Request $request)
     {
-        $user = User::find($id);
-        $user->update([
-            'name' => $request->name,
-            'username' => $request->username,
-            'no_hp' => $request->no_hp,
-            'email' =>$request->email
+        $exists = User::where('username', $request->username)->exists();
+
+        if ($exists) {
+            $data['status'] = '1';
+            $data['pesan'] = 'username sudah ada';
+            return response()->json($data);
+        } else {
+            $data['status'] = '0';
+            $data['pesan'] = 'username tersedia';
+            return response()->json($data);
+        }
+    }
+
+    public function checkHp(Request $request)
+    {
+        $exists = User::where('no_hp', $request->no_hp)->exists();
+
+        if ($exists) {
+            $data['status'] = '1';
+            $data['pesan'] = 'no handphone sudah ada';
+            return response()->json($data);
+        } else {
+            $data['status'] = '0';
+            $data['pesan'] = 'no handphone tersedia';
+            return response()->json($data);
+        }
+    }
+    public function checkEmail(Request $request)
+    {
+        $exists = User::where('email', $request->email)->exists();
+
+        if ($exists) {
+            $data['status'] = '1';
+            $data['pesan'] = 'email sudah ada';
+            return response()->json($data);
+        } else {
+            $data['status'] = '0';
+            $data['pesan'] = 'email tersedia';
+            return response()->json($data);
+        }
+    }
+
+    public function updateUser(Request $request)
+    {
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'no_hp' => 'required',
+            'email' => 'required',
+            'username' => 'required',
         ]);
 
-        return response()->json(['success' => 'User updated successfully!']);
+
+        try {
+
+            $id = $request->id;
+            $data['name'] = $request->name;
+            $data['username'] = $request->username;
+            $data['no_hp'] = $request->no_hp;
+            $data['email'] = $request->email;
+
+            $user = User::findOrFail($id);
+            $user->update($validated);
+
+            return response()->json(['success' => true, 'message' => 'Data berhasil disimpan!'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => true, 'message' => 'Terjadi kesalahan, coba lagi.'], 500);
+        }
     }
 
-    public function destroy($id)
+    public function deleteUser(Request $request, $id)
     {
-        $user = User::find($id);
-        $user->delete();
+        try {
+            $user = User::findOrFail($id); // Find user by ID
+            $user->delete(); // Delete the user
 
-        return response()->json(['success' => 'User deleted successfully!']);
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
     }
 }

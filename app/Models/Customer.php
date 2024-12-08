@@ -41,6 +41,7 @@ class Customer extends Authenticatable
         'username',
         'no_hp',
         'status',
+        'ktp',
         'password',
     ];
 

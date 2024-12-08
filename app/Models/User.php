@@ -43,6 +43,8 @@ class User extends Authenticatable
         'username',
         'no_hp',
         'status',
+        'ktp',
+        'store_id',
         'password',
         'last_login_at',
         'last_login_ip'

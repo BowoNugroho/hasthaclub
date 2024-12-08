@@ -70,6 +70,7 @@
     <script src="{{ url('public/modules/admin/js/demo-theme.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/demo.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/sweetalert2.all.min.js') }}" defer></script>
+    <script src="{{ url('public/modules/admin/js/moment.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/libs/toastr/toastr.min.js') }}" defer></script>
 
     <script>

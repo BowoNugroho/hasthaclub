@@ -18,23 +18,33 @@ use Modules\Panel\Http\Controllers\RoleController;
 
 Route::group(['middleware' => ['auth:web']], function () {
     // Route::group(['middleware' => ['role:admin']], function () {
-        Route::prefix('panel')->group(function () {
-            Route::get('/', [PanelController::class, 'index'])->name('panel.index');
+    Route::prefix('panel')->group(function () {
+        Route::get('/', [PanelController::class, 'index'])->name('panel.index');
 
-            Route::prefix('user')->group(function () {
-                Route::get('/', [UserController::class, 'index'])->name('panel.user.index');
-                Route::get('/datatables', [UserController::class, 'datatables'])->name('panel.user.datatables');
+        Route::prefix('user')->group(function () {
+            Route::get('/', [UserController::class, 'index'])->name('panel.user.index');
+            Route::get('/datatables', [UserController::class, 'datatables'])->name('panel.user.datatables');
                 Route::post('store', [UserController::class, 'store'])->name('panel.user.store');
                 Route::get('edit/{id}', [UserController::class, 'edit'])->name('panel.user.edit');
                 Route::put('update/{id}', [UserController::class, 'update'])->name('panel.user.update');
                 Route::delete('delete/{id}', [UserController::class, 'destroy'])->name('panel.user.destroy');
-            });
-
-            Route::prefix('role')->group(function () {
-                Route::get('/', [RoleController::class, 'index'])->name('panel.role.index');
-                Route::get('/datatables', [RoleController::class, 'datatables'])->name('panel.role.datatables');
-            });
-
+            Route::post('/saveUser', [UserController::class, 'saveUser'])->name('panel.user.saveUser');
+            Route::get('/editUser', [UserController::class, 'editUser'])->name('panel.user.editUser');
+            Route::post('/updateUser', [UserController::class, 'updateUser'])->name('panel.user.updateUser');
+            Route::delete('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('panel.user.deleteUser');
+            Route::get('/checkUsername', [UserController::class, 'checkUsername'])->name('panel.user.checkUsername');
+            Route::get('/checkHp', [UserController::class, 'checkHp'])->name('panel.user.checkHp');
+            Route::get('/checkEmail', [UserController::class, 'checkEmail'])->name('panel.user.checkEmail');
         });
+
+        Route::prefix('role')->group(function () {
+            Route::get('/', [RoleController::class, 'index'])->name('panel.role.index');
+            Route::get('/datatables', [RoleController::class, 'datatables'])->name('panel.role.datatables');
+            Route::post('/saveRole', [RoleController::class, 'saveRole'])->name('panel.role.saveRole');
+            Route::get('/editRole', [RoleController::class, 'editRole'])->name('panel.role.editRole');
+            Route::post('/updateRole', [RoleController::class, 'updateRole'])->name('panel.role.updateRole');
+            Route::delete('/deleteRole/{id}', [RoleController::class, 'deleteRole'])->name('panel.role.deleteRole');
+        });
+    });
     // });
 });

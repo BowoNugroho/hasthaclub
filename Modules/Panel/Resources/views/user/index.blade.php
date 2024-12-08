@@ -14,8 +14,15 @@
         </div>
       </div>
       <div class="card-body">
-          <h1>Data User</h1>
+          <div class="row">
+            <div class="col-md-1">
+              <h1>Data User</h1>
           <button class="btn btn-primary mb-3" id="addUserBtn">Add User</button>
+            </div>
+            <div class="col-md-11">
+              <button  type="button" class="btn btn-primary btn-sm m-2" data-bs-toggle="modal" data-bs-target="#tambahUser">Tambah</button>
+            </div>
+          </div>
           <table id="user_datatables" class="display">
               <thead>
                   <tr>
@@ -24,7 +31,7 @@
                       <th>Email</th>
                       <th>No Hp</th>
                       <th>Created At</th>
-                      <th>Actions</th>
+                      <th>Aksi</th>
                   </tr>
               </thead>
               <tbody>
@@ -35,154 +42,124 @@
     </div>
   </div>
 
-  <!-- Modal for Add/Edit User -->
-  <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="userModalLabel">Add User</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="userForm">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="no_hp" class="form-label">No Hp</label>
-                        <input type="text" class="form-control" id="no_hp" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="saveBtn">Save</button>
-                </form>
-            </div>
+  {{-- modal tambah--}}
+
+  <div class="modal" id="tambahUser" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tambah user</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form id="userForm">
+          @csrf
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Nama</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Nama" />
+              <span class="error text-danger" id="name_error"></span>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="username" />
+              <span class="error text-danger" id="username_error"></span>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label">Nomer Hp</label>
+                  <input type="text" id="no_hp" name="no_hp" class="form-control"  placeholder="no handphone" />
+                  <span class="error text-danger" id="no_hp_error"></span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="text" id="email" name="email" class="form-control"  placeholder="email" />
+                  <span class="error text-danger" id="email_error"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
+            Cancel
+            </a>
+            <button type="submit" class="btn btn-primary ms-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 5l0 14"></path>
+                <path d="M5 12l14 0"></path>
+              </svg>
+              Simpan
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 
+  {{-- modal edit --}}
+
+  <div class="modal" id="editUser" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit user</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="userEditForm">
+          @csrf
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Nama</label>
+              <input type="text" class="form-control" id="edit_name" name="name" placeholder="Nama" />
+              <input type="hidden" class="form-control" id="edit_user_id" name="id"/>
+              <span class="error text-danger" id="edit_name_error"></span>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-control" id="edit_username" name="username" placeholder="username" onkeyup="checkUsername()" />
+              <span class="error text-danger" id="edit_username_error"></span>
+              <span class="error text-success" id="edit_username_success"></span>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label">Nomer Hp</label>
+                  <input type="text" id="edit_no_hp" name="no_hp" class="form-control"  placeholder="no handphone" onkeyup="checkHp()" />
+                  <span class="error text-danger" id="edit_no_hp_error"></span>
+                  <span class="error text-success" id="edit_no_hp_success"></span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="text" id="edit_email" name="email" class="form-control"  placeholder="email" onkeyup="checkEmail()" />
+                  <span class="error text-danger" id="edit_email_error"></span>
+                  <span class="error text-success" id="edit_email_success"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
+            Cancel
+            </a>
+            <button type="submit" class="btn btn-primary ms-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 5l0 14"></path>
+                <path d="M5 12l14 0"></path>
+              </svg>
+              Simpan
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 @endsection
+@include('panel::user.js')
 
-@section('script')
-  <script>
-    $(document).ready(function() {
-        loadUsers();
 
-        // Open modal to add new user
-        $('#addUserBtn').click(function() {
-            $('#userModalLabel').text('Add User');
-            $('#userForm')[0].reset();
-            $('#userForm').attr('data-id', ''); // Optionally clear the ID if needed
-            $('#saveBtn').text('Save');
-            $('#userModal').modal('show');
-        });
-
-        // Edit Record
-        $(document).on('click', '.btn-edit', function() {
-            var id = $(this).data('id');
-            var editUrl = '{{ route('panel.user.edit', ':id') }}'.replace(':id', id); // Replace :id with actual ID
-
-            $.get(editUrl, function(data) {
-              console.log(data);
-              $('#userModalLabel').text('Edit User');
-              $('#name').val(data.name);
-              $('#username').val(data.username);
-              $('#email').val(data.email);
-              $('#no_hp').val(data.no_hp);
-              // $('#userForm').data('id', data.id);
-              $('#userForm').attr('data-id', data.id);
-              $('#saveBtn').text('Update');
-              $('#userModal').modal('show');
-            });
-        });
-
-        // Delete Record
-        $(document).on('click', '.btn-delete', function() {
-            var id = $(this).data('id');
-            var deleteUrl = '{{ route('panel.user.destroy', ':id') }}'.replace(':id', id); // Replace :id with actual ID
-            if (confirm('Are you sure you want to delete this record?')) {
-              $.ajax({
-                url: deleteUrl,
-                method: 'DELETE',
-                data: {
-                    _token: '{{ csrf_token() }}',
-                },
-                success: function(response) {
-                  loadUsers();
-                }
-              });
-            }
-        });
-
-        // Save or Update Record (Create/Edit)
-        $('#userForm').submit(function(e) {
-            e.preventDefault();
-            // var id = $('#userForm').data('id');
-            var id = $('#userForm').attr('data-id');
-
-            var createUrl = '{{ route('panel.user.store') }}';
-            var updateUrl = '{{ route('panel.user.update', ':id') }}'.replace(':id', id); // Replace :id with actual ID
-
-            let url = $('#saveBtn').text() === 'Save' ? createUrl : updateUrl;
-            let method = $('#saveBtn').text() === 'Save' ? 'POST' : 'PUT';
-            
-            $.ajax({
-                url: url,
-                method: method,
-                data: {
-                    _token: '{{ csrf_token() }}',
-                    name: $('#name').val(),
-                    username: $('#username').val(),
-                    no_hp: $('#no_hp').val(),
-                    email: $('#email').val(),
-                },
-                success: function(response) {
-                    $('#userModal').modal('hide');
-                    loadUsers();
-                }
-            });
-
-        });
-
-    });
-
-    function loadUsers() {
-      $('#user_datatables').DataTable({
-          processing: true,
-          serverSide: true,
-          ajax: {
-              url: '{{ route('panel.user.datatables') }}',
-              data: function (d) {
-                  // Additional parameters can be added here if needed
-              }
-          },
-          columns: [
-              { data: 'id' },
-              { data: 'name' },
-              { data: 'email' },
-              { data: 'no_hp' },
-              { data: 'created_at' },
-              {
-                  data: null,
-                  render: function(data, type, row) {
-                    return `
-                            <button class="btn btn-warning btn-edit" data-id="${row.id}">Edit</button>
-                            <button class="btn btn-danger btn-delete" data-id="${row.id}">Delete</button>
-                          `;
-                  }
-              }
-          ]
-      });
-    }
-
-    
-  </script>
-@endsection
