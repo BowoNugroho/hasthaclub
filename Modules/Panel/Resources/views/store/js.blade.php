@@ -7,19 +7,18 @@
           }
       });
 
-        let tableUser = $('#user_datatables').DataTable({
+        let tableStore = $('#user_datatables').DataTable({
             processing: true,
             serverSide: true,
             ajax: {
-                url: '{{ route('panel.user.datatables') }}',
+                url: '{{ route('panel.store.datatables') }}',
                 data: function (d) {
                     // Additional parameters can be added here if needed
                 }
             },
             columns: [
                 { data: 'id' },
-                { data: 'name' },
-                { data: 'username' },
+                { data: 'store_name' },
                 { data: 'email' },
                 { data: 'no_hp' },
                 { data: 'created_at', 
@@ -33,8 +32,8 @@
                 {
                     data: null, // We don't have specific data here
                     render: function (data, type, row) {
-                        return `<button class="btn btn-primary btn-sm btn-editUser" data-id="${row.id}">Edit</button>
-                                <button class="btn btn-danger btn-sm btn-deleteUser" data-id="${row.id}">Hapus</button>`;
+                        return `<button class="btn btn-primary btn-sm btn-editStore" data-id="${row.id}">Edit</button>
+                                <button class="btn btn-danger btn-sm btn-deleteStore" data-id="${row.id}">Hapus</button>`;
                     },
                     orderable: false, // Disable sorting for the Edit button column
                     searchable: false // Disable searching for the Edit button column
@@ -42,22 +41,21 @@
             ]
         });
 
-        $('#user_datatables').on('click', '.btn-editUser', function () {
+        $('#user_datatables').on('click', '.btn-editStore', function () {
             var userId = $(this).data('id');
 
            $.ajax({
-                url: '{{ route('panel.user.editUser') }}', // Your URL to fetch the user details
+                url: '{{ route('panel.store.editStore') }}', // Your URL to fetch the user details
                 method: 'GET',
                 data: { id: userId },
                 success: function (data) {
                   console.log(data);
-                  $('#edit_user_id').val(data.id);
-                  $('#edit_name').val(data.name);
-                  $('#edit_username').val(data.username);
+                  $('#edit_store_id').val(data.id);
+                  $('#edit_store_name').val(data.store_name);
                   $('#edit_no_hp').val(data.no_hp);
                   $('#edit_email').val(data.email);
 
-                    $('#editUser').modal('show');
+                    $('#editStore').modal('show');
                 },
                 error: function () {
                     alert('Failed to fetch user data.');
@@ -68,19 +66,14 @@
         $('#userForm').on('submit', function (e) {
             e.preventDefault(); 
 
-            $('#name_error').text('');
-            $('#username_error').text('');
+            $('#store_name_error').text('');
             $('#no_hp_error').text('');
             $('#email_error').text('');
 
             let isValid = true;
 
-            if ($('#name').val() === '') {
-                $('#name_error').text('Nama wajib diisi.');
-                isValid = false;
-            }
-            if ($('#username').val() === '') {
-                $('#username_error').text('Username wajib diisi.');
+            if ($('#store_name').val() === '') {
+                $('#store_name_error').text('Nama wajib diisi.');
                 isValid = false;
             }
             if ($('#no_hp').val() === '') {
@@ -95,21 +88,21 @@
             if (isValid) {
               var formData = new FormData(this);
               $.ajax({
-                  url: '{{ route("panel.user.saveUser") }}',
+                  url: '{{ route("panel.store.saveStore") }}',
                   type: 'POST',
                   data: formData,
                   processData: false,  
                   contentType: false,  
                   success: function (response) {
                       if (response.success) {
-                        $('#tambahUser').modal('hide');
+                        $('#tambahStore').modal('hide');
                         $('#userForm')[0].reset();
                         Swal.fire({
                               title: 'Berhasil Menyimpan data',
                               icon: 'success',
                               showCancelButton: false,
                             }).then((result) => {
-                              tableUser.ajax.reload();
+                              tableStore.ajax.reload();
                               // location.reload();
                             })
                         
@@ -136,22 +129,17 @@
           $('#userEditForm').on('submit', function (e) {
             e.preventDefault(); 
 
-            $('#edit_name_error').text('');
-            $('#edit_username_error').text('');
+            $('#edit_store_name_error').text('');
             $('#edit_no_hp_error').text('');
             $('#edit_email_error').text('');
             
 
-            let userId = $('#edit_user_id').val();
+            let userId = $('#edit_store_id').val();
 
             let isValid = true;
 
-            if ($('#edit_name').val() === '') {
-                $('#edit_name_error').text('Nama wajib diisi.');
-                isValid = false;
-            }
-            if ($('#edit_username').val() === '') {
-                $('#edit_username_error').text('Username wajib diisi.');
+            if ($('#edit_store_name').val() === '') {
+                $('#edit_store_name_error').text('Nama wajib diisi.');
                 isValid = false;
             }
             if ($('#edit_no_hp').val() === '') {
@@ -167,21 +155,21 @@
               var formData = new FormData($('#userEditForm')[0]);
               console.log(formData);
               $.ajax({
-                  url: '{{ route("panel.user.updateUser") }}',
+                  url: '{{ route("panel.store.updateStore") }}',
                   type: 'POST',
                   data: formData,
                   processData: false,  
                   contentType: false,  
                   success: function (response) {
                       if (response.success) {
-                        $('#editUser').modal('hide');
+                        $('#editStore').modal('hide');
                         $('#userEditForm')[0].reset();
                         Swal.fire({
                               title: 'Berhasil Menyimpan data',
                               icon: 'success',
                               showCancelButton: false,
                             }).then((result) => {
-                              tableUser.ajax.reload();
+                              tableStore.ajax.reload();
                             })
                         
                         
@@ -205,9 +193,9 @@
               });
             }
           });
-          $('#user_datatables').on('click', '.btn-deleteUser', function () {
+          $('#user_datatables').on('click', '.btn-deleteStore', function () {
               let userId = $(this).data('id');
-              let deleteUrl = '{{ route("panel.user.deleteUser", ":id") }}'.replace(':id', userId);
+              let deleteUrl = '{{ route("panel.store.deleteStore", ":id") }}'.replace(':id', userId);
 
               Swal.fire({
                   title: 'Apa user mau dihapus?',
@@ -229,7 +217,7 @@
                                         icon: 'success',
                                         showCancelButton: false,
                                       }).then((result) => {
-                                        tableUser.ajax.reload();
+                                        tableStore.ajax.reload();
                                       })
                                   
                                 }
@@ -260,38 +248,13 @@
             });
     });
 
-    function checkUsername()
-    {
-        let userId = $('#edit_user_id').val();
-        let username = $('#edit_username').val();
-
-        $.ajax({
-                url: '{{ route('panel.user.checkUsername') }}', // Your URL to fetch the user details
-                method: 'GET',
-                data: { id: userId, username : username},
-                success: function (data) {
-                  console.log(data);
-                  if( data.status == 1){
-                      $('#edit_username_success').text('');
-                      $('#edit_username_error').text(data.pesan);
-                    }
-                 if( data.status == 0){
-                        $('#edit_username_error').text('');
-                        $('#edit_username_success').text(data.pesan);
-                  }
-                },
-                error: function () {
-                    alert('Failed to fetch user data.');
-                }
-            });
-    }
     function checkHp()
     {
-        let userId = $('#edit_user_id').val();
+        let userId = $('#edit_store_id').val();
         let no_hp = $('#edit_no_hp').val();
 
         $.ajax({
-                url: '{{ route('panel.user.checkHp') }}', // Your URL to fetch the user details
+                url: '{{ route('panel.store.checkHp') }}', // Your URL to fetch the user details
                 method: 'GET',
                 data: { id: userId, no_hp : no_hp},
                 success: function (data) {
@@ -313,11 +276,11 @@
 
     function checkEmail()
     {
-        let userId = $('#edit_user_id').val();
+        let userId = $('#edit_store_id').val();
         let email = $('#edit_email').val();
 
         $.ajax({
-                url: '{{ route('panel.user.checkEmail') }}', // Your URL to fetch the user details
+                url: '{{ route('panel.store.checkEmail') }}', // Your URL to fetch the user details
                 method: 'GET',
                 data: { id: userId, email : email},
                 success: function (data) {

@@ -183,4 +183,6 @@ return [
 
         'store' => 'default',
     ],
+    
+    'guard_name' => 'web',  // Ensure this is set to the correct guard name
 ];

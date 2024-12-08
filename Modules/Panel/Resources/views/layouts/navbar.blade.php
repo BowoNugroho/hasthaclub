@@ -78,7 +78,7 @@
                           Master Data
                         </a>
                         <div class="dropdown-menu">
-                          <a href="#" class="dropdown-item">
+                          <a href="{{ route('panel.store.index') }}" class="dropdown-item">
                             Data Toko
                           </a>
                           <a href="#" class="dropdown-item">
@@ -87,7 +87,7 @@
                         </div>
                       </div>
                       <div class="dropend">
-                        <a class="dropdown-item" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                        <a class="dropdown-item" href="{{ route('panel.store.index') }}" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
                          Toko Saya
                         </a>
                       </div>

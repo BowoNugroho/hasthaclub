@@ -33,6 +33,10 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+
+    protected $dates = ['deleted_at'];
+
     protected $fillable = [
         'name',
         'email',
@@ -42,6 +46,8 @@ class User extends Authenticatable
         'ktp',
         'store_id',
         'password',
+        'last_login_at',
+        'last_login_ip'
     ];
 
     /**

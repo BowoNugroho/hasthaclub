@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('stores', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('store_name');
+            $table->string('email')->unique()->nullable();
+            $table->string('no_hp')->unique()->nullable();
             $table->text('alamat')->nullable();
             $table->string('kota')->nullable();
             $table->string('provinsi')->nullable();
@@ -21,10 +23,11 @@ return new class extends Migration
             $table->string('mitra_id');
             $table->string('sales_mitra_id');
             $table->boolean('status')->default(false);
-            $table->unsignedBigInteger('created_by')->nullable();
-            $table->unsignedBigInteger('updated_by')->nullable();
-            $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->uuid('created_by')->nullable();
+            $table->uuid('updated_by')->nullable();
+            $table->uuid('deleted_by')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

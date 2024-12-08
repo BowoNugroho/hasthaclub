@@ -36,6 +36,8 @@ class Store extends Model
         'jam_operasional',
         'mitra_id',
         'sales_mitra_id',
+        'no_hp',
+        'email',
         'status',
     ];
 

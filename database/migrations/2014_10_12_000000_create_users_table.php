@@ -21,13 +21,12 @@ return new class extends Migration
             $table->string('password');
             $table->string('gender')->nullable();
             $table->string('ktp')->nullable();
-            $table->string('store_id')->nullable();
+            $table->uuid('store_id')->nullable();
             $table->boolean('status')->default(false);
             $table->rememberToken();
-            $table->string('created_by')->nullable();
-            $table->string('updated_by')->nullable();
-            $table->string('deleted_by')->nullable();
-            // $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->uuid('created_by')->nullable();
+            $table->uuid('updated_by')->nullable();
+            $table->uuid('deleted_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
