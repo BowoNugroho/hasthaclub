@@ -21,10 +21,11 @@ return new class extends Migration
             $table->string('mitra_id');
             $table->string('sales_mitra_id');
             $table->boolean('status')->default(false);
-            $table->unsignedBigInteger('created_by')->nullable();
-            $table->unsignedBigInteger('updated_by')->nullable();
-            $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->uuid('created_by')->nullable();
+            $table->uuid('updated_by')->nullable();
+            $table->uuid('deleted_by')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
