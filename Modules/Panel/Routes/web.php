@@ -24,10 +24,6 @@ Route::group(['middleware' => ['auth:web']], function () {
         Route::prefix('user')->group(function () {
             Route::get('/', [UserController::class, 'index'])->name('panel.user.index');
             Route::get('/datatables', [UserController::class, 'datatables'])->name('panel.user.datatables');
-                Route::post('store', [UserController::class, 'store'])->name('panel.user.store');
-                Route::get('edit/{id}', [UserController::class, 'edit'])->name('panel.user.edit');
-                Route::put('update/{id}', [UserController::class, 'update'])->name('panel.user.update');
-                Route::delete('delete/{id}', [UserController::class, 'destroy'])->name('panel.user.destroy');
             Route::post('/saveUser', [UserController::class, 'saveUser'])->name('panel.user.saveUser');
             Route::get('/editUser', [UserController::class, 'editUser'])->name('panel.user.editUser');
             Route::post('/updateUser', [UserController::class, 'updateUser'])->name('panel.user.updateUser');
