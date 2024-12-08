@@ -36,6 +36,9 @@
                         <a href="{{ route('panel.role.index') }}" class="dropdown-item">
                           Data Role
                         </a>
+                        <a href="{{ route('panel.hasRole.index') }}" class="dropdown-item">
+                          Data Model Has Role
+                        </a>
                       </div>
                     </div>
                     <div class="dropend">
