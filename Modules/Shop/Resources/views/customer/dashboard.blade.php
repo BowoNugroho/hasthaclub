@@ -1,9 +1,9 @@
 @extends('shop::layouts.app')
 
 @section('content')
-<div class="grid grid-cols-5 mt-2">
-<div class="box  h-60"></div>
-<div class="box col-span-3 ">
+<div class="grid xl:grid-cols-8 lg:grid-cols-6 md:grid-cols-4 grid-cols-1 mt-2">
+<div class="box  xl:col-span-3 lg:col-span-2"></div>
+<div class="box lg:col-span-2 md:col-span-2 p-5 ">
     <nav>
         <div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4">
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
@@ -27,6 +27,6 @@
     <hr>
     @yield('content_customer')
 </div>
-<div class="box "></div>
+<div class="box xl:col-span-3 lg:col-span-2"></div>
 </div>
 @endsection
