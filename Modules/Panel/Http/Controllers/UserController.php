@@ -26,6 +26,7 @@ class UserController extends Controller
         // Apply search filter
         if ($search = $request->input('search.value')) {
             $query->where(function ($query) use ($search) {
+                $columns = ['id', 'name', 'email', 'no_hp', 'created_at']; // Define the columns you want to displays
                 foreach ($columns as $column) {
                     $query->orWhere($column, 'like', "%$search%");
                 }
