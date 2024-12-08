@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Modules\Panel\Http\Controllers\PanelController;
 use Modules\Panel\Http\Controllers\UserController;
 use Modules\Panel\Http\Controllers\RoleController;
+use Modules\Panel\Http\Controllers\HasRoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,14 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::get('/editRole', [RoleController::class, 'editRole'])->name('panel.role.editRole');
             Route::post('/updateRole', [RoleController::class, 'updateRole'])->name('panel.role.updateRole');
             Route::delete('/deleteRole/{id}', [RoleController::class, 'deleteRole'])->name('panel.role.deleteRole');
+        });
+
+        Route::prefix('hasRole')->group(function () {
+            Route::get('/', [HasRoleController::class, 'index'])->name('panel.hasRole.index');
+            Route::get('/datatables', [HasRoleController::class, 'datatables'])->name('panel.hasRole.datatables');
+            Route::post('/saveHasRole', [HasRoleController::class, 'saveHasRole'])->name('panel.hasRole.saveHasRole');
+            Route::get('/editHasRole', [HasRoleController::class, 'editHasRole'])->name('panel.hasRole.editHasRole');
+            Route::post('/updateHasRole', [HasRoleController::class, 'updateHasRole'])->name('panel.hasRole.updateHasRole');
         });
     });
     // });
