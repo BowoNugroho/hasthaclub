@@ -17,10 +17,9 @@
           <div class="row">
             <div class="col-md-1">
               <h1>Data User</h1>
-          <button class="btn btn-primary mb-3" id="addUserBtn">Add User</button>
             </div>
             <div class="col-md-11">
-              <button  type="button" class="btn btn-primary btn-sm m-2" data-bs-toggle="modal" data-bs-target="#tambahUser">Tambah</button>
+              <button  type="button" class="btn btn-primary btn-md m-2 float-end" data-bs-toggle="modal" data-bs-target="#tambahUser">Tambah</button>
             </div>
           </div>
           <table id="user_datatables" class="display">

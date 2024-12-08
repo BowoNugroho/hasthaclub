@@ -20,7 +20,6 @@ class RolePermissionSeeder extends Seeder
         $customer = Role::create(['name' => 'customer']);
         $sales_mitra = Role::create(['name' => 'sales_mitra']);
         $sales_to = Role::create(['name' => 'sales_to']);
-        $sales_toko = Role::create(['name' => 'sales_toko']);
 
         $viewDashboard = Permission::create(['name' => 'view dashboard']);
         $manageUsers = Permission::create(['name' => 'manage users']);
@@ -31,6 +30,6 @@ class RolePermissionSeeder extends Seeder
         $mitra->givePermissionTo([$viewDashboard]);
         $customer->givePermissionTo([$viewDashboard]);
         $sales_mitra->givePermissionTo([$viewDashboard]);
-        $sales_toko->givePermissionTo([$viewDashboard]);
+        $sales_to->givePermissionTo([$viewDashboard]);
     }
 }
