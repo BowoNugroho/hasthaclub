@@ -1,7 +1,7 @@
 @extends('panel::layouts.master')
 
 @section('title')
-    Konfifgurasi - Data Role
+  Konfigurasi - Data Role
 @endsection
 
 @section('content')

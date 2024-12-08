@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Panel\Http\Controllers\PanelController;
 use Modules\Panel\Http\Controllers\UserController;
+use Modules\Panel\Http\Controllers\StoreController;
 use Modules\Panel\Http\Controllers\RoleController;
 
 /*
@@ -41,6 +42,18 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::post('/updateRole', [RoleController::class, 'updateRole'])->name('panel.role.updateRole');
             Route::delete('/deleteRole/{id}', [RoleController::class, 'deleteRole'])->name('panel.role.deleteRole');
         });
+
+        Route::prefix('store')->group(function () {
+            Route::get('/', [StoreController::class, 'index'])->name('panel.store.index');
+            Route::get('/datatables', [StoreController::class, 'datatables'])->name('panel.store.datatables');
+            Route::post('/saveStore', [StoreController::class, 'saveStore'])->name('panel.store.saveStore');
+            Route::get('/editStore', [StoreController::class, 'editStore'])->name('panel.store.editStore');
+            Route::post('/updateStore', [StoreController::class, 'updateStore'])->name('panel.store.updateStore');
+            Route::delete('/deleteStore/{id}', [StoreController::class, 'deleteStore'])->name('panel.store.deleteStore');
+            Route::get('/checkHp', [StoreController::class, 'checkHp'])->name('panel.store.checkHp');
+            Route::get('/checkEmail', [StoreController::class, 'checkEmail'])->name('panel.store.checkEmail');
+        });
+
     });
     // });
 });

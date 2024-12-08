@@ -1,7 +1,7 @@
 @extends('panel::layouts.master')
 
 @section('title')
-  Konfigurasi - Data User
+    Konfigurasi - Data Store
 @endsection
 
 @section('content')
@@ -16,10 +16,10 @@
       <div class="card-body">
           <div class="row">
             <div class="col-md-1">
-              <h1>Data User</h1>
+              <h1>Data Store</h1>
             </div>
             <div class="col-md-11">
-              <button  type="button" class="btn btn-primary btn-md m-2 float-end" data-bs-toggle="modal" data-bs-target="#tambahUser">Tambah</button>
+              <button  type="button" class="btn btn-primary btn-md m-2 float-end" data-bs-toggle="modal" data-bs-target="#tambahStore">Tambah</button>
             </div>
           </div>
           <table id="user_datatables" class="display">
@@ -43,11 +43,11 @@
 
   {{-- modal tambah--}}
 
-  <div class="modal" id="tambahUser" tabindex="-1">
+  <div class="modal" id="tambahStore" tabindex="-1">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Tambah user</h5>
+          <h5 class="modal-title">Tambah Store</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form id="userForm">
@@ -55,13 +55,8 @@
           <div class="modal-body">
             <div class="mb-3">
               <label class="form-label">Nama</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Nama" />
+              <input type="text" class="form-control" id="store_name" name="store_name" placeholder="Nama" />
               <span class="error text-danger" id="name_error"></span>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Username</label>
-              <input type="text" class="form-control" id="username" name="username" placeholder="username" />
-              <span class="error text-danger" id="username_error"></span>
             </div>
             <div class="row">
               <div class="col-lg-6">
@@ -100,11 +95,11 @@
 
   {{-- modal edit --}}
 
-  <div class="modal" id="editUser" tabindex="-1">
+  <div class="modal" id="editStore" tabindex="-1">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Edit user</h5>
+          <h5 class="modal-title">Edit Store</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form id="userEditForm">
@@ -112,15 +107,9 @@
           <div class="modal-body">
             <div class="mb-3">
               <label class="form-label">Nama</label>
-              <input type="text" class="form-control" id="edit_name" name="name" placeholder="Nama" />
-              <input type="hidden" class="form-control" id="edit_user_id" name="id"/>
-              <span class="error text-danger" id="edit_name_error"></span>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Username</label>
-              <input type="text" class="form-control" id="edit_username" name="username" placeholder="username" onkeyup="checkUsername()" />
-              <span class="error text-danger" id="edit_username_error"></span>
-              <span class="error text-success" id="edit_username_success"></span>
+              <input type="text" class="form-control" id="edit_store_name" name="store_name" placeholder="Nama" />
+              <input type="hidden" class="form-control" id="edit_store_id" name="id"/>
+              <span class="error text-danger" id="edit_store_name_error"></span>
             </div>
             <div class="row">
               <div class="col-lg-6">
@@ -159,6 +148,6 @@
     </div>
   </div>
 @endsection
-@include('panel::user.js')
+@include('panel::store.js')
 
 
