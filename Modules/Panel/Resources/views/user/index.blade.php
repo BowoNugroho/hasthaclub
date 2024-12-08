@@ -30,6 +30,7 @@
                       <th>Email</th>
                       <th>No Hp</th>
                       <th>Created At</th>
+                      <th>Aksi</th>
                   </tr>
               </thead>
               <tbody>
@@ -40,7 +41,7 @@
     </div>
   </div>
 
-  {{-- modal --}}
+  {{-- modal tambah--}}
 
   <div class="modal" id="tambahUser" tabindex="-1">
     <div class="modal-dialog modal-lg" role="document">
@@ -96,12 +97,76 @@
       </div>
     </div>
   </div>
+
+  {{-- modal edit --}}
+
+  <div class="modal" id="editUser" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit user</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="userEditForm">
+          @csrf
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Nama</label>
+              <input type="text" class="form-control" id="edit_name" name="name" placeholder="Nama" />
+              <input type="hidden" class="form-control" id="edit_user_id" name="id"/>
+              <span class="error text-danger" id="edit_name_error"></span>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-control" id="edit_username" name="username" placeholder="username" />
+              <span class="error text-danger" id="edit_username_error"></span>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label">Nomer Hp</label>
+                  <input type="text" id="edit_no_hp" name="no_hp" class="form-control"  placeholder="no handphone" />
+                  <span class="error text-danger" id="edit_no_hp_error"></span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="text" id="edit_email" name="email" class="form-control"  placeholder="email" />
+                  <span class="error text-danger" id="edit_email_error"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
+            Cancel
+            </a>
+            <button type="submit" class="btn btn-primary ms-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 5l0 14"></path>
+                <path d="M5 12l14 0"></path>
+              </svg>
+              Simpan
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 @endsection
 
 @section('script')
   <script>
     $(document).ready(function() {
-        $('#user_datatables').DataTable({
+      $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+        let tableUser = $('#user_datatables').DataTable({
             processing: true,
             serverSide: true,
             ajax: {
@@ -115,8 +180,39 @@
                 { data: 'name' },
                 { data: 'email' },
                 { data: 'no_hp' },
-                { data: 'created_at' }
+                { data: 'created_at' },
+                {
+                    data: null, // We don't have specific data here
+                    render: function (data, type, row) {
+                        return `<button class="btn btn-primary btn-sm btn-editUser" data-id="${row.id}">Edit</button>`;
+                    },
+                    orderable: false, // Disable sorting for the Edit button column
+                    searchable: false // Disable searching for the Edit button column
+                }
             ]
+        });
+
+        $('#user_datatables').on('click', '.btn-editUser', function () {
+            var userId = $(this).data('id');
+
+           $.ajax({
+                url: '{{ route('panel.user.editUser') }}', // Your URL to fetch the user details
+                method: 'GET',
+                data: { id: userId },
+                success: function (data) {
+                  console.log(data);
+                  $('#edit_user_id').val(data.id);
+                  $('#edit_name').val(data.name);
+                  $('#edit_username').val(data.username);
+                  $('#edit_no_hp').val(data.no_hp);
+                  $('#edit_email').val(data.email);
+
+                    $('#editUser').modal('show');
+                },
+                error: function () {
+                    alert('Failed to fetch user data.');
+                }
+            });
         });
 
         $('#userForm').on('submit', function (e) {
@@ -163,7 +259,78 @@
                               icon: 'success',
                               showCancelButton: false,
                             }).then((result) => {
-                              location.reload();
+                              tableUser.ajax.reload();
+                              // location.reload();
+                            })
+                        
+                      }
+                  },
+                  error: function (xhr) {
+                      var errors = xhr.responseJSON.errors;
+                      if (errors) {
+                          $.each(errors, function (key, value) {
+                            Swal.fire({
+                              title: 'No hp / email sudah ready',
+                              icon: 'error',
+                              showCancelButton: false,
+                            }).then((result) => {
+                              
+                            })
+                          });
+                      }
+                  }
+              });
+            }
+          });
+
+          $('#userEditForm').on('submit', function (e) {
+            e.preventDefault(); 
+
+            $('#edit_name_error').text('');
+            $('#edit_username_error').text('');
+            $('#edit_no_hp_error').text('');
+            $('#edit_email_error').text('');
+
+            let userId = $('#edit_user_id').val();
+
+            let isValid = true;
+
+            if ($('#edit_name').val() === '') {
+                $('#edit_name_error').text('Nama wajib diisi.');
+                isValid = false;
+            }
+            if ($('#edit_username').val() === '') {
+                $('#edit_username_error').text('Username wajib diisi.');
+                isValid = false;
+            }
+            if ($('#edit_no_hp').val() === '') {
+                $('#edit_no_hp_error').text('No handphone wajib diisi.');
+                isValid = false;
+            }
+            if ($('#edit_email').val() === '') {
+                $('#edit_email_error').text('Email wajib diisi.');
+                isValid = false;
+            }
+            
+            if (isValid) {
+              var formData = new FormData($('#userEditForm')[0]);
+              console.log(formData);
+              $.ajax({
+                  url: '{{ route("panel.user.updateUser") }}',
+                  type: 'POST',
+                  data: formData,
+                  processData: false,  
+                  contentType: false,  
+                  success: function (response) {
+                      if (response.success) {
+                        $('#editUser').modal('hide');
+                        $('#userEditForm')[0].reset();
+                        Swal.fire({
+                              title: 'Berhasil Menyimpan data',
+                              icon: 'success',
+                              showCancelButton: false,
+                            }).then((result) => {
+                              tableUser.ajax.reload();
                             })
                         
                       }

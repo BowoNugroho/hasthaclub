@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+// use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -73,6 +74,40 @@ class UserController extends Controller
             $data['status'] = 1;
 
             $user = User::create($data);
+
+            return response()->json(['success' => true, 'message' => 'Data berhasil disimpan!'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => true, 'message' => 'Terjadi kesalahan, coba lagi.'], 500);
+        }
+    }
+
+    public function editUser(Request $request)
+    {
+        $user = User::find($request->id);
+        return response()->json($user);
+    }
+
+    public function updateUser(Request $request)
+    {
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'no_hp' => 'required',
+            'email' => 'required',
+            'username' => 'required',
+        ]);
+
+
+        try {
+
+            $id = $request->id;
+            $data['name'] = $request->name;
+            $data['username'] = $request->username;
+            $data['no_hp'] = $request->no_hp;
+            $data['email'] = $request->email;
+
+            $user = User::findOrFail($id);
+            $user->update($validated);
 
             return response()->json(['success' => true, 'message' => 'Data berhasil disimpan!'], 200);
         } catch (\Exception $e) {
