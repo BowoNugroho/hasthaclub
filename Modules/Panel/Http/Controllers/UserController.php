@@ -88,6 +88,50 @@ class UserController extends Controller
         return response()->json($user);
     }
 
+    public function checkUsername(Request $request)
+    {
+        $exists = User::where('username', $request->username)->exists();
+
+        if ($exists) {
+            $data['status'] = '1';
+            $data['pesan'] = 'username sudah ada';
+            return response()->json($data);
+        } else {
+            $data['status'] = '0';
+            $data['pesan'] = 'username tersedia';
+            return response()->json($data);
+        }
+    }
+
+    public function checkHp(Request $request)
+    {
+        $exists = User::where('no_hp', $request->no_hp)->exists();
+
+        if ($exists) {
+            $data['status'] = '1';
+            $data['pesan'] = 'no handphone sudah ada';
+            return response()->json($data);
+        } else {
+            $data['status'] = '0';
+            $data['pesan'] = 'no handphone tersedia';
+            return response()->json($data);
+        }
+    }
+    public function checkEmail(Request $request)
+    {
+        $exists = User::where('email', $request->email)->exists();
+
+        if ($exists) {
+            $data['status'] = '1';
+            $data['pesan'] = 'email sudah ada';
+            return response()->json($data);
+        } else {
+            $data['status'] = '0';
+            $data['pesan'] = 'email tersedia';
+            return response()->json($data);
+        }
+    }
+
     public function updateUser(Request $request)
     {
 
