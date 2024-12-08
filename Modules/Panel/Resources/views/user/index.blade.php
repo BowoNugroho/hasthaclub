@@ -180,7 +180,14 @@
                 { data: 'name' },
                 { data: 'email' },
                 { data: 'no_hp' },
-                { data: 'created_at' },
+                { data: 'created_at', 
+                  render: function(data, type, row) {
+                      if (data) {
+                          return moment(data).format('DD-MM-YYYY HH:mm:ss'); 
+                      }
+                      return data;
+                  } 
+                },
                 {
                     data: null, // We don't have specific data here
                     render: function (data, type, row) {
