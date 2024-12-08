@@ -19,7 +19,7 @@
             <h1>Data Model Has Role</h1>
           </div>
           <div class="col-md-10">
-            <button  type="button" class="btn btn-primary btn-sm m-2" data-bs-toggle="modal" data-bs-target="#tambahHasRole">Tambah</button>
+            <button  type="button" class="btn btn-primary btn-md m-2 float-end" data-bs-toggle="modal" data-bs-target="#tambahHasRole">Tambah</button>
           </div>
         </div>
           <table id="hasRole_datatables" class="display">
