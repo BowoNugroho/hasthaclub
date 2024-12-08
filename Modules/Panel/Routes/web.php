@@ -33,6 +33,10 @@ Route::group(['middleware' => ['auth:web']], function () {
         Route::prefix('role')->group(function () {
             Route::get('/', [RoleController::class, 'index'])->name('panel.role.index');
             Route::get('/datatables', [RoleController::class, 'datatables'])->name('panel.role.datatables');
+            Route::post('/saveRole', [RoleController::class, 'saveRole'])->name('panel.role.saveRole');
+            Route::get('/editRole', [RoleController::class, 'editRole'])->name('panel.role.editRole');
+            Route::post('/updateRole', [RoleController::class, 'updateRole'])->name('panel.role.updateRole');
+            Route::delete('/deleteRole/{id}', [RoleController::class, 'deleteRole'])->name('panel.role.deleteRole');
         });
     });
     // });

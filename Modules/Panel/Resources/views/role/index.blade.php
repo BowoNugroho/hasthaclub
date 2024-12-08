@@ -14,7 +14,14 @@
         </div>
       </div>
       <div class="card-body">
-          <h1>Data Role</h1>
+        <div class="row">
+          <div class="col-md-1">
+            <h1>Data Role</h1>
+          </div>
+          <div class="col-md-11">
+            <button  type="button" class="btn btn-primary btn-sm m-2" data-bs-toggle="modal" data-bs-target="#tambahRole">Tambah</button>
+          </div>
+        </div>
           <table id="role_datatables" class="display">
               <thead>
                   <tr>
@@ -22,6 +29,7 @@
                       <th>Name</th>
                       <th>Guard</th>
                       <th>Created At</th>
+                      <th>Aksi</th>
                   </tr>
               </thead>
               <tbody>
@@ -31,27 +39,10 @@
       </div>
     </div>
   </div>
+@include('panel::role.tambahRole')
+@include('panel::role.editRole')
 @endsection
 
-@section('script')
-  <script>
-    $(document).ready(function() {
-        $('#role_datatables').DataTable({
-            processing: true,
-            serverSide: true,
-            ajax: {
-                url: '{{ route('panel.role.datatables') }}',
-                data: function (d) {
-                    // Additional parameters can be added here if needed
-                }
-            },
-            columns: [
-                { data: 'id' },
-                { data: 'name' },
-                { data: 'guard_name' },
-                { data: 'created_at' }
-            ]
-        });
-    });
-  </script>
-@endsection
+@include('panel::role.js')
+
+

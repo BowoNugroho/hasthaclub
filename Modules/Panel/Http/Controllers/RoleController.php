@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\DB;
 
 class RoleController extends Controller
 {
@@ -23,7 +24,8 @@ class RoleController extends Controller
 
         // Apply search filter
         if ($search = $request->input('search.value')) {
-            $query->where(function($query) use ($search) {
+            $query->where(function ($query) use ($search) {
+                $columns = ['id', 'name', 'created_at'];  // Define the columns you want to display
                 foreach ($columns as $column) {
                     $query->orWhere($column, 'like', "%$search%");
                 }
@@ -51,5 +53,68 @@ class RoleController extends Controller
             'recordsFiltered' => $totalRecords,
             'data' => $data,
         ]);
+    }
+    public function saveRole(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:roles,name,NULL,id,guard_name,' . $request->guard_name,
+            'guard_name' => 'required',
+        ], [
+            'name.unique' => 'The combination of name and guard name must be unique.',
+        ]);
+
+        try {
+
+            $data['name'] = $request->name;
+            $data['guard_name'] = $request->guard_name;
+
+            $role = Role::create($data);
+
+            return response()->json(['success' => true], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => true], 500);
+        }
+    }
+
+    public function editRole(Request $request)
+    {
+        $user = Role::find($request->id);
+        return response()->json($user);
+    }
+
+    public function updateRole(Request $request)
+    {
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:roles,name,NULL,id,guard_name,' . $request->guard_name,
+            'guard_name' => 'required',
+        ], [
+            'name.unique' => 'The combination of name and guard name must be unique.',
+        ]);
+
+
+        try {
+
+            $id = $request->id;
+
+            $role = Role::findOrFail($id);
+            $role->update($validated);
+
+            return response()->json(['success' => true], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => true], 500);
+        }
+    }
+
+    public function deleteRole(Request $request, $id)
+    {
+        try {
+            $role = Role::findOrFail($id);
+            $role->delete();
+
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Role not found'], 404);
+        }
     }
 }
