@@ -4,9 +4,9 @@
 <div class="grid grid-cols-1 mt-10">
     <div class="box ">
         <p class="text-4xl font-bold text-center mb-10">Masuk</p>
-        <div class="grid grid-cols-5">
-            <div class="box col-span-2"></div>
-            <div class="box"> 
+        <div class="grid xl:grid-cols-8 lg:grid-cols-6 md:grid-cols-4 grid-cols-1 ">
+            <div class="box xl:col-span-3 lg:col-span-2"></div>
+            <div class="box lg:col-span-2 md:col-span-2 p-5"> 
                 <form action="{{ route('actionlogin') }}" method="post">
                     @csrf
                     @if ($errors->has('message'))
@@ -19,14 +19,20 @@
                         </div>
                     @endif
                     <div class="mb-10 mt-3">
-                        <input type="text" name="no_hp" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 w-full p-3 @error('no_hp') is-invalid @enderror" placeholder=" no. handphone" value="{{ old('no_hp') }}" >
+                        <div class="relative">
+                            <input type="text" id="no_hp" name="no_hp" class="block  p-3.5 bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full  peer @error('no_hp') is-invalid @enderror" placeholder=" " value="{{ old('no_hp') }}" >
+                            <label for="no_hp" 
+                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-3.5 scale-75 top-3.5 left-3 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:translate-y-[-0.8rem] peer-focus:scale-75 peer-focus:text-blue-600">No. handphone</label>
                             @if ($errors->has('no_hp'))
-                                <span class="text-red-500">{{ $errors->first('no_hp') }}</span>
+                            <span class="text-red-500">{{ $errors->first('no_hp') }}</span>
                             @endif
+                        </div>
                     </div>
                     <div class="mb-3 mt-10">
                         <div class="relative">
-                            <input type="password" id="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-blue-500 w-full p-3 @error('password') is-invalid @enderror" placeholder="password" > 
+                            <input type="password" id="password" name="password" class="block  p-3.5 bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full  peer  @error('password') is-invalid @enderror" placeholder=" " > 
+                            <label for="password" 
+                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-3.5 scale-75 top-3.5 left-3 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:translate-y-[-0.8rem] peer-focus:scale-75 peer-focus:text-blue-600">Password</label>
                                 <button type="button" onclick="showPasswordCs()"  class="absolute end-2.5 top-2 font-medium rounded-lg text-sm px-4 py-2"><i class="fa-regular fa-eye text-gray-500"></i></button>
                             @if ($errors->has('password'))
                                 <span class="text-red-500">{{ $errors->first('password') }}</span>
@@ -38,11 +44,11 @@
                         {{-- <a href=""><span class="text-blue-600 hover:underline hover:text-blue-400">Lupa password?</span></a> --}}
                     </div>
                     <div class="mb-10 text-center">
-                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm lg:w-[110px] w-[90px] sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
                     </div>
                 </form>
             </div>
-            <div class="box col-span-2"></div>
+            <div class="box xl:col-span-3 lg:col-span-2"></div>
         </div>
     </div>
 
