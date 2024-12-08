@@ -47,7 +47,7 @@
             <div class="box "></div>
             <div class="box xl:col-span-5 col-span-7 justify-center hidden lg:flex">
                 <div class="flex justify-between items-center px-5 lg:px-[50px] h-[80px] w-full ">
-                    <a href="/">
+                    <a href="{{ route('shop.indexHome') }}">
                         <img src="{{ url('public/modules/shop/images/hasthaclub.png') }}" class="h-[60px]" alt="">
                     </a>
                     <input type="text" placeholder="Cari Produk" class="w-[500px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />

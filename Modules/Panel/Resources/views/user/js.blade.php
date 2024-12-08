@@ -19,6 +19,7 @@
             columns: [
                 { data: 'id' },
                 { data: 'name' },
+                { data: 'username' },
                 { data: 'email' },
                 { data: 'no_hp' },
                 { data: 'created_at', 
