@@ -161,10 +161,10 @@
   <script>
     $(document).ready(function() {
       $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+      });
 
         let tableUser = $('#user_datatables').DataTable({
             processing: true,
@@ -184,7 +184,8 @@
                 {
                     data: null, // We don't have specific data here
                     render: function (data, type, row) {
-                        return `<button class="btn btn-primary btn-sm btn-editUser" data-id="${row.id}">Edit</button>`;
+                        return `<button class="btn btn-primary btn-sm btn-editUser" data-id="${row.id}">Edit</button>
+                                <button class="btn btn-danger btn-sm btn-deleteUser" data-id="${row.id}">Hapus</button>`;
                     },
                     orderable: false, // Disable sorting for the Edit button column
                     searchable: false // Disable searching for the Edit button column
@@ -352,6 +353,59 @@
               });
             }
           });
+          $('#user_datatables').on('click', '.btn-deleteUser', function () {
+              let userId = $(this).data('id');
+              let deleteUrl = '{{ route("panel.user.deleteUser", ":id") }}'.replace(':id', userId);
+
+              Swal.fire({
+                  title: 'Apa user mau dihapus?',
+                  // text: "You won't be able to revert this!",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonText: 'Hapus',
+                  cancelButtonText: 'Kembali',
+                  reverseButtons: true  
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                      $.ajax({
+                            url: deleteUrl,
+                            method: 'DELETE', 
+                            success: function (response) {
+                              if (response.success) {
+                                  Swal.fire({
+                                        title: 'Berhasil hapus data',
+                                        icon: 'success',
+                                        showCancelButton: false,
+                                      }).then((result) => {
+                                        tableUser.ajax.reload();
+                                      })
+                                  
+                                }
+                            },
+                            error: function (xhr, status, error) {
+                              var errors = xhr.responseJSON.errors;
+                                if (errors) {
+                                    $.each(errors, function (key, value) {
+                                      Swal.fire({
+                                        title: 'Terjadi kesalahan saat hapus data!',
+                                        icon: 'error',
+                                        showCancelButton: false,
+                                      }).then((result) => {
+                                        
+                                      })
+                                    });
+                                }
+                            }
+                          });
+                    } else {
+                      Swal.fire(
+                        "Batal!",
+                        "batal hapus data.",
+                        "error"
+                      )
+                    }
+                })
+            });
     });
 
   </script>

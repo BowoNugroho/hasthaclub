@@ -27,6 +27,7 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::post('/saveUser', [UserController::class, 'saveUser'])->name('panel.user.saveUser');
             Route::get('/editUser', [UserController::class, 'editUser'])->name('panel.user.editUser');
             Route::post('/updateUser', [UserController::class, 'updateUser'])->name('panel.user.updateUser');
+            Route::delete('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('panel.user.deleteUser');
         });
 
         Route::prefix('role')->group(function () {

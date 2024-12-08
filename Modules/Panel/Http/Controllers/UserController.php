@@ -114,4 +114,16 @@ class UserController extends Controller
             return response()->json(['error' => true, 'message' => 'Terjadi kesalahan, coba lagi.'], 500);
         }
     }
+
+    public function deleteUser(Request $request, $id)
+    {
+        try {
+            $user = User::findOrFail($id); // Find user by ID
+            $user->delete(); // Delete the user
+
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+    }
 }
