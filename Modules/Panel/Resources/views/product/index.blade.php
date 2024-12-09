@@ -27,6 +27,9 @@ Produk - Data Product
                   <tr>
                       <th>Id</th>
                       <th>Name</th>
+                      <th>Harga</th>
+                      <th>Brand</th>
+                      <th>Category</th>
                       <th>Deskripsi</th>
                       <th>Created At</th>
                       <th>Aksi</th>

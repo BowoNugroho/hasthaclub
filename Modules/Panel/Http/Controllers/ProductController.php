@@ -6,6 +6,8 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Models\Product;
+use App\Models\Brand;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ProductController extends Controller
@@ -13,14 +15,20 @@ class ProductController extends Controller
     // Display DataTable view
     public function index()
     {
-        return view('panel::product.index');
+        $brand = Brand::where('status',1)->get();
+        $category = Category::where('status',1)->get();
+
+        return view('panel::product.index', compact('brand', 'category'));
     }
 
     // Fetch data for DataTable with server-side processing
     public function datatables(Request $request)
     {
-        $columns = ['id', 'product_name', 'deskripsi', 'created_at'];  // Define the columns you want to display
-        $query = Product::query();  // Replace with, your actual model
+        $columns = ['id', 'product_name', 'deskripsi','category_name','brand_name', 'created_at'];  // Define the columns you want to display
+        $query = Product::query()
+                        ->join('brands as brand', 'products.brand_id', '=', 'brand.id')
+                        ->join('categories as category', 'products.category_id', '=', 'category.id')
+                        ->select('products.*', 'brand.brand_name', 'category.category_name');
 
         // Apply search filter
         if ($search = $request->input('search.value')) {
@@ -59,13 +67,19 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'product_name' => 'required|string|max:255',
+            'harga' => 'required',
             'deskripsi' => 'required',
+            'brand_id' => 'required',
+            'category_id' => 'required',
         ]);
 
         try {
 
             $data['product_name'] = $request->product_name;
+            $data['harga'] = $request->harga;
             $data['deskripsi'] = $request->deskripsi;
+            $data['brand_id'] = $request->brand_id;
+            $data['category_id'] = $request->category_id;
             $data['created_by'] = auth('web')->user()->id;
             $data['status'] = 1;
 
@@ -87,14 +101,20 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'product_name' => 'required|string|max:255',
+            'harga' => 'required',
             'deskripsi' => 'required',
+            'brand_id' => 'required',
+            'category_id' => 'required',
         ]);
 
         try {
 
             $id = $request->product_id;
             $data['product_name'] = $request->product_name;
+            $data['harga'] = $request->harga;
             $data['deskripsi'] = $request->deskripsi;
+            $data['brand_id'] = $request->brand_id;
+            $data['category_id'] = $request->category_id;
             $data['updated_by'] = auth('web')->user()->id;
 
             $product = Product::findOrFail($id);
