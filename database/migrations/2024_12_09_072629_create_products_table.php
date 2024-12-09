@@ -18,7 +18,7 @@ return new class extends Migration
             $table->decimal('harga', 10, 2)->nullable();;
             $table->uuid('brand_id')->nullable();
             $table->uuid('category_id')->nullable();
-            $table->text('diskripsi')->nullable();;
+            $table->text('deskripsi')->nullable();;
             $table->boolean('status')->default(false);
             $table->uuid('created_by')->nullable();
             $table->uuid('updated_by')->nullable();

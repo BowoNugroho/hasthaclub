@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('jumlah_diskon')->nullable();
             $table->string('harga_diskon')->nullable();
             $table->string('stock')->nullable();
-            $table->text('diskripsi')->nullable();
+            $table->text('deskripsi')->nullable();
             $table->boolean('status')->default(false);
             $table->uuid('created_by')->nullable();
             $table->uuid('updated_by')->nullable();

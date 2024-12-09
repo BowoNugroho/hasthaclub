@@ -15,18 +15,18 @@ class CategorySeeder extends Seeder
     {
         Category::create([
             'category_name' => 'Handphone',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
 
         Category::create([
             'category_name' => 'Laptop',
-            'diskripsi' => 'Laptop',
+            'deskripsi' => 'Laptop',
             'status' => true
         ]);
         Category::create([
             'category_name' => 'SmartWacth',
-            'diskripsi' => 'SmartWacth',
+            'deskripsi' => 'SmartWacth',
             'status' => true
         ]);
     }

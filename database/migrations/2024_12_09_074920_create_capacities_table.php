@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('capacities', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('capacity_name');
-            $table->text('diskripsi')->nullable();;
+            $table->text('deskripsi')->nullable();;
             $table->boolean('status')->default(false);
             $table->uuid('created_by')->nullable();
             $table->uuid('updated_by')->nullable();

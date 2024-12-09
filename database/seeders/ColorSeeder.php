@@ -15,42 +15,42 @@ class ColorSeeder extends Seeder
     {
         Color::create([
             'color_name' => 'Space Gray',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Color::create([
             'color_name' => 'Silver',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Color::create([
             'color_name' => 'Gold',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Color::create([
             'color_name' => 'Midnight',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Color::create([
             'color_name' => 'Starlight',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Color::create([
             'color_name' => 'Blue',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Color::create([
             'color_name' => 'Green',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Color::create([
             'color_name' => 'Purple',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
     }

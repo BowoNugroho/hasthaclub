@@ -15,27 +15,27 @@ class CapacitySeeder extends Seeder
     {
         Capacity::create([
             'capacity_name' => '64 GB',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Capacity::create([
             'capacity_name' => '128 GB',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Capacity::create([
             'capacity_name' => '256 GB',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Capacity::create([
             'capacity_name' => '512 GB',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Capacity::create([
             'capacity_name' => '1 Tera',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
     }

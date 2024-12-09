@@ -15,22 +15,22 @@ class BrandSeeder extends Seeder
     {
         Brand::create([
             'brand_name' => 'Apple',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Brand::create([
             'brand_name' => 'Samsung',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Brand::create([
             'brand_name' => 'Oppo',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
         Brand::create([
             'brand_name' => 'Vivo',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'status' => true
         ]);
     }

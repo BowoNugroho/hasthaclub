@@ -21,70 +21,70 @@ class ProductSeeder extends Seeder
 
         Product::create([
             'product_name' => 'iPhone 11 Pro Max',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'brand_id' => $brand->id,
             'category_id' => $category->id,
             'status' => true
         ]);
         Product::create([
             'product_name' => 'iPhone 11 Pro Max',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'brand_id' => $brand->id,
             'category_id' => $category->id,
             'status' => true
         ]);
         Product::create([
             'product_name' => 'iPhone 13 Pro Max',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'brand_id' => $brand->id,
             'category_id' => $category->id,
             'status' => true
         ]);
         Product::create([
             'product_name' => 'iPhone 13',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'brand_id' => $brand->id,
             'category_id' => $category->id,
             'status' => true
         ]);
         Product::create([
             'product_name' => 'iPhone 11',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'brand_id' => $brand->id,
             'category_id' => $category->id,
             'status' => true
         ]);
         Product::create([
             'product_name' => 'iPhone 12 Mini',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'brand_id' => $brand->id,
             'category_id' => $category->id,
             'status' => true
         ]);
         Product::create([
             'product_name' => 'iPhone 14',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'brand_id' => $brand->id,
             'category_id' => $category->id,
             'status' => true
         ]);
         Product::create([
             'product_name' => 'iPhone 14 Plus',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'brand_id' => $brand->id,
             'category_id' => $category->id,
             'status' => true
         ]);
         Product::create([
             'product_name' => 'iPhone 15',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'brand_id' => $brand->id,
             'category_id' => $category->id,
             'status' => true
         ]);
         Product::create([
             'product_name' => 'iPhone 15 Plus',
-            'diskripsi' => 'Phone',
+            'deskripsi' => 'Phone',
             'brand_id' => $brand->id,
             'category_id' => $category->id,
             'status' => true
