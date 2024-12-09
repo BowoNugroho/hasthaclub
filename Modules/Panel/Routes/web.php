@@ -11,6 +11,7 @@ use Modules\Panel\Http\Controllers\CategoryController;
 use Modules\Panel\Http\Controllers\BrandController;
 use Modules\Panel\Http\Controllers\CapacityController;
 use Modules\Panel\Http\Controllers\ColorController;
+use Modules\Panel\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +103,15 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::get('/editColor', [ColorController::class, 'editColor'])->name('panel.color.editColor');
             Route::post('/updateColor', [ColorController::class, 'updateColor'])->name('panel.color.updateColor');
             Route::delete('/deleteColor/{id}', [ColorController::class, 'deleteColor'])->name('panel.color.deleteColor');
+        });
+
+        Route::prefix('product')->group(function () {
+            Route::get('/', [ProductController::class, 'index'])->name('panel.product.index');
+            Route::get('/datatables', [ProductController::class, 'datatables'])->name('panel.product.datatables');
+            Route::post('/saveProduct', [ProductController::class, 'saveProduct'])->name('panel.product.saveProduct');
+            Route::get('/editProduct', [ProductController::class, 'editProduct'])->name('panel.product.editProduct');
+            Route::post('/updateProduct', [ProductController::class, 'updateProduct'])->name('panel.product.updateProduct');
+            Route::delete('/deleteProduct/{id}', [ProductController::class, 'deleteProduct'])->name('panel.product.deleteProduct');
         });
 
     });

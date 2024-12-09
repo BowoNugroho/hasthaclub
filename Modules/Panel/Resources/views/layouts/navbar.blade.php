@@ -115,12 +115,12 @@
                           <a href="{{ route('panel.brand.index') }}" class="dropdown-item">
                             Master Data Brand
                           </a>
-                          <a href="#" class="dropdown-item">
-                            Master  Data Produk
+                          <a href="{{ route('panel.product.index') }}" class="dropdown-item">
+                            Master Data Produk
                           </a>
                           <div class="dropend">
                             <a href="#" class="dropdown-item dropdown-toggle" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false">
-                              Master  Data Varian
+                              Master Data Varian
                             </a>
                             <div class="dropdown-menu">
                               <a href="{{ route('panel.color.index') }}" class="dropdown-item">
@@ -134,12 +134,12 @@
                         </div>
                       </div>
                       <div class="dropend">
-                        <a class="dropdown-item" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                        <a class="dropdown-item" href="{{ route('panel.product.index') }}"  data-bs-auto-close="outside" role="button" aria-expanded="false" >
                             Produk Saya
                         </a>
                       </div>
                       <div class="dropend">
-                        <a class="dropdown-item" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                        <a class="dropdown-item" href="{{ route('panel.category.index') }}" data-bs-auto-close="outside" role="button" aria-expanded="false" >
                             Kategori Produk Saya
                         </a>
                       </div>                  

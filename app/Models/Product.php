@@ -28,4 +28,10 @@ class Product extends Model
             $model->{$model->getKeyName()} = (string) \Illuminate\Support\Str::uuid();
         });
     }
+
+    protected $fillable = [
+        'product_name',
+        'deskripsi',
+        'status',
+    ];
 }
