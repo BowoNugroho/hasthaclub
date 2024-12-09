@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\Brand;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -71,13 +72,20 @@ class ProductController extends Controller
             'deskripsi' => 'required',
             'brand_id' => 'required',
             'category_id' => 'required',
+            'product_img' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048', // Validate the image
         ]);
 
         try {
 
+            $imagePath = null;
+            if ($request->hasFile('product_img')) {
+                $imagePath = $request->file('product_img')->store('public/products');
+            }
+
             $data['product_name'] = $request->product_name;
             $data['harga'] = $request->harga;
             $data['deskripsi'] = $request->deskripsi;
+            $data['product_img'] = $imagePath;
             $data['brand_id'] = $request->brand_id;
             $data['category_id'] = $request->category_id;
             $data['created_by'] = auth('web')->user()->id;
@@ -105,19 +113,33 @@ class ProductController extends Controller
             'deskripsi' => 'required',
             'brand_id' => 'required',
             'category_id' => 'required',
+            'product_img' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048', // Validate the image
         ]);
 
         try {
 
             $id = $request->product_id;
+            $product = Product::findOrFail($id);
+
+            $imagePath = $product->product_img; // Keep the existing image
+            if ($request->hasFile('product_img')) {
+                // Delete old image if it exists
+                if ($imagePath) {
+                    Storage::delete($imagePath);
+                }
+
+                // Store the new image
+                $imagePath = $request->file('product_img')->store('public/products');
+            }
+
             $data['product_name'] = $request->product_name;
             $data['harga'] = $request->harga;
             $data['deskripsi'] = $request->deskripsi;
+            $data['product_img'] = $imagePath;
             $data['brand_id'] = $request->brand_id;
             $data['category_id'] = $request->category_id;
             $data['updated_by'] = auth('web')->user()->id;
 
-            $product = Product::findOrFail($id);
             $product->update($data);
 
             return response()->json(['success' => true], 200);

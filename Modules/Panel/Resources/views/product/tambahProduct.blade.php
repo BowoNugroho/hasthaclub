@@ -17,7 +17,7 @@
               <label class="form-label">Harga</label>
               <input type="number" class="form-control" id="harga" name="harga" placeholder="Nama" />
               <span class="error text-danger" id="harga_error"></span>
-          </div>
+            </div>
             <div class="mb-3">
                 <label class="form-label">Deskripsi</label>
                 <textarea class="form-control"  id="deskripsi" name="deskripsi" rows="3"  placeholder="deskripsi"></textarea>
@@ -48,6 +48,10 @@
                     <span class="error text-danger" id="category_id_error"></span>
                 </div>
               </div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="product_img" name="product_img">
             </div>
           </div>
           <div class="modal-footer">

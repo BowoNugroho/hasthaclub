@@ -50,6 +50,10 @@
                 </div>
               </div>
             </div>
+            <div class="mb-3">
+              <label for="image" class="form-label">Image</label>
+              <input type="file" class="form-control" id="edit_product_img" name="product_img">
+            </div>
           </div>
           <div class="modal-footer">
             <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">

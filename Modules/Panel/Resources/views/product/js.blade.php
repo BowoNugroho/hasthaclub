@@ -54,7 +54,7 @@
             let isValid = true;
 
             if ($('#product_name').val() === '') {
-                $('#product_name_error').text('Nama Kategori wajib diisi.');
+                $('#product_name_error').text('Nama Produk wajib diisi.');
                 isValid = false;
             }
             if ($('#deskripsi').val() === '') {
@@ -150,7 +150,7 @@
 
             let isValid = true;
             if ($('#edit_product_name').val() === '') {
-                $('#edit_product_name_error').text('Nama Kategori wajib diisi.');
+                $('#edit_product_name_error').text('Nama Produk wajib diisi.');
                 isValid = false;
             }
             if ($('#edit_deskripsi').val() === '') {
