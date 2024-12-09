@@ -81,19 +81,11 @@
                           <a href="{{ route('panel.store.index') }}" class="dropdown-item">
                             Data Toko
                           </a>
-                          <a href="#" class="dropdown-item">
-                            Data Sales Toko
-                          </a>
                         </div>
                       </div>
                       <div class="dropend">
                         <a class="dropdown-item" href="{{ route('panel.store.index') }}" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
                          Toko Saya
-                        </a>
-                      </div>
-                      <div class="dropend">
-                        <a class="dropdown-item" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
-                         Sales Toko Saya
                         </a>
                       </div>
                     </div>
@@ -123,9 +115,6 @@
                           <a href="#" class="dropdown-item">
                             Master Kategori Produk
                           </a>
-                          <a href="#" class="dropdown-item">
-                            Master Katalog
-                          </a>
                         </div>
                       </div>
                       <div class="dropend">
@@ -137,12 +126,7 @@
                         <a class="dropdown-item" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
                             Kategori Produk Saya
                         </a>
-                      </div> 
-                      <div class="dropend">
-                        <a class="dropdown-item" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false" >
-                            Katalog Saya
-                        </a>
-                      </div>                 
+                      </div>                  
                     </div>
                   </div>
                 </div>
