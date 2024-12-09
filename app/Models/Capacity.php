@@ -28,4 +28,11 @@ class Capacity extends Model
             $model->{$model->getKeyName()} = (string) \Illuminate\Support\Str::uuid();
         });
     }
+
+    protected $fillable = [
+        'capacity_name',
+        'deskripsi',
+        'status',
+    ];
+
 }

@@ -126,7 +126,7 @@
                               <a href="#" class="dropdown-item">
                                 Master  Data Warna
                               </a>
-                              <a href="#" class="dropdown-item">
+                              <a href="{{ route('panel.capacity.index') }}" class="dropdown-item">
                                 Master  Data Kapasitas
                               </a>
                             </div>

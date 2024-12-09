@@ -9,6 +9,7 @@ use Modules\Panel\Http\Controllers\RoleController;
 use Modules\Panel\Http\Controllers\HasRoleController;
 use Modules\Panel\Http\Controllers\CategoryController;
 use Modules\Panel\Http\Controllers\BrandController;
+use Modules\Panel\Http\Controllers\CapacityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,15 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::get('/editBrand', [BrandController::class, 'editBrand'])->name('panel.brand.editBrand');
             Route::post('/updateBrand', [BrandController::class, 'updateBrand'])->name('panel.brand.updateBrand');
             Route::delete('/deleteBrand/{id}', [BrandController::class, 'deleteBrand'])->name('panel.brand.deleteBrand');
+        });
+
+        Route::prefix('capacity')->group(function () {
+            Route::get('/', [CapacityController::class, 'index'])->name('panel.capacity.index');
+            Route::get('/datatables', [CapacityController::class, 'datatables'])->name('panel.capacity.datatables');
+            Route::post('/saveCapacity', [CapacityController::class, 'saveCapacity'])->name('panel.capacity.saveCapacity');
+            Route::get('/editCapacity', [CapacityController::class, 'editCapacity'])->name('panel.capacity.editCapacity');
+            Route::post('/updateCapacity', [CapacityController::class, 'updateCapacity'])->name('panel.capacity.updateCapacity');
+            Route::delete('/deleteCapacity/{id}', [CapacityController::class, 'deleteCapacity'])->name('panel.capacity.deleteCapacity');
         });
 
     });
