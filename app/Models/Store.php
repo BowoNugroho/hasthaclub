@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
 
 class Store extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable, UuidTraits, HasRoles, Blameable;
+    use HasApiTokens, HasFactory, Notifiable, UuidTraits, HasRoles, Blameable, SoftDeletes;
     protected $table = 'stores';
 
     protected $keyType = 'string';
@@ -36,11 +36,14 @@ class Store extends Model
         'jam_operasional',
         'mitra_id',
         'sales_mitra_id',
+        'kota',
+        'provinsi',
         'no_hp',
         'email',
         'status',
     ];
 
+    // query modul shop
     public static function getStore($search)
     {
         if ($search == null) {
@@ -103,5 +106,19 @@ class Store extends Model
             ->update($data);
 
         return $user;
+    }
+
+    // query modul panel
+    public static function getUserMitra()
+    {
+        $data = DB::table('users')->get();
+
+        return $data;
+    }
+    public static function getUserAkuisisi()
+    {
+        $data = DB::table('users')->get();
+
+        return $data;
     }
 }

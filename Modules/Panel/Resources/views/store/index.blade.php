@@ -22,13 +22,16 @@
               <button  type="button" class="btn btn-primary btn-md m-2 float-end" data-bs-toggle="modal" data-bs-target="#tambahStore">Tambah</button>
             </div>
           </div>
-          <table id="user_datatables" class="display">
+          <table id="store_datatables" class="display">
               <thead>
                   <tr>
                       <th>ID</th>
                       <th>Name</th>
+                      <th>Kota</th>
                       <th>Email</th>
                       <th>No Hp</th>
+                      <th>Pemilik Toko</th>
+                      <th>Staff Akuisisi</th>
                       <th>Created At</th>
                       <th>Aksi</th>
                   </tr>
@@ -40,113 +43,8 @@
       </div>
     </div>
   </div>
-
-  {{-- modal tambah--}}
-
-  <div class="modal" id="tambahStore" tabindex="-1">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Tambah Store</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form id="userForm">
-          @csrf
-          <div class="modal-body">
-            <div class="mb-3">
-              <label class="form-label">Nama</label>
-              <input type="text" class="form-control" id="store_name" name="store_name" placeholder="Nama" />
-              <span class="error text-danger" id="name_error"></span>
-            </div>
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="mb-3">
-                  <label class="form-label">Nomer Hp</label>
-                  <input type="text" id="no_hp" name="no_hp" class="form-control"  placeholder="no handphone" />
-                  <span class="error text-danger" id="no_hp_error"></span>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="mb-3">
-                  <label class="form-label">Email</label>
-                  <input type="text" id="email" name="email" class="form-control"  placeholder="email" />
-                  <span class="error text-danger" id="email_error"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
-            Cancel
-            </a>
-            <button type="submit" class="btn btn-primary ms-auto">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M12 5l0 14"></path>
-                <path d="M5 12l14 0"></path>
-              </svg>
-              Simpan
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  {{-- modal edit --}}
-
-  <div class="modal" id="editStore" tabindex="-1">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Edit Store</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form id="userEditForm">
-          @csrf
-          <div class="modal-body">
-            <div class="mb-3">
-              <label class="form-label">Nama</label>
-              <input type="text" class="form-control" id="edit_store_name" name="store_name" placeholder="Nama" />
-              <input type="hidden" class="form-control" id="edit_store_id" name="id"/>
-              <span class="error text-danger" id="edit_store_name_error"></span>
-            </div>
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="mb-3">
-                  <label class="form-label">Nomer Hp</label>
-                  <input type="text" id="edit_no_hp" name="no_hp" class="form-control"  placeholder="no handphone" onkeyup="checkHp()" />
-                  <span class="error text-danger" id="edit_no_hp_error"></span>
-                  <span class="error text-success" id="edit_no_hp_success"></span>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="mb-3">
-                  <label class="form-label">Email</label>
-                  <input type="text" id="edit_email" name="email" class="form-control"  placeholder="email" onkeyup="checkEmail()" />
-                  <span class="error text-danger" id="edit_email_error"></span>
-                  <span class="error text-success" id="edit_email_success"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
-            Cancel
-            </a>
-            <button type="submit" class="btn btn-primary ms-auto">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M12 5l0 14"></path>
-                <path d="M5 12l14 0"></path>
-              </svg>
-              Simpan
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+@include('panel::store.tambahStore')
+@include('panel::store.editStore')
 @endsection
 @include('panel::store.js')
 
