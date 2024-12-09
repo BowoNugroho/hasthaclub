@@ -79,7 +79,7 @@ class ProductController extends Controller
 
             $imagePath = null;
             if ($request->hasFile('product_img')) {
-                $imagePath = $request->file('product_img')->store('public/products');
+                $imagePath = $request->file('product_img')->store('product_images', 'public');
             }
 
             $data['product_name'] = $request->product_name;
@@ -121,15 +121,12 @@ class ProductController extends Controller
             $id = $request->product_id;
             $product = Product::findOrFail($id);
 
-            $imagePath = $product->product_img; // Keep the existing image
+            $imagePath = $product->product_img;
             if ($request->hasFile('product_img')) {
-                // Delete old image if it exists
-                if ($imagePath) {
-                    Storage::delete($imagePath);
+                if (Storage::exists('public/' . $product->product_img)) {
+                    Storage::delete('public/' . $product->product_img);
                 }
-
-                // Store the new image
-                $imagePath = $request->file('product_img')->store('public/products');
+                $imagePath = $request->file('product_img')->store('product_images', 'public');
             }
 
             $data['product_name'] = $request->product_name;

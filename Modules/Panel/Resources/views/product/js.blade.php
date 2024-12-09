@@ -17,6 +17,10 @@
             },
             columns: [
                 { data: 'id' },
+                { data: 'product_img', render: function(data) {
+                    return data ? `<img src="{{ url('public/storage') }}/${data}" width="250">` : 'No Image';
+                  }
+                },
                 { data: 'product_name' },
                 { data: 'harga' },
                 { data: 'brand_name' },

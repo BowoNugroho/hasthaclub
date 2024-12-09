@@ -26,6 +26,7 @@ Produk - Data Product
               <thead>
                   <tr>
                       <th>Id</th>
+                      <th>Image</th>
                       <th>Name</th>
                       <th>Harga</th>
                       <th>Brand</th>
