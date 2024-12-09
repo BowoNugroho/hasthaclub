@@ -28,4 +28,10 @@ class Category extends Model
             $model->{$model->getKeyName()} = (string) \Illuminate\Support\Str::uuid();
         });
     }
+
+    protected $fillable = [
+        'category_name',
+        'deskripsi',
+        'status',
+    ];
 }

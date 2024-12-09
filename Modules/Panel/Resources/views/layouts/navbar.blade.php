@@ -109,7 +109,7 @@
                           Master Data
                         </a>
                         <div class="dropdown-menu">
-                          <a href="#" class="dropdown-item">
+                          <a href="{{ route('panel.category.index') }}" class="dropdown-item">
                             Master Data Kategori
                           </a>
                           <a href="#" class="dropdown-item">

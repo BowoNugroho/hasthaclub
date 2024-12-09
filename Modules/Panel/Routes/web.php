@@ -1,11 +1,13 @@
 <?php
 
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use Modules\Panel\Http\Controllers\PanelController;
 use Modules\Panel\Http\Controllers\UserController;
 use Modules\Panel\Http\Controllers\StoreController;
 use Modules\Panel\Http\Controllers\RoleController;
 use Modules\Panel\Http\Controllers\HasRoleController;
+use Modules\Panel\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +63,11 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::delete('/deleteStore/{id}', [StoreController::class, 'deleteStore'])->name('panel.store.deleteStore');
             Route::get('/checkHp', [StoreController::class, 'checkHp'])->name('panel.store.checkHp');
             Route::get('/checkEmail', [StoreController::class, 'checkEmail'])->name('panel.store.checkEmail');
+        });
+
+        Route::prefix('category')->group(function () {
+            Route::get('/', [CategoryController::class, 'index'])->name('panel.category.index');
+            Route::get('/datatables', [CategoryController::class, 'datatables'])->name('panel.category.datatables');
         });
     });
     // });
