@@ -8,6 +8,7 @@ use Modules\Panel\Http\Controllers\StoreController;
 use Modules\Panel\Http\Controllers\RoleController;
 use Modules\Panel\Http\Controllers\HasRoleController;
 use Modules\Panel\Http\Controllers\CategoryController;
+use Modules\Panel\Http\Controllers\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +74,16 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::post('/updateCategory', [CategoryController::class, 'updateCategory'])->name('panel.category.updateCategory');
             Route::delete('/deleteCategory/{id}', [CategoryController::class, 'deleteCategory'])->name('panel.category.deleteCategory');
         });
+
+        Route::prefix('brand')->group(function () {
+            Route::get('/', [BrandController::class, 'index'])->name('panel.brand.index');
+            Route::get('/datatables', [BrandController::class, 'datatables'])->name('panel.brand.datatables');
+            Route::post('/saveBrand', [BrandController::class, 'saveBrand'])->name('panel.brand.saveBrand');
+            Route::get('/editBrand', [BrandController::class, 'editBrand'])->name('panel.brand.editBrand');
+            Route::post('/updateBrand', [BrandController::class, 'updateBrand'])->name('panel.brand.updateBrand');
+            Route::delete('/deleteBrand/{id}', [BrandController::class, 'deleteBrand'])->name('panel.brand.deleteBrand');
+        });
+
     });
     // });
 });

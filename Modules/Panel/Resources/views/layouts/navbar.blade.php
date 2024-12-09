@@ -112,7 +112,7 @@
                           <a href="{{ route('panel.category.index') }}" class="dropdown-item">
                             Master Data Kategori
                           </a>
-                          <a href="#" class="dropdown-item">
+                          <a href="{{ route('panel.brand.index') }}" class="dropdown-item">
                             Master Data Brand
                           </a>
                           <a href="#" class="dropdown-item">

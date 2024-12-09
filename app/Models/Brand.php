@@ -28,4 +28,11 @@ class Brand extends Model
             $model->{$model->getKeyName()} = (string) \Illuminate\Support\Str::uuid();
         });
     }
+
+    protected $fillable = [
+        'brand_name',
+        'deskripsi',
+        'status',
+    ];
+
 }
