@@ -71,6 +71,7 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::post('/saveCategory', [CategoryController::class, 'saveCategory'])->name('panel.category.saveCategory');
             Route::get('/editCategory', [CategoryController::class, 'editCategory'])->name('panel.category.editCategory');
             Route::post('/updateCategory', [CategoryController::class, 'updateCategory'])->name('panel.category.updateCategory');
+            Route::delete('/deleteCategory/{id}', [CategoryController::class, 'deleteCategory'])->name('panel.category.deleteCategory');
         });
     });
     // });

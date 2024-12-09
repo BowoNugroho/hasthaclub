@@ -19,7 +19,7 @@ Produk - Data Kategori Produk
             <h1>Data Kategori Produk</h1>
           </div>
           <div class="col-md-10">
-            <button  type="button" class="btn btn-primary btn-md m-2 float-end" data-bs-toggle="modal" data-bs-target="#tambahCatgory">Tambah</button>
+            <button  type="button" class="btn btn-primary btn-md m-2 float-end" data-bs-toggle="modal" data-bs-target="#tambahCategory">Tambah</button>
           </div>
         </div>
           <table id="category_datatables" class="display">
@@ -39,8 +39,8 @@ Produk - Data Kategori Produk
       </div>
     </div>
   </div>
-{{-- @include('panel::category.tambahCategory')
-@include('panel::category.editCategory') --}}
+@include('panel::category.tambahCategory')
+@include('panel::category.editCategory') 
 @endsection
 
 @include('panel::category.js')

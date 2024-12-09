@@ -52,4 +52,67 @@ class CategoryController extends Controller
             'data' => $data,
         ]);
     }
+
+    public function saveCategory(Request $request)
+    {
+        $validated = $request->validate([
+            'category_name' => 'required|string|max:255',
+            'deskripsi' => 'required',
+        ]);
+
+        try {
+
+            $data['category_name'] = $request->category_name;
+            $data['deskripsi'] = $request->deskripsi;
+            $data['created_by'] = auth('web')->user()->id;
+            $data['status'] = 1;
+
+            $category = Category::create($data);
+
+            return response()->json(['success' => true], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => true], 500);
+        }
+    }
+
+    public function editCategory(Request $request)
+    {
+        $category = Category::find($request->id);
+        return response()->json($category);
+    }
+
+    public function updateCategory(Request $request)
+    {
+        $validated = $request->validate([
+            'category_name' => 'required|string|max:255',
+            'deskripsi' => 'required',
+        ]);
+
+        try {
+
+            $id = $request->category_id;
+            $data['category_name'] = $request->category_name;
+            $data['deskripsi'] = $request->deskripsi;
+            $data['updated_by'] = auth('web')->user()->id;
+
+            $category = Category::findOrFail($id);
+            $category->update($data);
+
+            return response()->json(['success' => true], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => true], 500);
+        }
+    }
+
+    public function deleteCategory(Request $request, $id)
+    {
+        try {
+            // SoftDeleting
+            Category::find($id)->delete();
+
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Category not found'], 404);
+        }
+    }
 }
