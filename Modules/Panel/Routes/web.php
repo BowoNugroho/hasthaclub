@@ -69,6 +69,8 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::get('/', [CategoryController::class, 'index'])->name('panel.category.index');
             Route::get('/datatables', [CategoryController::class, 'datatables'])->name('panel.category.datatables');
             Route::post('/saveCategory', [CategoryController::class, 'saveCategory'])->name('panel.category.saveCategory');
+            Route::get('/editCategory', [CategoryController::class, 'editCategory'])->name('panel.category.editCategory');
+            Route::post('/updateCategory', [CategoryController::class, 'updateCategory'])->name('panel.category.updateCategory');
         });
     });
     // });
