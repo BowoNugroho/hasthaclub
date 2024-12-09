@@ -123,7 +123,7 @@
                               Master  Data Varian
                             </a>
                             <div class="dropdown-menu">
-                              <a href="#" class="dropdown-item">
+                              <a href="{{ route('panel.color.index') }}" class="dropdown-item">
                                 Master  Data Warna
                               </a>
                               <a href="{{ route('panel.capacity.index') }}" class="dropdown-item">

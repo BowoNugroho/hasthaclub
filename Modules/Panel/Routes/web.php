@@ -10,6 +10,7 @@ use Modules\Panel\Http\Controllers\HasRoleController;
 use Modules\Panel\Http\Controllers\CategoryController;
 use Modules\Panel\Http\Controllers\BrandController;
 use Modules\Panel\Http\Controllers\CapacityController;
+use Modules\Panel\Http\Controllers\ColorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,6 +93,15 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::get('/editCapacity', [CapacityController::class, 'editCapacity'])->name('panel.capacity.editCapacity');
             Route::post('/updateCapacity', [CapacityController::class, 'updateCapacity'])->name('panel.capacity.updateCapacity');
             Route::delete('/deleteCapacity/{id}', [CapacityController::class, 'deleteCapacity'])->name('panel.capacity.deleteCapacity');
+        });
+
+        Route::prefix('color')->group(function () {
+            Route::get('/', [ColorController::class, 'index'])->name('panel.color.index');
+            Route::get('/datatables', [ColorController::class, 'datatables'])->name('panel.color.datatables');
+            Route::post('/saveColor', [ColorController::class, 'saveColor'])->name('panel.color.saveColor');
+            Route::get('/editColor', [ColorController::class, 'editColor'])->name('panel.color.editColor');
+            Route::post('/updateColor', [ColorController::class, 'updateColor'])->name('panel.color.updateColor');
+            Route::delete('/deleteColor/{id}', [ColorController::class, 'deleteColor'])->name('panel.color.deleteColor');
         });
 
     });

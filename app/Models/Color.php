@@ -28,4 +28,11 @@ class Color extends Model
             $model->{$model->getKeyName()} = (string) \Illuminate\Support\Str::uuid();
         });
     }
+
+    protected $fillable = [
+        'color_name',
+        'deskripsi',
+        'status',
+    ];
+
 }
