@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="grid xl:grid-cols-5 grid-cols-5 p-5">
-    <div class="box border"></div>
-    <div class="box border xl:col-span-3 col-span-5 text-center">
+    <div class="box "></div>
+    <div class="box  xl:col-span-3 col-span-5 text-center">
         <div class="grid grid-cols-1">
             <div class="box flex">
                 <span class="text-4xl font-bold tracking-widest mr-24 hidden md:flex">Toko</span>
@@ -126,7 +126,7 @@
             </div>
         </div>
     </div>
-    <div class="box border"></div>
+    <div class="box "></div>
 </div>
 @endsection
 
