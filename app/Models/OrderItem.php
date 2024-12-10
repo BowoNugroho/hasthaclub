@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 class OrderItem extends Model
 {
     use HasApiTokens, HasFactory, Notifiable, UuidTraits, HasRoles, Blameable, SoftDeletes;
-    protected $table = 'checkouts';
+    protected $table = 'order_items';
 
     protected $keyType = 'string';
     public $incrementing = false;
