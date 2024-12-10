@@ -12,6 +12,7 @@ use Modules\Panel\Http\Controllers\BrandController;
 use Modules\Panel\Http\Controllers\CapacityController;
 use Modules\Panel\Http\Controllers\ColorController;
 use Modules\Panel\Http\Controllers\ProductController;
+use Modules\Panel\Http\Controllers\ProductVariantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,6 +115,14 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::delete('/deleteProduct/{id}', [ProductController::class, 'deleteProduct'])->name('panel.product.deleteProduct');
         });
 
+        Route::prefix('productVariant')->group(function () {
+            Route::get('/', [ProductVariantController::class, 'index'])->name('panel.productVariant.index');
+            Route::get('/datatables', [ProductVariantController::class, 'datatables'])->name('panel.productVariant.datatables');
+            Route::post('/saveProductVariant', [ProductVariantController::class, 'saveProductVariant'])->name('panel.productVariant.saveProductVariant');
+            Route::get('/editProductVariant', [ProductVariantController::class, 'editProductVariant'])->name('panel.productVariant.editProductVariant');
+            Route::post('/updateProductVariant', [ProductVariantController::class, 'updateProductVariant'])->name('panel.productVariant.updateProductVariant');
+            Route::delete('/deleteProductVariant/{id}', [ProductVariantController::class, 'deleteProductVariant'])->name('panel.productVariant.deleteProductVariant');
+        });
     });
     // });
 });
