@@ -139,8 +139,13 @@
                         </a>
                       </div>
                       <div class="dropend">
-                        <a class="dropdown-item" href="{{ route('panel.category.index') }}" data-bs-auto-close="outside" role="button" aria-expanded="false" >
-                            Kategori Produk Saya
+                        <a class="dropdown-item" href="#" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                            Produk Best Seller
+                        </a>
+                      </div>                  
+                      <div class="dropend">
+                        <a class="dropdown-item" href="#" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                            Produk Checkout
                         </a>
                       </div>                  
                     </div>
