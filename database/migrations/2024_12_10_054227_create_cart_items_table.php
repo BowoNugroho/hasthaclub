@@ -11,14 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('cart_items', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('product_name');
-            $table->text('product_img')->nullable();
-            $table->decimal('harga', 10, 2)->nullable();
-            $table->uuid('brand_id')->nullable();
-            $table->uuid('category_id')->nullable();
-            $table->text('deskripsi')->nullable();
+            $table->uuid('cart_id');
+            $table->uuid('product_variant_id');
+            $table->uuid('store_id')->nullable();
+            $table->uuid('sales_mitra_id')->nullable();
+            $table->uuid('sales_to_id')->nullable();
+            $table->string('qty')->nullable();
+            $table->string('kode_voucher')->nullable();
+            $table->string('harga')->nullable();
+            $table->string('total_harga')->nullable();
             $table->boolean('status')->default(false);
             $table->uuid('created_by')->nullable();
             $table->uuid('updated_by')->nullable();
@@ -33,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('cart_items');
     }
 };
