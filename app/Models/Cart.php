@@ -34,4 +34,15 @@ class Cart extends Model
         'user_id',
         'status',
     ];
+
+
+    public static function cekUser($user_id)
+    {
+        $return = DB::table('carts as a')
+            ->select('a.id', 'a.user_id',)
+            ->where('a.user_id', $user_id)
+            ->first();
+
+        return $return;
+    }
 }

@@ -108,6 +108,16 @@ class Store extends Model
         return $user;
     }
 
+    public static function getSalesMitraId($id)
+    {
+        $return = DB::table('stores as a')
+            ->select('a.id', 'a.sales_mitra_id')
+            ->where('a.id', $id)
+            ->first();
+
+        return $return;
+    }
+
     // query modul panel
     public static function getUserMitra()
     {

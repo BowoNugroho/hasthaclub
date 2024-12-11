@@ -8,16 +8,22 @@ use Illuminate\Routing\Controller;
 use App\Models\Customer;
 use App\Models\DashboardCustomer;
 use App\Models\Store;
+use App\Models\Cart;
+use App\Models\CartItem;
 
 class StoreController extends Controller
 {
     public function index(Request $request)
     {
+        $user_id = @auth('customer')->user()->id;
+        $cek_cart = Cart::cekUser(@$user_id);
+        $cartCount = CartItem::countCart(@$cek_cart->id);
+
         $search = $request->input('search_store');
         $get = Store::getStore($search);
         $data = $get['data'];
         $count = $get['count'];
-        return view('shop::store.index', compact('data', 'count'));
+        return view('shop::store.index', compact('data', 'count', 'cartCount'));
     }
 
     public function loadMoreStore(Request $request)

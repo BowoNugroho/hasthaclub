@@ -5,8 +5,9 @@ namespace Modules\Shop\Http\Controllers;
 // use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-// use Illuminate\Support\Facades\Auth;
-use App\Models\User;
+// use Illuminate\Sup
+use App\Models\Cart;
+use App\Models\CartItem;
 
 class RiwayatController extends Controller
 {
@@ -19,6 +20,9 @@ class RiwayatController extends Controller
         // var_dump($name);
         // die;
         // $post = User::findOrFail($id);
-        return view('shop::customer.riwayatCs');
+        $user_id = @auth('customer')->user()->id;
+        $cek_cart = Cart::cekUser(@$user_id);
+        $cartCount = CartItem::countCart(@$cek_cart->id);
+        return view('shop::customer.riwayatCs', compact('cartCount'));
     }
 }

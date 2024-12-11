@@ -1,5 +1,11 @@
 @extends('shop::customer.dashboard')
-
+@section('cart-count')
+@if (@auth('customer')->user()->id)
+<span id="cart-count" class="cart-count bg-blue-500  text-white w-4 h-4 pl-1  text-xs rounded-full absolute ">
+    {{ $cartCount ?? 0 }}
+</span>
+@endif
+@endsection
 @section('content_customer')
 <div class="grid grid-cols-1">
     <p class="text-2xl font-bold text-start mb-5 mt-5">Informasi Akun</p>

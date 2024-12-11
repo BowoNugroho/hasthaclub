@@ -37,4 +37,16 @@ class Voucher extends Model
         'sales_to_id',
         'status',
     ];
+
+    public static function cehkVoucher($voucher_code)
+    {
+        $voucher = $voucher_code;
+
+        $return = DB::table('vouchers as a')
+            ->select('a.id', 'a.voucher_code', 'a.store_id', 'a.sales_to_id')
+            ->where('a.voucher_code', $voucher)
+            ->first();
+
+        return $return;
+    }
 }

@@ -94,4 +94,14 @@ class ProductVariant extends Model
 
         return $return;
     }
+
+    public static function getProductVariantbyId1($id)
+    {
+        $data = DB::table('product_variants as a')
+            ->select('a.id', 'a.harga', 'a.harga_diskon')
+            ->where('a.id', $id)
+            ->first();
+
+        return $data;
+    }
 }

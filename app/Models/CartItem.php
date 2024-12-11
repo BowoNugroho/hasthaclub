@@ -42,4 +42,27 @@ class CartItem extends Model
         'total_harga',
         'status',
     ];
+
+    public static function cekCartItembyProductVariantId($product_variant_id, $cart_id)
+    {
+        $return = DB::table('cart_items as a')
+            ->select('a.*')
+            ->where('a.product_variant_id', $product_variant_id)
+            ->where('a.cart_id', $cart_id)
+            ->whereNull('a.deleted_at')
+            ->first();
+
+        return $return;
+    }
+
+    public static function countCart($id)
+    {
+        $return = DB::table('cart_items as a')
+            ->select('a.qty')
+            ->where('a.cart_id', $id)
+            ->whereNull('a.deleted_at')
+            ->sum('a.qty');
+
+        return $return;
+    }
 }

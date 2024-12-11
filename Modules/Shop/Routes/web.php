@@ -63,6 +63,9 @@ Route::prefix('shop')->group(function () {
             Route::get('/detailKatalog', 'index')->name('detail.katalog');
             Route::get('/detailProduct/{id}', 'detailKatalog')->name('detail.katalog.product');
             Route::get('/cekProduct', 'cekProduct')->name('detail.katalog.cekProduct');
+            Route::get('/cekVoucher', 'cekVoucher')->name('detail.katalog.cekVoucher');
+            Route::post('/addCart', 'addCart')->name('detail.katalog.addCart');
+            Route::get('/counCart', 'counCart')->name('detail.katalog.counCart');
         });
     });
 

@@ -1,5 +1,11 @@
 @extends('shop::layouts.app')
-
+@section('cart-count')
+@if (@auth('customer')->user()->id)
+<span id="cart-count" class="cart-count bg-blue-500  text-white w-4 h-4 pl-1  text-xs rounded-full absolute ">
+    {{ $cartCount ?? 0 }}
+</span>
+@endif
+@endsection
 @section('content')
 <div class="grid xl:grid-cols-8 lg:grid-cols-6 md:grid-cols-4 grid-cols-1 mt-2">
 <div class="box  xl:col-span-3 lg:col-span-2"></div>

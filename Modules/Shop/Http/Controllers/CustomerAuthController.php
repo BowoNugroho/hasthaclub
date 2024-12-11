@@ -10,17 +10,22 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\Customer;
 use App\Models\User;
+use App\Models\Cart;
+use App\Models\CartItem;
 use Carbon\Carbon;
 
 class CustomerAuthController extends Controller
 {
     public function loginCs(Request $request)
     {
+        $user_id = @auth('customer')->user()->id;
+        $cek_cart = Cart::cekUser(@$user_id);
+        $cartCount = CartItem::countCart(@$cek_cart->id);
 
         if (Auth::guard('customer')->check()) {
             return redirect('/shop/dashboardCs');
         } else {
-            return view('shop::customer.login');
+            return view('shop::customer.login', compact('cartCount'));
         }
     }
 

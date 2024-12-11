@@ -18,7 +18,7 @@
             columns: [
                 { data: 'id' },
                 { data: 'product_img', render: function(data) {
-                    return data ? `<img src="{{ url('public/storage') }}/${data}" width="250">` : 'No Image';
+                    return data ? `<img src="{{ url('storage') }}/${data}" width="250">` : 'No Image';
                   }
                 },
                 { data: 'product_name' },

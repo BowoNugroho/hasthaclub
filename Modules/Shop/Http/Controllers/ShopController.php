@@ -6,6 +6,8 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Models\ProductBestSeller;
+use App\Models\Cart;
+use App\Models\CartItem;
 
 class ShopController extends Controller
 {
@@ -15,8 +17,13 @@ class ShopController extends Controller
      */
     public function index()
     {
+        // cek cart
+        $user_id = @auth('customer')->user()->id;
+        $cek_cart = Cart::cekUser(@$user_id);
+        $cartCount = CartItem::countCart(@$cek_cart->id);
+        //
         $produk_best_seller = ProductBestSeller::getProductBestSeller();
-        return view('shop::home.index', compact('produk_best_seller'));
+        return view('shop::home.index', compact('produk_best_seller', 'cartCount'));
     }
 
     /**
