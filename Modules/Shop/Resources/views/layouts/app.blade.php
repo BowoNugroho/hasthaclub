@@ -11,6 +11,7 @@
         {{-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> --}}
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <link href="{{ url('public/modules/admin/css/sweetalert2.min.css') }}" rel="stylesheet"/>
         
         {{-- Jangan di hapus --}}
         {{-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" /> --}}
@@ -48,7 +49,7 @@
             <div class="box xl:col-span-5 col-span-7 justify-center hidden lg:flex">
                 <div class="flex justify-between items-center px-5 lg:px-[50px] h-[80px] w-full ">
                     <a href="{{ route('shop.indexHome') }}">
-                        <img src="{{ url('public/modules/shop/images/hasthaclub.png') }}" class="h-[60px]" alt="">
+                        <img src="{{ url('modules/shop/images/hasthaclub.png') }}" class="h-[60px]" alt="">
                     </a>
                     <input type="text" placeholder="Cari Produk" class="w-[500px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
                     <ul class="flex gap-4">
@@ -62,6 +63,10 @@
                         </li>
                         <li class="text-[14px] hover:scale-150">
                             <i class="fa-solid fa-bag-shopping"></i>
+                            <span class="cart-count bg-blue-500  text-white w-4 h-4 pl-1  text-xs rounded-full absolute ">
+                                2
+                                {{-- {{ Cart::count() }} <!-- You can replace this with the number of items in the cart --> --}}
+                            </span>
                         </li>
                         {{-- buttton logout sementara --}}
                         {{-- <li><form action="{{ route('logoutCs') }}" method="POST" style="display: inline;">
@@ -288,5 +293,6 @@
                 }, 5000); // Menghilangkan alert setelah 5 detik
         </script>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+        <script src="{{ url('public/modules/admin/js/sweetalert2.all.min.js') }}" defer></script>
     </body>
 </html>

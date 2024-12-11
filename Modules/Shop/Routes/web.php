@@ -54,12 +54,16 @@ Route::prefix('shop')->group(function () {
         Route::get('/riwayatCs', 'index')->name('riwayatCs')->middleware('auth:customer');
     });
 
-    Route::controller(KatalogController::class)->group(function () {
-        Route::get('/katalog', 'index')->name('katalog');
-    });
+    Route::prefix('product')->group(function () {
+        Route::controller(KatalogController::class)->group(function () {
+            Route::get('/katalog', 'index')->name('katalog');
+        });
 
-    Route::controller(DetailKatalogController::class)->group(function () {
-        Route::get('/detail-katalog', 'index')->name('detail.katalog');
+        Route::controller(DetailKatalogController::class)->group(function () {
+            Route::get('/detailKatalog', 'index')->name('detail.katalog');
+            Route::get('/detailProduct/{id}', 'detailKatalog')->name('detail.katalog.product');
+            Route::get('/cekProduct', 'cekProduct')->name('detail.katalog.cekProduct');
+        });
     });
 
     Route::controller(StoreController::class)->group(function () {

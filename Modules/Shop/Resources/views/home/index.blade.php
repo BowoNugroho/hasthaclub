@@ -126,12 +126,13 @@
                     <!-- Carousel Inner -->
                     <div class="carousel-inner flex transition-transform duration-500 ease-in-out" id="carousel1">
                         <!-- Item 1 -->
+                        @foreach ($produk_best_seller as $val )
                         <div class="carousel-item1 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2" id="carousel-items1">
-                            <a href="#" class=" ">
+                            <a href="{{ route('detail.katalog.product', $val->product_variant_id) }}" class=" ">
                                 <div class="border max-auto p-3 rounded-lg shadow">
                                     <div class="grid grid-cols-1 mb-7 mt-5">
                                         <div class="flex justify-center ">
-                                            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
+                                            <img src="{{ url('public/storage/'. $val->product_img) }}" class="h-[150px]" alt="">
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1">
@@ -141,147 +142,18 @@
                                      </div>
                                      <div class="grid grid-cols-1 mt-1">
                                         <div class="flex justify-start">
-                                            <p class="text-lg font-bold">iPhone 14</p>
+                                            <p class="text-lg font-bold">{{ $val->product_name }}</p>
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1 mt-3">
                                         <div class="flex justify-start">
-                                            <p class="text-[11px]">Mulai Rp12.999.000</p>
+                                            <p class="text-[11px]">Mulai Rp.{{ number_format($val->harga_diskon, 0, ',', '.')  }}</p>
                                         </div>
                                      </div>
                                 </div>
                             </a>
                         </div>
-                        <div class="carousel-item1 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2" >
-                            <a href="#" class=" ">
-                                <div class="border max-auto p-3 rounded-lg shadow ">
-                                    <div class="grid grid-cols-1 mb-7 mt-5">
-                                        <div class="flex justify-center ">
-                                            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1">
-                                        <div class="flex justify-start">
-                                            <p class="font-bold text-md text-orange-500">Best Seller</p>
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1 mt-1">
-                                        <div class="flex justify-start">
-                                            <p class="text-lg font-bold">iPhone 14</p>
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1 mt-3">
-                                        <div class="flex justify-start">
-                                            <p class="text-[11px]">Mulai Rp12.999.000</p>
-                                        </div>
-                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="carousel-item1 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2" >
-                            <a href="#" class=" ">
-                                <div class="border max-auto p-3 rounded-lg shadow ">
-                                    <div class="grid grid-cols-1 mb-7 mt-5">
-                                        <div class="flex justify-center ">
-                                            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1">
-                                        <div class="flex justify-start">
-                                            <p class="font-bold text-md text-orange-500">Best Seller</p>
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1 mt-1">
-                                        <div class="flex justify-start">
-                                            <p class="text-lg font-bold">iPhone 14</p>
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1 mt-3">
-                                        <div class="flex justify-start">
-                                            <p class="text-[11px]">Mulai Rp12.999.000</p>
-                                        </div>
-                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="carousel-item1 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2" >
-                            <a href="#" class=" ">
-                                <div class="border max-auto p-3 rounded-lg shadow ">
-                                    <div class="grid grid-cols-1 mb-7 mt-5">
-                                        <div class="flex justify-center ">
-                                            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1">
-                                        <div class="flex justify-start">
-                                            <p class="font-bold text-md text-orange-500">Best Seller</p>
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1 mt-1">
-                                        <div class="flex justify-start">
-                                            <p class="text-lg font-bold">iPhone 14</p>
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1 mt-3">
-                                        <div class="flex justify-start">
-                                            <p class="text-[11px]">Mulai Rp12.999.000</p>
-                                        </div>
-                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="carousel-item1 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2" >
-                            <a href="#" class=" ">
-                                <div class="border max-auto p-3 rounded-lg shadow ">
-                                    <div class="grid grid-cols-1 mb-7 mt-5">
-                                        <div class="flex justify-center ">
-                                            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1">
-                                        <div class="flex justify-start">
-                                            <p class="font-bold text-md text-orange-500">Best Seller</p>
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1 mt-1">
-                                        <div class="flex justify-start">
-                                            <p class="text-lg font-bold">iPhone 14</p>
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1 mt-3">
-                                        <div class="flex justify-start">
-                                            <p class="text-[11px]">Mulai Rp12.999.000</p>
-                                        </div>
-                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="carousel-item1 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2" >
-                            <a href="#" class=" ">
-                                <div class="border max-auto p-3 rounded-lg shadow ">
-                                    <div class="grid grid-cols-1 mb-7 mt-5">
-                                        <div class="flex justify-center ">
-                                            <img src="{{ url('public/modules/shop/images/terbaru/iphone14.png') }}" class="h-[150px]" alt="">
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1">
-                                        <div class="flex justify-start">
-                                            <p class="font-bold text-md text-orange-500">Best Seller</p>
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1 mt-1">
-                                        <div class="flex justify-start">
-                                            <p class="text-lg font-bold">iPhone 14</p>
-                                        </div>
-                                     </div>
-                                     <div class="grid grid-cols-1 mt-3">
-                                        <div class="flex justify-start">
-                                            <p class="text-[11px]">Mulai Rp12.999.000</p>
-                                        </div>
-                                     </div>
-                                </div>
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <!-- Carousel Controls -->

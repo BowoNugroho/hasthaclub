@@ -39,4 +39,59 @@ class ProductVariant extends Model
         'capacity_id',
         'status',
     ];
+
+    public static function getProductVariantby1($id)
+    {
+        $data = DB::table('product_variants as a')
+            ->leftJoin('products as b', 'a.product_id', '=', 'b.id')
+            ->leftJoin('colors as c', 'a.color_id', '=', 'c.id')
+            ->leftJoin('capacities as d', 'a.capacity_id', '=', 'd.id')
+            ->select('a.*', 'b.product_name', 'b.product_img', 'c.color_name',  'd.capacity_name')
+            ->where('a.id', $id)
+            ->first();
+
+        return $data;
+    }
+
+    public static function getProductVariantWarnaby1($id)
+    {
+        $data = DB::table('product_variants as a')
+            ->leftJoin('colors as c', 'a.color_id', '=', 'c.id')
+            ->select('a.color_id', 'c.color_name', DB::raw('COUNT(a.id) as variant_count'))
+            ->where('a.product_id', $id)
+            ->groupBy('a.color_id', 'c.color_name')
+            ->get()
+            ->toArray();
+
+        return $data;
+    }
+    public static function getProductVariantKapasitasby1($id)
+    {
+        $data = DB::table('product_variants as a')
+            ->leftJoin('capacities as b', 'a.capacity_id', '=', 'b.id')
+            ->select('a.capacity_id', 'b.capacity_name', DB::raw('COUNT(a.id) as variant_count'))
+            ->where('a.product_id', $id)
+            ->groupBy('a.capacity_id', 'b.capacity_name')
+            ->orderBy('b.capacity_name', 'asc')
+            ->get()
+            ->toArray();
+
+        return $data;
+    }
+
+    public static function getProductVariantby2($data)
+    {
+        $color_id = $data['color_id'];
+        $capacity_id = $data['capacity_id'];
+        $product_id = $data['product_id'];
+
+        $return = DB::table('product_variants as a')
+            ->select('a.id')
+            ->where('a.product_id', $product_id)
+            ->where('a.color_id', $color_id)
+            ->where('a.capacity_id', $capacity_id)
+            ->first();
+
+        return $return;
+    }
 }

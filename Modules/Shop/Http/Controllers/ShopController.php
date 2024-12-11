@@ -5,6 +5,7 @@ namespace Modules\Shop\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Models\ProductBestSeller;
 
 class ShopController extends Controller
 {
@@ -14,7 +15,8 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return view('shop::home.index');
+        $produk_best_seller = ProductBestSeller::getProductBestSeller();
+        return view('shop::home.index', compact('produk_best_seller'));
     }
 
     /**
