@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('harga')->nullable();
             $table->string('total_harga')->nullable();
             $table->string('pick_up_type')->nullable();
+            $table->string('type_data')->nullable();
             $table->string('order_status')->nullable();
             $table->text('bukti_pembayaran_img')->nullable();
             $table->boolean('status_pembayaran')->default(false);
