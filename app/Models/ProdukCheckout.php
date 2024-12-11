@@ -33,4 +33,17 @@ class ProdukCheckout extends Model
         'product_variant_id',
         'status',
     ];
+
+    public static function getProductCheckout()
+    {
+        $data = DB::table('produk_checkouts as a')
+            ->leftJoin('product_variants as b', 'a.product_variant_id', '=', 'b.id')
+            ->leftJoin('products as c', 'b.product_id', '=', 'c.id')
+            ->select('a.*', 'b.harga_diskon', 'b.harga', 'c.product_name', 'c.product_img')
+            ->where('a.status', 1)
+            ->get()
+            ->toArray();
+
+        return $data;
+    }
 }

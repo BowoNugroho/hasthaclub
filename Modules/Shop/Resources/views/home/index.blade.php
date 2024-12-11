@@ -240,192 +240,39 @@
                     <!-- Carousel Inner -->
                     <div class="carousel-inner flex transition-transform duration-500 ease-in-out" id="carousel">
                         <!-- Item 1 -->
+                        @foreach (@$produk_checkout as $val)
                         <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2" id="carousel-items">
                             <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
                                 <div class="flex justify-center ">
-                                    <img src="{{ url('public/modules/shop/images/checkout/applewacth1.png') }}" class="h-[200px]" alt="">
+                                    <img src="{{ url('public/storage/'. $val->product_img) }}" class="h-[200px]" alt="">
                                 </div>
                              </div>
                              <div class="grid grid-cols-1 mb-6">
                                 <div class="flex justify-center">
-                                    <p class="font-bold text-[18px]">Apple Wacth</p>
+                                    <p class="font-bold text-[18px]">{{ $val->product_name }}</p>
                                 </div>
                              </div>
                              <div class="grid grid-cols-1 mt-1">
                                 <div class="flex justify-center">
-                                    <p class="text-[18px] text-slate-400 line-through">Rp 15.999.000</p>
+                                    <p class="text-[18px] text-slate-400 line-through">Rp.{{ number_format($val->harga, 0, ',', '.')  }}</p>
                                 </div>
                              </div>
                              <div class="grid grid-cols-1 ">
                                 <div class="flex justify-center">
-                                    <p class="text-[18px]">Rp 12.999.000  <span class="text-red-500 text-[15px]">20 %</span></p>
+                                    <p class="text-[18px]">Rp.{{ number_format($val->harga_diskon, 0, ',', '.')  }} <span class="text-red-500 text-[15px]">20 %</span></p>
                                 </div>
                              </div>
                              <div class="grid grid-cols-1 mt-3">
                                 <div class="flex justify-center">
                                     {{-- <button type="button" class="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Beli Sekarang</button> --}}
 
-                                    <a href="#" class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                    <a href="{{ route('detail.katalog.product', $val->product_variant_id) }}" class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                                         Beli Sekarang
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
-                            <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
-                                <div class="flex justify-center ">
-                                    <img src="{{ url('public/modules/shop/images/checkout/applewacth2.png') }}" class="h-[200px]" alt="">
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mb-6">
-                                <div class="flex justify-center">
-                                    <p class="font-bold text-[18px]">Apple Wacth</p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mt-1">
-                                <div class="flex justify-center">
-                                    <p class="text-[18px] text-slate-400 line-through">Rp 15.999.000</p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 ">
-                                <div class="flex justify-center">
-                                    <p class="text-[18px]">Rp 12.999.000  <span class="text-red-500 text-[15px]">20 %</span></p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mt-3">
-                                <div class="flex justify-center">
-                                    {{-- <button type="button" class="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Beli Sekarang</button> --}}
-
-                                    <a href="#" class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                                        Beli Sekarang
-                                    </a>
-                                </div>
-                             </div>
-                        </div>
-                        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
-                            <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
-                                <div class="flex justify-center ">
-                                    <img src="{{ url('public/modules/shop/images/checkout/applewacth3.png') }}" class="h-[200px]" alt="">
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mb-6">
-                                <div class="flex justify-center">
-                                    <p class="font-bold text-[18px]">Apple Wacth</p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mt-1">
-                                <div class="flex justify-center">
-                                    <p class="text-[18px] text-slate-400 line-through">Rp 15.999.000</p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 ">
-                                <div class="flex justify-center">
-                                    <p class="text-[18px]">Rp 12.999.000  <span class="text-red-500 text-[15px]">20 %</span></p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mt-3">
-                                <div class="flex justify-center">
-                                    {{-- <button type="button" class="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Beli Sekarang</button> --}}
-
-                                    <a href="#" class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                                        Beli Sekarang
-                                    </a>
-                                </div>
-                             </div>
-                        </div>
-                        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
-                            <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
-                                <div class="flex justify-center ">
-                                    <img src="{{ url('public/modules/shop/images/checkout/applewacth4.png') }}" class="h-[200px]" alt="">
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mb-6">
-                                <div class="flex justify-center">
-                                    <p class="font-bold text-[18px]">Apple Wacth</p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mt-1">
-                                <div class="flex justify-center">
-                                    <p class="text-[18px] text-slate-400 line-through">Rp 15.999.000</p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 ">
-                                <div class="flex justify-center">
-                                    <p class="text-[18px]">Rp 12.999.000  <span class="text-red-500 text-[15px]">20 %</span></p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mt-3">
-                                <div class="flex justify-center">
-                                    {{-- <button type="button" class="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Beli Sekarang</button> --}}
-
-                                    <a href="#" class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                                        Beli Sekarang
-                                    </a>
-                                </div>
-                             </div>
-                        </div>
-                        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
-                            <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
-                                <div class="flex justify-center ">
-                                    <img src="{{ url('public/modules/shop/images/checkout/applewacth2.png') }}" class="h-[200px]" alt="">
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mb-6">
-                                <div class="flex justify-center">
-                                    <p class="font-bold text-[18px]">Apple Wacth</p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mt-1">
-                                <div class="flex justify-center">
-                                    <p class="text-[18px] text-slate-400 line-through">Rp 15.999.000</p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 ">
-                                <div class="flex justify-center">
-                                    <p class="text-[18px]">Rp 12.999.000  <span class="text-red-500 text-[15px]">20 %</span></p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mt-3">
-                                <div class="flex justify-center">
-                                    {{-- <button type="button" class="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Beli Sekarang</button> --}}
-
-                                    <a href="#" class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                                        Beli Sekarang
-                                    </a>
-                                </div>
-                             </div>
-                        </div>
-                        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
-                            <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
-                                <div class="flex justify-center ">
-                                    <img src="{{ url('public/modules/shop/images/checkout/applewacth3.png') }}" class="h-[200px]" alt="">
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mb-6">
-                                <div class="flex justify-center">
-                                    <p class="font-bold text-[18px]">Apple Wacth</p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mt-1">
-                                <div class="flex justify-center">
-                                    <p class="text-[18px] text-slate-400 line-through">Rp 15.999.000</p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 ">
-                                <div class="flex justify-center">
-                                    <p class="text-[18px]">Rp 12.999.000  <span class="text-red-500 text-[15px]">20 %</span></p>
-                                </div>
-                             </div>
-                             <div class="grid grid-cols-1 mt-3">
-                                <div class="flex justify-center">
-                                    {{-- <button type="button" class="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Beli Sekarang</button> --}}
-
-                                    <a href="#" class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                                        Beli Sekarang
-                                    </a>
-                                </div>
-                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             
