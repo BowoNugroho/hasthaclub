@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('invoice');
+            $table->string('invoice')->nullable();
             $table->uuid('cart_id');
             $table->uuid('user_id');
             $table->uuid('store_id')->nullable();
