@@ -19,7 +19,8 @@ return new class extends Migration
             $table->uuid('sales_mitra_id')->nullable();
             $table->uuid('sales_to_id')->nullable();
             $table->string('qty')->nullable();
-            $table->string('kode_voucher')->nullable();
+            $table->string('voucher_code')->nullable();
+            $table->uuid('voucher_id')->nullable();
             $table->string('harga')->nullable();
             $table->string('total_harga')->nullable();
             $table->boolean('status')->default(false);
