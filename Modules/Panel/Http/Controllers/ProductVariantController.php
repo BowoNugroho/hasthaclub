@@ -36,7 +36,7 @@ class ProductVariantController extends Controller
             $query->where(function ($query) use ($search) {
                 $columns = ['id', 'harga', 'harga_diskon', 'stock', 'created_at']; // Define the columns you want to display
                 foreach ($columns as $column) {
-                    $query->orWhere($column, 'like', "%$search%")
+                    $query->orWhere('product_variants.' . $column, 'like', "%$search%")
                         ->orWhere('product.product_name', 'like', "%$search%")
                         ->orWhere('color.color_name', 'like', "%$search%")
                         ->orWhere('capacity.capacity_name', 'like', "%$search%");
