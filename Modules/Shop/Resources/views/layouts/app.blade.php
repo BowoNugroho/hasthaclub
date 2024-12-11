@@ -64,7 +64,9 @@
                             <a href="{{ route('customer.loginCs') }}"><i class="fa-regular fa-user"></a></i>
                         </li>
                         <li class="text-[14px] hover:scale-150">
-                            <i class="fa-solid fa-bag-shopping"></i>
+                            <a href="{{ route('cart') }}">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </a>
                             @yield('cart-count') 
                         </li>
                         {{-- buttton logout sementara --}}
@@ -90,7 +92,9 @@
                     <a href="/">
                         <img src="{{ url('public/modules/shop/images/hasthaclub.png') }}" class="h-[60px]" alt="">
                     </a>
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <a href="{{ route('cart') }}">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
                 </div>
             </div>
             <div id="mobile-menu" class="lg:hidden hidden">
@@ -102,7 +106,7 @@
                         <li class="text-[14px] hover:underline"><a href="{{ route('informasi.reseller') }}">Reseller</a></li>
                     </ul>
                     <ul class="flex gap-4">
-                        <li class="text-[14px]"><i class="fa-regular fa-user"></i></li>
+                        <li class="text-[14px]"><a href="{{ route('customer.loginCs') }}"><i class="fa-regular fa-user"></i></a></li>
                     </ul>
                 </div>
                 {{-- <div class=" left-0 flex flex-col gap-4 pt-5 px-5 absolute  w-[500px] h-screen bg-white"></div> --}}

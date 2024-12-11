@@ -65,4 +65,32 @@ class CartItem extends Model
 
         return $return;
     }
+
+    public static function getProduct($cart_id)
+    {
+        $return = DB::table('cart_items as a')
+            ->leftJoin('product_variants as b', 'a.product_variant_id', '=', 'b.id')
+            ->leftJoin('products as c', 'b.product_id', '=', 'c.id')
+            ->leftJoin('colors as d', 'b.color_id', '=', 'd.id')
+            ->leftJoin('capacities as e', 'b.capacity_id', '=', 'e.id')
+            ->select('a.*', 'c.product_img', 'c.product_name', 'd.color_name', 'e.capacity_name')
+            ->where('a.cart_id', $cart_id)
+            ->where('a.status', 1)
+            ->whereNull('a.deleted_at')
+            ->get()->toArray();
+
+        return $return;
+    }
+
+    public static function sumHarga($cart_id)
+    {
+        $return = DB::table('cart_items as a')
+            ->select('a.*',)
+            ->where('a.cart_id', $cart_id)
+            ->where('a.status', 1)
+            ->whereNull('a.deleted_at')
+            ->sum('a.total_harga');
+
+        return $return;
+    }
 }

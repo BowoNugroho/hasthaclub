@@ -9,6 +9,7 @@ use Modules\Shop\Http\Controllers\DetailKatalogController;
 use Modules\Shop\Http\Controllers\StoreController;
 use Modules\Shop\Http\Controllers\InformasiController;
 use Modules\Shop\Http\Controllers\ShopController;
+use Modules\Shop\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,11 @@ Route::prefix('shop')->group(function () {
             Route::post('/addCart', 'addCart')->name('detail.katalog.addCart')->middleware('auth:customer');
             Route::get('/counCart', 'counCart')->name('detail.katalog.counCart');
         });
+    });
+
+    Route::controller(CartController::class)->group(function () {
+        Route::get('/cart', 'index')->name('cart')->middleware('auth:customer');
+        Route::delete('/deleteCart/{id}', 'deleteCart')->name('cart.deleteCart')->middleware('auth:customer');
     });
 
     Route::controller(StoreController::class)->group(function () {
