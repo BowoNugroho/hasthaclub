@@ -12,14 +12,14 @@
     <div class="box"></div>
     <div class="box col-span-2 p-10">
         <div class="flex justify-center ">
-            <img src="{{ url('public/storage/'. $product->product_img) }}" class="h-[400px] " alt="">
+            <img src="{{ url('storage/'. $product->product_img) }}" class="h-[400px] " alt="">
         </div> 
         <div class="grid grid-cols-2 mt-10 gap-4">
             <div class="box  flex justify-center">
-                <img src="{{ url('public/storage/'. $product->product_img) }}" class="h-[300px] " alt="">
+                <img src="{{ url('storage/'. $product->product_img) }}" class="h-[300px] " alt="">
             </div>
             <div class="box  flex justify-center">
-                <img src="{{ url('public/storage/'. $product->product_img) }}" class="h-[300px] " alt="">
+                <img src="{{ url('storage/'. $product->product_img) }}" class="h-[300px] " alt="">
             </div>
         </div>
     </div>
@@ -187,9 +187,9 @@
 </div>
 @endsection
 
-@include('shop::katalog.js')
 
 @section('script')
+@include('shop::katalog.js')
 
 <script>
     // Mengambil elemen-elemen

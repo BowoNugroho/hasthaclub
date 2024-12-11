@@ -1,3 +1,4 @@
+@section('script')
 <script>
     $(document).ready(function() {
         $.ajaxSetup({
@@ -149,3 +150,4 @@
             });
         }
 </script>
+@endsection

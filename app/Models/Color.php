@@ -35,4 +35,15 @@ class Color extends Model
         'status',
     ];
 
+    public static function getColor()
+    {
+        $data = DB::table('colors')
+            ->select('colors.*')
+            ->where('colors.status', 1)
+            ->whereNull('colors.deleted_at')
+            ->get()
+            ->toArray();
+
+        return $data;
+    }
 }

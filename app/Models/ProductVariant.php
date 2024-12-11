@@ -40,6 +40,48 @@ class ProductVariant extends Model
         'status',
     ];
 
+    public static function getProductVariantbySeacrh($dt, $colors)
+    {
+        $brand = $dt['category'];
+        $search_product = $dt['search_product'];
+
+        $data['data'] = DB::table('product_variants as a')
+            ->leftJoin('products as b', 'a.product_id', '=', 'b.id')
+            ->leftJoin('colors as c', 'a.color_id', '=', 'c.id')
+            ->leftJoin('capacities as d', 'a.capacity_id', '=', 'd.id')
+            ->leftJoin('brands as e', 'b.brand_id', '=', 'e.id')
+            ->select('a.*', 'b.product_name', 'b.product_img', 'c.color_name', 'd.capacity_name', 'e.brand_name')
+            ->when($brand, function ($query) use ($brand) {
+                return $query->where('e.brand_name', 'like', '%' . $brand . '%');
+            })
+            ->when($search_product, function ($query) use ($search_product) {
+                return $query->where('b.product_name', 'like', '%' . $search_product . '%');
+            })
+            ->when(count($colors) > 0, function ($query) use ($colors) {
+                return $query->whereIn('a.color_id', $colors);
+            })
+            ->get()->toArray();
+
+        $data['count'] = DB::table('product_variants as a')
+            ->leftJoin('products as b', 'a.product_id', '=', 'b.id')
+            ->leftJoin('colors as c', 'a.color_id', '=', 'c.id')
+            ->leftJoin('capacities as d', 'a.capacity_id', '=', 'd.id')
+            ->leftJoin('brands as e', 'b.brand_id', '=', 'e.id')
+            ->select('a.*', 'b.product_name', 'b.product_img', 'c.color_name', 'd.capacity_name', 'e.brand_name')
+            ->when($brand, function ($query) use ($brand) {
+                return $query->where('e.brand_name', 'like', '%' . $brand . '%');
+            })
+            ->when($search_product, function ($query) use ($search_product) {
+                return $query->where('b.product_name', 'like', '%' . $search_product . '%');
+            })
+            ->when(count($colors) > 0, function ($query) use ($colors) {
+                return $query->whereIn('a.color_id', $colors);
+            })
+            ->count();
+
+        return $data;
+    }
+
     public static function getProductVariantby1($id)
     {
         $data = DB::table('product_variants as a')

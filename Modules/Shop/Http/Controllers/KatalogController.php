@@ -8,25 +8,36 @@ use Illuminate\Routing\Controller;
 use App\Models\Customer;
 use App\Models\DashboardCustomer;
 use App\Models\Cart;
+use App\Models\Color;
 use App\Models\CartItem;
+use App\Models\ProductVariant;
 
 class KatalogController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = [
-            ['name' => 'iPhone 14 128 Blue', 'harga_normal' => 12999000, 'harga_promo' => 10999000],
-            ['name' => 'iPhone 15 128 Blue', 'harga_normal' => 12999000, 'harga_promo' => 10999000],
-            ['name' => 'iPhone 13 128 Blue', 'harga_normal' => 12999000, 'harga_promo' => 10999000],
-            ['name' => 'iPhone 15 256 Blue', 'harga_normal' => 12999000, 'harga_promo' => 10999000],
-            ['name' => 'iPhone 14 256 Blue', 'harga_normal' => 12999000, 'harga_promo' => 10999000],
-            ['name' => 'iPhone 13 256 Blue', 'harga_normal' => 12999000, 'harga_promo' => 10999000],
-        ];
+        $data['category'] = $request->category;
+        $data['search_product'] = $request->input('search_product');
+        $colors = $request->input('colors', []);
+
+        $productVariant = ProductVariant::getProductVariantbySeacrh($data, $colors);
+        $color = Color::getColor();
+        $products = $productVariant['data'];
+        $productCount = $productVariant['count'];
+
 
         $user_id = @auth('customer')->user()->id;
         $cek_cart = Cart::cekUser(@$user_id);
         $cartCount = CartItem::countCart(@$cek_cart->id);
 
-        return view('shop::katalog.index', compact('products', 'cartCount'));
+        if ($request->ajax()) {
+            return response()->json([
+                'products_html' => view('shop::katalog.productList', compact('products'))->render(),
+                'cartCount' => $cartCount,
+                'productCount' => $productCount,
+            ]);
+        }
+
+        return view('shop::katalog.index', compact('products', 'cartCount', 'color', 'productCount'));
     }
 }

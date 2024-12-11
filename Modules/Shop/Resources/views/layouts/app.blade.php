@@ -51,7 +51,9 @@
                     <a href="{{ route('shop.indexHome') }}">
                         <img src="{{ url('public/modules/shop/images/hasthaclub.png') }}" class="h-[60px]" alt="">
                     </a>
-                    <input type="text" placeholder="Cari Produk" class="w-[500px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
+                    <form action="{{ route('katalog') }}" method="GET" >
+                        <input type="text" id="search_product"  name="search_product"  value="{{ old('search_product') }}" placeholder="Cari Produk" class="w-[500px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
+                    </form>
                     <ul class="flex gap-4">
                         <li class="text-[14px] "><i class="fas fa-store"></i>&nbsp;&nbsp;<span class="hover:underline"><a href="{{ route('store') }}">Pilih Toko</a></span></li>
                         <li class="text-[14px] hover:underline"><a href="{{ route('informasi.partnership') }}">Partnership</a></li>
