@@ -16,8 +16,8 @@ class ProductController extends Controller
     // Display DataTable view
     public function index()
     {
-        $brand = Brand::where('status',1)->get();
-        $category = Category::where('status',1)->get();
+        $brand = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->get();
 
         return view('panel::product.index', compact('brand', 'category'));
     }
@@ -25,18 +25,18 @@ class ProductController extends Controller
     // Fetch data for DataTable with server-side processing
     public function datatables(Request $request)
     {
-        $columns = ['id', 'product_name', 'deskripsi','category_name','brand_name', 'created_at'];  // Define the columns you want to display
+        $columns = ['id', 'product_name', 'deskripsi', 'category_name', 'brand_name', 'created_at'];  // Define the columns you want to display
         $query = Product::query()
-                        ->join('brands as brand', 'products.brand_id', '=', 'brand.id')
-                        ->join('categories as category', 'products.category_id', '=', 'category.id')
-                        ->select('products.*', 'brand.brand_name', 'category.category_name');
+            ->join('brands as brand', 'products.brand_id', '=', 'brand.id')
+            ->join('categories as category', 'products.category_id', '=', 'category.id')
+            ->select('products.*', 'brand.brand_name', 'category.category_name');
 
         // Apply search filter
         if ($search = $request->input('search.value')) {
             $query->where(function ($query) use ($search) {
                 $columns = ['id', 'product_name', 'deskripsi', 'created_at'];  // Define the columns you want to display
                 foreach ($columns as $column) {
-                    $query->orWhere($column, 'like', "%$search%");
+                    $query->orWhere('products.' . $column, 'like', "%$search%");
                 }
             });
         }
