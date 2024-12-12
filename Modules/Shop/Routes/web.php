@@ -81,6 +81,8 @@ Route::prefix('shop')->group(function () {
         Route::get('/dataAkun', 'cekAkun')->name('checkout.dataAkun')->middleware('auth:customer');
         Route::post('/payment', 'payment')->name('checkout.payment')->middleware('auth:customer');
         Route::get('/paymentRek', 'paymentRek')->name('checkout.paymentRek')->middleware('auth:customer');
+        Route::get('/konfirmasiPayment', 'konfirmasiPayment')->name('checkout.konfirmasiPayment')->middleware('auth:customer');
+        Route::post('/uploadBukti', 'uploadBukti')->name('checkout.uploadBukti')->middleware('auth:customer');
     });
 
     Route::controller(StoreController::class)->group(function () {

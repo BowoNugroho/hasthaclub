@@ -63,12 +63,16 @@ class CheckoutController extends Controller
 
     public function paymentRek(Request $request)
     {
+        $user_id = @auth('customer')->user()->id;
+        $cek_cart = Cart::cekUser(@$user_id);
+        $cartCount = CartItem::countCart(@$cek_cart->id);
+
         $totalHarga = OrderItem::sumHarga(@$request->co_id);
         $getInvoice = Checkout::getInvoice(@$request->co_id);
         $co_id = @$request->co_id;
         $invoice = @$getInvoice->invoice;
 
-        return view('shop::checkout.payment',compact('totalHarga','co_id','invoice'));
+        return view('shop::checkout.payment',compact('cartCount','totalHarga','co_id','invoice'));
     }
 
     public function createCo($dt)
@@ -175,6 +179,43 @@ class CheckoutController extends Controller
 
         } catch (\Exception $e) {
             return response()->json(['error' => 'Item not found'], 404);
+        }
+    }
+
+    public function konfirmasiPayment(Request $request)
+    {
+        $user_id = @auth('customer')->user()->id;
+        $cek_cart = Cart::cekUser(@$user_id);
+        $cartCount = CartItem::countCart(@$cek_cart->id);
+
+        $getInvoice = Checkout::getInvoice(@$request->co_id);
+
+        return view('shop::checkout.konfirmasiPembayaran',compact('cartCount','getInvoice'));
+    }
+
+    public function uploadBukti(Request $request)
+    {
+        try {
+
+            $co_id = $request->co_id;
+
+            $imagePath = null;
+            if ($request->hasFile('bukti_pembayaran_img')) {
+                $imagePath = $request->file('bukti_pembayaran_img')->store('bukti_payment_images', 'public');
+            }
+
+            $data['bukti_pembayaran_img'] = $imagePath;
+            $data['order_status'] = "PROSES";
+            $data['status_pembayaran'] = 1;
+            $data['updated_by'] = auth('customer')->user()->id;
+
+            $checkout = Checkout::findOrFail($co_id);
+            $checkout->update($data);
+
+
+            return response()->json(['success' => true], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => true], 500);
         }
     }
 }

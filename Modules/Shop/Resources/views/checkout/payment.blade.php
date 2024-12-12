@@ -36,7 +36,9 @@
         </div>
         <div class="text-lg grid mt-10 mb-10">
             <div class="flex justify-center">
-                <button class="inline-block px-6 py-2.5 border-2 bg-green-500 border-green-500 text-white font-semibold text-lg leading-tight rounded-full hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">Konfirasi Pembayaran</button>
+                <a href="{{route('checkout.konfirmasiPayment',  ['co_id' => $co_id ])}}">
+                    <span class="inline-block px-6 py-2.5 border-2 bg-green-500 border-green-500 text-white font-semibold text-lg leading-tight rounded-full hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">Konfirmasi Pembayaran</span>
+                </a>
             </div>
         </div>
     </div>
