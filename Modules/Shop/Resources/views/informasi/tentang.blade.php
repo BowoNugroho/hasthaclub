@@ -31,7 +31,7 @@
                 <li>KOLEKTIF</li>
                 <li>Jl. Watu gede No.58, Sariharjo, Ngaglik, SLeman, Daerah Istimewa Yogyakarta 55581</li>
                 <li>WhatsApp: <span class="text-blue-500">0882 0089 97382</span></li>
-                <li>Email: <span class="text-blue-500">customercare@hasthaclub.com</span></li>
+                <li>Email: <span class="text-blue-500">cs@hasthaclub.com</span></li>
             </ul>
         </div>
         <div class="grid mt-5">

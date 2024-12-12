@@ -135,6 +135,7 @@
                         <div class="box ">
                             <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Tentang</div>
                             <div class="grid grid-cols-1 text-start mb-3 hover:underline"><a href="{{ route('informasi.tentang') }}"> Tentang Hastha</a></div>
+                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"><a href="{{ route('informasi.karir') }}"> Karir</a></div>
                             {{-- <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Hubungi Kami</div> --}}
                             <div class="grid grid-cols-1 text-start mb-3 hover:underline"> <a href="{{ route('store') }}">Cari Toko</a></div>
                         </div>
@@ -198,6 +199,9 @@
                            {{-- <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Hubungi Kami</a> --}}
                         </li>
                         <li>
+                           <a href="{{ route('informasi.karir') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Karir</a>
+                        </li>
+                        <li>
                            <a href="{{ route('store') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 ">Cari Toko</a>
                         </li>
                   </ul>
@@ -233,7 +237,7 @@
                             </tr>
                             <tr class="h-10">
                                 <td><i class="fa-regular fa-envelope"></i> &nbsp;&nbsp;</td>
-                                <td>Email : <span class="text-blue-500">customercare@hasthaclub.com</span></td>
+                                <td>Email : <span class="text-blue-500">cs@hasthaclub.com</span></td>
                             </tr>
                             <tr class="h-10">
                                 <td><i class="fa-solid fa-headset"></i> &nbsp;&nbsp;</td>

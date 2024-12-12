@@ -57,4 +57,13 @@ class InformasiController extends Controller
 
         return view('shop::informasi.return', compact('cartCount'));
     }
+
+    public function karir(Request $request)
+    {
+        $user_id = @auth('customer')->user()->id;
+        $cek_cart = Cart::cekUser(@$user_id);
+        $cartCount = CartItem::countCart(@$cek_cart->id);
+
+        return view('shop::informasi.karir', compact('cartCount'));
+    }
 }

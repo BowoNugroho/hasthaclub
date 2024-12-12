@@ -14,7 +14,7 @@
         <div class="grid mt-5">
             <ul>
                 <li class="font-bold">The Hastha Club’s customer care :</li>
-                <li>Email: <span class="text-blue-500">customercare@hasthaclub.com</span></li>
+                <li>Email: <span class="text-blue-500">cs@hasthaclub.com</span></li>
                 <li>Whatsapp: <span class="text-blue-500">0882 0089 97382</span></li>
                 <li>Instagram: <span class="text-blue-500">HasthaClub</span></li>
             </ul>
