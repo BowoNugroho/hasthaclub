@@ -61,6 +61,14 @@ class CheckoutController extends Controller
         }
     }
 
+    public function paymentRek(Request $request)
+    {
+        $totalHarga = OrderItem::sumHarga(@$request->co_id);
+        $co_id = @$request->co_id;
+
+        return view('shop::checkout.payment',compact('totalHarga','co_id'));
+    }
+
     public function createCo($dt)
     {
 
@@ -95,27 +103,33 @@ class CheckoutController extends Controller
     {
 
         try {
-            $id = $request->co_id;
+            $co_id = $request->co_id;
             $data['type_data'] = $request->type_data;
             $data['customer_name'] = $request->customer_name;
             $data['customer_no_hp'] = $request->customer_no_hp;
             $data['customer_email'] = $request->customer_email;
             $data['customer_alamat'] = $request->customer_alamat;
             $data['catatan'] = $request->catatan;
-            $data['pick_up_type'] = $request->type_pemesanan;
-            $data['store_id'] = $request->store_id;
+            $data['pick_up_type'] = @$request->type_pemesanan;
+            $data['store_id'] = @$request->store_id;
             $data['total_harga'] = $request->total_harga;
             $data['order_status'] = 'PENDING';
             $data['status'] = 1;
 
-            $checkout = Checkout::findOrFail($id);
+            $checkout = Checkout::findOrFail($co_id);
             $checkout->update($data);
 
             // save order item
-            $this->saveOrderItem($id, $request->store_id);
+            $a = $this->saveOrderItem($co_id, @$request->store_id);
+            $getCartId = Checkout::getCartId($co_id);
+            $cart_id = $getCartId->cart_id;
+            $this->deleteCartItem($cart_id);
 
 
-            // return $checkout;
+            return response()->json([
+                'success' => 'success',
+                'co_id' => $co_id,
+            ]);
         } catch (\Exception $e) {
             $checkout = NULL;
             return $checkout;
@@ -142,10 +156,23 @@ class CheckoutController extends Controller
                 OrderItem::create($dt);
             }
 
-            // return $checkout;
+            return $data;
         } catch (\Exception $e) {
-            // $checkout = NULL;
-            // return $checkout;
+            return response()->json(['error' => 'Item not found'], 404);
+        }
+    }
+
+    public function deleteCartItem($cart_id)
+    {
+        try {
+
+            $cartItem = CartItem::where('cart_id', $cart_id);
+            $cartItem->delete();
+
+            return $cart_id;
+
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Item not found'], 404);
         }
     }
 }

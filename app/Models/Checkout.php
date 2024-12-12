@@ -30,8 +30,8 @@ class Checkout extends Model
 
         static::creating(function ($model) {
             $latestInvoice = Checkout::orderBy('created_at', 'desc')->first();
-            $invoiceNumber = $latestInvoice ? intval(substr($latestInvoice->invoice, 4)) + 1 : 1;
-            $model->invoice = 'INV' . date('Ymd') . str_pad($invoiceNumber, 4, '0', STR_PAD_LEFT); // Generates INV-000001, INV-000002, etc.  
+            $invoiceNumber = $latestInvoice ? intval(substr($latestInvoice->invoice, 12)) + 1 : 1;
+            $model->invoice = 'INV' . date('Ymd') . str_pad($invoiceNumber, 6, '0', STR_PAD_LEFT); // Generates INV-000001, INV-000002, etc.  
         });
     }
 
@@ -95,4 +95,16 @@ class Checkout extends Model
             ->get()->toArray();
         return $data;
     }
+
+    public static function getCartId($co_id)
+    {
+        $data = DB::table('checkouts as a')
+            ->select('a.id as co_id', 'a.cart_id')
+            ->where('a.id', $co_id)
+            ->first();
+            
+        return $data;
+    }
+
+    
 }

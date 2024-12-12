@@ -43,4 +43,16 @@ class OrderItem extends Model
         'total_harga',
         'status',
     ];
+
+    public static function sumHarga($co_id)
+    {
+        $return = DB::table('order_items as a')
+            ->select('a.*',)
+            ->where('a.checkout_id', $co_id)
+            ->where('a.status', 1)
+            ->whereNull('a.deleted_at')
+            ->sum('a.total_harga');
+
+        return $return;
+    }
 }

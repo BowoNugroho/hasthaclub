@@ -80,6 +80,7 @@ Route::prefix('shop')->group(function () {
         Route::get('/checkout/{id}', 'index')->name('checkout')->middleware('auth:customer');
         Route::get('/dataAkun', 'cekAkun')->name('checkout.dataAkun')->middleware('auth:customer');
         Route::post('/payment', 'payment')->name('checkout.payment')->middleware('auth:customer');
+        Route::get('/paymentRek', 'paymentRek')->name('checkout.paymentRek')->middleware('auth:customer');
     });
 
     Route::controller(StoreController::class)->group(function () {

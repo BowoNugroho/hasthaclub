@@ -43,7 +43,8 @@
                   processData: false,  
                   contentType: false,  
                   success: function (response) {
-                    console.log(response);
+                    let Url = '{{ route("checkout.paymentRek", "co_id=:id") }}'.replace(':id', response.co_id );
+                    window.location.href = Url;
                   },
                   error: function (xhr) {
                       var errors = xhr.responseJSON.errors;
