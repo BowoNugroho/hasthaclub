@@ -21,8 +21,15 @@
             <div class="box text-end">Jumlah</div>
             <div class="box text-end">Total</div>
         </div>
+        <hr>
+        @if($products == null)
+        <div class="grid grid-cols-1 mb-5 mt-10" >
+            <div class="box  text-center">
+                <span class="text-xl text-gray-500 ">Belum ada product yang masuk</span>
+            </div>
+        </div>
+        @else
         @foreach ($products as $val)
-            <hr>
             <div class="grid grid-cols-4 mb-3 mt-10"  id="cart-item-{{ $val->id }}" >
                 <div class="box col-span-2 ">
                     <div class="grid grid-cols-3">
@@ -57,15 +64,20 @@
                 <div class="box text-end font-bold"><span>Rp.{{ number_format($val->total_harga, 0, ',', '.')  }}</span></div>
             </div>     
         @endforeach
+        @endif
         <hr>
         <div class="grid grid-cols-1 mt-7">
             <div class="flex justify-between">
                 <span class="text-xl font-bold text-gray-500">Ringkasan belanja </span>
                 <span id="total-price" class="text-xl font-bold ">Total Pembayaran : Rp.{{ number_format($totalHarga, 0, ',', '.')  }}</span>
+                @if($products == null)
+                    <button class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 " disabled>Checkout</button>
+                @else
                 <form action="{{ route('checkout',$cart_id) }}" method="GET">
                     @csrf
                     <button class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Checkout</button>
                 </form>
+                @endif
             </div>
         </div>
     </div>
