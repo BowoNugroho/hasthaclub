@@ -9,23 +9,29 @@
 @section('content')
 <div class="grid xl:grid-cols-5 grid-cols-5 p-5">
     <div class="box "></div>
-    <div class="box  xl:col-span-3 col-span-5 text-center mt-10">
-        <div class="grid grid-cols-1 justify-center">
+    <div class="box  xl:col-span-3 col-span-5  mt-5">
+        <div class="grid grid-cols-1 text-start">
+            <span class="text-3xl text-blue-500 font-bold"># {{ $invoice }} </span>
+        </div>
+        <div class="grid grid-cols-1 text-center mt-7">
             <span class="text-3xl text-blue-500 font-bold">Silahkan Lakukan Pembayaran</span>
         </div>
-        <div class="text-lg grid mt-3">
+        <div class="grid grid-cols-1 text-center mt-3">
+            <span class="text-3xl text-green-500 font-bold">Rp. {{ number_format($totalHarga, 0, ',', '.')  }}</span>
+        </div>
+        <div class="text-lg grid mt-3 text-center">
             <span>Segera melakukan pembayaran dengan metode transfer Bank ke nomor Rekening dibawah ini:</span>
         </div>
-        <div class="text-lg grid mt-5 justify-center">
+        <div class="text-lg grid mt-5 justify-center text-center">
             <span class=" text-2xl border p-2 h-12 w-[400px] shadow rounded-lg font-bold tracking-widest ">00312456789985 </span>
         </div>
-        <div class="text-lg grid mt-3">
+        <div class="text-lg grid mt-3 text-center">
             <span class="text-2xl font-bold">A/N PT HANG MEDIATEK SETIAWAN</span>
         </div>
-        <div class="text-lg grid mt-3">
+        <div class="text-lg grid mt-3 text-center">
             <span class="text-lg">Pembayaran diluar Rekening PT HANG MEDIATEK SETIAWAN bukan tanggungjawab dari HASTHA CLUB.</span>
         </div>
-        <div class="text-lg grid mt-3">
+        <div class="text-lg grid mt-3 text-center">
             <span class="text-lg">Dan segera melakukan konfirmasi pembayaran supaya barang cepat untuk diproses.</span>
         </div>
         <div class="text-lg grid mt-10 mb-10">

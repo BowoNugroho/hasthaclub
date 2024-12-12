@@ -55,6 +55,16 @@ class Checkout extends Model
         'status',
     ];
 
+    public static function getInvoice($co_id)
+    {
+        $data = DB::table('checkouts as a')
+            ->select('a.id as co_id', 'a.cart_id','a.invoice')
+            ->where('a.id', $co_id)
+            ->first();
+            
+        return $data;
+    }
+
     public static function cekCo($dt)
     {
         $return = DB::table('checkouts as a')

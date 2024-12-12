@@ -64,9 +64,11 @@ class CheckoutController extends Controller
     public function paymentRek(Request $request)
     {
         $totalHarga = OrderItem::sumHarga(@$request->co_id);
+        $getInvoice = Checkout::getInvoice(@$request->co_id);
         $co_id = @$request->co_id;
+        $invoice = @$getInvoice->invoice;
 
-        return view('shop::checkout.payment',compact('totalHarga','co_id'));
+        return view('shop::checkout.payment',compact('totalHarga','co_id','invoice'));
     }
 
     public function createCo($dt)
