@@ -10,6 +10,7 @@ use Modules\Shop\Http\Controllers\StoreController;
 use Modules\Shop\Http\Controllers\InformasiController;
 use Modules\Shop\Http\Controllers\ShopController;
 use Modules\Shop\Http\Controllers\CartController;
+use Modules\Shop\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +74,12 @@ Route::prefix('shop')->group(function () {
     Route::controller(CartController::class)->group(function () {
         Route::get('/cart', 'index')->name('cart')->middleware('auth:customer');
         Route::delete('/deleteCart/{id}', 'deleteCart')->name('cart.deleteCart')->middleware('auth:customer');
+    });
+
+    Route::controller(CheckoutController::class)->group(function () {
+        Route::get('/checkout/{id}', 'index')->name('checkout')->middleware('auth:customer');
+        Route::get('/dataAkun', 'cekAkun')->name('checkout.dataAkun')->middleware('auth:customer');
+        Route::post('/payment', 'payment')->name('checkout.payment')->middleware('auth:customer');
     });
 
     Route::controller(StoreController::class)->group(function () {

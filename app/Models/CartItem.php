@@ -93,4 +93,28 @@ class CartItem extends Model
 
         return $return;
     }
+    public static function sumItem($cart_id)
+    {
+        $return = DB::table('cart_items as a')
+            ->select('a.*',)
+            ->where('a.cart_id', $cart_id)
+            ->where('a.status', 1)
+            ->whereNull('a.deleted_at')
+            ->sum('a.qty');
+
+        return $return;
+    }
+
+    public static function getStoreId($cart_id = null)
+    {
+        $return = DB::table('cart_items as a')
+            ->leftJoin('stores as b', 'a.store_id', '=', 'b.id')
+            ->select('a.id', 'a.store_id', 'a.sales_mitra_id', 'a.sales_to_id', 'b.store_name')
+            ->where('a.cart_id', $cart_id)
+            ->where('a.status', 1)
+            ->whereNull('a.deleted_at')
+            ->first();
+
+        return $return;
+    }
 }

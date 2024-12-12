@@ -27,6 +27,12 @@ class Checkout extends Model
         static::creating(function ($model) {
             $model->{$model->getKeyName()} = (string) \Illuminate\Support\Str::uuid();
         });
+
+        static::creating(function ($model) {
+            $latestInvoice = Checkout::orderBy('created_at', 'desc')->first();
+            $invoiceNumber = $latestInvoice ? intval(substr($latestInvoice->invoice, 4)) + 1 : 1;
+            $model->invoice = 'INV' . date('Ymd') . str_pad($invoiceNumber, 4, '0', STR_PAD_LEFT); // Generates INV-000001, INV-000002, etc.  
+        });
     }
 
     protected $fillable = [
@@ -48,4 +54,45 @@ class Checkout extends Model
         'status_pembayaran',
         'status',
     ];
+
+    public static function cekCo($dt)
+    {
+        $return = DB::table('checkouts as a')
+            ->select('a.id', 'a.user_id', 'a.cart_id')
+            ->where('a.cart_id', $dt['cart_id'])
+            ->where('a.user_id', $dt['user_id'])
+            ->first();
+
+        return $return;
+    }
+
+    public static function getUser($user_id)
+    {
+        $return = DB::table('users as a')
+            ->select('a.*')
+            ->where('a.id', $user_id)
+            ->first();
+
+        return $return;
+    }
+
+    public static function cekInvoice()
+    {
+        $return = DB::table('checkouts as a')
+            ->select('a.id', 'a.invoice')
+            ->whereNotNull('a.invoice')
+            ->orderBy('a.created_at', 'desc')
+            ->first();
+        return $return;
+    }
+
+    public static function getCartItem($id)
+    {
+        $data = DB::table('checkouts as a')
+            ->leftJoin('cart_items as b', 'a.cart_id', '=', 'b.cart_id')
+            ->select('a.id as co_id', 'b.product_variant_id', 'b.sales_mitra_id', 'b.sales_to_id', 'b.qty', 'b.voucher_code', 'b.voucher_id', 'b.harga', 'b.total_harga')
+            ->where('a.id', $id)
+            ->get()->toArray();
+        return $data;
+    }
 }

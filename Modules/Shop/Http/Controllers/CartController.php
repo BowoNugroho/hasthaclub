@@ -20,11 +20,12 @@ class CartController extends Controller
         $user_id = @auth('customer')->user()->id;
         $cek_cart = Cart::cekUser(@$user_id);
         $cartCount = CartItem::countCart(@$cek_cart->id);
+        $cart_id = @$cek_cart->id;
 
 
         $products = CartItem::getProduct(@$cek_cart->id);
         $totalHarga = CartItem::sumHarga(@$cek_cart->id);
-        return view('shop::cart.index', compact('cartCount', 'products', 'totalHarga'));
+        return view('shop::cart.index', compact('cartCount', 'products', 'totalHarga', 'cart_id'));
     }
 
     public function deleteCart($id)
@@ -36,11 +37,13 @@ class CartController extends Controller
             $user_id = @auth('customer')->user()->id;
             $cek_cart = Cart::cekUser(@$user_id);
             $cartCount = CartItem::countCart(@$cek_cart->id);
+            $cart_id = @$cek_cart->id;
             $totalHarga = CartItem::sumHarga(@$cek_cart->id);
 
             return response()->json([
                 'totalHarga' =>  number_format($totalHarga, 0, ',', '.'),
                 'cartCount' => $cartCount,
+                'cart_id' => $cart_id,
             ]);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Item not found'], 404);

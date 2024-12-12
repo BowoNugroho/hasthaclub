@@ -118,6 +118,17 @@ class Store extends Model
         return $return;
     }
 
+    public static function cekStore($user_id)
+    {
+        $return = DB::table('users as a')
+            ->leftJoin('stores as b', 'a.store_id', '=', 'b.id')
+            ->select('a.id', 'a.store_id', 'b.store_name')
+            ->where('a.id', $user_id)
+            ->first();
+
+        return $return;
+    }
+
     // query modul panel
     public static function getUserMitra()
     {

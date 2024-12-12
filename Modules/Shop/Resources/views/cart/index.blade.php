@@ -60,9 +60,12 @@
         <hr>
         <div class="grid grid-cols-1 mt-7">
             <div class="flex justify-between">
-                <span class="text-xl font-bold text-gray-500">Ringkasan belanja</span>
+                <span class="text-xl font-bold text-gray-500">Ringkasan belanja </span>
                 <span id="total-price" class="text-xl font-bold ">Total Pembayaran : Rp.{{ number_format($totalHarga, 0, ',', '.')  }}</span>
-                <button class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Checkout</button>
+                <form action="{{ route('checkout',$cart_id) }}" method="GET">
+                    @csrf
+                    <button class="inline-block px-6 py-2.5 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Checkout</button>
+                </form>
             </div>
         </div>
     </div>

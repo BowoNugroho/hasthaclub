@@ -11,6 +11,7 @@ use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\Blameable;
 use App\Traits\UuidTraits;
+use Illuminate\Support\Facades\DB;
 
 class Customer extends Authenticatable
 {
@@ -63,4 +64,15 @@ class Customer extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function cekRole($user_id)
+    {
+        $data = DB::table('model_has_roles as a')
+            ->leftJoin('roles as b', 'a.role_id', '=', 'b.id')
+            ->select('a.*', 'b.name as role_name')
+            ->where('a.model_id', $user_id)
+            ->first();
+
+        return $data;
+    }
 }

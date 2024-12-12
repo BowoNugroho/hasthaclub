@@ -73,7 +73,7 @@ class DetailKatalogController extends Controller
 
         $get_store = Voucher::cehkVoucher($voucher);
         $get_detail_product = ProductVariant::getProductVariantbyId1($product_variant_id);
-        $get_sales_mitra_id = Store::getSalesMitraId($get_store->store_id);
+        $get_sales_mitra_id = Store::getSalesMitraId(@$get_store->store_id);
         $cek_cart = Cart::cekUser($user_id);
 
         $cart_id = NULL;
@@ -96,7 +96,7 @@ class DetailKatalogController extends Controller
             $data['qty'] = $qty;
             $data['harga'] = $get_detail_product->harga;
             $data['harga_diskon'] = $get_detail_product->harga_diskon;
-            $data['sales_mitra_id'] = $get_sales_mitra_id->sales_mitra_id;
+            $data['sales_mitra_id'] = @$get_sales_mitra_id->sales_mitra_id;
             $data['cart_id'] = $cart_id;
 
             $save_cart_item = $this->saveCartItem($data);
@@ -113,7 +113,7 @@ class DetailKatalogController extends Controller
             $data['qty'] = $qty + $cek_product->qty;
             $data['harga'] = $get_detail_product->harga;
             $data['harga_diskon'] = $get_detail_product->harga_diskon;
-            $data['sales_mitra_id'] = $get_sales_mitra_id->sales_mitra_id;
+            $data['sales_mitra_id'] = @$get_sales_mitra_id->sales_mitra_id;
             $data['cart_id'] = $cart_id;
             $data['cart_item_id'] = $cek_product->id;
 
