@@ -116,5 +116,15 @@ class Checkout extends Model
         return $data;
     }
 
+    public static function getRiwayatCo($user_id)
+    {
+        $data = DB::table('checkouts as a')
+            ->select('a.*')
+            ->where('a.user_id', $user_id)
+            ->get()->toArray();
+            
+        return $data;
+    }
+
     
 }

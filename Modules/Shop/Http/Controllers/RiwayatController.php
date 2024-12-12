@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller;
 // use Illuminate\Sup
 use App\Models\Cart;
 use App\Models\CartItem;
+use App\Models\Checkout;
 
 class RiwayatController extends Controller
 {
@@ -23,6 +24,9 @@ class RiwayatController extends Controller
         $user_id = @auth('customer')->user()->id;
         $cek_cart = Cart::cekUser(@$user_id);
         $cartCount = CartItem::countCart(@$cek_cart->id);
-        return view('shop::customer.riwayatCs', compact('cartCount'));
+
+        $dtCo = Checkout::getRiwayatCo($user_id);
+
+        return view('shop::customer.riwayatCs', compact('cartCount','dtCo'));
     }
 }
