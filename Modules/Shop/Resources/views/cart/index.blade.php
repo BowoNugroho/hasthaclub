@@ -1,4 +1,9 @@
 @extends('shop::layouts.app')
+
+@section('title')
+    Keranjang Belanja
+@endsection
+
 @section('cart-count')
     @if (@auth('customer')->user()->id)
         <span id="cart-count" class="cart-count bg-blue-500  text-white w-4 h-4 pl-1  text-xs rounded-full absolute ">
@@ -34,7 +39,7 @@
                 <div class="box col-span-2 ">
                     <div class="grid grid-cols-3">
                         <div class="box flex justify-center">
-                            <img src="{{ url('storage/'. $val->product_img) }}" class="lg:h-[100px] h-[70px]" alt="">
+                            <img src="{{ url('public/storage/'. $val->product_img) }}" class="lg:h-[100px] h-[70px]" alt="">
                         </div>
                         <div class="box col-span-2">
                             <div class="grid">
