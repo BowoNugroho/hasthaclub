@@ -1,5 +1,4 @@
 @extends('shop::layouts.app')
-@if (@auth('customer')->user()->id)
 @section('cart-count')
 @if (@auth('customer')->user()->id)
 <span id="cart-count" class="cart-count bg-blue-500  text-white w-4 h-4 pl-1  text-xs rounded-full absolute ">
