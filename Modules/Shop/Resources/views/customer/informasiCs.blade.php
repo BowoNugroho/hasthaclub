@@ -12,8 +12,10 @@
 @endif
 @endsection
 @section('content_customer')
-<div class="grid grid-cols-1">
-    <p class="text-2xl font-bold text-start mb-5 mt-5">Informasi Akun</p>
+<div class="grid 2xl:grid-cols-3 xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-5  grid-cols-5 ">
+    <div class="box"></div>
+    <div class="box 2xl:col-span-1 xl:col-span-3 lg:col-span-3 md:col-span-3 col-span-5">
+        <p class="text-2xl font-bold text-start mb-5 mt-5">Informasi Akun</p>
     <form action="{{ route('updateCs',$dt->id) }}" method="post">
         @csrf
         <div class="mb-10 mt-3">
@@ -69,8 +71,10 @@
             </div>
         </div>
         <div class="mb-10 text-center mt-10">
-            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
         </div>
     </form>
+    </div>
+    <div class="box"></div> 
 </div>
 @endsection
