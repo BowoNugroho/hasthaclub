@@ -45,15 +45,15 @@
         <div class="grid grid-cols-1 gap-2">
             <div class="flex items-center justify-center bg-blue-500 lg:h-10 h-8 text-white lg:text-[12px] text-[10px] py-2 p-2">Dapatkan Free Membership Paradigm Fitness s.d 1 bulan dengan Pembelian Produk Hastha Club</div>
         </div>
-        <div class="grid xl:grid-cols-7 grid-cols-7 gap-4">
+        <div class="grid 2xl:grid-cols-7 grid-cols-7 gap-4">
             <div class="box "></div>
-            <div class="box xl:col-span-5 col-span-7 justify-center hidden lg:flex">
+            <div class="box 2xl:col-span-5 xl:col-span-7 col-span-7 justify-center hidden lg:flex">
                 <div class="flex justify-between items-center px-5 lg:px-[50px] h-[80px] w-full ">
                     <a href="{{ route('shop.indexHome') }}">
                         <img src="{{ url('public/modules/shop/images/hasthaclub.png') }}" class="h-[60px]" alt="">
                     </a>
                     <form action="{{ route('katalog') }}" method="GET" >
-                        <input type="text" id="search_product"  name="search_product"  value="{{ old('search_product') }}" placeholder="Cari Produk" class="w-[500px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
+                        <input type="text" id="search_product"  name="search_product"  value="{{ old('search_product') }}" placeholder="Cari Produk" class="xl:w-[500px] lg:w-[450px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
                     </form>
                     <ul class="flex gap-4">
                         <li class="text-[14px] "><i class="fas fa-store"></i>&nbsp;&nbsp;<span class="hover:underline"><a href="{{ route('store') }}">Pilih Toko</a></span></li>
@@ -70,11 +70,6 @@
                             </a>
                             @yield('cart-count') 
                         </li>
-                        {{-- buttton logout sementara --}}
-                        {{-- <li><form action="{{ route('logoutCs') }}" method="POST" style="display: inline;">
-                            @csrf
-                            <button type="submit" class="btn btn-danger" onclick="confirmLogout()">Logout</button>
-                        </form></li> --}}
                     </ul>
                 </div>
             </div>
@@ -101,7 +96,9 @@
             <div id="mobile-menu" class="lg:hidden hidden">
                 <hr>
                 <div class="flex justify-between items-center px-5 lg:px-[50px] h-[80px] w-full ">
-                    <input type="text" placeholder="Cari Produk" class="md:w-[500px] w-[200px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
+                    <form action="{{ route('katalog') }}" method="GET" >
+                        <input type="text" id="search_product"  name="search_product"  value="{{ old('search_product') }}" placeholder="Cari Produk" class="md:w-[500px] w-[200px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
+                    </form>
                     <ul class="flex gap-4">
                         <li class="text-[14px] hover:underline"><a href="{{ route('informasi.partnership') }}">Partnership</a></li>
                         <li class="text-[14px] hover:underline"><a href="{{ route('informasi.reseller') }}">Reseller</a></li>
