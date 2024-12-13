@@ -95,9 +95,9 @@
             </div>
             <div id="mobile-menu" class="lg:hidden hidden">
                 <hr>
-                <div class="flex justify-between items-center px-5 lg:px-[50px] h-[80px] w-full ">
+                <div class="flex justify-between items-center px-5 lg:px-[50px] h-[80px] w-full gap-4 ">
                     <form action="{{ route('katalog') }}" method="GET" >
-                        <input type="text" id="search_product"  name="search_product"  value="{{ old('search_product') }}" placeholder="Cari Produk" class="md:w-[500px] w-[200px] pl-10 pr-4 py-2 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
+                        <input type="text" id="search_product"  name="search_product"  value="{{ old('search_product') }}" placeholder="Cari Produk" class="md:w-[500px] sm:w-[300px] w-[150px] p-1 pl-3 text-gray-700  rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none  border border-gray-300 bg-gray-100" />
                     </form>
                     <ul class="flex gap-4">
                         <li class="text-[14px] hover:underline"><a href="{{ route('informasi.partnership') }}">Partnership</a></li>
