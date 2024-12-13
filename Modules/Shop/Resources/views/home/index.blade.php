@@ -68,7 +68,7 @@
             <a href="{{ route('katalog',['category' => 'apple']) }}" class="max-auto p-3">
                 <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <img src="{{ url('public/modules/shop/images/katalog/ip 13.png') }}" class="lg:h-[80px] h-[50px]" alt="">
+                        <img src="{{ url('public/modules/shop/images/katalog/logoappple.png') }}" class="lg:h-[80px] h-[50px]" alt="">
                     </div>
                  </div>
                  <div class="grid grid-cols-1">
@@ -85,7 +85,7 @@
             <a href="#" class="max-auto p-3">
                 <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <img src="{{ url('public/modules/shop/images/katalog/samsung.png') }}" class="lg:h-[80px] h-[50px]" alt="">
+                        <img src="{{ url('public/modules/shop/images/katalog/android.svg') }}" class="lg:h-[80px] h-[50px]" alt="">
                     </div>
                  </div>
                  <div class="grid grid-cols-1">
@@ -102,7 +102,7 @@
             <a href="#" class="max-auto p-3">
                 <div class="grid grid-cols-1">
                     <div class="flex justify-center">
-                        <img src="{{ url('public/modules/shop/images/katalog/laptop.png') }}" class="lg:h-[80px] h-[50px]" alt="">
+                        <img src="{{ url('public/modules/shop/images/katalog/windows.png') }}" class="lg:h-[80px] h-[50px]" alt="">
                     </div>
                  </div>
                  <div class="grid grid-cols-1">

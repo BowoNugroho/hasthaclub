@@ -122,8 +122,8 @@
                     <div class="grid grid-cols-4 gap-6 ">
                         <div class="box "> 
                             <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Belanja</div>
-                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Apple</div>
-                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"> Andorid</div>
+                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"> <a href="{{ route('katalog',['category' => 'apple']) }}">Apple</a></div>
+                            <div class="grid grid-cols-1 text-start mb-3 hover:underline"> <a href="#">Andorid</a></div>
                         </div>
                         <div class="box ">
                             <div class="grid grid-cols-1 text-start text-lg font-bold mb-5"> Layanan</div>
