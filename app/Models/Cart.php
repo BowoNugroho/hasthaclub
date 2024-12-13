@@ -41,6 +41,7 @@ class Cart extends Model
         $return = DB::table('carts as a')
             ->select('a.id', 'a.user_id',)
             ->where('a.user_id', $user_id)
+            ->whereNull('a.deleted_at')
             ->first();
 
         return $return;

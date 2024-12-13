@@ -72,7 +72,7 @@ class CheckoutController extends Controller
         $co_id = @$request->co_id;
         $invoice = @$getInvoice->invoice;
 
-        return view('shop::checkout.payment',compact('cartCount','totalHarga','co_id','invoice'));
+        return view('shop::checkout.payment', compact('cartCount', 'totalHarga', 'co_id', 'invoice'));
     }
 
     public function createCo($dt)
@@ -175,8 +175,10 @@ class CheckoutController extends Controller
             $cartItem = CartItem::where('cart_id', $cart_id);
             $cartItem->delete();
 
-            return $cart_id;
+            $cart = Cart::findOrFail($cart_id);
+            $cart->delete();
 
+            return $cart_id;
         } catch (\Exception $e) {
             return response()->json(['error' => 'Item not found'], 404);
         }
@@ -190,7 +192,7 @@ class CheckoutController extends Controller
 
         $getInvoice = Checkout::getInvoice(@$request->co_id);
 
-        return view('shop::checkout.konfirmasiPembayaran',compact('cartCount','getInvoice'));
+        return view('shop::checkout.konfirmasiPembayaran', compact('cartCount', 'getInvoice'));
     }
 
     public function uploadBukti(Request $request)

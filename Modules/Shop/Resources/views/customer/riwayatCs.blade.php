@@ -37,9 +37,9 @@
         </div>
         <div class="text-lg grid mt-10 mb-5">
             <div class="flex justify-center">
-                @if ($val->id == 0)
+                @if ($val->status_pembayaran == 0)
                     <a href="{{route('checkout.paymentRek',  ['co_id' => $val->id ])}}">
-                        <span class="inline-block px-2 py-2 border-2 bg-green-500 border-green-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">Konfirmasi Pembayaran</span>
+                        <span class="inline-block px-2 py-2 border-2 bg-blue-500 border-blue-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Konfirmasi Pembayaran</span>
                     </a>
                 @else
                     <span class="inline-block px-2 py-2 border-2 bg-green-500 border-green-500 text-white font-semibold text-sm leading-tight rounded-full hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">Telah Dibayar</span>

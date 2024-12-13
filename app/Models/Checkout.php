@@ -58,10 +58,10 @@ class Checkout extends Model
     public static function getInvoice($co_id)
     {
         $data = DB::table('checkouts as a')
-            ->select('a.id as co_id', 'a.cart_id','a.invoice')
+            ->select('a.id as co_id', 'a.cart_id', 'a.invoice')
             ->where('a.id', $co_id)
             ->first();
-            
+
         return $data;
     }
 
@@ -112,7 +112,7 @@ class Checkout extends Model
             ->select('a.id as co_id', 'a.cart_id')
             ->where('a.id', $co_id)
             ->first();
-            
+
         return $data;
     }
 
@@ -121,10 +121,9 @@ class Checkout extends Model
         $data = DB::table('checkouts as a')
             ->select('a.*')
             ->where('a.user_id', $user_id)
+            ->orderBy('a.created_at', 'desc')
             ->get()->toArray();
-            
+
         return $data;
     }
-
-    
 }
