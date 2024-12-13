@@ -150,10 +150,7 @@
             </div>
         </div>
         <div class="grid mt-5">
-            <p>Daftarkan dirimu dengan mengisi formulir berikut</p>
-        </div>
-        <div class="grid mt-3">
-            <p><a href="https://www.hasthaclub.com/karir"><span class="text-blue-500 hover:underline">https://www.hasthaclub.com/karir </span></a>(link Gform rekrutmen)</p>
+            <p>Daftarkan dirimu dengan mengisi formulir <a href="https://form.jotform.com/Hastha/form"><span class="text-blue-500 hover:underline">DISINI</span></a></p>
         </div>
         <div class="grid mt-5">
             <span class="font-bold underline">PERINGATAN* </span>
