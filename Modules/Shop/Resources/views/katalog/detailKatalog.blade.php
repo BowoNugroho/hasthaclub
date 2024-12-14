@@ -5,63 +5,80 @@
 @endsection
 
 @section('cart-count')
-@if (@auth('customer')->user()->id)
-<span id="cart-count" class="cart-count bg-blue-500  text-white w-4 h-4 pl-1  text-xs rounded-full absolute ">
-    {{ $cartCount ?? 0 }}
-</span>
-@endif
+    @if (@auth('customer')->user()->id)
+        <span id="cart-count" class="cart-count bg-blue-500  text-white w-4 h-4 pl-1  text-xs rounded-full absolute ">
+            {{ $cartCount ?? 0 }}
+        </span>
+    @endif
 @endsection<!-- Dynamic cart count passed from the controller -->
 @section('content')
-<div class="grid grid-cols-5">
+<div class="grid 2xl:grid-cols-6 xl:grid-cols-7 lg:grid-cols-9">
     <div class="box"></div>
-    <div class="box col-span-2 p-10">
+    <div class="box 2xl:col-span-2 xl:col-span-3 lg:col-span-4 p-10 hidden lg:grid">
         <div class="flex justify-center ">
-            <img src="{{ url('storage/'. $product->product_img) }}" class="h-[400px] " alt="">
+            <img src="{{ url('storage/'. $product->product_img) }}" class="2xl:h-[400px] xl:h-[360px] lg:h-[300px] " alt="">
         </div> 
         <div class="grid grid-cols-2 mt-10 gap-4">
             <div class="box  flex justify-center">
-                <img src="{{ url('storage/'. $product->product_img) }}" class="h-[300px] " alt="">
+                <img src="{{ url('storage/'. $product->product_img) }}" class="2xl:h-[300px] xl:h-[260px] lg:h-[230px] " alt="">
             </div>
             <div class="box  flex justify-center">
-                <img src="{{ url('storage/'. $product->product_img) }}" class="h-[300px] " alt="">
+                <img src="{{ url('storage/'. $product->product_img) }}" class="2xl:h-[300px] xl:h-[260px] lg:h-[230px] " alt="">
             </div>
         </div>
     </div>
-    <div class="box p-10">
+    <div class="box lg:hidden mt-5 p-5">
+        <div class="grid grid-cols-1">
+            <div class="box">
+                <span class="lg:text-3xl md:text-2xl text-lg font-bold">{{ $product->product_name }}</span>
+            </div>
+        </div>
+        <div class="grid grid-cols-1">
+            <div class="box">
+                <span class="lg:text-[13px] md:text-[13px] text-[10px] text-gray-600 ">SKU: 8100122760</span>
+            </div>
+        </div>
+        <div class="flex justify-center mt-5">
+            <img src="{{ url('storage/'. $product->product_img) }}" class="md:h-[300px] h-[200px] " alt="">
+        </div> 
+    </div>
+    <div class="box p-10 2xl:col-span-2 xl:col-span-2 lg:col-span-3">
         {{-- <form id="cartForm"> --}}
             {{-- @csrf --}}
-            <div class="grid grid-cols-1">
-                <div class="box">
-                    <span class="text-3xl font-bold">{{ $product->product_name }}</span>
+            <div class="hidden lg:grid">
+                <div class="grid grid-cols-1">
+                    <div class="box">
+                        <span class="text-3xl font-bold">{{ $product->product_name }}</span>
+                    </div>
                 </div>
-            </div>
-            <div class="grid grid-cols-1">
-                <div class="box">
-                    <span class="text-[12px] text-gray-600 ">SKU: 8100122760</span>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 mt-5">
-                <div class="box">
-                    <span class="text-[16px] text-slate-500 line-through">Rp.{{ number_format($product->harga, 0, ',', '.')  }}</span>
-                </div>
-            </div>
-            <div class="grid grid-cols-1">
-                <div class="box">
-                    <span class="text-xl font-bold ">Rp.{{ number_format($product->harga_diskon, 0, ',', '.')  }}  <span class="text-red-500 text-[12px]">[20 %]</span></span>
+                <div class="grid grid-cols-1">
+                    <div class="box">
+                        <span class="text-[12px] text-gray-600 ">SKU: 8100122760</span>
+                    </div>
                 </div>
             </div>
             <div class="grid grid-cols-1 mt-5">
                 <div class="box">
-                    <span class="text-[15px] font-bold">Warna</span>
+                    <span class="2xl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[13px] text-[13px] text-slate-500 line-through">Rp.{{ number_format($product->harga, 0, ',', '.')  }}</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1">
+                <div class="box">
+                    <span class="2xl:text-xl xl:text-xl lg:text-xl md:text-lg text-sm font-bold ">Rp.{{ number_format($product->harga_diskon, 0, ',', '.')  }}  <span class="text-red-500 text-[12px]">[20 %]</span></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 mt-5">
+                <div class="box">
+                    <span class="2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[13px] text-[13px]  font-bold">Warna</span>
                 </div>
             </div>
             <div class="grid grid-cols-1 mt-3">
                 <div class="box flex">
                     @foreach ($productWarna as $val )
                         @if ($val->color_id == $product->color_id)
-                            <button type="button" data-color-id="{{ $val->color_id }}" onclick="variant(this)" class="border border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-300 hover:ring-1 hover:ring-blue-500 hover:scale-105 font-medium rounded-full text-[11px] px-3 py-1 text-center me-2 mb-2 ">{{ $val->color_name }}</button>
+                            <button type="button" data-color-id="{{ $val->color_id }}" onclick="variant(this)" class="border border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-300 hover:ring-1 hover:ring-blue-500 hover:scale-105 font-medium rounded-full 2xl:text-[11px] xl:text-[11px] lg:text-[11px] md:text-[9px] text-[9px] px-3 py-1 text-center me-2 mb-2 ">{{ $val->color_name }}</button>
                         @else
-                            <button type="button" data-color-id="{{ $val->color_id }}" onclick="variant(this)" class="border focus:outline-none focus:ring-4 focus:ring-blue-300 hover:ring-1 hover:ring-blue-500 hover:scale-105 font-medium rounded-full text-[11px] px-3 py-1 text-center me-2 mb-2 ">{{ $val->color_name }}</button>
+                            <button type="button" data-color-id="{{ $val->color_id }}" onclick="variant(this)" class="border focus:outline-none focus:ring-4 focus:ring-blue-300 hover:ring-1 hover:ring-blue-500 hover:scale-105 font-medium rounded-full 2xl:text-[11px] xl:text-[11px] lg:text-[11px] md:text-[9px] text-[9px] px-3 py-1 text-center me-2 mb-2 ">{{ $val->color_name }}</button>
                         @endif
                     @endforeach
                     <select class="form-select hidden" id="select_color_id" name="select_color_id">
@@ -73,16 +90,16 @@
             </div>
             <div class="grid grid-cols-1 mt-5">
                 <div class="box">
-                    <span class="text-[15px] font-bold">Kapasitas</span>
+                    <span class="2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[13px] text-[13px] font-bold">Kapasitas</span>
                 </div>
             </div>
             @foreach ($productKapasitas as $val)
                 <div class="grid grid-cols-1 mt-3">
                     <div class="box">
                         @if ($val->capacity_id == $product->capacity_id)
-                        <button type="button" data-capacity-id="{{ $val->capacity_id }}" onclick="variant(this)" class="border  border-blue-500 w-full focus:outline-none focus:ring-4 focus:ring-blue-300 hover:ring-1 hover:ring-blue-500  font-medium rounded-md text-[15px] px-3 py-2.5 text-start me-2 mb-2 ">{{ $val->capacity_name }}</button>
+                        <button type="button" data-capacity-id="{{ $val->capacity_id }}" onclick="variant(this)" class="border  border-blue-500 w-full focus:outline-none focus:ring-4 focus:ring-blue-300 hover:ring-1 hover:ring-blue-500  font-medium rounded-md 2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[13px] text-[13px] px-3 py-2.5 text-start me-2 mb-2 ">{{ $val->capacity_name }}</button>
                         @else
-                        <button type="button" data-capacity-id="{{ $val->capacity_id }}"  onclick="variant(this)" class="border  w-full focus:outline-none focus:ring-4 focus:ring-blue-300 hover:ring-1 hover:ring-blue-500  font-medium rounded-md text-[15px] px-3 py-2.5 text-start me-2 mb-2 ">{{ $val->capacity_name }}</button>
+                        <button type="button" data-capacity-id="{{ $val->capacity_id }}"  onclick="variant(this)" class="border  w-full focus:outline-none focus:ring-4 focus:ring-blue-300 hover:ring-1 hover:ring-blue-500  font-medium rounded-md 2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[13px] text-[13px] px-3 py-2.5 text-start me-2 mb-2 ">{{ $val->capacity_name }}</button>
                         @endif
                     </div>
                 </div>
@@ -96,17 +113,17 @@
             <input type="hidden" id="product_variant_id" value="{{ $product->id }}">
             <div class="grid grid-cols-1 mt-5">
                 <div class="box">
-                    <span class="text-[15px] font-bold">Jumlah</span>
+                    <span class="2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[13px] text-[13px] font-bold">Jumlah</span>
                 </div>
             </div>
             <div class="grid grid-cols-1 mt-5">
                 <div class="box">
-                    <div class="flex items-center gap-4 w-[160px]  p-1.5 rounded-lg outline outline-1">
-                        <button id="decrease" class="text-lg text-gray-700 rounded-full w-10 h-8 flex justify-center items-center font-bold">
+                    <div class="flex items-center gap-4 w-[160px]  2xl:p-1.5 xl:p-1.5 lg:p-1.5 md:p-1 p-1 rounded-lg outline outline-1">
+                        <button id="decrease" class="2xl:text-lg xl:text-lg lg:text-lg md:text-md text-md  text-gray-700 rounded-full w-10 h-8 flex justify-center items-center font-bold">
                             <i class="fa-solid fa-minus"></i>
                         </button>
-                        <input type="number" id="qty" class="w-full text-center text-lg p-1" value="1" min="1">
-                        <button id="increase" class="text-lg text-gray-700 rounded-full w-10 h-8 flex justify-center items-center font-bold">
+                        <input type="number" id="qty" class="w-full text-center 2xl:text-lg xl:text-lg lg:text-lg md:text-md text-md  p-1" value="1" min="1">
+                        <button id="increase" class="2xl:text-lg xl:text-lg lg:text-lg md:text-md text-md  text-gray-700 rounded-full w-10 h-8 flex justify-center items-center font-bold">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
@@ -126,18 +143,18 @@
             </div> --}}
             <div class="grid grid-cols-1 mt-5">
                 <div class="box">
-                    <span class="text-[15px] font-bold">Voucher toko</span>
+                    <span class="2xl:text-[15px] xl:text-[15px] lg:text-[15px] md:text-[13px] text-[13px] font-bold">Voucher toko</span>
                 </div>
             </div>
             <div class="grid grid-cols-1 mt-2 ml-5">
                 <div class="box">
-                    <input type="text" name="voucher" id="voucher" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full p-3">
+                    <input type="text" name="voucher" id="voucher" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none w-full 2xl:p-3 xl:p-3 lg:p-3 md:p-2 p-2 ">
                     <span class="error text-red-500" id="voucher_error"></span>
                 </div>
             </div>
             <div class="grid grid-cols-1 mt-5">
                 <div class="box">
-                    <button type="button" onclick="submitCart(this)" class="text-lg text-white bg-blue-500 rounded-lg w-full px-3 py-1  flex justify-center items-center ">
+                    <button type="button" onclick="submitCart(this)" class="2xl:text-lg xl:text-lg lg:text-lg md:text-md text-md text-white bg-blue-500 rounded-lg w-full px-3 py-1  flex justify-center items-center ">
                         <span id="buttonText">Tambah Keranjang</span>
                         <div role="status" id="loadingSpinner" style="display: none;">
                             <svg aria-hidden="true" class="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -154,24 +171,36 @@
     </div>
     <div class="box "></div>
 </div>
-<div class="grid grid-cols-5 mb-7">
+<div class="grid 2xl:grid-cols-6 xl:grid-cols-7 lg:grid-cols-9 mb-7">
     <div class="box"></div>
-    <div class="box col-span-3">
+    <div class="box 2xl:col-span-4 xl:col-span-5 lg:col-span-7  col-span-7 ">
         <div>
             <hr>
             <button type="button" class="flex items-center w-full p-3 text-base text-gray-900 transition duration-75 rounded-lg group hover:underline" aria-controls="dropdown-promo" data-collapse-toggle="dropdown-promo">
-                <span class="flex-1 ms-3 text-start text-lg font-bold rtl:text-right whitespace-nowrap text-blue-500  hover:underline">Ringkasan</span>
+                <span class="flex-1 ms-3 text-start t2xl:text-lg xl:text-lg lg:text-lg md:text-md text-md font-bold rtl:text-right whitespace-nowrap text-blue-500  hover:underline">Ringkasan</span>
                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                  </svg>
             </button>
             <div id="dropdown-promo">
-                <div class="grid grid-cols-3 p-6">
-                    <div class="box">
-                        <span>Deskripsi</span>
+                <div class="hidden md:grid">
+                    <div class="grid grid-cols-3 p-6 ">
+                        <div class="box">
+                            <span>Deskripsi</span>
+                        </div>
+                        <div class="box col-span-2">
+                            <p>{{ $product->deskripsi_product }}</p>
+                        </div>
                     </div>
-                    <div class="box col-span-2">
-                        <p>{{ $product->deskripsi_product }}</p>
+                </div>
+                <div class=" md:hidden">
+                    <div class="grid-cols-3 p-6 ">
+                        <div class="mb-3">
+                            <span class="text-sm">Deskripsi</span>
+                        </div>
+                        <div class="box col-span-2">
+                            <p class="text-sm">{{ $product->deskripsi_product }}</p>
+                        </div>
                     </div>
                 </div>
                 {{-- <div class="grid grid-cols-3 p-6">
