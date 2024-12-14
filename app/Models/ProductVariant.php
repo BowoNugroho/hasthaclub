@@ -88,7 +88,7 @@ class ProductVariant extends Model
             ->leftJoin('products as b', 'a.product_id', '=', 'b.id')
             ->leftJoin('colors as c', 'a.color_id', '=', 'c.id')
             ->leftJoin('capacities as d', 'a.capacity_id', '=', 'd.id')
-            ->select('a.*', 'b.product_name', 'b.product_img', 'c.color_name',  'd.capacity_name')
+            ->select('a.*', 'b.product_name', 'b.product_img', 'b.deskripsi as deskripsi_product', 'c.color_name',  'd.capacity_name')
             ->where('a.id', $id)
             ->first();
 
