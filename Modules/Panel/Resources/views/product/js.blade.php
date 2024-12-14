@@ -25,7 +25,20 @@
                 { data: 'harga' },
                 { data: 'brand_name' },
                 { data: 'category_name' },
-                { data: 'deskripsi' },
+                { data: 'deskripsi', 
+                  render: function(data, type, row) {
+                        if (data) {
+                          const wordLimit = 5;
+                          const words = data.split(' ');
+
+                          if (words.length > wordLimit) {
+                            return words.slice(0, wordLimit).join(' ') + ' ...';
+                          }
+                          return data;
+                        }
+                        return '-';
+                    } 
+                },
                 { data: 'created_at', 
                   render: function(data, type, row) {
                       if (data) {
