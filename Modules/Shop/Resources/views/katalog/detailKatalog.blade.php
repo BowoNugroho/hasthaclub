@@ -189,7 +189,8 @@
                             <span>Deskripsi</span>
                         </div>
                         <div class="box col-span-2">
-                            <p>{{ $product->deskripsi_product }}</p>
+                            <p>{!! nl2br(e($product->deskripsi_product)) !!}</p>
+
                         </div>
                     </div>
                 </div>
@@ -199,7 +200,7 @@
                             <span class="text-sm">Deskripsi</span>
                         </div>
                         <div class="box col-span-2">
-                            <p class="text-sm">{{ $product->deskripsi_product }}</p>
+                            <p class="text-sm">{!! nl2br(e($product->deskripsi_product)) !!}</p>
                         </div>
                     </div>
                 </div>
