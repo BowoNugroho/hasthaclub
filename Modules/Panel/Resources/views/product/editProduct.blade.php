@@ -14,15 +14,20 @@
                 <input type="hidden" class="form-control" id="edit_product_id" name="product_id" placeholder="Nama" />
                 <span class="error text-danger" id="edit_product_name_error"></span>
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
               <label class="form-label">Harga</label>
               <input type="number" class="form-control" id="edit_harga" name="harga" placeholder="Nama" />
               <span class="error text-danger" id="edit_harga_error"></span>
-          </div>
+          </div> --}}
             <div class="mb-3">
                 <label class="form-label">Deskripsi</label>
                 <textarea class="form-control"  id="edit_deskripsi" name="deskripsi" rows="3"  placeholder="deskripsi"></textarea>
                 <span class="error text-danger" id="edit_deskripsi_error"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fitur</label>
+                <textarea class="form-control"  id="edit_fitur" name="fitur" rows="3"  placeholder="fitur"></textarea>
+                <span class="error text-danger" id="edit_fitur_error"></span>
             </div>
             <div class="row">
               <div class="col-lg-6">

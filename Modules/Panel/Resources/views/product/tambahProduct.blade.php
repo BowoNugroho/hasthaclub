@@ -13,16 +13,21 @@
                 <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Nama" />
                 <span class="error text-danger" id="product_name_error"></span>
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
               <label class="form-label">Harga</label>
               <input type="number" class="form-control" id="harga" name="harga" placeholder="Nama" />
               <span class="error text-danger" id="harga_error"></span>
-            </div>
+            </div> --}}
             <div class="mb-3">
                 <label class="form-label">Deskripsi</label>
                 <textarea class="form-control"  id="deskripsi" name="deskripsi" rows="3"  placeholder="deskripsi"></textarea>
                 <span class="error text-danger" id="deskripsi_error"></span>
             </div>
+            <div class="mb-3">
+              <label class="form-label">Fitur</label>
+              <textarea class="form-control"  id="fitur" name="fitur" rows="3"  placeholder="fitur"></textarea>
+              <span class="error text-danger" id="fitur_error"></span>
+          </div>
             <div class="row">
               <div class="col-lg-6">
                 <div class="mb-3">

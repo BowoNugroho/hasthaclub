@@ -34,6 +34,7 @@ class Product extends Model
         'product_img',
         'harga',
         'deskripsi',
+        'fitur',
         'brand_id',
         'category_id',
         'status',

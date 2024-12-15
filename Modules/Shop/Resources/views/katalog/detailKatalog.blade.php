@@ -202,6 +202,15 @@
 
                         </div>
                     </div>
+                    <div class="grid grid-cols-3 p-6 ">
+                        <div class="box">
+                            <span>Fitur</span>
+                        </div>
+                        <div class="box col-span-2">
+                            <p>{!! nl2br(e($product->fitur)) !!}</p>
+
+                        </div>
+                    </div>
                 </div>
                 <div class=" md:hidden">
                     <div class="grid-cols-3 p-6 ">
@@ -210,6 +219,14 @@
                         </div>
                         <div class="box col-span-2">
                             <p class="text-sm">{!! nl2br(e($product->deskripsi_product)) !!}</p>
+                        </div>
+                    </div>
+                    <div class="grid-cols-3 p-6 ">
+                        <div class="mb-3">
+                            <span class="text-sm">Fitur</span>
+                        </div>
+                        <div class="box col-span-2">
+                            <p class="text-sm">{!! nl2br(e($product->fitur)) !!}</p>
                         </div>
                     </div>
                 </div>

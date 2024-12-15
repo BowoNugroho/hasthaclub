@@ -28,10 +28,11 @@ Produk - Data Product
                       <th>Id</th>
                       <th>Image</th>
                       <th>Name</th>
-                      <th>Harga</th>
+                      {{-- <th>Harga</th> --}}
                       <th>Brand</th>
                       <th>Category</th>
                       <th>Deskripsi</th>
+                      <th>Fitur</th>
                       <th>Created At</th>
                       <th>Aksi</th>
                   </tr>

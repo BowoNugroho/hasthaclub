@@ -25,16 +25,17 @@ class ProductController extends Controller
     // Fetch data for DataTable with server-side processing
     public function datatables(Request $request)
     {
-        $columns = ['id', 'product_name', 'deskripsi', 'category_name', 'brand_name', 'created_at'];  // Define the columns you want to display
+        $columns = ['id', 'product_name', 'deskripsi', 'fitur', 'category_name', 'brand_name', 'created_at'];  // Define the columns you want to display
         $query = Product::query()
             ->join('brands as brand', 'products.brand_id', '=', 'brand.id')
             ->join('categories as category', 'products.category_id', '=', 'category.id')
-            ->select('products.*', 'brand.brand_name', 'category.category_name');
+            ->select('products.*', 'brand.brand_name', 'category.category_name')
+            ->orderBy('created_at', 'desc');
 
         // Apply search filter
         if ($search = $request->input('search.value')) {
             $query->where(function ($query) use ($search) {
-                $columns = ['id', 'product_name', 'deskripsi', 'created_at'];  // Define the columns you want to display
+                $columns = ['id', 'product_name', 'deskripsi', 'fitur', 'created_at'];  // Define the columns you want to display
                 foreach ($columns as $column) {
                     $query->orWhere('products.' . $column, 'like', "%$search%");
                 }
@@ -68,8 +69,9 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'product_name' => 'required|string|max:255',
-            'harga' => 'required',
+            // 'harga' => 'required',
             'deskripsi' => 'required',
+            'fitur' => 'required',
             'brand_id' => 'required',
             'category_id' => 'required',
             'product_img' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048', // Validate the image
@@ -83,8 +85,9 @@ class ProductController extends Controller
             }
 
             $data['product_name'] = $request->product_name;
-            $data['harga'] = $request->harga;
+            // $data['harga'] = $request->harga;
             $data['deskripsi'] = $request->deskripsi;
+            $data['fitur'] = $request->fitur;
             $data['product_img'] = $imagePath;
             $data['brand_id'] = $request->brand_id;
             $data['category_id'] = $request->category_id;
@@ -109,8 +112,9 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'product_name' => 'required|string|max:255',
-            'harga' => 'required',
+            // 'harga' => 'required',
             'deskripsi' => 'required',
+            'fitur' => 'required',
             'brand_id' => 'required',
             'category_id' => 'required',
             'product_img' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048', // Validate the image
@@ -130,8 +134,9 @@ class ProductController extends Controller
             }
 
             $data['product_name'] = $request->product_name;
-            $data['harga'] = $request->harga;
+            // $data['harga'] = $request->harga;
             $data['deskripsi'] = $request->deskripsi;
+            $data['fitur'] = $request->fitur;
             $data['product_img'] = $imagePath;
             $data['brand_id'] = $request->brand_id;
             $data['category_id'] = $request->category_id;

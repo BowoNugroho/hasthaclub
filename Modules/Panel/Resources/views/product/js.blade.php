@@ -22,10 +22,24 @@
                   }
                 },
                 { data: 'product_name' },
-                { data: 'harga' },
+                // { data: 'harga' },
                 { data: 'brand_name' },
                 { data: 'category_name' },
                 { data: 'deskripsi', 
+                  render: function(data, type, row) {
+                        if (data) {
+                          const wordLimit = 5;
+                          const words = data.split(' ');
+
+                          if (words.length > wordLimit) {
+                            return words.slice(0, wordLimit).join(' ') + ' ...';
+                          }
+                          return data;
+                        }
+                        return '-';
+                    } 
+                },
+                { data: 'fitur', 
                   render: function(data, type, row) {
                         if (data) {
                           const wordLimit = 5;
@@ -64,7 +78,8 @@
 
             $('#product_name_error').text('');
             $('#deskripsi_error').text('');
-            $('#harga_error').text('');
+            $('#fitur_error').text('');
+            // $('#harga_error').text('');
             $('#brand_id_error').text('');
             $('#category_id_error').text('');
 
@@ -78,10 +93,14 @@
                 $('#deskripsi_error').text('Deskripsi wajib diisi.');
                 isValid = false;
             }
-            if ($('#harga').val() === '') {
-                $('#harga_error').text('Harga wajib diisi.');
+            if ($('#fitur').val() === '') {
+                $('#fitur_error').text('Fitur wajib diisi.');
                 isValid = false;
             }
+            // if ($('#harga').val() === '') {
+            //     $('#harga_error').text('Harga wajib diisi.');
+            //     isValid = false;
+            // }
             if ($('#brand_id').val() === '') {
                 $('#brand_id_error').text('Brand wajib diisi.');
                 isValid = false;
@@ -143,7 +162,8 @@
                   console.log(data);
                   $('#edit_product_name').val(data.product_name);
                   $('#edit_deskripsi').val(data.deskripsi);
-                  $('#edit_harga').val(data.harga);
+                  $('#edit_fitur').val(data.fitur);
+                  // $('#edit_harga').val(data.harga);
                   $('#edit_product_id').val(data.id);
                   $('#edit_brand_id').val(data.brand_id).trigger('change');
                   $('#edit_category_id').val(data.category_id).trigger('change');
@@ -161,7 +181,8 @@
 
             $('#edit_product_name_error').text('');
             $('#edit_deskripsi_error').text('');
-            $('#edit_harga_error').text('');
+            $('#edit_fitur_error').text('');
+            // $('#edit_harga_error').text('');
             $('#edit_brand_id_error').text('');
             $('#edit_category_id_error').text('');
 
@@ -174,10 +195,14 @@
                 $('#edit_deskripsi_error').text('Deskripsi wajib diisi.');
                 isValid = false;
             }
-            if ($('#edit_harga').val() === '') {
-                $('#edit_harga_error').text('Harga wajib diisi.');
+            if ($('#edit_fitur').val() === '') {
+                $('#edit_fitur_error').text('Fitur wajib diisi.');
                 isValid = false;
             }
+            // if ($('#edit_harga').val() === '') {
+            //     $('#edit_harga_error').text('Harga wajib diisi.');
+            //     isValid = false;
+            // }
             if ($('#edit_brand_id').val() === '') {
                 $('#edit_brand_id_error').text('Brand wajib diisi.');
                 isValid = false;
