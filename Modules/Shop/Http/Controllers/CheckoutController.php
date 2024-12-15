@@ -42,7 +42,16 @@ class CheckoutController extends Controller
         $data['user_id'] = $user_id;
         $data['store_id'] = $getStoreId->store_id;
         $data['sales_mitra_id'] = $getStoreId->sales_mitra_id;
-        $data['sales_to_id'] = $getStoreId->sales_to_id;
+        // sales to semisal pakai voucher khusus
+        if ($role == 'sales_to') {
+            if ($getStoreId->sales_to_id == null) {
+                $data['sales_to_id'] = $user_id;
+            } else {
+                $data['sales_to_id'] = $getStoreId->sales_to_id;
+            }
+        } else {
+            $data['sales_to_id'] = $getStoreId->sales_to_id;
+        }
 
         $cekCo = Checkout::cekCo($data);
 
@@ -156,6 +165,7 @@ class CheckoutController extends Controller
                 $dt['voucher_code'] = $item->voucher_code;
                 $dt['voucher_id'] = $item->voucher_id;
                 $dt['harga'] = $item->harga;
+                $dt['potongan_harga'] = $item->potongan_harga;
                 $dt['total_harga'] = $item->total_harga;
                 $dt['status'] = 1;
 

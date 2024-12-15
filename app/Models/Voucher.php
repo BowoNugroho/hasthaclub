@@ -38,12 +38,12 @@ class Voucher extends Model
         'status',
     ];
 
-    public static function cehkVoucher($voucher_code)
+    public static function cekVoucher($voucher_code)
     {
         $voucher = $voucher_code;
 
         $return = DB::table('vouchers as a')
-            ->select('a.id', 'a.voucher_code', 'a.store_id', 'a.sales_to_id')
+            ->select('a.id', 'a.voucher_code', 'a.store_id', 'a.sales_to_id', 'a.potongan_harga')
             ->where('a.voucher_code', $voucher)
             ->first();
 

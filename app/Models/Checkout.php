@@ -100,8 +100,9 @@ class Checkout extends Model
     {
         $data = DB::table('checkouts as a')
             ->leftJoin('cart_items as b', 'a.cart_id', '=', 'b.cart_id')
-            ->select('a.id as co_id', 'b.product_variant_id', 'b.sales_mitra_id', 'b.sales_to_id', 'b.qty', 'b.voucher_code', 'b.voucher_id', 'b.harga', 'b.total_harga')
+            ->select('a.id as co_id', 'b.product_variant_id', 'b.sales_mitra_id', 'b.sales_to_id', 'b.qty', 'b.voucher_code', 'b.voucher_id', 'b.harga', 'b.potongan_harga', 'b.total_harga')
             ->where('a.id', $id)
+            ->whereNull('b.deleted_at')
             ->get()->toArray();
         return $data;
     }
@@ -111,6 +112,7 @@ class Checkout extends Model
         $data = DB::table('checkouts as a')
             ->select('a.id as co_id', 'a.cart_id')
             ->where('a.id', $co_id)
+            ->whereNull('a.deleted_at')
             ->first();
 
         return $data;

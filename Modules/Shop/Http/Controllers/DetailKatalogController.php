@@ -60,7 +60,7 @@ class DetailKatalogController extends Controller
     {
         $voucher = $request->voucher;
 
-        $cekVoucher = Voucher::cehkVoucher($voucher);
+        $cekVoucher = Voucher::cekVoucher($voucher);
         return response()->json($cekVoucher);
     }
 
@@ -71,7 +71,7 @@ class DetailKatalogController extends Controller
         $qty = $request->qty;
         $user_id = $request->user_id;
 
-        $get_store = Voucher::cehkVoucher($voucher);
+        $get_store = Voucher::cekVoucher($voucher);
         $get_detail_product = ProductVariant::getProductVariantbyId1($product_variant_id);
         $get_sales_mitra_id = Store::getSalesMitraId(@$get_store->store_id);
         $cek_cart = Cart::cekUser($user_id);
@@ -91,6 +91,7 @@ class DetailKatalogController extends Controller
             $data['product_variant_id'] = $product_variant_id;
             $data['voucher_code'] = $voucher;
             $data['voucher_id'] = $get_store->id;
+            $data['potongan_harga'] = $get_store->potongan_harga;
             $data['store_id'] = $get_store->store_id;
             $data['sales_to_id'] = $get_store->sales_to_id;
             $data['qty'] = $qty;
@@ -108,6 +109,7 @@ class DetailKatalogController extends Controller
             $data['product_variant_id'] = $product_variant_id;
             $data['voucher_code'] = $voucher;
             $data['voucher_id'] = $get_store->id;
+            $data['potongan_harga'] = $get_store->potongan_harga;
             $data['store_id'] = $get_store->store_id;
             $data['sales_to_id'] = $get_store->sales_to_id;
             $data['qty'] = $qty + $cek_product->qty;
@@ -145,11 +147,13 @@ class DetailKatalogController extends Controller
             $data['product_variant_id'] = $dt['product_variant_id'];
             $data['voucher_code'] = $dt['voucher_code'];
             $data['voucher_id'] =  $dt['voucher_id'];
+            $data['potongan_harga'] =  $dt['potongan_harga'];
             $data['store_id'] = $dt['store_id'];
             $data['sales_to_id'] = $dt['sales_to_id'];
             $data['qty'] = $dt['qty'];
             $data['harga'] = $dt['harga_diskon'];
-            $data['total_harga'] = $dt['qty'] * $dt['harga_diskon'];
+            $hargafix = $dt['harga_diskon'] - $dt['potongan_harga'];
+            $data['total_harga'] = $dt['qty'] * $hargafix;
             $data['sales_mitra_id'] = $dt['sales_mitra_id'];
             $data['cart_id'] = $dt['cart_id'];
             $data['status'] = 1;
@@ -170,11 +174,13 @@ class DetailKatalogController extends Controller
             $data['product_variant_id'] = $dt['product_variant_id'];
             $data['voucher_code'] = $dt['voucher_code'];
             $data['voucher_id'] =  $dt['voucher_id'];
+            $data['potongan_harga'] =  $dt['potongan_harga'];
             $data['store_id'] = $dt['store_id'];
             $data['sales_to_id'] = $dt['sales_to_id'];
             $data['qty'] = $dt['qty'];
             $data['harga'] = $dt['harga_diskon'];
-            $data['total_harga'] = $dt['qty'] * $dt['harga_diskon'];
+            $hargafix = $dt['harga_diskon'] - $dt['potongan_harga'];
+            $data['total_harga'] = $dt['qty'] * $hargafix;
             $data['sales_mitra_id'] = $dt['sales_mitra_id'];
             $data['cart_id'] = $dt['cart_id'];
             $data['status'] = 1;

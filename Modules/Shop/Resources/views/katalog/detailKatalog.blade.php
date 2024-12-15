@@ -250,26 +250,5 @@
 
 @section('script')
 @include('shop::katalog.js')
-
-<script>
-    // Mengambil elemen-elemen
-    const decreaseButton = document.getElementById('decrease');
-    const increaseButton = document.getElementById('increase');
-    const jumlahInput = document.getElementById('qty');
-
-    // Menambahkan event listener untuk tombol -
-    decreaseButton.addEventListener('click', function() {
-        let currentValue = parseInt(jumlahInput.value);
-        if (currentValue > 1) {
-            jumlahInput.value = currentValue - 1;
-        }
-    });
-
-    // Menambahkan event listener untuk tombol +
-    increaseButton.addEventListener('click', function() {
-        let currentValue = parseInt(jumlahInput.value);
-        jumlahInput.value = currentValue + 1;
-    });
-</script>
     
 @endsection

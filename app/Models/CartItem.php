@@ -37,6 +37,7 @@ class CartItem extends Model
         'sales_to_id',
         'qty',
         'voucher_code',
+        'potongan_harga',
         'voucher_id',
         'harga',
         'total_harga',

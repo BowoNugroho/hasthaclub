@@ -39,6 +39,7 @@ class OrderItem extends Model
         'qty',
         'voucher_code',
         'voucher_id',
+        'potongan_harga',
         'harga',
         'total_harga',
         'status',
