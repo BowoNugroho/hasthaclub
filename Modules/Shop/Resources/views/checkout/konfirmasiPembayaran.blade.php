@@ -23,7 +23,7 @@
     <div class="box "></div>
     <div class="box  xl:col-span-3 col-span-5  mt-5">
         <div class="grid grid-cols-1 text-center mt-7">
-            <span class="text-3xl text-blue-500 font-bold">Silahkan Upload Bukti Pembayran</span>
+            <span class="xl:text-3xl lg:text-3xl md:text-2xl text-2xl text-blue-500 font-bold">Silahkan Upload Bukti Pembayaran</span>
         </div>
         <div class="grid grid-cols-1 text-center mt-7">
             <form id="formUploadBukti" class="max-w-lg mx-auto">
@@ -34,7 +34,7 @@
                 <span class="error text-red-500" id="bukti_error"></span>
 
                 <div class="mt-10">
-                    <button type="submit" class="inline-block px-6 py-2.5 border-2 bg-green-500 border-green-500 text-white font-semibold text-lg leading-tight rounded-full hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"> Upload</button>
+                    <button type="submit" class="inline-block px-6 py-2.5 border-2 bg-green-500 border-green-500 text-white font-semibold xl:text-lg lg:text-lg md:text-md text-md leading-tight rounded-full hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"> Upload</button>
                 </div>
             </form>
         </div>
