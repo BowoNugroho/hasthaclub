@@ -10,7 +10,16 @@
             {{ $cartCount ?? 0 }}
         </span>
     @endif
-@endsection<!-- Dynamic cart count passed from the controller -->
+@endsection
+@section('cart-count2')
+    @if (@auth('customer')->user()->id)
+        <span id="cart-count2" class="cart-count bg-blue-500  text-white w-4 h-4   text-xs rounded-full absolute ">
+            {{ $cartCount ?? 0 }}
+        </span>
+    @endif
+@endsection
+
+<!-- Dynamic cart count passed from the controller -->
 @section('content')
 <div class="grid 2xl:grid-cols-6 xl:grid-cols-7 lg:grid-cols-9">
     <div class="box"></div>

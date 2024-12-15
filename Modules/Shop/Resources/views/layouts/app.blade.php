@@ -88,9 +88,12 @@
                     <a href="/">
                         <img src="{{ url('public/modules/shop/images/hasthaclub.png') }}" class="h-[60px]" alt="">
                     </a>
-                    <a href="{{ route('cart') }}">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </a>
+                    <div>
+                        <a href="{{ route('cart') }}">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </a>
+                        @yield('cart-count2') 
+                    </div>
                 </div>
             </div>
             <div id="mobile-menu" class="lg:hidden hidden">

@@ -146,6 +146,7 @@
                 success: function(response) {
                     console.log(response)
                     $('#cart-count').text(response); 
+                    $('#cart-count2').text(response); 
                 }
             });
         }
