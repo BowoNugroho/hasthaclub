@@ -5,12 +5,20 @@
 @endsection
 
 @section('cart-count')
-@if (@auth('customer')->user()->id)
-<span id="cart-count" class="cart-count bg-blue-500  text-white w-4 h-4 pl-1  text-xs rounded-full absolute ">
-    {{ $cartCount ?? 0 }}
-</span>
-@endif
+    @if (@auth('customer')->user()->id)
+        <span id="cart-count" class="cart-count bg-blue-500  text-white w-4 h-4 pl-1  text-xs rounded-full absolute ">
+            {{ $cartCount ?? 0 }}
+        </span>
+    @endif
 @endsection
+@section('cart-count2')
+    @if (@auth('customer')->user()->id)
+        <span id="cart-count2" class="cart-count bg-blue-500  text-white w-4 h-4   text-xs rounded-full absolute ">
+            {{ $cartCount ?? 0 }}
+        </span>
+    @endif
+@endsection
+
 @section('content_customer')
 <div class="grid 2xl:grid-cols-3 xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-5  grid-cols-5 ">
     <div class="box"></div>

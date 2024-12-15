@@ -5,12 +5,20 @@
 @endsection
 
 @section('cart-count')
-@if (@auth('customer')->user()->id)
-<span id="cart-count" class="cart-count bg-blue-500  text-white w-4 h-4 pl-1  text-xs rounded-full absolute ">
-    {{ $cartCount ?? 0 }}
-</span>
-@endif
+    @if (@auth('customer')->user()->id)
+        <span id="cart-count" class="cart-count bg-blue-500  text-white w-4 h-4 pl-1  text-xs rounded-full absolute ">
+            {{ $cartCount ?? 0 }}
+        </span>                                                     
+    @endif
 @endsection
+@section('cart-count2')
+    @if (@auth('customer')->user()->id)
+        <span id="cart-count2" class="cart-count bg-blue-500  text-white w-4 h-4   text-xs rounded-full absolute ">
+            {{ $cartCount ?? 0 }}
+        </span>
+    @endif
+@endsection
+
 @section('content')
 <div class="grid xl:grid-cols-5 grid-cols-5 p-5">
     <div class="box "></div>
@@ -120,7 +128,7 @@
                                 <div class="box hidden md:flex">
                                     <div class="grid grid-cols-1 p-2">
                                         <div class="flex justify-center ">
-                                            <img src="{{ url('public/modules/shop/images/store.png') }}" class="h-[120px]" alt="">
+                                            <img src="{{ url('modules/shop/images/store.png') }}" class="h-[120px]" alt="">
                                         </div>
                                     </div>
                                 </div>
