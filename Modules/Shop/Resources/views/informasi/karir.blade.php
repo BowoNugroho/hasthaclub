@@ -18,18 +18,19 @@
         </span>
     @endif
 @endsection
+
 @section('content')
-<div class="grid grid-cols-5">
+<div class="grid xl:grid-cols-5 lg:grid-cols-7 grid-cols-5">
     <div class="box"></div>
-    <div class="box col-span-3 p-10">
-        <span class="text-3xl font-bold">KARIR</span>
-        <div class="grid mt-5">
+    <div class="box xl:col-span-3 lg:col-span-5 col-span-5 p-10">
+        <span class="xl:text-3xl lg:text-3xl md:text-2xl text-2xl font-bold">KARIR</span>
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <p>Bergabung dan menjadi bagian dari perjalanan luar biasa Hastha Club</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold underline">Lowongan Kerja di Hastha Club :</span>
         </div>
-        <div class="grid grid-cols-2 mt-5">
+        <div class="grid  mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <div class="box ">
                 <table>
                     <tr>
@@ -51,17 +52,17 @@
             </div>
             <div class="box"></div>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold underline">Deskripsi :</span>
         </div>
         <div class="grid mt-3">
             <p>Sales Promotor merupakan staff yang bertugas mempromosikan dan menjual
                 produk atau layanan secara langsung kepada konsumen.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold underline">Peran sales promotor :</span>
         </div>
-        <div class="grid grid-cols-1 mt-5">
+        <div class="grid grid-cols-1 mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <div class="box ">
                 <table>
                     <tr>
@@ -83,10 +84,10 @@
                 </table>
             </div>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold underline">Tugas dan tanggung jawab sales promotor :</span>
         </div>
-        <div class="grid grid-cols-1 mt-5">
+        <div class="grid grid-cols-1 mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <div class="box ">
                 <table>
                     <tr>
@@ -101,10 +102,10 @@
                 </table>
             </div>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold underline">Syarat* :</span>
         </div>
-        <div class="grid grid-cols-1 mt-5">
+        <div class="grid grid-cols-1 mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <div class="box ">
                 <table>
                     <tr>
@@ -125,10 +126,10 @@
                 </table>
             </div>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold underline">Penempatan :</span>
         </div>
-        <div class="grid grid-cols-1 mt-5">
+        <div class="grid grid-cols-1 mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <div class="box ">
                 <table>
                     <tr>
@@ -143,10 +144,10 @@
                 </table>
             </div>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold underline">Benefit sales promotor :</span>
         </div>
-        <div class="grid grid-cols-1 mt-5">
+        <div class="grid grid-cols-1 mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <div class="box ">
                 <table>
                     <tr>
@@ -161,16 +162,16 @@
                 </table>
             </div>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <p>Daftarkan dirimu dengan mengisi formulir <a href="https://form.jotform.com/Hastha/form"><span class="text-blue-500 hover:underline">DISINI</span></a></p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold underline">PERINGATAN* </span>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <p>Hati-hati atas upaya tindakan penipuan yang mengatasnamakan HasthaClub. Seluruh proses rekrutmen tidak dikenakan biaya apapun!
                 Butuh informasi seputar rekrutmen? Hubungi tim rekrutmen kami melalui
-                sambungan whatsapp berikut: 0882 0089 97382 (pesan akan kami respon padahari & jam kerja yang berlaku)</p>
+                sambungan Whatsapp berikut: <span class="text-blue-500">0882 0089 97382</span> (pesan akan kami respon pada hari & jam kerja yang berlaku)</p>
         </div>
     </div>
     <div class="box"></div>

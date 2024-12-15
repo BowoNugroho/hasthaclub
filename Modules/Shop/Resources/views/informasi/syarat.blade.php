@@ -20,11 +20,11 @@
 @endsection
 
 @section('content')
-<div class="grid grid-cols-5">
+<div class="grid xl:grid-cols-5 lg:grid-cols-7 grid-cols-5">
     <div class="box"></div>
-    <div class="box col-span-3 p-10">
-        <span class="text-3xl font-bold">SYARAT & KETENTUAN</span>
-        <div class="grid mt-10">
+    <div class="box xl:col-span-3 lg:col-span-5 col-span-5 p-10">
+        <span class="xl:text-3xl lg:text-3xl md:text-2xl text-2xl font-bold">SYARAT & KETENTUAN</span>
+        <div class="grid mt-10 xl:text-[17px] lg:text-[17px] text-[15px]">
             <p>Persyaratan dan Ketentuan Layanan ini (“Term and Condition”) mencakup pembelian dan penggunaan
                 produk dan layanan Anda (“Layanan”) yang tersedia melalui Situs Hastha Club. Situs Hastha Club
                 dioperasikan oleh Hastha Club.</p>
@@ -32,7 +32,7 @@
                     produk atau layanan melalui Situs Hastha Club, Anda mengakui dan setuju untuk terikat oleh persyaratan
                     ini (“Perjanjian”) sebagai berikut:</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">Ikhtisar</span>
             <p class="mt-2">Ketentuan Layanan ini telah ditandatangani dan diberikan oleh Anda dan merupakan perjanjian yang sah
                 dan mengikat antara Anda dan Hastha Club, yang dapat diberlakukan terhadap Anda sesuai dengan
@@ -52,14 +52,14 @@
             <p class="mt-5">Dengan menggunakan situs ini selanjutnya, Anda setuju untuk mematuhi setiap syarat dan ketentuan
                 layanan tersebut.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">Integritas data</span>
             <p class="mt-5">Anda menyatakan bahwa semua informasi, data, dan materi lain yang Anda berikan kepada Hastha Club
                 adalah benar, akurat, terkini, dan lengkap. Anda bertanggung jawab untuk memperbarui dan mengoreksi
                 informasi yang telah Anda berikan kepada Hastha Club dengan memperbarui informasi pada akun yang
                 Anda buat di <span class="text-blue-500 underline"> http://www.hasthaclub.com</span>.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">Kebijakan Privasi</span>
             <p class="mt-5">Salinan Kebijakan Privasi yang berlaku untuk pengumpulan, penggunaan, pengungkapan, dan pemrosesan
                 informasi pribadi lainnya oleh Hastha Club terdapat di <span class="text-blue-500"> www.hasthaclub.com </span> / privacy. Anda menyetujui
@@ -69,14 +69,14 @@
                 waktu, atas kebijakannya sendiri, dan mengeposkan versi pemberitahuan yang diperbarui di alamat situs
                 web yang diberikan di atas.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">Mata Uang</span>
             <p class="mt-5">Kami menggunakan Rupiah (IDR), mata uang Indonesia, untuk setiap pembayaran dan/atau tagihan ke
                 kartu kredit Anda. Harga yang ditampilkan di Situs dapat ditampilkan dalam mata uang asing, tetapi kami
                 akan menggunakan Rupiah (IDR) sebagai harga transaksi yang dibebankan berdasarkan nilai tukar mata
                 uang asing tersebut ke Rupiah (IDR) yang berlaku di bank kami.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">Merek Dagang dan Hak Cipta</span>
             <p class="mt-5">Merek dagang, logo, dan merek layanan ("Merek") yang ditampilkan di Situs adalah milik Hastha Club atau
                 pemberi lisensinya atau penyedia konten, atau pihak lain. Pengguna atau pihak mana pun yang bertindak
@@ -90,7 +90,7 @@
                 melalui Situs dilindungi oleh hak cipta, merek dagang, dan hukum Republik Indonesia dan hukum asing
                 lainnya yang berlaku.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">Force Majeure</span>
             <p class="mt-5">Hastha Club dibebaskan dari kewajiban untuk melaksanakan Layanan berdasarkan Ketentuan Layanan,
                 sejauh layanan tersebut dicegah atau ditunda pelaksanaannya, secara keseluruhan atau sebagian, sebagai
@@ -102,7 +102,7 @@
                 kepada Anda karena peristiwa tersebut, Hastha Club akan memberi Anda pilihan untuk menunda
                 pengiriman atau menerima pengembalian biaya Anda.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">Tautan Pihak Ketiga</span>
             <p class="mt-5">Layanan dapat berisi tautan ke situs web pihak ketiga, pengiklan, layanan, penawaran khusus, atau acara
                 atau aktivitas lain yang tidak dimiliki atau dikendalikan oleh Hastha Club. Hastha Club tidak mendukung
@@ -117,7 +117,7 @@
                 atas segala kerugian atau kerusakan apa pun yang berkaitan dengan transaksi Anda dengan pengiklan
                 tersebut.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">Akses ke Fitur Situs yang Dilindungi Kata Sandi</span>
             <p class="mt-5">Akses dan penggunaan area Situs yang dilindungi kata sandi dibatasi hanya untuk pengguna yang
                 berwenang. Anda bertanggung jawab untuk melindungi kredensial login Anda, termasuk kata sandi apa
@@ -129,7 +129,7 @@
                 Anda di Situs ini, telah dilakukan oleh Anda kecuali kami menerima pemberitahuan yang menyatakan
                 sebaliknya.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">SANGGAHAN/TANPA JAMINAN</span>
             <p class="mt-5">Layanan dan Produk atau Layanan apapun yang dapat Anda beli melalui Layanan disediakan atas dasar
                 "apa adanya" dan "sebagaimana tersedia". Penggunaan Layanan merupakan risiko Anda sendiri. Sejauh
@@ -157,19 +157,19 @@
                 jawab atas segala kerusakan yang Anda alami atau yang Anda duga alami sebagai akibat dari Konten
                 Anggota.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">Perjanjian Lengkap</span>
             <p class="mt-5">Persyaratan Layanan ini merupakan perjanjian lengkap antara Anda dan Hastha Club mengenai hal-hal
                 khusus di sini, dan semua perjanjian, surat, proposal, diskusi, dan dokumen lain sebelumnya mengenai halhal
                 di sini digantikan dan digabungkan ke dalam Persyaratan Layanan ini.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">Keterpisahan</span>
             <p class="mt-5">Jika ada ketentuan dalam Persyaratan Layanan ini, keberlakuan ketentuan lainnya tidak akan terpengaruh
                 atau terganggu dengan cara apa pun, dan ketentuan tersebut akan dianggap dinyatakan kembali untuk
                 mencerminkan maksud awal para pihak sedekat mungkin sesuai dengan hukum yang berlaku.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">Hukum dan Yurisdiksi yang Mengatur</span>
             <p class="mt-5">Jika Anda memilih untuk mengakses Situs ini dari luar Indonesia, Anda melakukannya atas inisiatif Anda
                 sendiri dan bertanggung jawab untuk mematuhi hukum setempat yang berlaku. Persyaratan Layanan ini
@@ -182,7 +182,7 @@
                 diselesaikan secara musyawarah, para pihak dengan ini sepakat untuk menyelesaikan perselisihan atau
                 perbedaan pendapat tersebut melalui Pengadilan Negeri Jakarta Barat, Indonesia.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold">Modifikasi Ketentuan Layanan</span>
             <p class="mt-5">Anda mengakui dan setuju bahwa Hastha Club dapat, atas kebijakannya sendiri, mengubah, menambah,
                 atau menghapus bagian mana pun dari Ketentuan Layanan ini kapan saja dan dengan cara apa pun, dengan

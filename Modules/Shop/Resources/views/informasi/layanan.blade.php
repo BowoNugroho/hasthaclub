@@ -20,11 +20,11 @@
 @endsection
 
 @section('content')
-<div class="grid grid-cols-5">
+<div class="grid xl:grid-cols-5 lg:grid-cols-7 grid-cols-5">
     <div class="box"></div>
-    <div class="box col-span-3 p-10">
-        <span class="text-3xl font-bold">LAYANAN PELANGGAN</span>
-        <div class="grid mt-5">
+    <div class="box xl:col-span-3 lg:col-span-5 col-span-5 p-10">
+        <span class="xl:text-3xl lg:text-3xl md:text-2xl text-2xl font-bold">LAYANAN PELANGGAN</span>
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <ul>
                 <li class="font-bold">The Hastha Club’s customer care :</li>
                 <li>Email: <span class="text-blue-500">cs@hasthaclub.com</span></li>
@@ -32,7 +32,7 @@
                 <li>Instagram: <span class="text-blue-500">HasthaClub</span></li>
             </ul>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <p>Butuh informasi lebih lanjut? Jangan ragu untuk menghubungi kami!</p>
         </div>
     </div>

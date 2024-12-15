@@ -20,16 +20,16 @@
 @endsection
 
 @section('content')
-<div class="grid grid-cols-5">
+<div class="grid xl:grid-cols-5 lg:grid-cols-7 grid-cols-5">
     <div class="box"></div>
-    <div class="box col-span-3 p-10">
-        <span class="text-3xl font-bold">PENGEMBALIAN & PENUKARAN</span>
-        <div class="grid mt-10">
+    <div class="box xl:col-span-3 lg:col-span-5 col-span-5 p-10">
+        <span class="xl:text-3xl lg:text-3xl md:text-2xl text-2xl font-bold">PENGEMBALIAN & PENUKARAN</span>
+        <div class="grid mt-10  xl:text-[17px] lg:text-[17px] text-[15px]">
             <p>Pusat Layanan Pelanggan Hastha Club untuk Pengembalian Barang</p>
             <p class="mt-2"> KOLEKTIF</p>
             <p class="mt-2"> Jl. Watu Gede No.58 Sarriharjo, Ngaglik, Sleman, Daerah Istimewa Yogyakarta 55581</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5  xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold ">Bagaimana kebijakan penukaran barang Hastha Club?</span>
             <p class="mt-2">Barang yang ditukar harus sesuai dengan kebijakan kami:</p>
             <p>- Barang harus dikembalikan dalam keadaan tidak dipakai, tidak rusak, dan tidak digunakan, dengan semua
@@ -45,7 +45,7 @@
             <p class="mt-2">Beberapa barang tidak dapat dikembalikan karena program penjualan, perjanjian khusus dengan pedagang,
                 atau alasan sanitasi.</p>
         </div>
-        <div class="grid mt-5">
+        <div class="grid mt-5  xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold ">Bagaimana cara menukar/mengembalikan barang yang saya beli?</span>
             <p class="mt-2">Metode A*:</p>
             <p class="mt-2">1. Kirim barang Anda kepada kami</p>
