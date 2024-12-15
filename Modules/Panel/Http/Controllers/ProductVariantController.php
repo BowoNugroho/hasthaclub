@@ -29,7 +29,8 @@ class ProductVariantController extends Controller
             ->join('products as product', 'product_variants.product_id', '=', 'product.id')
             ->join('colors as color', 'product_variants.color_id', '=', 'color.id')
             ->join('capacities as capacity', 'product_variants.capacity_id', '=', 'capacity.id')
-            ->select('product_variants.*', 'product.product_name', 'color.color_name', 'capacity.capacity_name');
+            ->select('product_variants.*', 'product.product_name', 'color.color_name', 'capacity.capacity_name')
+            ->orderBy('created_at', 'desc');
 
         // Apply search filter
         if ($search = $request->input('search.value')) {
