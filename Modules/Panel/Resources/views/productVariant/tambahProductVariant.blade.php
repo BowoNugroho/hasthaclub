@@ -65,11 +65,11 @@
                 <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock" />
                 <span class="error text-danger" id="stock_error"></span>
             </div>
-              <div class="mb-3">
+              {{-- <div class="mb-3">
                   <label class="form-label">Deskripsi</label>
                   <textarea class="form-control"  id="deskripsi" name="deskripsi" rows="3"  placeholder="deskripsi"></textarea>
                   <span class="error text-danger" id="deskripsi_error"></span>
-              </div>
+              </div> --}}
             </div>
           <div class="modal-footer">
             <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">

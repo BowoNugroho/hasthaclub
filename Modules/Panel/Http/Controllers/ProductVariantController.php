@@ -87,7 +87,7 @@ class ProductVariantController extends Controller
             $data['harga'] = $request->harga;
             $data['harga_diskon'] = $request->harga_diskon;
             $data['stock'] = $request->stock;
-            $data['deskripsi'] = $request->deskripsi;
+            // $data['deskripsi'] = $request->deskripsi;
             $data['created_by'] = auth('web')->user()->id;
             $data['status'] = 1;
 
@@ -127,7 +127,7 @@ class ProductVariantController extends Controller
             $data['harga'] = $request->harga;
             $data['harga_diskon'] = $request->harga_diskon;
             $data['stock'] = $request->stock;
-            $data['deskripsi'] = $request->deskripsi;
+            // $data['deskripsi'] = $request->deskripsi;
             $data['updated_by'] = auth('web')->user()->id;
 
             $productVariant->update($data);

@@ -142,7 +142,7 @@
                     $('#edit_harga').val(data.harga);
                     $('#edit_harga_diskon').val(data.harga_diskon);
                     $('#edit_stock').val(data.stock);
-                    $('#edit_deskripsi').val(data.deskripsi);
+                    // $('#edit_deskripsi').val(data.deskripsi);
 
                     $('#editProductVariant').modal('show');
                 },
