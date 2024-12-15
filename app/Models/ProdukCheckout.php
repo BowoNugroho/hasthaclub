@@ -39,7 +39,7 @@ class ProdukCheckout extends Model
         $data = DB::table('produk_checkouts as a')
             ->leftJoin('product_variants as b', 'a.product_variant_id', '=', 'b.id')
             ->leftJoin('products as c', 'b.product_id', '=', 'c.id')
-            ->select('a.*', 'b.harga_diskon', 'b.harga', 'c.product_name', 'c.product_img')
+            ->select('a.*', 'b.product_variants_img1', 'b.harga_diskon', 'b.harga', 'c.product_name', 'c.product_img')
             ->where('a.status', 1)
             ->get()
             ->toArray();
