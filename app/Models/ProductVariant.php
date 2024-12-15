@@ -60,6 +60,7 @@ class ProductVariant extends Model
             ->when(count($colors) > 0, function ($query) use ($colors) {
                 return $query->whereIn('a.color_id', $colors);
             })
+            ->whereNull('a.deleted_at')
             ->get()->toArray();
 
         $data['count'] = DB::table('product_variants as a')
@@ -77,6 +78,7 @@ class ProductVariant extends Model
             ->when(count($colors) > 0, function ($query) use ($colors) {
                 return $query->whereIn('a.color_id', $colors);
             })
+            ->whereNull('a.deleted_at')
             ->count();
 
         return $data;
