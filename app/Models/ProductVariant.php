@@ -36,6 +36,8 @@ class ProductVariant extends Model
         'harga_diskon',
         'stock',
         'deskripsi',
+        'product_variants_img1',
+        'product_variants_img2',
         'capacity_id',
         'status',
     ];

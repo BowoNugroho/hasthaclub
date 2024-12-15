@@ -26,6 +26,7 @@ Produk - Data Produk Saya
               <thead>
                   <tr>
                       <th>Id</th>
+                      <th>Gambar</th>
                       <th>Product</th>
                       <th>Warna</th>
                       <th>Kapasitas</th>

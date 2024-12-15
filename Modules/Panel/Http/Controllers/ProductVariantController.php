@@ -24,7 +24,7 @@ class ProductVariantController extends Controller
 
     public function datatables(Request $request)
     {
-        $columns = ['id', 'product_name', 'color_name', 'capacity_name', 'harga', 'harga_diskon', 'stock', 'created_at'];  // Define the columns you want to display
+        $columns = ['id', 'product_variants_img1', 'product_name', 'color_name', 'capacity_name', 'harga', 'harga_diskon', 'stock', 'created_at'];  // Define the columns you want to display
         $query = ProductVariant::query()
             ->join('products as product', 'product_variants.product_id', '=', 'product.id')
             ->join('colors as color', 'product_variants.color_id', '=', 'color.id')
@@ -77,11 +77,24 @@ class ProductVariantController extends Controller
             'harga' => 'required',
             'harga_diskon' => 'required',
             'stock' => 'required',
+            'product_variants_img1' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'product_variants_img2' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
 
         try {
 
+            $imagePath1 = null;
+            if ($request->hasFile('product_variants_img1')) {
+                $imagePath1 = $request->file('product_variants_img1')->store('product_variant_images1', 'public');
+            }
+            $imagePath2 = null;
+            if ($request->hasFile('product_variants_img2')) {
+                $imagePath2 = $request->file('product_variants_img2')->store('product_variant_images2', 'public');
+            }
+
             $data['product_id'] = $request->product_id;
+            $data['product_variants_img1'] = $imagePath1;
+            $data['product_variants_img2'] = $imagePath2;
             $data['color_id'] = $request->color_id;
             $data['capacity_id'] = $request->capacity_id;
             $data['harga'] = $request->harga;
@@ -114,14 +127,32 @@ class ProductVariantController extends Controller
             'harga' => 'required',
             'harga_diskon' => 'required',
             'stock' => 'required',
+            'product_variants_img1' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'product_variants_img2' => 'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
 
         try {
 
             $id = $request->product_variant_id;
             $productVariant = ProductVariant::findOrFail($id);
+            $imagePath1 = $productVariant->product_variants_img1;
+            if ($request->hasFile('product_variants_img1')) {
+                if (Storage::exists('public/' . $productVariant->product_variants_img1)) {
+                    Storage::delete('public/' . $productVariant->product_variants_img1);
+                }
+                $imagePath1 = $request->file('product_variants_img1')->store('product_variant_images1', 'public');
+            }
+            $imagePath2 = $productVariant->product_variants_img2;
+            if ($request->hasFile('product_variants_img2')) {
+                if (Storage::exists('public/' . $productVariant->product_variants_img2)) {
+                    Storage::delete('public/' . $productVariant->product_variants_img2);
+                }
+                $imagePath1 = $request->file('product_variants_img2')->store('product_variant_images2', 'public');
+            }
 
             $data['product_id'] = $request->product_id;
+            $data['product_variants_img1'] = $imagePath1;
+            $data['product_variants_img2'] = $imagePath2;
             $data['color_id'] = $request->color_id;
             $data['capacity_id'] = $request->capacity_id;
             $data['harga'] = $request->harga;

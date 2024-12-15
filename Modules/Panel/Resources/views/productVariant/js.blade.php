@@ -17,6 +17,10 @@
             },
             columns: [
                 { data: 'id' },
+                { data: 'product_variants_img1', render: function(data) {
+                    return data ? `<img src="{{ url('storage') }}/${data}" height="50">` : 'No Image';
+                  }
+                },
                 { data: 'product_name' },
                 { data: 'color_name' },
                 { data: 'capacity_name' },

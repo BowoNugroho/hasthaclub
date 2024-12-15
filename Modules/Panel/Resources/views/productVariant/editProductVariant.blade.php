@@ -66,6 +66,14 @@
                         <input type="number" class="form-control" id="edit_stock" name="stock" placeholder="Stock" />
                         <span class="error text-danger" id="edit_stock_error"></span>
                     </div>
+                    <div class="mb-3">
+                        <label for="image1" class="form-label">Gambar 1</label>
+                        <input type="file" class="form-control" id="edit_product_variants_img1" name="product_variants_img1">
+                      </div>
+                      <div class="mb-3">
+                        <label for="image2" class="form-label">Gambar 2</label>
+                        <input type="file" class="form-control" id="edit_product_variants_img2" name="product_variants_img2">
+                      </div>
                     {{-- <div class="mb-3">
                         <label class="form-label">Deskripsi</label>
                         <textarea class="form-control" id="edit_deskripsi" name="deskripsi" rows="3" placeholder="deskripsi"></textarea>
