@@ -111,7 +111,7 @@
                  <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
                     <div class="flex justify-center ">
                         <a href="{{ route('detail.katalog.product', $product->id) }}">
-                            <img src="{{ url('storage/'. $product->product_img) }}" class="2xl:h-[200px]  xl:h-[200px] lg:h-[200px] h-[150px] hover:scale-110" alt="">
+                            <img src="{{ url('public/storage/'. $product->product_variants_img1) }}" class="2xl:h-[200px]  xl:h-[200px] lg:h-[200px] h-[150px] hover:scale-110" alt="">
                         </a>
                     </div>
                  </div>

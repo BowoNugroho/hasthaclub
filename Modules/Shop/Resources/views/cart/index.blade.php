@@ -49,7 +49,7 @@
                 <div class="box col-span-2 ">
                     <div class="grid grid-cols-3">
                         <div class="box flex justify-center ">
-                            <img src="{{ url('storage/'. $val->product_img) }}" class="lg:h-[100px] h-[70px]" alt="">
+                            <img src="{{ url('public/storage/'. $val->product_variants_img1) }}" class="lg:h-[100px] h-[70px]" alt="">
                         </div>
                         <div class="box col-span-2">
                             <div class="grid">
@@ -93,7 +93,7 @@
                     </div>
                     <div class="grid grid-cols-1 mt-5">
                         <div class="box grid justify-center">
-                            <img src="{{ url('storage/'. $val->product_img) }}" class="h-[250px]" alt="">
+                            <img src="{{ url('public/storage/'. $val->product_variants_img1) }}" class="h-[250px]" alt="">
                         </div>
                     </div>
                     <div class="grid mt-5">

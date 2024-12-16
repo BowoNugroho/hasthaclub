@@ -94,6 +94,7 @@ class ProductVariant extends Model
             ->leftJoin('capacities as d', 'a.capacity_id', '=', 'd.id')
             ->select('a.*', 'b.product_name', 'b.product_img', 'b.deskripsi as deskripsi_product', 'b.fitur', 'c.color_name',  'd.capacity_name')
             ->where('a.id', $id)
+            ->whereNull('a.deleted_at')
             ->first();
 
         return $data;
@@ -105,6 +106,7 @@ class ProductVariant extends Model
             ->leftJoin('colors as c', 'a.color_id', '=', 'c.id')
             ->select('a.color_id', 'c.color_name', DB::raw('COUNT(a.id) as variant_count'))
             ->where('a.product_id', $id)
+            ->whereNull('a.deleted_at')
             ->groupBy('a.color_id', 'c.color_name')
             ->get()
             ->toArray();
@@ -136,6 +138,7 @@ class ProductVariant extends Model
             ->where('a.product_id', $product_id)
             ->where('a.color_id', $color_id)
             ->where('a.capacity_id', $capacity_id)
+            ->whereNull('a.deleted_at')
             ->first();
 
         return $return;

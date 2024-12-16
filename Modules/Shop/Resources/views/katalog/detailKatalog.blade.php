@@ -25,16 +25,19 @@
     <div class="box"></div>
     <div class="box 2xl:col-span-2 xl:col-span-3 lg:col-span-4 p-10 hidden lg:grid">
         <div class="flex justify-center ">
-            <img src="{{ url('storage/'. $product->product_img) }}" class="2xl:h-[400px] xl:h-[360px] lg:h-[300px] " alt="">
+            <img src="{{ url('public/storage/'. $product->product_variants_img1) }}" class="2xl:h-[400px] xl:h-[360px] lg:h-[300px] " alt="">
         </div> 
-        <div class="grid grid-cols-2 mt-10 gap-4">
+        <div class="flex justify-center mt-10">
+            <img src="{{ url('public/storage/'. $product->product_img) }}" class="2xl:h-[400px] xl:h-[360px] lg:h-[300px] " alt="">
+        </div> 
+        {{-- <div class="grid grid-cols-2 mt-10 gap-4">
             <div class="box  flex justify-center">
-                <img src="{{ url('storage/'. $product->product_img) }}" class="2xl:h-[300px] xl:h-[260px] lg:h-[230px] " alt="">
+                <img src="{{ url('public/storage/'. $product->product_variants_img1) }}" class="2xl:h-[300px] xl:h-[260px] lg:h-[230px] " alt="">
             </div>
             <div class="box  flex justify-center">
-                <img src="{{ url('storage/'. $product->product_img) }}" class="2xl:h-[300px] xl:h-[260px] lg:h-[230px] " alt="">
+                <img src="{{ url('public/storage/'. $product->product_variants_img1) }}" class="2xl:h-[300px] xl:h-[260px] lg:h-[230px] " alt="">
             </div>
-        </div>
+        </div> --}}
     </div>
     <div class="box lg:hidden mt-5 p-5">
         <div class="grid grid-cols-1">
@@ -48,7 +51,7 @@
             </div>
         </div>
         <div class="flex justify-center mt-5">
-            <img src="{{ url('storage/'. $product->product_img) }}" class="md:h-[300px] h-[200px] " alt="">
+            <img src="{{ url('public/storage/'. $product->product_variants_img1) }}" class="md:h-[300px] h-[200px] " alt="">
         </div> 
     </div>
     <div class="box p-10 2xl:col-span-2 xl:col-span-2 lg:col-span-3">

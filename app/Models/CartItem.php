@@ -74,7 +74,7 @@ class CartItem extends Model
             ->leftJoin('products as c', 'b.product_id', '=', 'c.id')
             ->leftJoin('colors as d', 'b.color_id', '=', 'd.id')
             ->leftJoin('capacities as e', 'b.capacity_id', '=', 'e.id')
-            ->select('a.*', 'c.product_img', 'c.product_name', 'd.color_name', 'e.capacity_name')
+            ->select('a.*', 'c.product_img', 'b.product_variants_img1', 'c.product_name', 'd.color_name', 'e.capacity_name')
             ->where('a.cart_id', $cart_id)
             ->where('a.status', 1)
             ->whereNull('a.deleted_at')

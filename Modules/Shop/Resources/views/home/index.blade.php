@@ -151,7 +151,7 @@
                                 <div class="border max-auto p-3 rounded-lg shadow">
                                     <div class="grid grid-cols-1 mb-7 mt-5">
                                         <div class="flex justify-center ">
-                                            <img src="{{ url('public/storage/'. $val->product_img) }}" class="h-[150px]" alt="">
+                                            <img src="{{ url('public/storage/'. $val->product_variants_img1) }}" class="h-[150px]" alt="">
                                         </div>
                                      </div>
                                      <div class="grid grid-cols-1">
@@ -257,7 +257,7 @@
                         <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2" id="carousel-items">
                             <div class="grid grid-cols-1 mb-2 mt-5 p-5 rounded-lg border border-black">
                                 <div class="flex justify-center ">
-                                    <img src="{{ url('public/storage/'. $val->product_img) }}" class="h-[200px]" alt="">
+                                    <img src="{{ url('public/storage/'. $val->product_variants_img1) }}" class="h-[200px]" alt="">
                                 </div>
                              </div>
                              <div class="grid grid-cols-1 mb-6">
