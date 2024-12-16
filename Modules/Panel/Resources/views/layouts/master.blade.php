@@ -14,13 +14,15 @@
     <meta name="author" content="{{ $author ?? '' }}">
 
     <!-- CSS files -->
+    <link href="{{ url('public/modules/admin/css/jquery.dataTables.min.css') }}" rel="stylesheet"/>
     <link href="{{ url('public/modules/admin/css/tabler.min.css') }}" rel="stylesheet"/>
     <link href="{{ url('public/modules/admin/css/tabler-flags.min.css') }}" rel="stylesheet"/>
     <link href="{{ url('public/modules/admin/css/tabler-payments.min.css') }}" rel="stylesheet"/>
     <link href="{{ url('public/modules/admin/css/tabler-vendors.min.css') }} " rel="stylesheet"/>
     <link href="{{ url('public/modules/admin/css/demo.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url('public/modules/admin/css/choices.min.css') }}" rel="stylesheet"/>
     <link href="{{ url('public/modules/admin/css/sweetalert2.min.css') }}" rel="stylesheet"/>
-    <link href="{{ url('public/modules/admin/css/jquery.dataTables.min.css') }}" rel="stylesheet"/>
+
     <style>
     @import url('https://rsms.me/inter/inter.css');
     :root {
@@ -71,6 +73,7 @@
     <script src="{{ url('public/modules/admin/js/demo-theme.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/demo.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/sweetalert2.all.min.js') }}" defer></script>
+    <script src="{{ url('public/modules/admin/js/choices.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/js/moment.min.js') }}" defer></script>
     <script src="{{ url('public/modules/admin/libs/toastr/toastr.min.js') }}" defer></script>
 
