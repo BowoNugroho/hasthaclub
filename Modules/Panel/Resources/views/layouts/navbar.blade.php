@@ -139,7 +139,7 @@
                         </a>
                       </div>
                       <div class="dropend">
-                        <a class="dropdown-item" href="#" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                        <a class="dropdown-item" href="{{ route('panel.productBestSeller.index') }}" data-bs-auto-close="outside" role="button" aria-expanded="false" >
                             Produk Best Seller
                         </a>
                       </div>                  
