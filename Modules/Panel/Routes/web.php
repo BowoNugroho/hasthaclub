@@ -13,6 +13,7 @@ use Modules\Panel\Http\Controllers\CapacityController;
 use Modules\Panel\Http\Controllers\ColorController;
 use Modules\Panel\Http\Controllers\ProductController;
 use Modules\Panel\Http\Controllers\ProductVariantController;
+use Modules\Panel\Http\Controllers\ProductBestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,6 +123,15 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::get('/editProductVariant', [ProductVariantController::class, 'editProductVariant'])->name('panel.productVariant.editProductVariant');
             Route::post('/updateProductVariant', [ProductVariantController::class, 'updateProductVariant'])->name('panel.productVariant.updateProductVariant');
             Route::delete('/deleteProductVariant/{id}', [ProductVariantController::class, 'deleteProductVariant'])->name('panel.productVariant.deleteProductVariant');
+        });
+
+        Route::prefix('productBest')->group(function () {
+            Route::get('/', [ProductBestController::class, 'index'])->name('panel.productBestSeller.index');
+            Route::get('/datatables', [ProductBestController::class, 'datatables'])->name('panel.productBestSeller.datatables');
+            Route::post('/saveProductBest', [ProductBestController::class, 'saveProductBest'])->name('panel.productBestSeller.saveProductBest');
+            Route::get('/editProductBest', [ProductBestController::class, 'editProductBest'])->name('panel.productBestSeller.editProductBest');
+            Route::post('/updateProductBest', [ProductBestController::class, 'updateProductBest'])->name('panel.productBestSeller.updateProductBest');
+            Route::delete('/deleteProductBest/{id}', [ProductBestController::class, 'deleteProductBest'])->name('panel.productBestSeller.deleteProductBest');
         });
     });
     // });
