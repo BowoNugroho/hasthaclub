@@ -28,7 +28,7 @@
             <img src="{{ url('public/storage/'. $product->product_variants_img1) }}" class="2xl:h-[400px] xl:h-[360px] lg:h-[300px] " alt="">
         </div> 
         <div class="flex justify-center mt-10">
-            <img src="{{ url('public/storage/'. $product->product_img) }}" class="2xl:h-[400px] xl:h-[360px] lg:h-[300px] " alt="">
+            <img src="{{ url('public/storage/'. $product->product_img) }}" class="2xl:h-[300px] xl:h-[260px] lg:h-[230px] " alt="">
         </div> 
         {{-- <div class="grid grid-cols-2 mt-10 gap-4">
             <div class="box  flex justify-center">

@@ -124,6 +124,7 @@ class Checkout extends Model
             ->select('a.*')
             ->where('a.user_id', $user_id)
             ->orderBy('a.created_at', 'desc')
+            ->whereNotNull('a.order_status')
             ->get()->toArray();
 
         return $data;
