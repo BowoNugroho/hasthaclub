@@ -27,6 +27,8 @@ Produk - Data Produk Best Seller
                   <tr>
                       <th>Id</th>
                       <th>Name</th>
+                      <th>Kapasitas</th>
+                      <th>Warna</th>
                       <th>Created At</th>
                       <th>Aksi</th>
                   </tr>

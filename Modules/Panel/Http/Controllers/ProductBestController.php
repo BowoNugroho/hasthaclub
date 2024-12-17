@@ -27,19 +27,22 @@ class ProductBestController extends Controller
 
     public function datatables(Request $request)
     {
-        $columns = ['id', 'product_name', 'created_at'];  // Define the columns you want to display
+        $columns = ['id', 'product_name', 'color_name', 'capacity_name', 'created_at'];  // Define the columns you want to display
         $query = ProductBestSeller::query()
             ->join('product_variants', 'product_best_sellers.product_variant_id', '=', 'product_variants.id')
             ->join('products', 'product_variants.product_id', '=', 'products.id')
-            ->select('product_best_sellers.*', 'products.product_name')
+            ->join('colors', 'product_variants.color_id', '=', 'colors.id')
+            ->join('capacities', 'product_variants.capacity_id', '=', 'capacities.id')
+            ->select('product_best_sellers.*', 'products.product_name', 'colors.color_name', 'capacities.capacity_name')
             ->orderBy('product_best_sellers.created_at', 'desc');
 
         // Apply search filter
         if ($search = $request->input('search.value')) {
             $query->where(function ($query) use ($search) {
-                $columns = ['id', 'product_name', 'created_at'];  // Define the columns you want to display
+                $columns = ['id', 'created_at'];  // Define the columns you want to display
                 foreach ($columns as $column) {
-                    $query->orWhere($column, 'like', "%$search%");
+                    $query->orWhere('product_best_sellers.' . $column, 'like', "%$search%")
+                        ->orWhere('products.product_name', 'like', "%$search%");
                 }
             });
         }

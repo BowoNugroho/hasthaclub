@@ -39,6 +39,8 @@
             columns: [
                 { data: 'id' },
                 { data: 'product_name' },
+                { data: 'capacity_name' },
+                { data: 'color_name' },
                 { data: 'created_at', 
                   render: function(data, type, row) {
                       if (data) {
