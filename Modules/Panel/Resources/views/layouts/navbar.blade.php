@@ -144,7 +144,7 @@
                         </a>
                       </div>                  
                       <div class="dropend">
-                        <a class="dropdown-item" href="#" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                        <a class="dropdown-item" href="{{ route('panel.productCheckout.index') }}" data-bs-auto-close="outside" role="button" aria-expanded="false" >
                             Produk Checkout
                         </a>
                       </div>                  

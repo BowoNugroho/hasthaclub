@@ -14,6 +14,7 @@ use Modules\Panel\Http\Controllers\ColorController;
 use Modules\Panel\Http\Controllers\ProductController;
 use Modules\Panel\Http\Controllers\ProductVariantController;
 use Modules\Panel\Http\Controllers\ProductBestController;
+use Modules\Panel\Http\Controllers\ProductCheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -132,6 +133,15 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::get('/editProductBest', [ProductBestController::class, 'editProductBest'])->name('panel.productBestSeller.editProductBest');
             Route::post('/updateProductBest', [ProductBestController::class, 'updateProductBest'])->name('panel.productBestSeller.updateProductBest');
             Route::delete('/deleteProductBest/{id}', [ProductBestController::class, 'deleteProductBest'])->name('panel.productBestSeller.deleteProductBest');
+        });
+
+        Route::prefix('productCheckout')->group(function () {
+            Route::get('/', [ProductCheckoutController::class, 'index'])->name('panel.productCheckout.index');
+            Route::get('/datatables', [ProductCheckoutController::class, 'datatables'])->name('panel.productCheckout.datatables');
+            Route::post('/saveProductCheckout', [ProductCheckoutController::class, 'saveProductCheckout'])->name('panel.productCheckout.saveProductCheckout');
+            Route::get('/editProductCheckout', [ProductCheckoutController::class, 'editProductCheckout'])->name('panel.productCheckout.editProductCheckout');
+            Route::post('/updateProductCheckout', [ProductCheckoutController::class, 'updateProductCheckout'])->name('panel.productCheckout.updateProductCheckout');
+            Route::delete('/deleteProductCheckout/{id}', [ProductCheckoutController::class, 'deleteProductCheckout'])->name('panel.productCheckout.deleteProductCheckout');
         });
     });
     // });

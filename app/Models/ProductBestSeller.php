@@ -41,6 +41,7 @@ class ProductBestSeller extends Model
             ->leftJoin('products as c', 'b.product_id', '=', 'c.id')
             ->select('a.*', 'b.product_variants_img1', 'b.harga_diskon', 'c.product_name', 'c.product_img')
             ->where('a.status', 1)
+            ->whereNull('a.deleted_at')
             ->get()
             ->toArray();
 
