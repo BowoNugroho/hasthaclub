@@ -84,12 +84,13 @@
             Cancel
             </a>
             <button type="submit" class="btn btn-primary ms-auto">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentProduct" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <svg id="spinnerTextIcon" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M12 5l0 14"></path>
                 <path d="M5 12l14 0"></path>
               </svg>
-              Simpan
+              <span id="spinnerText">Simpan</span>
+              <span class="spinner-border spinner-border-sm me-2" id="spinnerProductVariant" role="status" style="display: none;"></span>
             </button>
           </div>
         </form>

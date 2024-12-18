@@ -7,6 +7,13 @@
             }
         });
 
+        new Choices('#product_id', {placeholder: true,searchEnabled: true});
+        new Choices('#color_id', {placeholder: true,searchEnabled: true});
+        new Choices('#capacity_id', {placeholder: true,searchEnabled: true});
+        const choicesProductId = new Choices('#edit_product_id', {placeholder: true,searchEnabled: true});
+        const choicesColorId = new Choices('#edit_color_id', {placeholder: true,searchEnabled: true});
+        const choicesCapacityId = new Choices('#edit_capacity_id', {placeholder: true,searchEnabled: true});
+
         let tableProductVariant =  $('#productVariant_datatables').DataTable({
             processing: true,
             serverSide: true,
@@ -63,31 +70,53 @@
             $('#harga_diskon_error').text('');
             $('#stock_error').text('');
 
+            $(this).find("#spinnerText").text("Loading...");
+            $('#spinnerTextIcon').hide();
+            $('#spinnerProductVariant').show();
+
             let isValid = true;
 
             if ($('#product_id').val() === '') {
                 $('#product_id_error').text('Produk wajib diisi.');
                 isValid = false;
+                $('#spinnerText').show();
+                $('#spinnerTextIcon').show();
+                $('#spinnerProductVariant').hide();
             }
             if ($('#color_id').val() === '') {
                 $('#color_id_error').text('Varian Warna wajib diisi.');
                 isValid = false;
+                $('#spinnerText').show();
+                $('#spinnerTextIcon').show();
+                $('#spinnerProductVariant').hide();
             }
             if ($('#capacity_id').val() === '') {
                 $('#capacity_id_error').text('Varian Kapasitas wajib diisi.');
                 isValid = false;
+                $('#spinnerText').show();
+                $('#spinnerTextIcon').show();
+                $('#spinnerProductVariant').hide();
             }
             if ($('#harga').val() === '') {
                 $('#harga_error').text('Harga normal wajib diisi.');
                 isValid = false;
+                $('#spinnerText').show();
+                $('#spinnerTextIcon').show();
+                $('#spinnerProductVariant').hide();
             }
             if ($('#harga_diskon').val() === '') {
                 $('#harga_diskon_error').text('Harga Diskon wajib diisi.');
                 isValid = false;
+                $('#spinnerText').show();
+                $('#spinnerTextIcon').show();
+                $('#spinnerProductVariant').hide();
             }
             if ($('#stock').val() === '') {
                 $('#stock_error').text('Stock wajib diisi.');
                 isValid = false;
+                $('#spinnerText').show();
+                $('#spinnerTextIcon').show();
+                $('#spinnerProductVariant').hide();
             }
             
             if (isValid) {
@@ -103,6 +132,9 @@
                       if (response.success) {
                         $('#tambahProductVariant').modal('hide');
                         $('#productVariantForm')[0].reset();
+                        $('#spinnerText').show();
+                        $('#spinnerTextIcon').show();
+                        $('#spinnerProductVariant').hide();
                         Swal.fire({
                               title: 'Berhasil menyimpan data',
                               icon: 'success',
@@ -140,9 +172,12 @@
                 success: function (data) {
                     console.log(data);
                     $('#edit_product_variant_id').val(data.id);
-                    $('#edit_product_id').val(data.product_id).trigger('change');
-                    $('#edit_color_id').val(data.color_id).trigger('change');
-                    $('#edit_capacity_id').val(data.capacity_id).trigger('change');
+                    // $('#edit_product_id').val(data.product_id).trigger('change');
+                    // $('#edit_color_id').val(data.color_id).trigger('change');
+                    // $('#edit_capacity_id').val(data.capacity_id).trigger('change');
+                    choicesProductId.setChoiceByValue(data.product_id);  
+                    choicesColorId.setChoiceByValue(data.color_id);  
+                    choicesCapacityId.setChoiceByValue(data.capacity_id);  
                     $('#edit_harga').val(data.harga);
                     $('#edit_harga_diskon').val(data.harga_diskon);
                     $('#edit_stock').val(data.stock);
@@ -166,19 +201,32 @@
             $('#edit_harga_diskon_error').text('');
             $('#edit_stock_error').text('');
 
+            $(this).find("#editspinnerText").text("Loading...");
+            $('#editspinnerTextIcon').hide();
+            $('#editspinnerProductVariant').show();
+
             let isValid = true;
 
             if ($('#edit_product_id').val() === '') {
                 $('#edit_product_id_error').text('Produk wajib diisi.');
                 isValid = false;
+                $('#editspinnerText').show();
+                $('#editspinnerTextIcon').show();
+                $('#editspinnerProductVariant').hide();
             }
             if ($('#edit_color_id').val() === '') {
                 $('#edit_color_id_error').text('Varian Warna wajib diisi.');
                 isValid = false;
+                $('#editspinnerText').show();
+                $('#editspinnerTextIcon').show();
+                $('#editspinnerProductVariant').hide();
             }
             if ($('#edit_capacity_id').val() === '') {
                 $('#edit_capacity_id_error').text('Varian Kapasitas wajib diisi.');
                 isValid = false;
+                $('#editspinnerText').show();
+                $('#editspinnerTextIcon').show();
+                $('#editspinnerProductVariant').hide();
             }
             if ($('#edit_harga').val() === '') {
                 $('#edit_harga_error').text('Harga normal wajib diisi.');
@@ -187,10 +235,16 @@
             if ($('#edit_harga_diskon').val() === '') {
                 $('#edit_harga_diskon_error').text('Harga Diskon wajib diisi.');
                 isValid = false;
+                $('#editspinnerText').show();
+                $('#editspinnerTextIcon').show();
+                $('#editspinnerProductVariant').hide();
             }
             if ($('#edit_stock').val() === '') {
                 $('#edit_stock_error').text('Stock wajib diisi.');
                 isValid = false;
+                $('#editspinnerText').show();
+                $('#editspinnerTextIcon').show();
+                $('#editspinnerProductVariant').hide();
             }
             
             if (isValid) {
@@ -206,6 +260,9 @@
                       if (response.success) {
                         $('#editProductVariant').modal('hide');
                         $('#editProductVariantForm')[0].reset();
+                        $('#editspinnerText').show();
+                        $('#editspinnerTextIcon').show();
+                        $('#editspinnerProductVariant').hide();
                         Swal.fire({
                               title: 'Berhasil Menyimpan data',
                               icon: 'success',
