@@ -15,6 +15,7 @@ use Modules\Panel\Http\Controllers\ProductController;
 use Modules\Panel\Http\Controllers\ProductVariantController;
 use Modules\Panel\Http\Controllers\ProductBestController;
 use Modules\Panel\Http\Controllers\ProductCheckoutController;
+use Modules\Panel\Http\Controllers\VoucherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -142,6 +143,16 @@ Route::group(['middleware' => ['auth:web']], function () {
             Route::get('/editProductCheckout', [ProductCheckoutController::class, 'editProductCheckout'])->name('panel.productCheckout.editProductCheckout');
             Route::post('/updateProductCheckout', [ProductCheckoutController::class, 'updateProductCheckout'])->name('panel.productCheckout.updateProductCheckout');
             Route::delete('/deleteProductCheckout/{id}', [ProductCheckoutController::class, 'deleteProductCheckout'])->name('panel.productCheckout.deleteProductCheckout');
+        });
+
+        Route::prefix('voucher')->group(function () {
+            Route::get('/', [VoucherController::class, 'index'])->name('panel.voucher.index');
+            Route::get('/datatables', [VoucherController::class, 'datatables'])->name('panel.voucher.datatables');
+            Route::post('/saveVoucher', [VoucherController::class, 'saveVoucher'])->name('panel.voucher.saveVoucher');
+            Route::get('/editVoucher', [VoucherController::class, 'editVoucher'])->name('panel.voucher.editVoucher');
+            Route::post('/updateVoucher', [VoucherController::class, 'updateVoucher'])->name('panel.voucher.updateVoucher');
+            Route::delete('/deleteVoucher/{id}', [VoucherController::class, 'deleteVoucher'])->name('panel.voucher.deleteVoucher');
+            Route::get('/cekKodeVoucher', [VoucherController::class, 'cekKodeVoucher'])->name('panel.voucher.checkVoucher');
         });
     });
     // });

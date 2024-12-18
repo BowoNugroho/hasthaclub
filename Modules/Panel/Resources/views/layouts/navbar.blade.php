@@ -148,6 +148,11 @@
                             Produk Checkout
                         </a>
                       </div>                  
+                      <div class="dropend">
+                        <a class="dropdown-item" href="{{ route('panel.voucher.index') }}" data-bs-auto-close="outside" role="button" aria-expanded="false" >
+                            Voucher
+                        </a>
+                      </div>                  
                     </div>
                   </div>
                 </div>
