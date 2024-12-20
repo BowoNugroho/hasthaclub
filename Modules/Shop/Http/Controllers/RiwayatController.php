@@ -48,7 +48,7 @@ class RiwayatController extends Controller
             ->orderBy('order_items.created_at', 'desc')
             ->get();
 
-        $path = public_path('public/modules/shop/images/hasthaclub.png');
+        $path = public_path('modules/shop/images/hasthaclub.png');
         $type = pathinfo($path, PATHINFO_EXTENSION);
         $dt = file_get_contents($path);
         $base64 = 'data:image/' . $type . ';base64,' . base64_encode($dt);
