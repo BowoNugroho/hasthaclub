@@ -52,6 +52,9 @@ class Checkout extends Model
         'order_status',
         'bukti_pembayaran_img',
         'status_pembayaran',
+        'tgl_pembelian',
+        'tgl_pembayaran',
+        'status_pembayaran',
         'status',
     ];
 

@@ -29,7 +29,7 @@
                 Partnership (HCSP)</span> dan dapatkan banyak keuntunganya.</p>
         </div>
         <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
-            <p>Tentang Program : <span class="font-bold">Hastha Club Strategic Partnership (HCSP)</span> merupakan program kemitraan yang dibangun oleh HMS Group dalam rangka pemenuhan dalam pelayanan pelanggan. Program kemitraan ini menawarkan kerjasama antara HMS Group dengan pemilik store/konter dalam penyediaan tempat untuk penempatan standing banner dan penggunaan alamat store/konter untuk pelayanan customer.</p>
+            <p>Tentang Program : <span class="font-bold">Hastha Club Strategic Partnership (HCSP)</span> merupakan program kemitraan yang dibangun oleh PT Gayeon Industri Persada dalam rangka pemenuhan dalam pelayanan pelanggan. Program kemitraan ini menawarkan kerjasama antara PT Gayeon Industri Persada dengan pemilik store/konter dalam penyediaan tempat untuk penempatan standing banner dan penggunaan alamat store/konter untuk pelayanan customer.</p>
         </div>
         <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <span class="font-bold underline">Keuntungan Program :</span>

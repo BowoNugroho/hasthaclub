@@ -37,7 +37,7 @@
                 Belanja secara online dan dapatkan barang impianmu 3-7 hari kerja dengan ketentuan harga promo.</p>
         </div>
         <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
-            <span class="font-bold underline">HMS Group </span>
+            <span class="font-bold underline">PT Gayeon Industri Persada </span>
         </div>
         <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <ul>

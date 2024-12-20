@@ -129,6 +129,7 @@ class CheckoutController extends Controller
             $data['store_id'] = @$request->store_id;
             $data['total_harga'] = $request->total_harga;
             $data['order_status'] = 'PENDING';
+            $data['tgl_pembelian'] = now();
             $data['status'] = 1;
 
             $checkout = Checkout::findOrFail($co_id);
@@ -219,6 +220,7 @@ class CheckoutController extends Controller
             $data['bukti_pembayaran_img'] = $imagePath;
             $data['order_status'] = "PROSES";
             $data['status_pembayaran'] = 1;
+            $data['tgl_pembayaran'] = now();
             $data['updated_by'] = auth('customer')->user()->id;
 
             $checkout = Checkout::findOrFail($co_id);

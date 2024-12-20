@@ -54,6 +54,7 @@ Route::prefix('shop')->group(function () {
 
     Route::controller(RiwayatController::class)->group(function () {
         Route::get('/riwayatCs', 'index')->name('riwayatCs')->middleware('auth:customer');
+        Route::get('/invoicePdf/{id}', 'invoicePdf')->name('riwayatCs.invoicePdf')->middleware('auth:customer');
     });
 
     Route::prefix('product')->group(function () {

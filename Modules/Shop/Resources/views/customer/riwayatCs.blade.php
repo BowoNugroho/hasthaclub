@@ -35,10 +35,13 @@
         <div class="flex mt-3 justify-between">
             <span class="2xl:text-lg xl:text-lg lg:text-lg md:text-md sm:text-md text-sm"># {{$val->invoice}}</span>
             <span class="2xl:text-md xl:text-md lg:text-md md:text-sm sm:text-[12px] text-[12px]">Order Status :
-            <span class="2xl:text-md xl:text-md lg:text-md md:text-[10px] sm:text-[10px] text-[10px] bg-orange-500 text-white  font-bold px-2 py-1 rounded-full">{{$val->order_status}}</span></span>
+                <span class="2xl:text-md xl:text-md lg:text-md md:text-[10px] sm:text-[10px] text-[10px] bg-orange-500 text-white  font-bold px-2 py-1 rounded-full">{{$val->order_status}}</span></span>
         </div>
-        <div class="grid">
+        <div class="flex mt-3 justify-between">
             <p class="2xl:text-md xl:text-md lg:text-md md:text-md sm:text-sm text-sm">Status Pembayaran : <span class="bg-orange-500 text-white 2xl:text-md xl:text-md lg:text-md md:text-sm sm:text-[12px] text-[12px] font-bold px-2 py-1 rounded-full"> {{ $val->status_pembayaran == 0 ? 'Belum' : 'Sudah' }}</span></p>
+            <a href="{{ route('riwayatCs.invoicePdf',$val->id) }}" target="_blank">
+                <span class="2xl:text-lg xl:text-lg lg:text-lg md:text-md sm:text-[12px] text-[12px] text-blue-500"> <i class="fa-solid fa-file-arrow-down"></i> </span>
+            </a>
         </div>
         <div class="grid mt-2">
             <span class="2xl:text-md xl:text-md lg:text-md md:text-md sm:text-sm text-sm">Total Pembayaran : Rp. {{ number_format($val->total_harga, 0, ',', '.')  }}</span>

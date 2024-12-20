@@ -267,7 +267,7 @@
                 </div>
                 <hr>
                 <div class="grid grid-cols-1 text-center mt-4">
-                    <p class="text-slate-500 lg:text-lg md:text-md text-sm">Copyright © 2024 Hastha Club | HMS Group. All rights reserved.</p>
+                    <p class="text-slate-500 lg:text-lg md:text-md text-sm">Copyright © 2024 Hastha Club | PT Gayeon Industri Persada. All rights reserved.</p>
                 </div>
             </div>
             <div class="box xl:col-span-2 "></div>

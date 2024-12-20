@@ -128,7 +128,7 @@
                                 <div class="box hidden md:flex">
                                     <div class="grid grid-cols-1 p-2">
                                         <div class="flex justify-center ">
-                                            <img src="{{ url('modules/shop/images/store.png') }}" class="h-[120px]" alt="">
+                                            <img src="{{ url('public/modules/shop/images/store.png') }}" class="h-[120px]" alt="">
                                         </div>
                                     </div>
                                 </div>
