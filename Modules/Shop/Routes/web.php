@@ -100,5 +100,6 @@ Route::prefix('shop')->group(function () {
         Route::get('/informasi-term-condition', 'syarat')->name('informasi.syarat');
         Route::get('/informasi-return-exchange', 'return')->name('informasi.return');
         Route::get('/informasi-karir', 'karir')->name('informasi.karir');
+        Route::get('/informasi-hastha-digital', 'digital')->name('informasi.digital');
     });
 });
