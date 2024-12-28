@@ -31,79 +31,210 @@
                 bisnismu.</p>
         </div>
         <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
-            <span class="font-bold underline">Apa saja yang akan kamu dapatkan dari layanan Hastha Digital?</span>
+            <p>Selain daripada mengembangkan akun sosial media instagram bisnismu, Hastha Digital jugaakan membantu untuk meliput bisnismu dan di muat dalam artikel media nasional. Sehinggadapat membantu pelanggan menemukan bisnismu melalui mesin pencarian Google danmeningkatkan citra bisnismu.</p>
+        </div>
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
+            <span class="font-bold underline">Layanan Hastha Digital</span>
         </div>
         <div class="grid grid-cols-1 mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <div class="box ">
                 <table>
                     <tr>
-                        <td>1. Publikasi media / peliputan bisnismu untuk ditayangkan pada artikel media nasional (1x)</td>
+                        <td class="font-bold">1. Layanan Instagram</td>
                     </tr>
                     <tr>
-                        <td>2. Free 1000 followers instagram</td>
+                        <td>&nbsp;&nbsp;&nbsp;a. Instagram auto likes (postingan)</td>
                     </tr>
                     <tr>
-                        <td>3. Free 100 likes untuk setiap postingan instagram selama 3 bulan (otomatis)</td>
+                        <td>&nbsp;&nbsp;&nbsp;b. Instagram auto impression</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;c. Instagram auto like + impression</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;d. Instagram auto reach + impression</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;e. Instagram auto view (reels)</td>
+                    </tr>
+                </table>
+                <table class="mt-5">
+                    <tr>
+                        <td class="font-bold">2. Layanan Publikasi/Liputan Media Nasional</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;a. Kabarbaru.co</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;b. Radarbaru.com</td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;c. Radarberita.com</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;d. Suaratime.com</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;e. Wartatime.com</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;f. Rakyatsipil.com</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;g. Dailynusantara.com</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;h. Portaldemokrasi.com</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;i. Haluannusantara.com</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;j. Nalarrakyat.com</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;k. Jogjapekan.com</td>
                     </tr>
                     <tr>
                 </table>
             </div>
         </div>
         <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
-            <span class="font-bold underline">Biaya layanan Hastha Digital</span>
+            <span class="font-bold underline">Paket dan Biaya Berlangganan Hastha Digital</span>
         </div>
         <div class="grid grid-cols-1 mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <div class="box ">
                 <table>
                     <tr>
-                        <td>1. Biaya 2 bulan pertama termasuk instalasi tools auto likes Rp 100.000</td>
+                        <td class="font-bold">1. Paket Promo Rp 100.000</td>
                     </tr>
                     <tr>
-                        <td>2. Biaya berlangganan bulan berikutnya Rp 20.000</td>
+                        <td>&nbsp;&nbsp;&nbsp;a. Layanan instagram auto service selama 2 bulan (100-200 likes)</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;b. Layanan publikasi/liputan media nasional (1x)</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;c. Biaya langganan bulan berikutnya Rp 20.000</td>
+                    </tr>
+                </table>
+                <table class="mt-5">
+                    <tr>
+                        <td class="font-bold">2. Paket Promo Rp 150.000</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;a. Layanan instagram auto service selama 2 bulan (100-200 likes)</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;b. Layanan publikasi/liputan media nasional (2x)</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;c. Voucher belanja Hastha Club Rp 1.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;d. Biaya langganan bulan berikutnya Rp 20.000</td>
+                    </tr>
+                </table>
+                <table class="mt-5">
+                    <tr>
+                        <td class="font-bold">3. Paket Promo Rp 200.000</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;a. Layanan instagram auto service selama 2 bulan (100-200 likes)</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;b. Layanan publikasi/liputan media nasional (3x)</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;c. Voucher belanja Hastha Club Rp 1.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;d. Biaya langganan bulan berikutnya Rp 20.000</td>
                     </tr>
                 </table>
             </div>
         </div>
         <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
-            <span class="font-bold underline">Lama proses instalasi</span>
+            <span class="font-bold underline">Proses pengerjaan & Kebijakan</span>
         </div>
         <div class="grid grid-cols-1 mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <div class="box ">
                 <table>
                     <tr>
-                        <td>1. Instalasi akun sosial media akan kami kerjakan sesuai dengan nomor urut pendaftaran. Umumnya proses instalasi selesai dalam maksimal 1 jam (tanpa kendala)</td>
+                        <td class="font-bold">1. Layanan Instagram Auto Service</td>
                     </tr>
                     <tr>
-                        <td>2. Proses publikasi / peliputan bisnis mitra akan kami proses maksimal dalam3 hari kerja.</td>
+                        <td>&nbsp;&nbsp;&nbsp;a. Proses instalasi hanya membutuhkan username akun</td>
                     </tr>
                     <tr>
-                        <td>3. Pengiriman followers akan kami kirim maksimal dalam 1x24jam (tanpa kendala)
-                            terhitung sejak waktu pendaftaran dilakukan</td>
+                        <td>&nbsp;&nbsp;&nbsp;b. Proses instalasi akan membutuhkan waktu 30 menit hingga 1 jam</td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;c. Auto like postingan dapat digunakan untuk postingan sebelumnya dan postinganbaru</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;d. Jumlah like untuk setiap postingan sesuai kebijakan atau dapat dirubah sesuai
+                            permintaan</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;e. Jumlah postingan tercover sebanyak 100 postingan setiap bulanya</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;f. Pengiriman like umumnya terkirim mulai 30 menit hingga 1 jam dari waktu postingdi lakukan</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;g. Like bisa dikirim sekaligus, bisa juga setiap 5,10,15,20 menit (bisa request)</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;h. Seluruh layanan dilakukan secara organik, sehingga menjamin keamanan akuninstagram anda dari pelanggaran dll.</td>
+                    </tr>
+                </table>
+                <table class="mt-5">
+                    <tr>
+                        <td class="font-bold">2. PLayanan Publikasi/Liputan Media Nasional</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;a. Silahkan pilih salah satu (sesuai paket) media yang ingin digunakan</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;b. Kirimkan foto bisnismu</td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;c. Kirimkan deskripsi artikel yang ingin di publish</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;d. Artikel bisnis akan di tayangkan urut sesuai dengan antrian pada media yang ingindigunakan</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;e. Umumnya proses publikasi membutuhkan waktu 3-7 hari kerja, namun waktutersebut dapat lebih lama sesuai dengan antrian pada media yang di pilih</td>
                     </tr>
                 </table>
             </div>
         </div>
         <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
-            <span class="font-bold underline">Apa yang perlu disiapkan sebelum menggunakan layanan?</span>
+            <span class="font-bold underline">Cara Pemesanan</span>
+        </div>
+        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
+            <p>Untuk melakukan pemesanaan, kamu bisa menghubungi salah satu kontak berikut:</p>
         </div>
         <div class="grid grid-cols-1 mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
             <div class="box ">
                 <table>
                     <tr>
-                        <td>1. Username instagram dan link profil instagram</td>
+                        <td>WhatsApp &nbsp;&nbsp;&nbsp</td>
+                        <td>:</td>
+                        <td>&nbsp;&nbsp;&nbsp 0882 0089 97382</td>
                     </tr>
                     <tr>
-                        <td>2. Akun instagram tidak boleh di private</td>
-                    </tr>
-                    <tr>
-                        <td>3. Foto bisnis / usaha / produk untuk di tayangkan pada artikel media nasional</td>
+                        <td>Email &nbsp;&nbsp;&nbsp</td>
+                        <td>:</td>
+                        <td>&nbsp;&nbsp;&nbsp; <span class="text-blue-500">cs@hasthaclub.com</span></td>
                     </tr>
                 </table>
             </div>
-        </div>
-        <div class="grid mt-5 xl:text-[17px] lg:text-[17px] text-[15px]">
-            <p>Butuh informasi lebih lanjut? Atau ingin melakukan pemesanan? Silahkan hubungi kami
-                melalui email berikut <span class="text-blue-500">cs@hasthaclub.com</span></p>
         </div>
     </div>
     <div class="box"></div>
